@@ -1,2 +1,0 @@
-# talks
-Collection of talks
