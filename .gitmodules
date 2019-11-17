@@ -1,0 +1,6 @@
+[submodule "reveal.js"]
+	path = reveal.js
+	url = git@github.com:modichirag/reveal.js.git
+[submodule "LBNL2019/reveal.js"]
+	path = LBNL2019/reveal.js
+	url = git@github.com:modichirag/reveal.js.git
