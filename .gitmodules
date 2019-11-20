@@ -1,9 +1,9 @@
 [submodule "reveal.js"]
 	path = reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js
 [submodule "LBNL2019/reveal.js"]
 	path = LBNL2019/reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js
 [submodule "Chamberlain/reveal.js"]
 	path = Chamberlain/reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js
