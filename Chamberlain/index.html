@@ -277,33 +277,31 @@
 										</li>
 										<br>
 										<li class='fragment' data-fragment-index='0'> Cost - <b >large number of latent variables</b>.
+											<br>
+											<br>
+											<ul style="list-style:None"> 																				
+												$\rightarrow$  Effecient inference possible with novel methods based on fast, accurate, differentiable forward simulations :
+										
+										
+													<ul  style="padding-left: 20px">
+														<li> Hamiltonian Monte-Carlo
+														</li>
+														<li> Variational Inference
+														</li>
+														<li> MAP+Laplace
+														</li>
+														<li> Gold Mining
+														</li>
+														<li> Dimensionality reduction by Fisher-Information Maximization
+														</li>
+													</ul>
+												
+											</ul>
+											
 										</li>
 										<br>
 										
-										
-									</ul>
 
-									<br>
-									<div class='fragment'>
-										$\rightarrow$ A non-exhaustive list of methods to perform efficient inference in this large number of dimensions :
-										
-										<ul  style="padding-left: 100px">
-											<li> Hamiltonian Monte-Carlo
-											</li>
-											<li> Variational Inference
-											</li>
-											<li> MAP+Laplace
-											</li>
-											<li> Gold Mining
-											</li>
-											<li> Dimensionality reduction by Fisher-Information Maximization
-											</li>
-										</ul>
-										<br>
-										<br>
-										
-										$\rightarrow$ They require fast, accurate, differentiable forward simulations
-									 </div>
 								</div>
 						
 								<div class='col'>
@@ -482,21 +480,35 @@
 						<div class="container">
 							
 							<div class="col">
-								<div  class="fragment" data-fragment-index="1"  style="text-align:left"> Smooth the fields to estimate error</div>
+								<ul>
+								<li  class="fragment" data-fragment-index="1"  style="text-align:left"> Smooth the fields to estimate error</li>
 								<br>
-								<div class="fragment" data-fragment-index="2" style="text-align:left">Shifted Log-Normal</div>
+								<li class="fragment" data-fragment-index="2" style="text-align:left">Shifted Log-Normal</li>
 								<div class="fragment" data-fragment-index="2" style="text-align:center">
-									$$ \mathcal{E} = \sum_i \Bigg(\frac{\mu_N + \rm{log(M_{R,i}^{NN} + M_0)} - \rm{log(M_{R,i}^{d} + M_0)}}{2\sigma_N}\Bigg)^2 $$ </div>
-								<img class="fragment  plain" data-fragment-index="3"  data-src="assets/noannealhrecon-w.png" height="300"/>
+									$ \mathcal{E} = \sum_i \Bigg(\frac{\mu_N + \rm{log(M_{R,i}^{NN} + M_0)} - \rm{log(M_{R,i}^{d} + M_0)}}{2\sigma_N}\Bigg)^2 $ </div>
+								<br>
+								<li class="fragment" data-fragment-index="3" > Cross correlation : phases of fluctuations </li>
+								<div class="fragment" data-fragment-index="3" style="text-align:center">
+									$ r_c = \frac{P_{xy}}{\sqrt{P_x \times P_y}}$ </div>
+								<br>
+								
+								<li class="fragment" data-fragment-index="3" > Transfer Function : amplitude of fluctuations </li>
+								<div class="fragment" data-fragment-index="3" style="text-align:center">
+									$ t_f = \sqrt{\frac{P_{y}}{P_x} }$ </div>
+								<br>
+								
+								</ul>
 							</div>																
 							
 							<div class="col" >
-								<br><br>
-								<img class="fragment" data-fragment-index="1" data-src="assets/nnnoisefield.png" height="200"/>
-								<br><br>
-								<img class="fragment" data-fragment-index="2" data-src="assets/nnnoisehist.png" height="200"/>
+								<div style="position:relative; width:500px; height:600px; margin:0 auto;">
+								<img class="fragment" data-fragment-index="1" data-src="assets/nnnoisefield.png" height="180"/>
+								<br>
+								<img class="fragment current-visible" data-fragment-index="2" data-src="assets/nnnoisehist.png" style="position:absolute;top:200px;left:100px;" height="200"/>
+								<img class="fragment  plain" data-fragment-index="3"  data-src="assets/noannealhrecon-w.png" style="position:absolute;top:200px;left:30px;" height="300"/>
+
 							</div>
-							<div class="fragment" data-fragment-index="1" style="position:relative; float:right; top:200px;left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
+							<div class="fragment" data-fragment-index="1" style="position:relative; float:right; top:-65px;left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
 
 						</div>
 						<br><br>
@@ -838,13 +850,16 @@
 						  <div class='col' style="flex: 0 0 25em;">
 							  <ul >
 								  <li> Readily available gradients </li>
-								  <li class='fragment' data-fragment-index="1"> Seamless interfacing with DL elements </li> 
+								  <br>
+								  <li class='fragment' data-fragment-index="1"> Seamless interfacing with DL elements </li>
+								  <br>
+								  <li class='fragment' data-fragment-index="2"> Developing hybrid forward models while preserving our understanding of underlying physics </li>
+							  	  <br>
+								  <li class='fragment' data-fragment-index="3">  Discussing collaboration with scientists at NERSC and Google to develop exascale computing for future surveys using Mesh TensorFlow </li>
 							  </ul>
-							  <br>
-							  <br>
-							  <div class='fragment' data-fragment-index="1"> Developing hybrid models while preserving our understanding of underlying physics </div> 
-							  <br><br><br><br>
-						      <img data-src="assets/TF_FullColor_Horizontal.png" class='plain' style="height: 80px;"/>
+							  
+							  <br><br>
+						      <img data-src="assets/TF_FullColor_Horizontal.png" class='plain' style="height: 60px;"/>
 						  </div>
 						  <div class='col' style="flex: 0 0 25em;">
 
@@ -878,6 +893,7 @@
 
 							  </code></pre>
 						  </div>
+					  </div>
 				</section>
 				
 				<!-------------------------------------------------------------------------------->
@@ -909,8 +925,6 @@
 								</div>
 							</div>
 							<br>
-							<br>
-							
 							<div class='fragment', data-fragment-index=4> Additional modes lost due to </div>
 							<br>
 							
@@ -925,13 +939,21 @@
 									</ul>
 								</div>
 							</div>
+							<br>
+							<div class='fragment', data-fragment-index=5> How to recover these lost modes? <br>
+								$\Longrightarrow$ Exploit mode coupling between small and large sacles
+							</div>
+							
 						</div>
 						<div class='col' >
 							<div style="position:relative; width:600px; height:600px; margin:0 auto;top:-50px">
 								<img class="fragment current-visible plain"  data-src="assets/21cmmapwhitepaper.png" style="position:absolute;top:0px;left:0px;" data-fragment-index="0" />
 								<img class="fragment current-visible plain"  data-src="assets/21cmmapwhitepaper.png" style="position:absolute;top:0px;left:0px;" data-fragment-index="1" />
-								<img class="fragment plain"  data-src="assets/21cmwedge.png" style="position:absolute;top:400px;left:00px;" data-fragment-index="1" />
-								<img class="fragment  plain"  data-src="assets/21cmcorrupt.png" style="position:absolute;top:20px;left:100px;" data-fragment-index="2"/>
+								<img class="fragment  plain"  data-src="assets/21cmwedge.png" style="position:absolute;top:400px;left:00px;" data-fragment-index="1" />
+								<img class="fragment  current-visible plain"  data-src="assets/21cmcorrupt.png" style="position:absolute;top:20px;left:100px;" data-fragment-index="2"/>
+								<img class="fragment  current-visible plain"  data-src="assets/21cmcorrupt.png" style="position:absolute;top:20px;left:100px;" data-fragment-index="3"/>
+								<img class="fragment  current-visible plain"  data-src="assets/21cmcorrupt.png" style="position:absolute;top:20px;left:100px;" data-fragment-index="4"/>
+								<img class="fragment plain"  data-src="assets/21cmloop2.png" style="position:absolute;top:0px;left:40px;" data-fragment-index="5" height="350px"/>
 								
 							</div>
 							<div  class="fragment  plain"  data-fragment-index="1" style="position:absolute; float:right; top:650px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
@@ -952,8 +974,8 @@
 
 								<ul>
 									<li class='fragment' data-fragment-index="1">HI content follows halo mass </li>
-									<li class='fragment' data-fragment-index="2">Dominant signal from low mass halos </li>
-									<li class='fragment' data-fragment-index="3">Satellites are HI poor </li>
+									<li class='fragment' data-fragment-index="1">Dominant signal from low mass halos </li>
+									<li class='fragment' data-fragment-index="1">Satellites are HI poor </li>
 								</ul>
 								<br>
 								<br>
@@ -1055,7 +1077,11 @@
 						<h3 class='slide-title'>reconstructing large scale modes</h3>
 						$$\mathcal{P}_w =  \sum_k \frac{1}{\rm N_{modes}(k)} \left( \sum_{\substack{\vec{k}, |\vec{k}|\sim k, \\ {\vec{k} \not\in w}}}  \frac{|\delta_{\rm HI}^b(\vec{k}) - \delta_{\rm HI}^n(\vec{k})|^2}{P_{\rm err}(k,\mu)} +  \sum_{\vec{k}, |\vec{k}|\sim k}  \frac{|s(\vec{k}))|^2}{P_{\rm s}(k)}  \right)$$
 
-						<img class="fragment  fade-up"  data-src="assets/21cmrecon.png" data-fragment-index="0"/>
+						<div style="position:relative; width:800px; height:600px; left:100px;margin:0 auto">	
+							<img class="fragment  plain current-visible fade-up"  style="position:absolute;left:-70px;width:800px" data-src="assets/21cmrecon-noise.png" data-fragment-index="0"/>
+							<img class="fragment  "  style="position:absolute;left:-70px;width:800px" data-src="assets/21cmrecon.png" data-fragment-index="1"/>
+						</div>
+						
 						<div   style="position:absolute; float:right; top:700px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
 
 					</section>
@@ -1314,3 +1340,12 @@
 
 						<!-- 	</div> -->
 						<!-- </div> -->
+<!-- #arrow { -->
+<!--     border-right:2px solid black; -->
+<!--     border-bottom:2px solid black; -->
+<!--     width:10px; -->
+<!--     height:10px; -->
+<!--     transform: rotate(-45deg); -->
+<!--     margin-top:40px; -->
+<!-- } -->
+
