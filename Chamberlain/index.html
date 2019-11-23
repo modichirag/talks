@@ -87,13 +87,13 @@
 						<h3 class='slide-title'> next generation of cosmological probes</h3>
 						<div class="container">
 							<div class="col">
-								<div class="fragment fade-up">
+								<div class="fragment fade-up" data-fragment-index='0'>
 									Galaxy Clustering  -  DESI, LSST, Euclid...
 									<br>
 									<img src="assets/sdss_pie2.jpg" class="plain" height="250"></img>
 									<br>
 								</div>
-								<div class="fragment fade-up">
+								<div class="fragment fade-up" data-fragment-index='0'>
 									Gravitational Lensing - DES, HSC, LSST...
 									<br>
 									<img src="assets/lensing.jpg" class="plain" height="250"></img>
@@ -102,13 +102,13 @@
 							</div>
 							
 							<div class="col">
-								<div class="fragment fade-up">
+								<div class="fragment fade-up" data-fragment-index='0'>
 									Supernovae - DES, LSST, WFRIST...
 									<br>
 									<img src="assets/supernova2.jpg" class="plain" height="250"></img>
 								</div>
 								
-								<div class="fragment fade-up">
+								<div class="fragment fade-up" data-fragment-index='0'>
 									21-cm Intensity Mapping - CHIME, HIRAX, PUMA...
 									<br>
 									<img src="assets/21cm.png" class="plain" height="250"></img>
@@ -139,6 +139,7 @@
 								<img class="fragment current-visible plain"  data-src="assets/desi_first_sky.png" style="position:absolute;top:20px;left:20px;" data-fragment-index="1" />
 								<img src="assets/desi_bao.png" class="fragment fade-up" data-fragment-index="2" height="400"></img>
 								</div>
+								<div class="fragment"  data-fragment-index="2" style="position:relative; float:right; font-size: 20px; top:0px; left:0px">DESI Collaboration: 1611.00036</div>
 							</div>
 					</section>
 					<!-------------------------------------------------------------------------------->
@@ -148,18 +149,23 @@
 
 						<br>
 						<div class='container'>
-							<div class='col' style="flex: 0 0 25em;">
+							<div class='col' style="flex: 0 0 25em;position:relative; top:-80px">
 								<ul>
 									<!-- <li class='fragment' data-fragment-index="1">A concept for an ultra-wide band, high-sensitivity and low-resolution radio telescope array </li> -->
-									<li class='fragment' data-fragment-index="1">A concept radio telescope array for 21 cm intensity mapping in post-reionization era </li>
+									<li>post-DESI, post-LSST program for dark energy</li>
 									<br>
-									<li class='fragment' data-fragment-index="3">post-DESI, post-LSST program for dark energy</li>
+									<li class='fragment' data-fragment-index="2" >A concept radio telescope array for 21 cm intensity mapping in post-reionization era </li>
 									<br>
 									<li class='fragment' data-fragment-index="4">Growth and expansion history in the pre-acceleration era</li> 				
 								</ul>
 							</div>
 							<div class='col' style="flex: 0 0 25em;">
-							      <img data-src="assets/puma_expansion.png" class='fragment plain' data-fragment-index="4",  style="height: 370px;"/>
+								<div style="position:relative; width:480px; height:420px; margin:0 auto;">
+									
+									<img class="fragment current-visible plain"  data-src="assets/21cmmapwhitepaper.png" style="position:absolute;top:0px;left:0px;" data-fragment-index="2" />
+									<img data-src="assets/puma_expansion.png" class='fragment plain' data-fragment-index="4",  style="position:absolute;top:0px;left:0px;height: 370px;"/>
+								</div>
+								<div class="fragment"  data-fragment-index="2" style="position:relative; float:right; font-size: 20px; top:-20px; left:50px">CVDE White Paper: 1810.09572</div>
 							</div>
 
 					</section>
@@ -248,8 +254,9 @@
 									<img class="fragment current-visible plain" data-src="assets/nbody.png"  data-fragment-index="2" />
 									  <img class="fragment  plain" data-src="assets/hsc_constraints.png" style="position:absolute;top:0;left:0;" data-fragment-index="3" />
 								</div>
-								<div class="fragment current-visible" data-fragment-index="1" style="position:relative; float:right; font-size: 20px">Krause &amp; Eifler 2016</div>
-								<div class="fragment"  data-fragment-index="3" style="position:relative; float:right; font-size: 20px; top:-50px; left:170px">(Hikage,..., Lanusse, et al. 2018)</div>
+								<div class="fragment current-visible" data-fragment-index="0" style="position:absolute; font-size: 20px;  left:900px">DESC Collaboration: 1809.01669</div>
+								<div class="fragment current-visible" data-fragment-index="1" style="position:absolute; font-size: 20px;  left:980px">Krause &amp; Eifler 2016</div>
+								<div class="fragment"  data-fragment-index="3" style="position:absolute; font-size: 20px; top:500px; left:1030px">Hikage et al. 2018</div>
 							</div>
 						</div>
 						<br>
@@ -280,7 +287,7 @@
 											<br>
 											<br>
 											<ul style="list-style:None"> 																				
-												$\rightarrow$  Effecient inference possible with novel methods based on fast, accurate, differentiable forward simulations :
+												$\rightarrow$  Effecient high dimensional inference possible with novel methods:
 										
 										
 													<ul  style="padding-left: 20px">
@@ -295,6 +302,8 @@
 														<li> Dimensionality reduction by Fisher-Information Maximization
 														</li>
 													</ul>
+													<br>
+													$\rightarrow$ Benefit from fast, accurate, differentiable forward simulations
 												
 											</ul>
 											
@@ -306,7 +315,7 @@
 						
 								<div class='col'>
 									<img data-src="assets/pgm_lensing.png" class="plain" style="height:550px;"/>
-									<div style="float:right; font-size: 20px">(Schneider et al. 2015)</div>
+									<div style="float:right; font-size: 20px">Schneider et al. 2015</div>
 								</div>
 						</div>
 					</section>
@@ -331,7 +340,7 @@
 									<div class="block-content">
 										<ul>
 											<li> Initial density field 
-											$\rightarrow$ Optimal analysis ... </li>
+											$\rightarrow$ Optimal analysis, BAO ... </li>
 											<li > Observed data field 
 											$\rightarrow$ Denoising ... </li> 
 											<li > Velocity field/Final matter density 
@@ -359,8 +368,8 @@
 								<br>
 
 							</div>
-							<div class="col" style="flex: 0 0 25em;">
-								<img class="fragment plain" data-fragment-index="2" data-src="assets/opt_cycle.png" height="400"/>
+							<div class="col" style="flex: 0 0 21em;">
+								<img class="fragment plain" data-fragment-index="2" data-src="assets/opt_cycle.png" height="350"/>
 							</div>
 				
 					</section>
@@ -370,9 +379,16 @@
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
+				<section>
+					<div style="font-size:80px">Galaxy Clustering Surveys</div>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
 				<!-------------------------------------------------------------------------------->
 				<section>
-						 <h3 class='slide-title'> Forward Models in Cosmology</h3>
+						 <h3 class='slide-title'> forward models for galaxy clustering surveys</h3>
 
 
 						<div class="container">
@@ -408,13 +424,6 @@
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-				<section>
-					<div style="font-size:80px">Galaxy Clustering Surveys</div>
-				</section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				
 
 				<section>
 					<h3 class='slide-title'> Neural halo models </h3>
@@ -460,7 +469,7 @@
 								<img class="fragment plain" data-fragment-index="7" style="position:absolute;top:200px;left:50px;" data-src="assets/nnmodel.png" height="200"/>
 								<img class="fragment plain" data-fragment-index="7" style="position:absolute;top:0px;left:5px;" data-src="assets/comparepredict-n.png" />
 
-								<div class="fragment" data-fragment-index="2" style="position:absolute;top:500px;left:400px; float:right; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
+								<div class="fragment" data-fragment-index="2" style="position:absolute;top:450px;left:400px; float:right; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
 							</div>
 						</div>
 					</div>
@@ -508,7 +517,7 @@
 								<img class="fragment  plain" data-fragment-index="3"  data-src="assets/noannealhrecon-w.png" style="position:absolute;top:200px;left:30px;" height="300"/>
 
 							</div>
-							<div class="fragment" data-fragment-index="1" style="position:relative; float:right; top:-65px;left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
+							<div class="fragment" data-fragment-index="1" style="position:relative; float:right; top:-70px;left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
 
 						</div>
 						<br><br>
@@ -527,7 +536,7 @@
 								<div style="text-align:center"> $${ \mathcal{L}(s) = \Bigg(\frac{ d - \mathcal{F}(s)}{\sigma}\Bigg)^2 + s^\dagger S^{-1} s}$$ </div>
 								<br>
 								<div style="text-align:center">
-									<div class="fragment" data-fragment-index="1"> <b>Problem :</b> Simple optimization leads to poor results </div>
+									<div class="fragment" data-fragment-index="1"> <b>Problem :</b> Simple optimization leads to poor results despite correct posterior </div>
 									<br>
 									<div style="position:relative; width:550px; height:100px; margin:0 auto;">
 
@@ -551,11 +560,11 @@
 														
 							<div class="col" style="flex: 0 0 25em;">
 								<!-- <div class="col"> -->
-								<div style="position:relative; width:500px; height:300px; margin:0 auto;">
+								<div style="position:relative; width:500px; height:300px; margin:0 auto;top:-30px">
 									<img class="fragment current-visible" data-fragment-index="0" style="position:absolute;top:0;left:0;" data-src="assets/annealinit.png" height="300"/>
 									<img class="fragment" data-fragment-index="1" style="position:absolute;top:0;left:0;" data-src="assets/noanneal.png" height="300"/>
 								</div>
-								<div style="position:relative; width:500px; height:300px; margin:0 auto;">
+								<div style="position:relative; width:500px; height:300px; margin:0 auto;top:-30px">
 									<img class="fragment current-visible" data-fragment-index="5" style="position:absolute;top:0;left:0;" data-src="assets/annealinit.png" height="300"/>
 									<img class="fragment current-visible" data-fragment-index="6" style="position:absolute;top:0;left:0;" data-src="assets/anneal4.png" height="300"/>
 									<img class="fragment current-visible" data-fragment-index="7" style="position:absolute;top:0;left:0;" data-src="assets/anneal2.png" height="300"/>
@@ -569,7 +578,7 @@
 
 					<!-------------------------------------------------------------------------------->
 					<section>
-						<h3 class='slide-title'> reconstruction - visually</h3>
+						<h3 class='slide-title'> visualizing reconstruction</h3>
 
 						<div style="position:relative; width:1000px; height:300px; margin:0 auto;">							
 							<img   style="position:absolute;top:0;left:0;" data-src="assets/recontruth.png" height="500"/>
@@ -602,7 +611,7 @@
 					<section>
 						<h3 class='slide-title'> Baryon Acoustic Oscillations </h3>
 
-						<i> Most robust probes for dark energy from galaxy surveys (DESI, LSST) </i>
+						<i> Most robust probes for dark energy from galaxy surveys like DESI </i>
 
 						<br>
 						<br>
@@ -617,10 +626,10 @@
 									<br>
 									<li class="fragment" data-fragment-index="3"> Damping due to non-linear evolution</li>
 									<br>
-									<div style="position:relative; width:400px; height:400px; left:100px;margin:1 auto">
+									<div style="position:relative; width:550px; height:550px; left:50px;margin:1 auto;top:-40px">
 										<img class="fragment plain" data-fragment-index="3" data-src="assets/bao_damping.jpg"/>
 									</div>
-									<div class="fragment" data-fragment-index="3" style="position:relative; float:right; top:-150px; left:130px; font-size: 20px; margin:0 auto">Padmanabhan et al. 2012</div>
+									<div class="fragment" data-fragment-index="3" style="position:relative; float:right; top:-230px; left:200px; font-size: 20px; margin:0 auto">Padmanabhan et al. 2012</div>
 									<br>
 								</ul>
 							</div>		
@@ -632,17 +641,17 @@
 									<!-- <video class="fragment current-visible" data-fragment-index="0" data-autoplay  data-src="assets/bao_movie.mp4" /> -->
 									<!-- <video class="fragment current-visible" data-fragment-index="0" data-autoplay  data-src="assets/illustris_movie_cube_sub_frame.mp4" style="position:absolute;top:65px;left:0px;" /> -->
 									
-									<img class="fragment current-visible plain" data-fragment-index="0"  style="position:absolute;top:-100px;left:0px;" data-src="assets/bao_cartoon.png" />
-									<img class="fragment current-visible plain" data-fragment-index="3"  style="position:absolute;top:-100px;left:0px;" data-src="assets/bao_cartoon.png" />
-									<div class="fragment " data-fragment-index="4" style="position:absolute;top:0;left:80px;font-size:20px" >
-										$F_{ij} =  V_{\rm{eff}}\int_{k_{min}}^{k_{max}} \frac{\partial {\rm ln} P(k)}{\partial p_i} \frac{\partial {\rm ln} P(k)}{\partial p_j}\frac{4 \pi k^2}{2 (2\pi)^3} dk$
+									<img class="fragment current-visible plain" data-fragment-index="0"  style="position:absolute;top:-150px;left:0px;" data-src="assets/bao_cartoon.png" />
+									<img class="fragment current-visible plain" data-fragment-index="3"  style="position:absolute;top:-150px;left:0px;" data-src="assets/bao_cartoon.png" />
+									<div class="fragment " data-fragment-index="4" style="position:absolute;top:-70px;left:40px;font-size:20px" >
+										$F_{ij} =  V_{\rm{eff}}\int_{k_{min}}^{k_{max}} \frac{\partial {\rm ln} P(k)}{\partial p_i} \frac{\partial {\rm ln} P(k)}{\partial p_j}\frac{4 \pi k^2}{2 (2\pi)^3} dk \quad \mathbf{\propto \,  r_c^4} $
 									</div>
 									
-									<img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:65px;left:0px;" data-src="assets/realrccfig.png" />
+									<img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" />
 
 								</div>
-								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-40px; left:-140px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
-								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-60px; left:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
+								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-100px; left:-140px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
+								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-120px; left:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
 								
 							</div>
 						
@@ -666,9 +675,12 @@
 									<br>									
 									<li class="fragment" data-fragment-index="2">Displace halos with velocities beyond linear theory</li>
 									<br>
-									<ul class="fragment" data-fragment-index="3"> $\rightarrow$ Over 2x gains in line-of-sight direction</ul>
+									<li class="fragment" data-fragment-index="3"> Imporvements in BAO <br><br>
+										<ul>$\rightarrow$ Over 2x gains in line-of-sight direction</ul>
+										<ul class="fragment" data-fragment-index="3"> $\rightarrow$ Same ~30% improvement in transverse direction</ul>
+									</li>
 									<br>
-									<ul class="fragment" data-fragment-index="3"> $\rightarrow$ Same ~30% improvement in transverse direction</ul>
+									<li class="fragment" data-fragment-index="4"> Supplement other analyses - velocity power spectra, undoing redshift space distortions ...</li>
 									<br>
 									<br>
 								</ul>
@@ -691,35 +703,37 @@
 				<!-------------------------------------------------------------------------------->
 				
 				<section>
-						<h3 class='slide-title'> Can we do better? </h3>
+						<h3 class='slide-title'> extending forward models with deep learning </h3>
 						
 						<h4 class="fragment" data-fragment-index="0"> How to model p( galaxies | dark matter)? <h4>
 
 						<div class="container">
-							<div class="col"  style="flex: 0 0 30em;">
+							<div class="col" >
 								<ul>
 									<ul class="fragment" data-fragment-index="1"> <b>Mixture Density Networks </b>: learn the likelihood</ul>
 									<br>
-									<ul class="fragment" data-fragment-index="2"> <b>Pixel CNN++ </b>: Models the probability $p(x)$ of an image $x$ given latent input $h$ <br>
+									<ul class="fragment" data-fragment-index="2"> <b>Pixel CNN++ </b>: Models the probability $p(x)$ of an image $x$ given latent input $h$
 										$$p_{\theta}(x|h) = \prod_{i=0}^{n} p_{\theta}(x_i | x_{i-1} \ldots x_0, h) $$
 									</ul>
 									
 								</ul>
-								<div class='fragment' data-fragment-index="3"> <img class="plain"  data-src="assets/halo_sampling.png" /><br>
-								MDN model predicting distribution of halo positions </div>
+								<div class='fragment' data-fragment-index="3" style="position:relative; width:600px; height:500px; left:0px; top:0px; margin:0 auto">
+									<img class="plain"  data-src="assets/halo_sampling.png" /><br>
+									MDN model predicting distribution of halo positions
+								</div>
 							</div>
-							<div class="col" style="flex: 0 0 0em;">
-								<div class="fragment" data-fragment-index="0" style="text-align:left;font-size:25px">
+							<div class="col" >
+								<div class="fragment" data-fragment-index="0" style="position:relative; text-align:left;font-size:25px;top:-130px">
 									$ {\mathcal{E} = \sum_i \Bigg(\frac{\mu_N + \rm{log(M_{R,i}^{NN} + M_0)} - \rm{log(M_{R,i}^{d} + M_0)}}{2\sigma_N}\Bigg)^2}$ </div>
 								<!-- <div class="col"> -->
-								<div style="position:relative; width:600px; height:300px; left:50px; top:0px; margin:1 auto">
+								<div style="position:relative; width:600px; height:300px; left:50px; top:-100px; margin:1 auto">
 							          	<img class="plain fragment current-visible" data-fragment-index="1" style="position:absolute;top:0;left:70px;" data-src="assets/MDN.png" height="550"/>
 									<img class="plain fragment " data-fragment-index="2" style="position:absolute;top:0;left:100px;" data-src="assets/pixelcnn0.png" height="250"/>
 									
 								</div>
-								<div  class="plain fragment " data-fragment-index="2" style="float:right; font-size: 20px">van den Oord et al. 2016</div>
-
-
+								<div  class="plain fragment " data-fragment-index="2" style="position:relative;float:right; top:-100px;left:-200px; font-size: 20px">van den Oord et al. 2016</div>
+								
+								
 							</div>
 							<br>
 						</div>
@@ -799,9 +813,10 @@
 				<!-- </section> -->
 
 				<section>
-					  <h3 class='slide-title'>introducing FlowPM: Particle-Mesh Simulations in TensorFlow</h3>
-
-					  <div class='container'>
+					<h3 class='slide-title'>need differentiable simulations interfacing with deep learning elements?</h3>
+					<div class="fragment"> introducing <br> <b> <span class='alert' style="font-size:25px"> FlowPM </span> </b>: <em>Particle-Mesh Simulations in TensorFlow </em></div>
+					
+					  <div class='container fragment'>
 						  <div class='col' style="flex: 0 0 25em;">
 							  <img data-src="assets/github.png" class="plain" style="height:70px"/>
 							  <div> <a href="https://github.com/modichirag/flowpm">https://github.com/modichirag/flowpm</a>
@@ -851,11 +866,11 @@
 							  <ul >
 								  <li> Readily available gradients </li>
 								  <br>
-								  <li class='fragment' data-fragment-index="1"> Seamless interfacing with DL elements </li>
+								  <li class='fragment' data-fragment-index="1"> Seamless interfacing with DL elements for hybrid forward models and inference </li>
 								  <br>
-								  <li class='fragment' data-fragment-index="2"> Developing hybrid forward models while preserving our understanding of underlying physics </li>
-							  	  <br>
-								  <li class='fragment' data-fragment-index="3">  Discussing collaboration with scientists at NERSC and Google to develop exascale computing for future surveys using Mesh TensorFlow </li>
+								  <!-- <li class='fragment' data-fragment-index="2"> Developing hybrid forward models while preserving our understanding of underlying physics </li> -->
+							  	  <!-- <br> -->
+								  <li class='fragment' data-fragment-index="3">  Collaborating with researchers at BCCP, NERSC and Google to develop exascale computing using Mesh TensorFlow for future cosmological surveys  </li>
 							  </ul>
 							  
 							  <br><br>
@@ -907,7 +922,7 @@
 				<!-------------------------------------------------------------------------------->
 				<section >
 						
-					<h3 class='slide-title'>21-cm surveys</h3>
+					<h3 class='slide-title'>foreground wedge of 21-cm surveys</h3>
 
 					<div class='container'>
 						<div class='col' >
@@ -941,7 +956,7 @@
 							</div>
 							<br>
 							<div class='fragment', data-fragment-index=5> How to recover these lost modes? <br>
-								$\Longrightarrow$ Exploit mode coupling between small and large sacles
+								$\Longrightarrow$ Exploit mode coupling between small and large scales
 							</div>
 							
 						</div>
@@ -967,7 +982,7 @@
 						
 				<section >
 						<h3 class='slide-title'>Hidden Valley Simulations</h3>
-						<div> (10,240)^3 simulation, largest LSS simulations ever run on NERSC </div>
+						<div> 1Gpc/h, (10,240)^3 simulation, largest LSS simulations ever run on NERSC </div>
 						<div class='container'>
 							<div class='col' style="flex: 0 0 25em; position:relative">
 								<br>
@@ -988,9 +1003,10 @@
 								</div>
 							</div>
 							<div class='col' style="flex: 0 0 25em;">
-								<img class="fragment  plain"  data-src="assets/hv_occupation.png" data-fragment-index="0" height='480px'/>
+								<img class="fragment  plain"  style="position:relative;top:-30px" data-src="assets/hv_occupation.png" data-fragment-index="0" height='480px'/>
 							</div>
-							<div   style="position:absolute; float:right; top:650px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019a</div>
+							<div   style="position:absolute; float:right; top:620px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019a</div>
+							<div   style="position:absolute; float:right; top:650px;  left:650px;font-size: 20px; margin:0 auto">Simulations available at <a href="http://cyril.astro.berkeley.edu/">http://cyril.astro.berkeley.edu/ </a></div>
 
 						</div>
 					</section>
@@ -1013,7 +1029,7 @@
 							<br>
 							<li class='fragment' data-fragment-index="3">Fit bias parameters to minimize the difference at the field level 
 							<div class='fragment' data-fragment-index="3" style="text-align:right">
-								$$ P_{\rm err} (k) = \frac{1}{N_{\rm modes}} (k)   \sum_{\vec{k}, |\vec{k}| \sim k} | \delta^b_{\rm HI}(\vec{k}) - \delta_{\rm HI}(\vec{k})| ^2 $$
+								$$ P_{\rm err} (k) = \frac{1}{N_{\rm modes}(k)}  \sum_{\vec{k}, |\vec{k}| \sim k} | \delta^b_{\rm HI}(\vec{k}) - \delta_{\rm HI}(\vec{k})| ^2 $$
 							</div></li>
 							<br>
 						</ul>
@@ -1056,7 +1072,9 @@
 									 
 								</div>
 								<br>
-								<div class="fragment" data-fragment-index='1'> Error power spectrum motivates our likelihood </div>
+								<div class="fragment" data-fragment-index='1'> Error power spectrum motivates our likelihood <br><br>
+									$ P_{\rm err} (k) = \frac{1}{N_{\rm modes}(k)}  \sum_{\vec{k}, |\vec{k}| \sim k} | \delta^b_{\rm HI}(\vec{k}) - \delta_{\rm HI}(\vec{k})| ^2 $
+							</div>
 								
 							</div>
 
@@ -1082,7 +1100,7 @@
 							<img class="fragment  "  style="position:absolute;left:-70px;width:800px" data-src="assets/21cmrecon.png" data-fragment-index="1"/>
 						</div>
 						
-						<div   style="position:absolute; float:right; top:700px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
+						<div   style="position:absolute; float:right; top:650px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
 
 					</section>
 
@@ -1168,12 +1186,12 @@
 			
 
 		<style>
-		  /* .reveal .slides {
-		    border: 5px solid red;
-		    min-height: 100%;
-		    width: 128mm;
-		    height: 96mm;
-		} */
+		<!--    .reveal .slides { -->
+		<!--     border: 5px solid red; -->
+		<!--     min-height: 100%; -->
+		<!--     width: 128mm; -->
+		<!--     height: 96mm; -->
+		<!-- }  -->
 		.reveal .box {
 			background-color: #191919;
 			margin-left: 10px;
