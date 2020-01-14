@@ -9,4 +9,4 @@
 	url = https://github.com/modichirag/reveal.js
 [submodule "Perimeter-Jan2020/reveal.js"]
 	path = Perimeter-Jan2020/reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js
