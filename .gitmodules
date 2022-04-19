@@ -13,3 +13,6 @@
 [submodule "RIMSeminar/reveal.js"]
 	path = RIMSeminar/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "TIFR_Apr2022/reveal.js"]
+	path = TIFR_Apr2022/reveal.js
+	url = git@github.com:modichirag/reveal.js.git
