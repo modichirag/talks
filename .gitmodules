@@ -16,3 +16,6 @@
 [submodule "testppt/reveal.js"]
 	path = testppt/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "RIMSeminar/reveal.js"]
+	path = RIMSeminar/reveal.js
+	url = https://github.com/modichirag/reveal.js
