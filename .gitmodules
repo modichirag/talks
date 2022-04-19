@@ -13,3 +13,6 @@
 [submodule "TIFR_2022/reveal.js"]
 	path = TIFR_2022/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "testppt/reveal.js"]
+	path = testppt/reveal.js
+	url = https://github.com/modichirag/reveal.js
