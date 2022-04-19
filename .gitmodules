@@ -10,3 +10,6 @@
 [submodule "Perimeter_Jan2020/reveal.js"]
 	path = Perimeter_Jan2020/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "TIFR_2022/reveal.js"]
+	path = TIFR_2022/reveal.js
+	url = https://github.com/modichirag/reveal.js
