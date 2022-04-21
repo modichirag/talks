@@ -16,3 +16,6 @@
 [submodule "TIFR_Apr2022/reveal.js"]
 	path = TIFR_Apr2022/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "TIFR_Apr2022-v2/reveal.js"]
+	path = TIFR_Apr2022-v2/reveal.js
+	url = https://github.com/modichirag/reveal.js
