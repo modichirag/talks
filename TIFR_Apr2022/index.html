@@ -6,7 +6,7 @@
 
 		<title>Reconstruction of Cosmological Fields in Forward Model Framework</title>
 
-		<meta name="description" content="Cosmology Seminar preserntation at Perimeter">
+		<meta name="description" content="Presentation at TIFR">
 		<meta name="author" content="Chirag Modi">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,9 +39,9 @@
 
 						<div class="container">
 							<div class="title" style="border-radius: 20px; background-color:rgba(0, 0, 0, 0.4);">
-								<h2> Reconstructing Cosmological Fields with Differentiable Simulations </h2>
-								<h3>  FlowPM and CosmicRIM </h3>
-								<h4>Cosmology Seminar @ Midwest Cosmology Network, June 30th, 2021</h4>
+								<h2> Forward Modelling approach to Cosmological Analysis </h2>
+								<h3> Reconstructing Cosmological Fields with Differentiable Simulations </h3>
+								<h4> State of the Universe Seminar, TIFR, April 22nd 2022</h4>
 							</div>
 						</div>
 
@@ -74,7 +74,7 @@
 				<!-- <section data-background-image="assets/WMAP_timeline.jpg" data-background-size="1100px" data-background-color="black"> -->
 				<!-- 	<\!-- <h2 class='slide-title' style="position:absolute;top:0;"> the $\Lambda$CDM view of the Universe </h3> -\-> -->
 				<!-- 	<h2 class='slide-title' style="position:relative;top:0;"> the $\Lambda$CDM view of the Universe </h2> -->
-				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> -->
+T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> -->
 				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
 				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
 				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
@@ -360,6 +360,59 @@
 					
 					<!-------------------------------------------------------------------------------->
 
+					<!-- <section> -->
+					<!-- 	<h3  class='slide-title'>A different road: forward modeling</h3> -->
+
+					<!-- 	<div class='container'> -->
+					<!-- 			<div class='col'> -->
+
+					<!-- 				<ul> -->
+					<!-- 					<li > Instead of trying to analytically evaluate the likelihood, -->
+					<!-- 						let us build a forward model of the observables.</li> -->
+					<!-- 					<br> -->
+					<!-- 					<li > Each component of the model is now tractable -->
+					<!-- 					</li> -->
+					<!-- 					<br> -->
+					<!-- 					<li class='fragment' data-fragment-index='0'> Cost - <b >large number of latent variables</b>. -->
+					<!-- 						<br> -->
+					<!-- 						<br> -->
+					<!-- 						<ul style="list-style:None"> 																				 -->
+					<!-- 							$\rightarrow$  Effecient high dimensional inference possible with novel methods: -->
+										
+										
+					<!-- 								<ul  style="padding-left: 20px"> -->
+					<!-- 									<li> Hamiltonian Monte-Carlo -->
+					<!-- 									</li> -->
+					<!-- 									<li> Variational Inference -->
+					<!-- 									</li> -->
+					<!-- 									<li> MAP+Laplace -->
+					<!-- 									</li> -->
+					<!-- 									<li> Gold Mining -->
+					<!-- 									</li> -->
+					<!-- 									<li> Dimensionality reduction by Fisher-Information Maximization -->
+					<!-- 									</li> -->
+					<!-- 								</ul> -->
+					<!-- 								<br> -->
+					<!-- 								$\rightarrow$ Benefit from fast, accurate, differentiable forward simulations -->
+												
+					<!-- 						</ul> -->
+											
+					<!-- 					</li> -->
+					<!-- 					<br> -->
+										
+
+					<!-- 			</div> -->
+						
+					<!-- 			<div class='col'> -->
+					<!-- 				<img data-src="assets/pgm_lensing.png" class="plain" style="height:550px;"/> -->
+					<!-- 				<div style="float:right; font-size: 20px">Schneider et al. 2015</div> -->
+					<!-- 			</div> -->
+					<!-- 	</div> -->
+					<!-- </section> -->
+
+
+					<!-------------------------------------------------------------------------------->
+
 					<section>
 						<h3  class='slide-title'>A different road: forward modeling</h3>
 
@@ -367,33 +420,30 @@
 								<div class='col'>
 
 									<ul>
-										<li > Instead of trying to analytically evaluate the likelihood,
-											let us build a forward model of the observables.</li>
+										<li > Build a forward model of the observables from the initial conditions
+											wherein each component is accessible</li>
 										<br>
-										<li > Each component of the model is now tractable
+										<li class='fragment' data-fragment-index='0'> Cost - <b >large number of latent variables to infer</b>.
 										</li>
 										<br>
-										<li class='fragment' data-fragment-index='0'> Cost - <b >large number of latent variables</b>.
+										<li class='fragment' data-fragment-index='1'> Novel methods for high dimensional inference with <b> fast, accurate, differentiable forward simulations</b>.
 											<br>
 											<br>
-											<ul style="list-style:None"> 																				
-												$\rightarrow$  Effecient high dimensional inference possible with novel methods:
-										
-										
+											<ul style="list-style:None"> 																										
 													<ul  style="padding-left: 20px">
-														<li> Hamiltonian Monte-Carlo
+														<li class='fragment' data-fragment-index='2'> Hamiltonian Monte-Carlo
 														</li>
-														<li> Variational Inference
+														<div class="fragment current-visible" data-fragment-index="2" style="position:absolute; font-size: 20px;  left:125px"><em>Follow gradient to take long jumps in MCMC</em></div>
+														<li class='fragment' data-fragment-index='3'> Variational Inference
 														</li>
-														<li> MAP+Laplace
+														<div class="fragment current-visible" data-fragment-index="3" style="position:absolute; font-size: 20px;  left:125px"><em>Use gradients to reduce stachostaticity in learning</em></div>
+														<li class='fragment' data-fragment-index='4'> Dimensionality reduction by Fisher-Information Maximization
 														</li>
-														<li> Gold Mining
+														<div class="fragment current-visible" data-fragment-index="4" style="position:absolute; font-size: 20px;  left:125px"><em>Use gradients to estimate Fisher information for training loss</em></div>
+														<li class='fragment' data-fragment-index='5'> Neural Score Matching
 														</li>
-														<li> Dimensionality reduction by Fisher-Information Maximization
-														</li>
+														<div class="fragment" data-fragment-index="5" style="position:absolute; font-size: 20px;  left:125px"><em>Match the gradients of the log-likelihood of the data</em></div>
 													</ul>
-													<br>
-													$\rightarrow$ Benefit from fast, accurate, differentiable forward simulations
 												
 											</ul>
 											
@@ -410,6 +460,7 @@
 						</div>
 					</section>
 
+					
 				</section>
 
 				<!-------------------------------------------------------------------------------->
@@ -471,49 +522,6 @@
 
 
 					
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section>
-						 <h3 class='slide-title'> forward models in cosmology</h3>
-
-
-						<div class="container">
-							<div class='col'>
-								<img data-src="assets/fieldinit.png" class="plain" style="height:300px;"/>
-								<b class="alert"> Linear Field </b>
-							</div>
-							<div class='col fragment' data-fragment-index='2'>
-								<img data-src="assets/fieldfin.png" class="plain " style="height:300px;"/>
-								<b class="alert"> Final Dark Matter </b>
-							</div>
-							<hr style="width: 1px; height: 400px; background: white; border: none;" />
-							<div class='col fragment' data-fragment-index='3'>
-								<img data-src="assets/fieldhalo.png" class="plain " style="height:300px;"/>
-								<b class="alert"> Dark Matter Halos </b>
-							</div>
-							<div class='col fragment' data-fragment-index='4'>
-								<img data-src="assets/fieldgal.png" class="plain " style="height:300px;"/>
-								<b class="alert"> Observables </b>
-							</div>
-						</div>
-						<div class="container" style="position:relative; width:1000px; height:50px; margin:0 auto;">
-							<div class='col fragment'  data-fragment-index='2'> <font size="10"> $\longrightarrow$ </font> <br> N-body simulations
-								<br>
-								<b class="alert fragment "> FlowPM </b>
-							</div>
-							<div class='col fragment' data-fragment-index='3'>  <font size="10"> $\longrightarrow$ </font> <br> Group Finding <br> algorithms </div>
-							<div class='col fragment' data-fragment-index='4'>  <font size="10"> $\longrightarrow$ </font> <br> Semi-analytic &amp <br> distribution models </div>
-						<!-- 		<div class='fragment' data-fragment-index='2'> N-body simulations <div> -->
-						<!-- <div class='fragment' data-fragment-index='3'> Group Finding algorithms <div> -->
-						<!-- <div class='fragment' data-fragment-index='4'> Semi-analytic models <div> -->
-						</div>
-
-
-					</section>
-
-
-				</section>
 				
 
 				<!-------------------------------------------------------------------------------->
@@ -633,11 +641,11 @@
 
 							<div class="col">
 								<ul>
-									<li >Pressure waves in the primordial photon-baryon fluids </li> 
+									<li class="fragment" data-fragment-index="0">Pressure waves in the primordial photon-baryon fluids </li> 
 									<br>									
-									<li >Frozen at the time of decoupling <br>$\rightarrow$ Clustering at preferred scale </li>
+									<li class="fragment" data-fragment-index="0">Frozen at the time of decoupling <br>$\rightarrow$ Clustering at preferred scale </li>
 									<br>
-									<li > Damping due to non-linear evolution</li>
+									<li class="fragment" data-fragment-index="0"> Damping due to non-linear evolution</li>
 									<br>
 
 									<li class="fragment" data-fragment-index="2"> Fisher information <br> <br>
@@ -834,7 +842,7 @@
 				<!-------------------------------------------------------------------------------->
 				
 				<section class="inverted" data-background="#000">
-					<h2>How do we make cosmology simulations <b>fast</b> and <b>differentiable</b>?</h2>
+					<h2>How do we make the forward models in cosmology <b>fast</b> and <b>differentiable</b>?</h2>
 				</section>
 				
 				<!-------------------------------------------------------------------------------->
@@ -843,6 +851,98 @@
 				<section>
 
 	
+					<section>
+						 <h3 class='slide-title'> forward models in cosmology</h3>
+
+
+						<div class="container">
+							<div class='col'>
+								<img data-src="assets/fieldinit.png" class="plain" style="height:300px;"/>
+								<b class="alert"> Linear Field </b>
+							</div>
+							<div class='col fragment' data-fragment-index='2'>
+								<img data-src="assets/fieldfin.png" class="plain " style="height:300px;"/>
+								<b class="alert"> Final Dark Matter </b>
+							</div>
+							<hr style="width: 1px; height: 400px; background: white; border: none;" />
+							<div class='col fragment' data-fragment-index='3'>
+								<img data-src="assets/fieldhalo.png" class="plain " style="height:300px;"/>
+								<b class="alert"> Dark Matter Halos </b>
+							</div>
+							<div class='col fragment' data-fragment-index='4'>
+								<img data-src="assets/fieldgal.png" class="plain " style="height:300px;"/>
+								<b class="alert"> Observables </b>
+							</div>
+						</div>
+						<div class="container" style="position:relative; width:1000px; height:50px; margin:0 auto;">
+							<div class='col fragment'  data-fragment-index='2'> <font size="10"> $\longrightarrow$ </font> <br> N-body simulations
+								<br>
+								<b class="alert fragment "> FlowPM </b>
+							</div>
+							<div class='col fragment' data-fragment-index='3'>  <font size="10"> $\longrightarrow$ </font> <br> Group Finding <br> algorithms </div>
+							<div class='col fragment' data-fragment-index='4'>  <font size="10"> $\longrightarrow$ </font> <br> Semi-analytic &amp <br> distribution models </div>
+						<!-- 		<div class='fragment' data-fragment-index='2'> N-body simulations <div> -->
+						<!-- <div class='fragment' data-fragment-index='3'> Group Finding algorithms <div> -->
+						<!-- <div class='fragment' data-fragment-index='4'> Semi-analytic models <div> -->
+						</div>
+
+
+					</section>
+
+					<!-------------------------------------------------------------------------------->
+					<section>
+						<h3 class='slide-title'>the Fast Particle-Mesh scheme</h3>
+
+						<b>The idea</b>: approximate gravitational forces by estimating densities on a grid.
+						
+						<div class='container'>
+							<div class='col'>
+								<ul>
+									<li>The numerical scheme:
+										<br>
+										<br>
+										<ul>
+											<li class="fragment" data-fragment-index="1"> Estimate the density of particles on a mesh<br>
+											=> compute gravitational forces by FFT
+											</li>
+											
+											<br>
+											
+											<li class="fragment" data-fragment-index="2"> Interpolate forces at particle positions
+											</li>
+											
+											<br>
+											
+											<li class="fragment" data-fragment-index="3"> Update particle velocity and positions, and iterate
+											</li>
+										</ul>
+									</li>
+									<br>
+									
+									<li class='fragment'> Fast and simple, at the cost of approximating short range interactions.
+									</li>
+									
+								</ul>
+							</div>
+							
+							<div class='col'>
+
+								<div style="position:relative; width:550px; height:550px; margin:0 auto;">
+									<img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="0" />
+									<img class="fragment current-visible plain" data-src="assets/particle_density_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="1" />
+									<img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="2" />
+									<img class="fragment  plain" data-src="assets/particle_positions_1.png" style="position:absolute;top:0;left:0;" data-fragment-index="3" />
+									
+								</div>
+								
+							</div>
+						</div>
+						
+						<div class="fragment"> $\Longrightarrow$ Only a series of FFTs and interpolations.</div>
+					</section>
+					
+					<!-------------------------------------------------------------------------------->
+
 					<section>
 						<h3 class="slide-title">the hammer behind the Deep Learning revolution</h3>
 						<br>
@@ -872,57 +972,10 @@
 					</section>
 
 
-					<section>
-					<h3 class='slide-title'>the Fast Particle-Mesh scheme</h3>
+					<!-------------------------------------------------------------------------------->
+					
 
-					<b>The idea</b>: approximate gravitational forces by estimating densities on a grid.
-
-					<div class='container'>
-						<div class='col'>
-							<ul>
-								<li>The numerical scheme:
-									<br>
-									<br>
-									<ul>
-										<li class="fragment" data-fragment-index="1"> Estimate the density of particles on a mesh<br>
-											=> compute gravitational forces by FFT
-										</li>
-
-										<br>
-
-										<li class="fragment" data-fragment-index="2"> Interpolate forces at particle positions
-										</li>
-
-										<br>
-
-										<li class="fragment" data-fragment-index="3"> Update particle velocity and positions, and iterate
-										</li>
-									</ul>
-								</li>
-								<br>
-
-								<li class='fragment'> Fast and simple, at the cost of approximating short range interactions.
-								</li>
-
-							</ul>
-						</div>
-
-						<div class='col'>
-
-							<div style="position:relative; width:550px; height:550px; margin:0 auto;">
-								<img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="0" />
-								<img class="fragment current-visible plain" data-src="assets/particle_density_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="1" />
-								<img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="2" />
-								<img class="fragment  plain" data-src="assets/particle_positions_1.png" style="position:absolute;top:0;left:0;" data-fragment-index="3" />
-
-							</div>
-
-						</div>
-					</div>
-
-					<div class="fragment"> $\Longrightarrow$ Only a series of FFTs and interpolations.</div>
-				</section>
-
+					
 			
 					<section>
 						<h3 class='slide-title'>Introducing FlowPM: Particle-Mesh Simulations in TensorFlow</h3>
@@ -935,8 +988,8 @@
 						</div>
 						<div class='container'>
 							<div class='col'>
-								<img data-src="assets/github.png" class="plain" style="height:70px" />
-								<img data-src="assets/TF_FullColor_Horizontal.png" class='plain' style="height: 70px;" />
+								<img data-src="assets/github.png" class="plain" style="height:50px" />
+								<img data-src="assets/TF_FullColor_Horizontal.png" class='plain' style="height: 50px;" />
 								
 								<div> <a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a>
 								</div>
@@ -961,7 +1014,8 @@
 										final_field = flowpm.cic_paint(tf.zeros_like(initial_conditions),
 										final_state[0])
 								</code></pre>
-								x10 faster than CPU based PM simulations
+								10x faster than CPU based PM simulations <br>
+								Scales to multiple GPUs with Mesh TensorFlow
 								<br>
 								<br>
 								<br>
@@ -1042,401 +1096,458 @@
 				<!-------------------------------------------------------------------------------->
 				
 				<section class="inverted" data-background="#000">
-					<h2>If only MAP optimization was easy in high dimensions.</h2>
+					<h2>Meeting challenges to high dimensional inference</h2>
 				</section>
 				
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				
-			    <section>
-				    <h3 class="slide-title"> MAP optimization in action</h3>
-				    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$
-				    <!-- <div style="float:right; font-size: 16px">credit: <a href="https://github.com/modichirag">C. Modi</a></div> -->
-				    <br>
-				    <div class="container">
-					    <div class="col fragment fade-up" data-fragment-index="1">
-						    <img data-src="assets/init_field.png" style='height:250px;' />
-						    <br> True initial conditions <br> $s_0$
-					    </div>
-
-					    <div class="col">
-						    <img data-src="assets/reconim_init.gif" style='height:250px;' />
-						    <br> Reconstructed initial conditions $s$
-					    </div>
-
-					    <div class="col">
-						    <img data-src="assets/reconim_fin.gif" style='height:250px;' />
-						    <br> Reconstructed dark matter distribution $x_{dm} = f(s)$
-					    </div>
-
-					    <div class="col">
-						    <img data-src="assets/fin_field.png" style='height:250px;' />
-						    <br> Data <br> $x_{dm} = f(s_0)$
-					    </div>
-				    </div>
-				    <br>
-				    <br>
-
-				    <div class="fragment" data-fragment-index="1">
-					    Check out this blogpost for more details <br> <a href=https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html>
-						    https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html</a>
-				    </div>
-			    </section>
-
-
-			    <section>
-				    <h3 class="slide-title">If only MAP optimization was easy...</h3>
-
-				    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$
-
-				    <div class="container">
-					    <div class="col">
-						    Direct optimization
-						    <div style="position:relative; width:600px; height:410px; margin:0 auto;">
-							    <img style="position:absolute;top:0;left:0px;" data-src="assets/recon_illustration0.png" height="350" />
-							    <img class="fragment " data-fragment-index="1" style="position:absolute;top:0;left:0px;" data-src="assets/recon_illustration1.png" height="350" />
+				<section>
+					    <h3 class="slide-title"> MAP optimization in action</h3>
+					    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$
+					    <!-- <div style="float:right; font-size: 16px">credit: <a href="https://github.com/modichirag">C. Modi</a></div> -->
+					    <br>
+					    <div class="container">
+						    <div class="col fragment fade-up" data-fragment-index="1">
+							    <img data-src="assets/init_field.png" style='height:250px;' />
+							    <br> True initial conditions <br> $s_0$
 						    </div>
 
-					    </div>
-					    <div class="col fragment" data-fragment-index="2">
-						    ad-hoc annealing
-						    <div style="position:relative; width:600px; height:410px; margin:0 auto;">
-							    <img class="fragment " data-fragment-index="2" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration2.png" height="350" />
-							    <img class="fragment " data-fragment-index="3" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration3.png" height="350" />
-							    <img class="fragment " data-fragment-index="4" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration4.png" height="350" />
-							    <img class="fragment " data-fragment-index="5" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration5.png" height="350" />
+						    <div class="col">
+							    <img data-src="assets/reconim_init.gif" style='height:250px;' />
+							    <br> Reconstructed initial conditions $s$
+						    </div>
+
+						    <div class="col">
+							    <img data-src="assets/reconim_fin.gif" style='height:250px;' />
+							    <br> Reconstructed dark matter distribution $x_{dm} = f(s)$
+						    </div>
+
+						    <div class="col">
+							    <img data-src="assets/fin_field.png" style='height:250px;' />
+							    <br> Data <br> $x_{dm} = f(s_0)$
 						    </div>
 					    </div>
-				    </div>
+					    <br>
+					    <br>
 
-				    <div>
-					    <ul>
-						    <li> Direct optimization of MAP leads to poor solutions on large scales.
-						    </li>
-						    <li class="fragment">Annealing recovers unbiased large scales, but at the cost of ad-hoc tempering procedure.
-						    </li>
-					    </ul>
-				    </div>
-			    </section>
-
-			    <section class="inverted" data-background="#000">
-				    <h2>Instead of guessing an optimization scheme, could we <b>learn to optimize</b>?</h2>
-			    </section>
-
-			    <section>
-				    <h3 class="slide-title">A closer look at the optimization algorithm</h3>
-
-				    <br>
-
-				    $$\arg\max_x \ \log p(y | f(x)) \ + \ p(x) $$
-
-				    <div class="container">
-					    <div class="col">
-						    <ul>
-							    <li> Standard Gradient Descent Algorithm:
-								    $$x_{i+1} = x_i - \epsilon \left[ \nabla_x{\log p(y | f(x_i))} + \nabla_x \log p(x_i) \right]$$
-								    <br>
-								    <div class="fragment" data-fragment-index="2">$$x_{i+1} = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right]$$
-									    with <b class="alert">update function</b> $\Gamma: (u,v) \rightarrow \epsilon(u + v)$ </div>
-							    </li>
-							    <br>
-							    <br>
-							    <li class="fragment"> Many algorithms (e.g. ADAM, LBFGS) can expressed in this form with a different choice of $\Gamma$.
-							    </li>
-						    </ul>
-
+					    <div class="fragment" data-fragment-index="1">
+						    Check out this blogpost for more details <br> <a href=https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html>
+							    https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html</a>
 					    </div>
-					    <div class="col fragment" data-fragment-index="1">
-						    <img data-src="assets/map_graph.png" />
-					    </div>
-				    </div>
+				</section>
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
 
-				    <br>
-				    <div class="fragment">
-					    $\Longrightarrow$ What if we could learn this update function?
-				    </div>
-			    </section>
+				<section>
+					<section>
+						
+					    <h3 class="slide-title">If only MAP optimization was easy...</h3>
 
-			    <section>
-				    <section>
-					    <h3 class="slide-title">Recurrent Inference Machines for Solving Inverse Problems<br> <a href="https://arxiv.org/abs/1706.04008">Putzky & Welling, 2017</a></h3>
-
-					    <img data-src="assets/illustration_RIM.png" />
+					    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$
 
 					    <div class="container">
 						    <div class="col">
-							    <ul>
-								    <li> Introduce a Recurrent Neural Network (RNN) $h_\phi$, and state variable $s$, so that:
-									    $$ s_{i+1} = h^*_\phi( \nabla \log p(y|x_{i}), x_i, s_{i})$$
-									    $$ x_{i+1} = x_i + h_\phi(\nabla \log p(y|x_{i}), x_i, s_{i+1})$$
-								    </li>
+							    Direct optimization
+							    <div style="position:relative; width:600px; height:410px; margin:0 auto;">
+								    <img style="position:absolute;top:0;left:0px;" data-src="assets/recon_illustration0.png" height="350" />
+								    <img class="fragment " data-fragment-index="1" style="position:absolute;top:0;left:0px;" data-src="assets/recon_illustration1.png" height="350" />
+							    </div>
 
-							    </ul>
 						    </div>
-						    <div class="col fragment">
-							    <ul>
-								    <li> Train according to:
-									    $$\mathcal{L} = \sum_{i}^T w_i\mathcal{L}(x_i, x)$$
-								    </li>
-							    </ul>
-						    </div>
-					    </div>
-				    </section>
-
-				    <!-- <section> -->
-				    <!-- 	    <h3 class="slide-title">Inside an RNN Cell</h3> -->
-				    <!-- 	    <img data-src="assets/LSTM_GRU.png" height="600px" /> -->
-				    <!-- 	    (<a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">source</a>) -->
-				    <!-- </section> -->
-
-				    <section>
-					    <h3 class="slide-title">Illustration on inverse problems</h3>
-					    <br>
-					    <br>
-					    <br>
-					    <br>
-					    <div>
-						    <img data-src="assets/IllustrationRIM.png" /><br>
-						    From left to right: input masked image, increasing number of steps of solutions, ground truth.
-					    </div>
-					    <br>
-					    <br>
-					    <br>
-					    <br>
-				    </section>
-			    </section>
-
-			    <section>
-				    <section>
-					    <h3 class="slide-title">CosmicRIM: Recurrence Inference Machines for Initial Condition Reconstruction</h3>
-					    <div class="container">
-						    <div class="col">
-							    <div style="float:right; font-size: 20px"> Modi, <b>Lanusse</b>, Seljak, Spergel, Perreault-Levasseur (2021)
-								    <a href="https://arxiv.org/abs/2104.12864"><img src="https://img.shields.io/badge/astro--ph.CO-arXiv%3A2104.12864-B31B1B.svg" class="plain" style="height:25px;vertical-align:middle;" /></a>
+						    <div class="col fragment" data-fragment-index="2">
+							    ad-hoc annealing
+							    <div style="position:relative; width:600px; height:410px; margin:0 auto;">
+								    <img class="fragment " data-fragment-index="2" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration2.png" height="350" />
+								    <img class="fragment " data-fragment-index="3" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration3.png" height="350" />
+								    <img class="fragment " data-fragment-index="4" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration4.png" height="350" />
+								    <img class="fragment " data-fragment-index="5" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration5.png" height="350" />
 							    </div>
 						    </div>
 					    </div>
-					    <br>
 
-					    <div class="container">
-
-						    <div class="col">
-							    Recurrent Neural Network Architecture
-							    <img data-src="assets/cosmic_rim.png" width="450" />
-						    </div>
-
-						    <div class="col">
-
-							    <ul>
-								    <li>A few notable differences to a vanilla RIM:
-									    <ul>
-										    <li class="fragment">We provide gradients of both prior and likelihood to the model.</li>
-
-										    <br>
-										    <li class="fragment">Because our forward model couples scales, we use a multiscale U-Net architecture.</li>
-										    <br>
-										    <li class="fragment"> Input gradients are pre-scaled with the ADAM formula.</li>
-									    </ul>
-								    </li>
-
-							    </ul>
-
-						    </div>
+					    <div>
+						    <ul>
+							    <li class="fragment" data-fragment-index="1"> Direct optimization of MAP leads to poor solutions on large scales.
+							    </li>
+							    <li class="fragment" data-fragment-index="3">Annealing recovers unbiased large scales, but at the cost of ad-hoc tempering procedure.
+							    </li>
+						    </ul>
 					    </div>
-					    <br>
-				    </section>
-
-				    <section>
-					    <h3 class="slide-title">Experiments</h3>
-					    <div class="block ">
-						    <div class="block-title">
-							    Settings
-						    </div>
-						    <div class="block-content">
-							    <ul>
-								    <li>Data: Halo mass weighted field, $\bar{n}=10^{-3}$ (h/Mpc)$^3$
-								    </li>
-								    <li>Forward model: $64^3$ particles, 400 Mpc/h box, 2LPT dynamics with 2nd order bias model
-								    </li>
-								    <li> RIM: 10 steps, trained under l2 loss
-								    </li>
-							    </ul>
-						    </div>
-					    </div>
-
-					    <div class="container">
-
-						    <div class="col">
-							    Initial conditions cross-correlation
-							    <img data-src="assets/rim_rc.png" width="420" />
-
-						    </div>
-						    <div class="col">
-							    Transfer function<br>
-							    <img data-src="assets/rim_transfer.png" width="420" />
-						    </div>
-
-					    </div>
-					    <ul>
-						    <li>CosmicRIM: Learn to optimize by embedding a Neural Network in the optimization algorithm.<br>
-							    $\Longrightarrow$ converges 40x faster than LBFGS.</li>
-					    </ul>
-
-				    </section>
-
-
-				    <section>
-					    <h3 class="slide-title">What does RIM learn</h3>
-
-						  <div class='container'>
-							  <div class='col' style="flex: 0 0 25em;">
-								  <br><br>
-								  <ul >
-									  <li > Physically motivated annealing
-										  <ul>
-											  <li>  large scales are reconstructed before small scales </li>
-										  </ul>
-										  <br>
-									  <li class="plain fragment"> Local minima i.e. ADAM/L-BFGS starting from RIM output do not improve results
-									  </li>
-								  </ul>
-
-							  </div>
-							  <div class='col' style="flex: 0 0 25em;">
-								  <div style="position:relative; width:600px; height:400px; top:00px; left:50px;  margin:1 auto">
-									  <img  style="position:absolute;left:20px;" data-src="assets/rim_rc_steps.png"/>
-								  </div> 
-								  </div>
-						  </div>
-
-				    </section>
-
-			    </section>
-
-			    <section class="inverted" data-background="#000">
-				    <h2>$64^3$? too small, it's never going to be useful for anything!</h2>
-			    </section>
-
-			    <section>
-					<section>
-						<h3 class='slide-title'>towards large scale inference with Mesh TensorFlow</h3>
-
-						  <div class='container'>
-							  <div class='col' style="flex: 0 0 25em;">
-								  <br><br>
-								  <ul >
-									  <li> Simulations of interesting size do not fit on single GPU RAM
-										  <ul>
-											  <!-- <li> Need distributed machine learning framework </li> -->
-											  <li>  Shift from <em> Data </em>  parallelism to <em>  Model </em>  parallelism on HPC environment </li>
-										  </ul>
-									  </li>
-									  <br>
-									  <li class='fragment' data-fragment-index="1"> Mesh TensorFlow (Shazeer et al. 2018)
-										  <ul> <li> mesh: a n-dimensional array of processors </li>
-											  <li> logical tensors with named dimensions </li>
-											  <li> <em> Computational layout: </em> <br> tensor dimesnion $\rightarrow$ mesh-dimension </li>
-										  </ul>
-									  </li>
-									  <!-- <br> -->
-									  <!-- <li class='fragment' data-fragment-index="2"> 3D FFT are computational bottleneck -->
-									  <!-- 	  <ul> <li> Multi-grid scheme for PM simulations  </li>  -->
-									  <!-- 		  <li> coarse grids to estimate large scale forces </li> -->
-									  <!-- 		  <li> <em> Laplacian Image Pyramids </em> to split scales </li> -->
-									  <!-- 	  </ul> -->
-									  <!-- </li> -->
-								  </ul>
-
-							  </div>
-							  <div class='col' style="flex: 0 0 25em;">
-								  <div style="position:relative; width:600px; height:400px; top:00px; left:50px;  margin:1 auto">
-									  <img class="plain fragment current-visible" data-fragment-index="0"  style="position:absolute;left:20px;" data-src="assets/mesh_tensorflow.png"/>
-									  <img class="plain fragment current-visible" data-fragment-index="1"  style="position:absolute;left:20px;" data-src="assets/matmul2d.png"/>
-									  <!-- <img class="plain fragment current-visible" data-fragment-index="2"  style="position:absolute;left:50px;" data-src="assets/pyramid_im.png"/> -->
-									  <!-- <img class="plain fragment" data-fragment-index="3"  style="position:absolute;left:50px;height:300px" data-src="assets/pyramid_2pt.png"/> -->
-								  </div> 
-								  <div class="plain fragment current-visible" data-fragment-index="0"  style="position:absolute; text-align:right; right:0px; bottom:100px;">  Gholami et al. 2018  </div>
-								  <div class="plain fragment current-visible" data-fragment-index="1"  style="position:absolute; text-align:right; right:0px; bottom:100px;">  Shazeer et al. 2018  </div>																																			  </div>
-						  </div>
-
-
 					</section>
 
 					<section>
-						<h3 class='slide-title'>Mesh FlowPM</h3>
-						<!--
-						    <img data-src="assets/mesh_flopwm.png" class="plain" style="height:450px;" /> -->
+						<h3 class="slide-title">If only getting uncertainties was easy...</h3>
 
-						  <div class='container'>
-							  <div class='col' style="flex: 0 0 25em;">
-								  <br><br>
-								  <ul >
-									  <li > Mesh TensorFlow for distributed, GPU accelerated and automatically differentiable simulations
-									  </li>
-									  <br>
-									  <li class='fragment' data-fragment-index="1"> 3D FFT are computational bottleneck
-									  </li>
-									  <br>
-									  <li class='fragment' data-fragment-index="2"> Multi-grid scheme for PM simulations  
-										  <ul> 
-											  <li> coarse grids to estimate large scale forces </li>
-											  <li> <em> Laplacian Image Pyramids </em> to split scales </li>
-										  </ul>
-									  </li>
-								  </ul>
-
-							  </div>
-							  <div class='col' style="flex: 0 0 25em;">
-								  <div style="position:relative; width:600px; height:400px; top:00px; left:50px;  margin:1 auto">
-
-									  <img class="plain fragment current-visible" data-fragment-index="1"  style="position:absolute;left:50px;" data-src="assets/hvsim2.png"/>
-									  <img class="plain fragment current-visible" data-fragment-index="2"  style="position:absolute;left:100px;" data-src="assets/pyramid_im.png"/>
-									  <img class="plain fragment" data-fragment-index="3"  style="position:absolute;left:100px;height:300px" data-src="assets/pyramid_2pt.png"/>
-								  </div> 
-							  </div>
-						  </div>
-
-
-					</section>
+						<br>
 					
-					<section>
-						<h3 class='slide-title'>Mesh FlowPM: scaling to next generation surveys</h3>
-						<!--
-						    <img data-src="assets/mesh_flopwm.png" class="plain" style="height:450px;" /> -->
+						$$\arg\max_x \ \log p(y | f(x)) \ + \ p(x) $$
 						
 						<div class="container">
 							<div class="col">
-								<img data-src="assets/mfpm_demo_1024.png" />
-							</div>
-							
-							<div class="col">
 								<ul>
-									<li> Working MeshTF fork resulting from collaboration with NVIDIA and the Jean-Zay user team.
+									<li> Hamiltonian Monte Carlo (HMC) to generate samples from the distribution:
+										$$U(q) = - \log \pi(q) $$
+										<br>
+										<div class="fragment" data-fragment-index="2">$$x_{i+1} = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right]$$
+											with <b class="alert">update function</b> $\Gamma: (u,v) \rightarrow \epsilon(u + v)$ </div>
 									</li>
 									<br>
 									<br>
-									<li> For a $2048^3$ simulation:
-										<ul>
-											<li>Distributed on <b>256</b> NVIDIA V100 GPUs</li>
-											<li>Runtime: 3 mins</li>
-										</ul>
-									</li>
-									<br>
-									<br>
-									<li> Don't hesitate to reach out if you have a use case for model parallelism!<br>
-										<img data-src="assets/github.png" class="plain" style="height:70px" /><br>
-										
-										<div> <a href="https://github.com/DifferentiableUniverseInitiative/mesh">https://github.com/DifferentiableUniverseInitiative/mesh</a>
-										</div>
+									<li class="fragment"> Many algorithms (e.g. ADAM, LBFGS) can expressed in this form with a different choice of $\Gamma$.
 									</li>
 								</ul>
+								
+							</div>
+							<div class="col fragment" data-fragment-index="1">
+								<img data-src="assets/map_graph.png" />
 							</div>
 						</div>
+						
+						<br>
+						<div class="fragment">
+							$\Longrightarrow$ What if we could learn this update function?
+						</div>
 					</section>
-			    </section>
+					
+				</section>
 
-			    <!-------------------------------------------------------------------------------->
+
 				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+
+				<section class="inverted" data-background="#000">
+					    <h2>Instead of guessing an optimization scheme, could we <b>learn to optimize</b>?</h2>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section>
+					<h3 class="slide-title">A closer look at the optimization algorithm</h3>
+
+					<br>
+					
+					$$\arg\max_x \ \log p(y | f(x)) \ + \ p(x) $$
+					
+					<div class="container">
+						<div class="col">
+							<ul>
+								<li> Standard Gradient Descent Algorithm:
+									$$x_{i+1} = x_i - \epsilon \left[ \nabla_x{\log p(y | f(x_i))} + \nabla_x \log p(x_i) \right]$$
+									<br>
+									<div class="fragment" data-fragment-index="2">$$x_{i+1} = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right]$$
+										with <b class="alert">update function</b> $\Gamma: (u,v) \rightarrow \epsilon(u + v)$ </div>
+								</li>
+								<br>
+								<br>
+								<li class="fragment"> Many algorithms (e.g. ADAM, LBFGS) can expressed in this form with a different choice of $\Gamma$.
+								</li>
+							</ul>
+							
+						</div>
+						<div class="col fragment" data-fragment-index="1">
+							<img data-src="assets/map_graph.png" />
+						</div>
+					</div>
+					
+					<br>
+					<div class="fragment">
+						$\Longrightarrow$ What if we could learn this update function?
+					</div>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section>
+					    <section>
+						    <h3 class="slide-title">Recurrent Inference Machines for Solving Inverse Problems<br> <a href="https://arxiv.org/abs/1706.04008">Putzky & Welling, 2017</a></h3>
+
+						    <img data-src="assets/illustration_RIM.png" />
+
+						    <div class="container">
+							    <div class="col">
+								    <ul>
+									    <li> Introduce a Recurrent Neural Network (RNN) $h_\phi$, and state variable $s$, so that:
+										    $$ s_{i+1} = h^*_\phi( \nabla \log p(y|x_{i}), x_i, s_{i})$$
+										    $$ x_{i+1} = x_i + h_\phi(\nabla \log p(y|x_{i}), x_i, s_{i+1})$$
+									    </li>
+
+								    </ul>
+							    </div>
+							    <div class="col fragment">
+								    <ul>
+									    <li> Train according to:
+										    $$\mathcal{L} = \sum_{i}^T w_i\mathcal{L}(x_i, x)$$
+									    </li>
+								    </ul>
+							    </div>
+						    </div>
+					    </section>
+
+					    <!-- <section> -->
+					    <!-- 	    <h3 class="slide-title">Inside an RNN Cell</h3> -->
+					    <!-- 	    <img data-src="assets/LSTM_GRU.png" height="600px" /> -->
+					    <!-- 	    (<a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">source</a>) -->
+					    <!-- </section> -->
+
+					    <!-- <section> -->
+					    <!-- 	    <h3 class="slide-title">Illustration on inverse problems</h3> -->
+					    <!-- 	    <br> -->
+					    <!-- 	    <br> -->
+					    <!-- 	    <br> -->
+					    <!-- 	    <br> -->
+					    <!-- 	    <div> -->
+					    <!-- 		    <img data-src="assets/IllustrationRIM.png" /><br> -->
+					    <!-- 		    From left to right: input masked image, increasing number of steps of solutions, ground truth. -->
+					    <!-- 	    </div> -->
+					    <!-- 	    <br> -->
+					    <!-- 	    <br> -->
+					    <!-- 	    <br> -->
+					    <!-- 	    <br> -->
+					    <!-- </section> -->
+				</section>
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section>
+					    <section>
+						    <h3 class="slide-title">CosmicRIM: Recurrence Inference Machines for Initial Condition Reconstruction</h3>
+						    <div class="container">
+							    <div class="col">
+								    <div style="float:right; font-size: 20px"> Modi, <b>Lanusse</b>, Seljak, Spergel, Perreault-Levasseur (2021)
+									    <a href="https://arxiv.org/abs/2104.12864"><img src="https://img.shields.io/badge/astro--ph.CO-arXiv%3A2104.12864-B31B1B.svg" class="plain" style="height:25px;vertical-align:middle;" /></a>
+								    </div>
+							    </div>
+						    </div>
+						    <br>
+
+						    <div class="container">
+
+							    <div class="col">
+								    Recurrent Neural Network Architecture
+								    <img data-src="assets/cosmic_rim.png" width="450" />
+							    </div>
+
+							    <div class="col">
+
+								    <ul>
+									    <li class="fragment"> Few key features of Cosmic RIM:
+										    <br>
+										    <ul>
+											    <br>
+											    <li >We provide gradients of both prior and likelihood to the model.</li>
+											    <br>
+											    <li >Because our forward model couples scales, we use a multiscale U-Net architecture.</li>
+											    <br>
+											    <li > Input gradients are pre-scaled with the ADAM formula.</li>
+										    </ul>
+									    </li>
+
+								    </ul>
+
+							    </div>
+						    </div>
+						    <br>
+					    </section>
+
+					    <section>
+						    <h3 class="slide-title">Experiments</h3>
+						    <div class="block ">
+							    <div class="block-title">
+								    Settings
+							    </div>
+							    <div class="block-content">
+								    <ul>
+									    <li>Data: Halo mass weighted field, $\bar{n}=10^{-3}$ (h/Mpc)$^3$
+									    </li>
+									    <li>Forward model: $64^3$ particles, 400 Mpc/h box, 2LPT dynamics with 2nd order bias model
+									    </li>
+									    <li> RIM: 10 steps, trained under l2 loss
+									    </li>
+								    </ul>
+							    </div>
+						    </div>
+
+						    <div class="container">
+
+							    <div class="col">
+								    Initial conditions cross-correlation
+								    <img data-src="assets/rim_rc.png" width="420" />
+
+							    </div>
+							    <div class="col">
+								    Transfer function<br>
+								    <img data-src="assets/rim_transfer.png" width="420" />
+							    </div>
+
+						    </div>
+						    <ul>
+							    <li class="fragment">CosmicRIM: Learn to optimize by embedding a Neural Network in the optimization algorithm.<br>
+								    $\Longrightarrow$ converges 40x faster than LBFGS.</li>
+						    </ul>
+
+					    </section>
+
+
+					    <section>
+						    <h3 class="slide-title">What does RIM learn</h3>
+
+							  <div class='container'>
+								  <div class='col' style="flex: 0 0 25em;">
+									  <br><br>
+									  <ul >
+										  <li > Physically motivated annealing
+											  <ul>
+												  <li>  large scales are reconstructed before small scales </li>
+											  </ul>
+											  <br>
+										  <li class="plain fragment"> Local minima i.e. ADAM/L-BFGS starting from RIM output do not improve results
+										  </li>
+									  </ul>
+
+								  </div>
+								  <div class='col' style="flex: 0 0 25em;">
+									  <div style="position:relative; width:600px; height:400px; top:00px; left:50px;  margin:1 auto">
+										  <img  style="position:absolute;left:20px;" data-src="assets/rim_rc_steps.png"/>
+									  </div> 
+									  </div>
+							  </div>
+
+					    </section>
+
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<!-- <section class="inverted" data-background="#000"> -->
+				<!-- 	    <h2>$64^3$? too small, it's never going to be useful for anything!</h2> -->
+				<!-- </section> -->
+
+				<!-- <section> -->
+				<!-- 		<section> -->
+				<!-- 			<h3 class='slide-title'>towards large scale inference with Mesh TensorFlow</h3> -->
+
+				<!-- 			  <div class='container'> -->
+				<!-- 				  <div class='col' style="flex: 0 0 25em;"> -->
+				<!-- 					  <br><br> -->
+				<!-- 					  <ul > -->
+				<!-- 						  <li> Simulations of interesting size do not fit on single GPU RAM -->
+				<!-- 							  <ul> -->
+				<!-- 								  <\!-- <li> Need distributed machine learning framework </li> -\-> -->
+				<!-- 								  <li>  Shift from <em> Data </em>  parallelism to <em>  Model </em>  parallelism on HPC environment </li> -->
+				<!-- 							  </ul> -->
+				<!-- 						  </li> -->
+				<!-- 						  <br> -->
+				<!-- 						  <li class='fragment' data-fragment-index="1"> Mesh TensorFlow (Shazeer et al. 2018) -->
+				<!-- 							  <ul> <li> mesh: a n-dimensional array of processors </li> -->
+				<!-- 								  <li> logical tensors with named dimensions </li> -->
+				<!-- 								  <li> <em> Computational layout: </em> <br> tensor dimesnion $\rightarrow$ mesh-dimension </li> -->
+				<!-- 							  </ul> -->
+				<!-- 						  </li> -->
+				<!-- 						  <\!-- <br> -\-> -->
+				<!-- 						  <\!-- <li class='fragment' data-fragment-index="2"> 3D FFT are computational bottleneck -\-> -->
+				<!-- 						  <\!-- 	  <ul> <li> Multi-grid scheme for PM simulations  </li>  -\-> -->
+				<!-- 						  <\!-- 		  <li> coarse grids to estimate large scale forces </li> -\-> -->
+				<!-- 						  <\!-- 		  <li> <em> Laplacian Image Pyramids </em> to split scales </li> -\-> -->
+				<!-- 						  <\!-- 	  </ul> -\-> -->
+				<!-- 						  <\!-- </li> -\-> -->
+				<!-- 					  </ul> -->
+
+				<!-- 				  </div> -->
+				<!-- 				  <div class='col' style="flex: 0 0 25em;"> -->
+				<!-- 					  <div style="position:relative; width:600px; height:400px; top:00px; left:50px;  margin:1 auto"> -->
+				<!-- 						  <img class="plain fragment current-visible" data-fragment-index="0"  style="position:absolute;left:20px;" data-src="assets/mesh_tensorflow.png"/> -->
+				<!-- 						  <img class="plain fragment current-visible" data-fragment-index="1"  style="position:absolute;left:20px;" data-src="assets/matmul2d.png"/> -->
+				<!-- 						  <\!-- <img class="plain fragment current-visible" data-fragment-index="2"  style="position:absolute;left:50px;" data-src="assets/pyramid_im.png"/> -\-> -->
+				<!-- 						  <\!-- <img class="plain fragment" data-fragment-index="3"  style="position:absolute;left:50px;height:300px" data-src="assets/pyramid_2pt.png"/> -\-> -->
+				<!-- 					  </div>  -->
+				<!-- 					  <div class="plain fragment current-visible" data-fragment-index="0"  style="position:absolute; text-align:right; right:0px; bottom:100px;">  Gholami et al. 2018  </div> -->
+				<!-- 					  <div class="plain fragment current-visible" data-fragment-index="1"  style="position:absolute; text-align:right; right:0px; bottom:100px;">  Shazeer et al. 2018  </div>																																			  </div> -->
+				<!-- 			  </div> -->
+
+
+				<!-- 		</section> -->
+
+				<!-- 		<section> -->
+				<!-- 			<h3 class='slide-title'>Mesh FlowPM</h3> -->
+				<!-- 			<\!-- -->
+				<!-- 			    <img data-src="assets/mesh_flopwm.png" class="plain" style="height:450px;" /> -\-> -->
+
+				<!-- 			  <div class='container'> -->
+				<!-- 				  <div class='col' style="flex: 0 0 25em;"> -->
+				<!-- 					  <br><br> -->
+				<!-- 					  <ul > -->
+				<!-- 						  <li > Mesh TensorFlow for distributed, GPU accelerated and automatically differentiable simulations -->
+				<!-- 						  </li> -->
+				<!-- 						  <br> -->
+				<!-- 						  <li class='fragment' data-fragment-index="1"> 3D FFT are computational bottleneck -->
+				<!-- 						  </li> -->
+				<!-- 						  <br> -->
+				<!-- 						  <li class='fragment' data-fragment-index="2"> Multi-grid scheme for PM simulations   -->
+				<!-- 							  <ul>  -->
+				<!-- 								  <li> coarse grids to estimate large scale forces </li> -->
+				<!-- 								  <li> <em> Laplacian Image Pyramids </em> to split scales </li> -->
+				<!-- 							  </ul> -->
+				<!-- 						  </li> -->
+				<!-- 					  </ul> -->
+
+				<!-- 				  </div> -->
+				<!-- 				  <div class='col' style="flex: 0 0 25em;"> -->
+				<!-- 					  <div style="position:relative; width:600px; height:400px; top:00px; left:50px;  margin:1 auto"> -->
+
+				<!-- 						  <img class="plain fragment current-visible" data-fragment-index="1"  style="position:absolute;left:50px;" data-src="assets/hvsim2.png"/> -->
+				<!-- 						  <img class="plain fragment current-visible" data-fragment-index="2"  style="position:absolute;left:100px;" data-src="assets/pyramid_im.png"/> -->
+				<!-- 						  <img class="plain fragment" data-fragment-index="3"  style="position:absolute;left:100px;height:300px" data-src="assets/pyramid_2pt.png"/> -->
+				<!-- 					  </div>  -->
+				<!-- 				  </div> -->
+				<!-- 			  </div> -->
+
+
+				<!-- 		</section> -->
+
+				<!-- 		<section> -->
+				<!-- 			<h3 class='slide-title'>Mesh FlowPM: scaling to next generation surveys</h3> -->
+				<!-- 			<\!-- -->
+				<!-- 			    <img data-src="assets/mesh_flopwm.png" class="plain" style="height:450px;" /> -\-> -->
+
+				<!-- 			<div class="container"> -->
+				<!-- 				<div class="col"> -->
+				<!-- 					<img data-src="assets/mfpm_demo_1024.png" /> -->
+				<!-- 				</div> -->
+
+				<!-- 				<div class="col"> -->
+				<!-- 					<ul> -->
+				<!-- 						<li> Working MeshTF fork resulting from collaboration with NVIDIA and the Jean-Zay user team. -->
+				<!-- 						</li> -->
+				<!-- 						<br> -->
+				<!-- 						<br> -->
+				<!-- 						<li> For a $2048^3$ simulation: -->
+				<!-- 							<ul> -->
+				<!-- 								<li>Distributed on <b>256</b> NVIDIA V100 GPUs</li> -->
+				<!-- 								<li>Runtime: 3 mins</li> -->
+				<!-- 							</ul> -->
+				<!-- 						</li> -->
+				<!-- 						<br> -->
+				<!-- 						<br> -->
+				<!-- 						<li> Don't hesitate to reach out if you have a use case for model parallelism!<br> -->
+				<!-- 							<img data-src="assets/github.png" class="plain" style="height:70px" /><br> -->
+
+				<!-- 							<div> <a href="https://github.com/DifferentiableUniverseInitiative/mesh">https://github.com/DifferentiableUniverseInitiative/mesh</a> -->
+				<!-- 							</div> -->
+				<!-- 						</li> -->
+				<!-- 					</ul> -->
+				<!-- 				</div> -->
+				<!-- 			</div> -->
+				<!-- 		</section> -->
+				<!-- </section> -->
+
+				<!-------------------------------------------------------------------------------->
+				    <!-------------------------------------------------------------------------------->
 
 				<section>
 						<h3 class="slide-title"> Summary </h3>
