@@ -667,7 +667,11 @@
 
 					<!-- 			<\!-- 	Transfer Function : $ t_f = \sqrt{\frac{P_{y}}{P_x} }$  -\-> -->
 									<li class="fragment" data-fragment-index="2">
-										Cross correlation : $ r_c = \frac{P_{xy}}{\sqrt{P_x \times P_y}}$ <br>
+										Quantify gains with cross correlation between true and reconstructed initial conditions
+										: $ r_c = \frac{P_{ab}}{\sqrt{P_a \times P_b}}$ <br>
+										<!-- div style="font-size:20px"> -->
+										<!-- 	<em> a: true initial conditions, b:  reconstructed initial conditions </em> -->
+										<!-- </div> -->
 									</li>
 									<li class="fragment" data-fragment-index="2"> Fisher information  <br> <br>
 										$\mathcal{I}_{ij} =  V_{\rm{eff}}\int_{k_{min}}^{k_{max}} \frac{\partial {\rm ln} P(k)}{\partial p_i} \frac{\partial {\rm ln} P(k)}{\partial p_j}\frac{4 \pi k^2}{2 (2\pi)^3} dk \quad {\propto \,  r_c^4} $
@@ -818,15 +822,26 @@
 
 					<section >
 						<h3 class='slide-title'>21-cm surveys : reconstructing large scale modes in the data</h3>
-						<div class="fragment" data-fragment-index="1">	
-						$$\mathcal{P}_w =  \sum_k \frac{1}{\rm N_{modes}(k)} \left( \sum_{\substack{\vec{k}, |\vec{k}|\sim k, \\ {\vec{k} \not\in w}}}  \frac{|\delta_{\rm HI}^b(\vec{k}) - \delta_{\rm HI}^n(\vec{k})|^2}{P_{\rm err}(k,\mu)} +  \sum_{\vec{k}, |\vec{k}|\sim k}  \frac{|s(\vec{k}))|^2}{P_{\rm s}(k)}  \right)$$
+
+						<div class="fragment" data-fragment-index="0" style="position:absolute;left:-300px;width:800px;top:300px">
+								Cross correlation <br> $ r_c = \frac{P_{xy}}{\sqrt{P_x \times P_y}}$ <br>
 						</div>
-						<div style="position:relative; width:800px; height:600px; left:100px;margin:0 auto">	
+						<div class="fragment" data-fragment-index="0" style="position:absolute;left:780px;width:800px;top:300px">
+								Transfer Function <br> $ t_f = \sqrt{\frac{P_{y}}{P_x} }$
+						</div>
+						
+						<!-- <div class="fragment" data-fragment-index="1">	 -->
+						<!-- $$\mathcal{P}_w =  \sum_k \frac{1}{\rm N_{modes}(k)} \left( \sum_{\substack{\vec{k}, |\vec{k}|\sim k, \\ {\vec{k} \not\in w}}}  \frac{|\delta_{\rm HI}^b(\vec{k}) - \delta_{\rm HI}^n(\vec{k})|^2}{P_{\rm err}(k,\mu)} +  \sum_{\vec{k}, |\vec{k}|\sim k}  \frac{|s(\vec{k}))|^2}{P_{\rm s}(k)}  \right)$$ -->
+						<!-- </div> -->
+						
+						<div style="position:relative; width:800px; height:600px; left:100px; top:100px; margin:0 auto">	
 							<img class="fragment plain current-visible fade-up"  style="position:absolute;left:-70px;width:800px" data-src="assets/21cmrecon-noise.png" data-fragment-index="0"/>
 							<img class="fragment  "  style="position:absolute;left:-70px;width:800px" data-src="assets/21cmrecon.png" data-fragment-index="1"/>
 						</div>
 						
-						<div   style="position:absolute; float:right; top:650px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
+						<div   class="fragment plain current-visible fade-up" data-fragment-index="0" style="position:absolute; float:right; top:600px;  left:400px;font-size: 23px; margin:0 auto">Compare observed noisy data to true 21-cm field</div>
+						<div   class="fragment plain current-visible fade-up" data-fragment-index="1" style="position:absolute; float:right; top:600px;  left:400px;font-size: 23px; margin:0 auto">Compare reconstructed data to true 21-cm field</div>
+						<div   style="position:absolute; float:right; top:620px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
 						
 
 					</section>
