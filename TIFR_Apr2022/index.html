@@ -74,7 +74,7 @@
 				<!-- <section data-background-image="assets/WMAP_timeline.jpg" data-background-size="1100px" data-background-color="black"> -->
 				<!-- 	<\!-- <h2 class='slide-title' style="position:absolute;top:0;"> the $\Lambda$CDM view of the Universe </h3> -\-> -->
 				<!-- 	<h2 class='slide-title' style="position:relative;top:0;"> the $\Lambda$CDM view of the Universe </h2> -->
-T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> -->
+				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> -->
 				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
 				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
 				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
@@ -108,7 +108,7 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 									<li class="fragment fade-up"> <b class="alert">CosmicRIM </b>: learning optimization with recurrent networks
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">Mesh FlowPM </b>: distributed simulations in TensorFlow
+									<li class="fragment fade-up"> <b class="alert">Variational self boosted sampling </b>: combining variational inference and MCMC
 									</li>
 								</ul>
 							</div>
@@ -207,31 +207,32 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 					</section>
 				
 					<!-------------------------------------------------------------------------------->
-					<section data-background-image="assets/Mayall.jpg">
-						<h2 class='slide-title'> the Dark Energy Spectroscopic Instrument</h2>						
-						<div class="container">
-							<div class="col">
-								<ul>
-									<li > 14,000 square degrees over 5 years</li>
-									<br>
-									<li > 35 million galaxies and quasars in 0 &lt; z &lt; 3.5</li>
-									<br>
-									<li class="fragment fade-up" data-fragment-index="1"> Measuring growth of structures and Baryon Acoustic Oscillations</li>
-								</ul>
-								<br >
-							</div>
-							<div class="col">
-								<div style="position:relative; width:480px; height:420px; margin:0 auto;">
-								<!-- <img src="assets/desi_bao.png" class="fragment fade-up" height="400"></img> -->
-								<!-- 
-								     <img class="fragment current-visible plain"  data-src="assets/desi_first_sky.png" style="position:absolute;top:20px;left:20px;" data-fragment-index="0" /> 
-								     <img class="fragment current-visible plain"  data-src="assets/desi_first_sky.png" style="position:absolute;top:20px;left:20px;" data-fragment-index="1" />
-								     -->
-								<img src="assets/desi_bao.png" class="fragment fade-up" data-fragment-index="1" height="400"></img>
-								</div>
-								<div class="fragment"  data-fragment-index="1" style="position:relative; float:right; font-size: 20px; top:10px; left:0px">DESI Collaboration: 1611.00036</div>
-							</div>
-					</section>
+					<!-- <section data-background-image="assets/Mayall.jpg"> -->
+					<!-- 	<h2 class='slide-title'> the Dark Energy Spectroscopic Instrument</h2>						 -->
+					<!-- 	<div class="container"> -->
+					<!-- 		<div class="col"> -->
+					<!-- 			<ul> -->
+					<!-- 				<li > 14,000 square degrees over 5 years</li> -->
+					<!-- 				<br> -->
+					<!-- 				<li > 35 million galaxies and quasars in 0 &lt; z &lt; 3.5</li> -->
+					<!-- 				<br> -->
+					<!-- 				<li class="fragment fade-up" data-fragment-index="1"> Measuring growth of structures and Baryon Acoustic Oscillations</li> -->
+					<!-- 			</ul> -->
+					<!-- 			<br > -->
+					<!-- 		</div> -->
+					<!-- 		<div class="col"> -->
+					<!-- 			<div style="position:relative; width:480px; height:420px; margin:0 auto;"> -->
+					<!-- 			<\!-- <img src="assets/desi_bao.png" class="fragment fade-up" height="400"></img> -\-> -->
+					<!-- 			<\!--  -->
+					<!-- 			     <img class="fragment current-visible plain"  data-src="assets/desi_first_sky.png" style="position:absolute;top:20px;left:20px;" data-fragment-index="0" />  -->
+					<!-- 			     <img class="fragment current-visible plain"  data-src="assets/desi_first_sky.png" style="position:absolute;top:20px;left:20px;" data-fragment-index="1" /> -->
+					<!-- 			     -\-> -->
+					<!-- 			<img src="assets/desi_bao.png" class="fragment fade-up" data-fragment-index="1" height="400"></img> -->
+					<!-- 			</div> -->
+					<!-- 			<div class="fragment"  data-fragment-index="1" style="position:relative; float:right; font-size: 20px; top:10px; left:0px">DESI Collaboration: 1611.00036</div> -->
+					<!-- 		</div> -->
+					<!-- </section> -->
+					
 					<!-- <\!-------------------------------------------------------------------------------\-> -->
 					<!-- <section  data-background-image="assets/chime2.jpeg"  data-background-color="black"> -->
 
@@ -1102,40 +1103,40 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				
-				<section>
-					    <h3 class="slide-title"> MAP optimization in action</h3>
-					    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$
-					    <!-- <div style="float:right; font-size: 16px">credit: <a href="https://github.com/modichirag">C. Modi</a></div> -->
-					    <br>
-					    <div class="container">
-						    <div class="col fragment fade-up" data-fragment-index="1">
-							    <img data-src="assets/init_field.png" style='height:250px;' />
-							    <br> True initial conditions <br> $s_0$
-						    </div>
+				<!-- <section> -->
+				<!-- 	    <h3 class="slide-title"> MAP optimization in action</h3> -->
+				<!-- 	    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$ -->
+				<!-- 	    <\!-- <div style="float:right; font-size: 16px">credit: <a href="https://github.com/modichirag">C. Modi</a></div> -\-> -->
+				<!-- 	    <br> -->
+				<!-- 	    <div class="container"> -->
+				<!-- 		    <div class="col fragment fade-up" data-fragment-index="1"> -->
+				<!-- 			    <img data-src="assets/init_field.png" style='height:250px;' /> -->
+				<!-- 			    <br> True initial conditions <br> $s_0$ -->
+				<!-- 		    </div> -->
 
-						    <div class="col">
-							    <img data-src="assets/reconim_init.gif" style='height:250px;' />
-							    <br> Reconstructed initial conditions $s$
-						    </div>
+				<!-- 		    <div class="col"> -->
+				<!-- 			    <img data-src="assets/reconim_init.gif" style='height:250px;' /> -->
+				<!-- 			    <br> Reconstructed initial conditions $s$ -->
+				<!-- 		    </div> -->
 
-						    <div class="col">
-							    <img data-src="assets/reconim_fin.gif" style='height:250px;' />
-							    <br> Reconstructed dark matter distribution $x_{dm} = f(s)$
-						    </div>
+				<!-- 		    <div class="col"> -->
+				<!-- 			    <img data-src="assets/reconim_fin.gif" style='height:250px;' /> -->
+				<!-- 			    <br> Reconstructed dark matter distribution $x_{dm} = f(s)$ -->
+				<!-- 		    </div> -->
 
-						    <div class="col">
-							    <img data-src="assets/fin_field.png" style='height:250px;' />
-							    <br> Data <br> $x_{dm} = f(s_0)$
-						    </div>
-					    </div>
-					    <br>
-					    <br>
+				<!-- 		    <div class="col"> -->
+				<!-- 			    <img data-src="assets/fin_field.png" style='height:250px;' /> -->
+				<!-- 			    <br> Data <br> $x_{dm} = f(s_0)$ -->
+				<!-- 		    </div> -->
+				<!-- 	    </div> -->
+				<!-- 	    <br> -->
+				<!-- 	    <br> -->
 
-					    <div class="fragment" data-fragment-index="1">
-						    Check out this blogpost for more details <br> <a href=https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html>
-							    https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html</a>
-					    </div>
-				</section>
+				<!-- 	    <div class="fragment" data-fragment-index="1"> -->
+				<!-- 		    Check out this blogpost for more details <br> <a href=https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html> -->
+				<!-- 			    https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html</a> -->
+				<!-- 	    </div> -->
+				<!-- </section> -->
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 
@@ -1176,8 +1177,71 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 					    </div>
 					</section>
 
+					<!-------------------------------------------------------------------------------->
 					<section>
 						<h3 class="slide-title">If only getting uncertainties was easy...</h3>
+
+						<br>
+					
+						$$\mathrm{Generate\, samples\, from\, posterior: }\, \pi(x)  =  \log p(y | f(x)) \ + \ p(x) $$
+						
+						<div class="container">
+							<div class="col">
+								<ul>
+									<li class="fragment" data-fragment-index="1" > <b> Hamiltonian Monte Carlo (HMC) </b>
+										<br>
+										$$U(x) = - \log \pi(x) $$
+										$$H(x, p) = U(x) + \frac{1}{2}p^TM^{-1}p$$
+									<br>
+									Generate samples by simulating a Markov chain to evolve the Hamiltonian
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="2"> Guaranteed to be asymptotically correct
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="3"> Samples are correlated
+									</li>
+								</ul>
+								
+							</div>
+							<div class="col" >
+								<!-- <\!-- <div class="col"> -\-> -->
+								<div style="position:relative; width:700px; height:400px; top:130px; left:50px;  margin:1 auto">
+
+									<Img class="fragment current-visible plain" data-fragment-index="1" style="position:absolute;top:-50px;left:0px;" data-src="assets/hmc_algo.png"/>
+									<img class="fragment current-visible plain" data-fragment-index="2"  style="position:absolute;top:-50px;left:0px" data-src="assets/hmc_posterior.png" />
+									<img class="fragment plain" data-fragment-index="3"  style="position:absolute;top:-50px;left:0px;height:250px;width:800px" data-src="assets/hmc_ac.png" />
+
+								</div>
+								<div class="fragment" data-fragment-index="1" style="position:absolute; float:right; top:600px; right:00px; font-size: 20px; margin:0 auto">Modi et al. (in prep)</div>							
+								
+							</div>
+						</div>
+						
+						<br>
+						<div class="fragment">
+							$\Longrightarrow$ Can take $\mathcal{O}(10^4)$ simulations to generate one independent sample!!!
+						</div>
+					</section>
+					
+				</section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+
+				<section class="inverted" data-background="#000">
+					    <h2>Combining machine learning with differentiable simulations for efficient inference</h2>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section>
+
+					<section>
+						<h3 class="slide-title">Learning to Optimize: A closer look at the optimization algorithm</h3>
 
 						<br>
 					
@@ -1186,10 +1250,9 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 						<div class="container">
 							<div class="col">
 								<ul>
-									<li> Hamiltonian Monte Carlo (HMC) to generate samples from the distribution:
-										$$U(q) = - \log \pi(q) $$
-										<br>
-										<div class="fragment" data-fragment-index="2">$$x_{i+1} = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right]$$
+									<li> Standard Gradient Descent Algorithm:
+										$$x_{i+1} = x_i - \epsilon \left[ \nabla_x{\log p(y | f(x_i))} + \nabla_x \log p(x_i) \right]$$
+										<div class="fragment" data-fragment-index="1">$$x_{i+1} = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right]$$
 											with <b class="alert">update function</b> $\Gamma: (u,v) \rightarrow \epsilon(u + v)$ </div>
 									</li>
 									<br>
@@ -1209,105 +1272,56 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 							$\Longrightarrow$ What if we could learn this update function?
 						</div>
 					</section>
+
+					<!-------------------------------------------------------------------------------->
 					
-				</section>
-
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-
-				<section class="inverted" data-background="#000">
-					    <h2>Instead of guessing an optimization scheme, could we <b>learn to optimize</b>?</h2>
-				</section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section>
-					<h3 class="slide-title">A closer look at the optimization algorithm</h3>
-
-					<br>
-					
-					$$\arg\max_x \ \log p(y | f(x)) \ + \ p(x) $$
-					
-					<div class="container">
-						<div class="col">
-							<ul>
-								<li> Standard Gradient Descent Algorithm:
-									$$x_{i+1} = x_i - \epsilon \left[ \nabla_x{\log p(y | f(x_i))} + \nabla_x \log p(x_i) \right]$$
-									<br>
-									<div class="fragment" data-fragment-index="2">$$x_{i+1} = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right]$$
-										with <b class="alert">update function</b> $\Gamma: (u,v) \rightarrow \epsilon(u + v)$ </div>
-								</li>
-								<br>
-								<br>
-								<li class="fragment"> Many algorithms (e.g. ADAM, LBFGS) can expressed in this form with a different choice of $\Gamma$.
-								</li>
-							</ul>
-							
+					<section>
+						<h3 class="slide-title">Learning to Optimize: Recurrent Inference Machines<br> <a href="https://arxiv.org/abs/1706.04008">Putzky & Welling, 2017</a></h3>
+						
+						<img data-src="assets/illustration_RIM.png" />
+						
+						<div class="container">
+							<div class="col", style="width:900px">
+								<ul>
+									<li> Recurrent Neural Network $h_\phi$ learns the update function <br>
+										state variable $s$ keeps a memory of previous updates
+										$$ s_{i+1} = h^*_\phi( \nabla \log p(y|x_{i}), x_i, s_{i})$$
+										$$ x_{i+1} = x_i + h_\phi(\nabla \log p(y|x_{i}), x_i, s_{i+1})$$
+									</li>
+									
+								</ul>
+							</div>
+							<div class="col fragment">
+								<ul>
+									<li> Train according to:
+										$$\mathcal{L} = \sum_{i}^T w_i\mathcal{L}(x_i, x)$$
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div class="col fragment" data-fragment-index="1">
-							<img data-src="assets/map_graph.png" />
-						</div>
-					</div>
+					</section>
 					
-					<br>
-					<div class="fragment">
-						$\Longrightarrow$ What if we could learn this update function?
-					</div>
-				</section>
+					<!-- <section> -->
+					<!-- 	    <h3 class="slide-title">Inside an RNN Cell</h3> -->
+					<!-- 	    <img data-src="assets/LSTM_GRU.png" height="600px" /> -->
+					<!-- 	    (<a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">source</a>) -->
+					<!-- </section> -->
 
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section>
-					    <section>
-						    <h3 class="slide-title">Recurrent Inference Machines for Solving Inverse Problems<br> <a href="https://arxiv.org/abs/1706.04008">Putzky & Welling, 2017</a></h3>
-
-						    <img data-src="assets/illustration_RIM.png" />
-
-						    <div class="container">
-							    <div class="col">
-								    <ul>
-									    <li> Introduce a Recurrent Neural Network (RNN) $h_\phi$, and state variable $s$, so that:
-										    $$ s_{i+1} = h^*_\phi( \nabla \log p(y|x_{i}), x_i, s_{i})$$
-										    $$ x_{i+1} = x_i + h_\phi(\nabla \log p(y|x_{i}), x_i, s_{i+1})$$
-									    </li>
-
-								    </ul>
-							    </div>
-							    <div class="col fragment">
-								    <ul>
-									    <li> Train according to:
-										    $$\mathcal{L} = \sum_{i}^T w_i\mathcal{L}(x_i, x)$$
-									    </li>
-								    </ul>
-							    </div>
-						    </div>
-					    </section>
-
-					    <!-- <section> -->
-					    <!-- 	    <h3 class="slide-title">Inside an RNN Cell</h3> -->
-					    <!-- 	    <img data-src="assets/LSTM_GRU.png" height="600px" /> -->
-					    <!-- 	    (<a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">source</a>) -->
-					    <!-- </section> -->
-
-					    <!-- <section> -->
-					    <!-- 	    <h3 class="slide-title">Illustration on inverse problems</h3> -->
-					    <!-- 	    <br> -->
-					    <!-- 	    <br> -->
-					    <!-- 	    <br> -->
-					    <!-- 	    <br> -->
-					    <!-- 	    <div> -->
-					    <!-- 		    <img data-src="assets/IllustrationRIM.png" /><br> -->
-					    <!-- 		    From left to right: input masked image, increasing number of steps of solutions, ground truth. -->
-					    <!-- 	    </div> -->
-					    <!-- 	    <br> -->
-					    <!-- 	    <br> -->
-					    <!-- 	    <br> -->
-					    <!-- 	    <br> -->
-					    <!-- </section> -->
+					<!-- <section> -->
+					<!-- 	    <h3 class="slide-title">Illustration on inverse problems</h3> -->
+					<!-- 	    <br> -->
+					<!-- 	    <br> -->
+					<!-- 	    <br> -->
+					<!-- 	    <br> -->
+					<!-- 	    <div> -->
+					<!-- 		    <img data-src="assets/IllustrationRIM.png" /><br> -->
+					<!-- 		    From left to right: input masked image, increasing number of steps of solutions, ground truth. -->
+					<!-- 	    </div> -->
+					<!-- 	    <br> -->
+					<!-- 	    <br> -->
+					<!-- 	    <br> -->
+					<!-- 	    <br> -->
+					<!-- </section> -->
 				</section>
 				
 				<!-------------------------------------------------------------------------------->
@@ -1423,6 +1437,59 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
+
+
+				<section>
+					<section>
+						<h3 class="slide-title">Learning to sample: Variational Self Boosted Sampling</h3>
+
+					
+						<!-- $$\mathrm{Posterior }\, \pi(x)  =  \log p(y | f(x)) \ + \ p(x) $$ -->
+						
+						<div class="container">
+							<div class="col">
+								<ul>
+									<li  > <b> Variational Inference</b> : Learns a parametric form of the posterior $q(x; \nu)$
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="2"> <b> Variational Self boosted Sampling </b>
+										<br>
+										Combine HMC sampling with VI to
+										<ul>
+											<br>
+											<li> Phase 1- Use HMC samples to train variational distribution on the fly
+											</li>
+											<br>
+											<li> Phase 2- Generate proposals from variational distribution to break
+												correlations in Markov chain
+											</li>
+										</ul>
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="3"> Generated samples explore the posterior correctly
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="4"> Reduces correlation length by over x10
+									</li>
+								</ul>
+								
+							</div>
+							<div class="col" >
+								<!-- <\!-- <div class="col"> -\-> -->
+								<div style="position:relative; width:700px; height:600px; top:50px; left:50px;  margin:1 auto">
+
+									<Img class="fragment current-visible plain" data-fragment-index="2" style="position:absolute;top:-50px;left:0px;" data-src="assets/vsbs_algo.png"/>
+									<img class="fragment current-visible plain" data-fragment-index="3"  style="position:absolute;top:0px;left:0px" data-src="assets/vsbs_posterior.png" />
+									<img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:-50px;left:0px;height:800px;width:800px" data-src="assets/vsbs_ac_gains.png" />
+								</div>
+								<div class="fragment" data-fragment-index="2" style="position:absolute; float:right; top:600px; right:00px; font-size: 20px; margin:0 auto">Modi et al. (in prep)</div>							
+								
+							</div>
+						</div>
+					</section>
+					
+				</section>
+
 
 				<!-- <section class="inverted" data-background="#000"> -->
 				<!-- 	    <h2>$64^3$? too small, it's never going to be useful for anything!</h2> -->
@@ -1558,18 +1625,19 @@ T				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> 
 							</div>
 							<div class="block-content">
 								<ul>
-									<li class="fragment fade-up"> <b class="alert">Cosmological Forward Modelling</b>.<br>
+									<li class="fragment fade-up"> <b class="alert">Cosmological forward modelling</b>.<br>
 										$\Longrightarrow$ Bypass the need for analytic likelihoods and goes towards optimal inference.<br>
 										$\Longrightarrow$ Reconstruction of latent cosmological fields 
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">Differentiable Simulations</b>.<br>
+									<li class="fragment fade-up"> <b class="alert">Differentiable simulations</b>.<br>
 										$\Longrightarrow$ FlowPM and Mesh-FlowPM <br>
 										$\Longrightarrow$ enable efficient simulator-based inference and hybrid physical/deep learning models.
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">Learned Optimization</b>.<br>
-										$\Longrightarrow$ Recurrent Inference Machines allow us to efficiently navigate complex, non-convex posteriors.
+									<li class="fragment fade-up"> <b class="alert">Learned optimization & sampling</b>.<br>
+										$\Longrightarrow$ Recurrent Inference Machines allow us to efficiently navigate complex, non-convex posteriors.<br>
+										$\Longrightarrow$ Variational Self Boosted Sampling reduces auto-correlation length by combining HMC and VI
 									</li>
 								</ul>
 							</div>
