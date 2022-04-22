@@ -607,12 +607,12 @@
 									<img   style="position:absolute;top:0;left:0;" data-src="assets/recontruth.png" height="500"/>
 								</div>
 								<div style="position:relative; width:1000px; height:300px; margin:0 auto;">
-									<div class="fragment " data-fragment-index="0" style="position:absolute;top:10px;left:600px;font-size:200%"> $\longrightarrow$ </div>
-									<img class="fragment plain" data-fragment-index="0" style="position:absolute;top:50px;left:500px;" data-src="assets/fnn.jpeg" height="150" />
+									<!-- <div class="fragment " data-fragment-index="0" style="position:absolute;top:10px;left:600px;font-size:200%"> $\longrightarrow$ </div> -->
+									<!-- <img class="fragment plain" data-fragment-index="0" style="position:absolute;top:50px;left:500px;" data-src="assets/fnn.jpeg" height="150" /> -->
 									<img class="fragment  current-visible" data-fragment-index="1"  style="position:absolute;top:0;left:0;" data-src="assets/reconinit.png" height="500"/>
 									<img class="fragment  current-visible " data-fragment-index="2"  style="position:absolute;top:0;left:0;" data-src="assets/reconrecon.png" height="500"/>
 								</div>
-								<div class="fragment" data-fragment-index="0" style="position:relative; float:right; left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
+								<div class="fragment" data-fragment-index="1" style="position:relative; float:right; top:10px; left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
 							</div>
 						</div>
 					</section>
@@ -665,8 +665,12 @@
 									<li class="fragment" data-fragment-index="0"> Damping due to non-linear evolution</li>
 									<br>
 
-									<li class="fragment" data-fragment-index="2"> Fisher information <br> <br>
-										$F_{ij} =  V_{\rm{eff}}\int_{k_{min}}^{k_{max}} \frac{\partial {\rm ln} P(k)}{\partial p_i} \frac{\partial {\rm ln} P(k)}{\partial p_j}\frac{4 \pi k^2}{2 (2\pi)^3} dk \quad \mathbf{\propto \,  r_c^4} $
+					<!-- 			<\!-- 	Transfer Function : $ t_f = \sqrt{\frac{P_{y}}{P_x} }$  -\-> -->
+									<li class="fragment" data-fragment-index="2">
+										Cross correlation : $ r_c = \frac{P_{xy}}{\sqrt{P_x \times P_y}}$ <br>
+									</li>
+									<li class="fragment" data-fragment-index="2"> Fisher information  <br> <br>
+										$\mathcal{I}_{ij} =  V_{\rm{eff}}\int_{k_{min}}^{k_{max}} \frac{\partial {\rm ln} P(k)}{\partial p_i} \frac{\partial {\rm ln} P(k)}{\partial p_j}\frac{4 \pi k^2}{2 (2\pi)^3} dk \quad {\propto \,  r_c^4} $
 									</li>
 
 
