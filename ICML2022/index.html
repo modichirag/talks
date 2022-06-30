@@ -1,0 +1,918 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Reconstruction of Cosmological Fields in Forward Model Framework</title>
+
+		<meta name="description" content="Cosmology Seminar preserntation at Perimeter">
+		<meta name="author" content="Chirag Modi">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" href="reveal.js/css/reset.css">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/darkenergy.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+		
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<!-- <section  data-background-image="assets/lsst_stills_0009_crop.jpg" > -->
+				<section  data-background-image="assets/backgroundweb1.jpg" data-background-size="2500px" data-background-color="black" data-background-position='right'> 
+				<!-- <section  data-background-image="assets/backgroundtrail2.jpg" data-background-size="cover" data-background-color="black" > -->
+
+						<div class="container">
+							<div class="title" style="border-radius: 20px; background-color:rgba(0, 0, 0, 0.4);">
+								<h2> Reconstructing the Universe with Variational Self Boosted Sampling </h2>
+								<h4>Machine Learning for Astrophysics, ICML 2022</h4>
+							</div>
+						</div>
+
+						<hr>
+						<div style="border-radius: 20px; background-color:rgba(0, 0, 0, 0);">
+							<div class="container" >
+								<div class="col">
+									<div align="left" style="margin-left: 20px;">
+										<br>
+										<h3>Chirag Modi</h3>
+										<p>Center for Computational Astronomy<br>Center for Computational Mathematics<br>Flatiron Institute</p>
+										
+										<br>
+										
+									</div>
+								</div>
+								<div class="col" align="right">
+									<img src="assets/fl_logo3.png" class="plain" height="150"></img>
+									<br>
+									<br>
+									<!-- <img src="assets/bids-logo2.png" class="plain" height="150"></img>
+									     <img src="assets/desc-logo-inv.png" class="plain" height="200"></img> -->
+								</div>
+							</div>
+						</div>
+				</section>
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<!-- <section data-background-image="assets/WMAP_timeline.jpg" data-background-size="1100px" data-background-color="black"> -->
+				<!-- 	<\!-- <h2 class='slide-title' style="position:absolute;top:0;"> the $\Lambda$CDM view of the Universe </h3> -\-> -->
+				<!-- 	<h2 class='slide-title' style="position:relative;top:0;"> the $\Lambda$CDM view of the Universe </h2> -->
+				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+
+				
+				<!-------------------------------------------------------------------------------->
+				<section>
+						<h3 class="slide-title"> Outline </h3>
+
+						
+						<div class="block ">
+							<div class="block-title">
+								Main parts of the talk
+							</div>
+							<div class="block-content">
+								<ul>
+									<li class="fragment fade-up"> Reconstruction of cosmological fields
+									</li>
+									<br>
+									<li class="fragment fade-up"> Current approaches to high dimensional inference <br>
+										$\rightarrow$ Hamiltonian Monte-Carlo (HMC) <br>
+										$\rightarrow$ Variational Inference (VI)
+									</li>
+									<br>
+									<li class="fragment fade-up"> <b class="alert">VBS </b>: Variational self-Boosted Sampling (VBS)
+									</li>
+									<br>
+									<li class="fragment fade-up"> Perspective on VBS
+									</li>
+								</ul>
+							</div>
+						</div>
+						<br>
+						
+						<br> <br> <br>
+				</section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
+				<!-- <section> -->
+	
+				<!-- 		<h3 class='slide-title'> Bayesian Reconstruction of Cosmological Fields </h3> -->
+
+
+				<!-- 		<\!-- <div> <b> Idea : </b> -\-> -->
+				<!-- 		<\!-- 	Given a forward model for the observed data, reconstruct latent fields for analysis by maximizing the posterior of the initial conditions  $(s)$ of the Universe </div> -\-> -->
+				<!-- 		<\!-- $$ \arg\max_s \  \log p(d | \mathcal{F}(s)) \ + \ p(s) $$ -\-> -->
+				<!-- 		<\!-- <\\!-- =  \underbrace{[d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)]}_{likelihood \,(\mathcal{E})} + \underbrace{s^\dagger \mathcal{S}^{-1} s}_{prior} $$ -\\-> -\-> -->
+
+				<!-- 		<div class="container"> -->
+
+				<!-- 			<div class="col"  style="flex: 0 0 32em;"> -->
+
+				<!-- 				<div class="block fragment " data-fragment-index="1"> -->
+				<!-- 					<div class="block-title"> -->
+				<!-- 						Goal -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content"> -->
+				<!-- 						Given a forward model for the cosmological observables such as galaxies, -->
+				<!-- 						use the observed data to reconstruct the Gaussian initial conditions at the beginning of the Universe -->
+				<!-- 					</div> -->
+
+				<!-- 				</div> -->
+				<!-- 				<br> -->
+				<!-- 				<div class="block fragment " data-fragment-index="2"> -->
+				<!-- 					<div class="block-title"> -->
+				<!-- 						Bayesian Approach -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content"> -->
+				<!-- 						Solving an inverse problem -->
+				<!-- 						$$ \arg\max_s \  \log p(d | \mathcal{F}(s)) \ + \ p(s) $$ -->
+
+				<!-- 					</div> -->
+
+				<!-- 				</div> -->
+				<!-- 				<br> -->
+
+				<!-- 				<div class="block fragment " data-fragment-index="3"> -->
+				<!-- 					<div class="block-title"> -->
+				<!-- 						Challenges -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content"> -->
+				<!-- 						<ul> -->
+				<!-- 							<li > Very expensive forward model -->
+				<!-- 							</li> -->
+				<!-- 							<li > High Dimensional Inverse Problem (&gt $10^8$ parameters)<br> -->
+				<!-- 							$\rightarrow$ Gradient Based Algorithm <br> -->
+				<!-- 								$\rightarrow$ Differentiable Forward Models</li> -->
+				<!-- 						</ul> -->
+				<!-- 					</div> -->
+
+				<!-- 				</div> -->
+				<!-- 				<br> -->
+
+				<!-- 			</div> -->
+				<!-- 			<div class="col" style="flex: 0 0 21em;"> -->
+				<!-- 				<img class="plain"  data-src="assets/all_fields.png" /> -->
+				<!-- 				<\!-- <div class="fragment " data-fragment-index="3">  -\-> -->
+				<!-- 				<\!-- $$ \arg\max_s \  \log p(d | \mathcal{F}(s)) \ + \ p(s) $$ -\-> -->
+				<!-- 				<\!-- <\\!-- =  \underbrace{[d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)]}_{likelihood \,(\mathcal{E})} + \underbrace{s^\dagger \mathcal{S}^{-1} s}_{prior} $$ -\\-> -\-> -->
+				<!-- 				<\!-- </div> -\-> -->
+				<!-- 				<\!-- <img class="plain"  data-src="assets/opt_cycle.png" /> -\-> -->
+				<!-- 			</div> -->
+				
+				<!-- </section> -->
+				
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
+				<!-------------------------------------------------------------------------------->
+				
+				<section>
+						<h3 class='slide-title'> Bayesian Reconstruction of Cosmological Fields </h3>
+
+
+						<img class="plain"  data-src="assets/all_fields.png" />
+
+						<div class="container">
+
+							<!-- <div class="col"  style="flex: 0 0 20em;"> -->
+
+							<div class="col"  style="flex">
+
+								<div class="block fragment " data-fragment-index="1">
+									<div class="block-title">
+										Goal
+									</div>
+									<div class="block-content"  style="font-size:20px">
+										Given a forward model $\mathcal{F}$ for the cosmological observables such as galaxies,
+										use the observed data to reconstruct the Gaussian initial conditions at the beginning of the Universe
+									</div>
+
+								</div>
+							</div>
+							<div class="col"  style="flex">
+								<div class="block fragment " data-fragment-index="2">
+									<div class="block-title">
+										Approach
+									</div>
+									<div class="block-content"  style="font-size:20px">
+										Solving an inverse problem
+										<br>
+										Posterior: $$  p(d | \mathcal{F}(s)) \ + \ p(s) $$
+										Use Bayesian inference algorithms
+									</div>
+
+								</div>
+							</div>
+							<div class="col"  style="flex">
+
+								<div class="block fragment " data-fragment-index="3">
+									<div class="block-title">
+										Challenges
+									</div>
+									<div class="block-content"  style="font-size:20px"
+										<ul>
+											<li > Expensive forward model
+											</li>
+											<li > High dimensions <br>&gt $512^3$ parameters to reconstruct density at all points in space
+										</ul>
+									</div>
+
+								</div>
+								
+							</div>
+						</div>
+
+							<!-- </div> -->
+							<!-- <div class="col" style="flex: 0 0 21em;"> -->
+							<!-- 	<img class="plain"  data-src="assets/all_fields.png" /> -->
+							<!-- 	<\!-- <div class="fragment " data-fragment-index="3">  -\-> -->
+							<!-- 	<\!-- $$ \arg\max_s \  \log p(d | \mathcal{F}(s)) \ + \ p(s) $$ -\-> -->
+							<!-- 	<\!-- <\\!-- =  \underbrace{[d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)]}_{likelihood \,(\mathcal{E})} + \underbrace{s^\dagger \mathcal{S}^{-1} s}_{prior} $$ -\\-> -\-> -->
+							<!-- 	<\!-- </div> -\-> -->
+							<!-- 	<\!-- <img class="plain"  data-src="assets/opt_cycle.png" /> -\-> -->
+							<!-- </div> -->
+				
+				</section>
+				</section>
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<!-- <section> -->
+				<!-- 	<div style="font-size:80px">Galaxy Clustering Surveys</div> -->
+				<!-- </section> -->
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section>
+
+					<section>
+						<h3 class='slide-title'> Hamiltonian Monte Carlo (HMC) - baseline </h3>
+						
+						<br>
+						<i> Generate samples from the posterior distribution $\pi$  </i>
+						<br>
+						<br>
+						<div class="container" style="font-size:20px">
+
+							<div class="col">
+								<ul>
+									<li class="fragment" data fragment-index="1"> reinterpret the parameters as a position vector $(q)$ with associated potential energy function
+										$$U(q) = -\log \pi(q)$$
+									</li> 
+									<li class="fragment" data fragment-index="2">introduce an auxiliary momentum $(p)$ for each parameter & construct Hamiltonian
+										$$H(x) = H(q, p) = U(q) + \frac{1}{2}p^TMp$$
+									</li>
+									<li class="fragment" data fragment-index="3"> to generate samples, simulate a Markov chain by evolving the system with Hamiltonian equations
+									</li>
+									<br>
+									<li class="fragment" data fragment-index="4">accept/reject to maintain detailed balance
+										$$\alpha = \mathrm{min}(1, \exp(H(x_0) - H(x_1))$$
+									</li>
+								</ul>
+							</div>		
+														
+							<div class="col" >
+								<div style="position:relative; width:700px; height:500px; top:200px; left:50px;  margin:1 auto">
+									
+									<Img  style="position:absolute;top:-150px;left:0px;" data-src="assets/hmc_algo.png"/>
+
+								</div>
+								<div style="position:absolute; float:right; top:650px; right:00px; font-size: 20px; margin:0 auto">Padmanabhan et al. 2012</div>							
+								
+							</div>
+							
+						</div>
+					</section>
+				
+				
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+					<section>
+						<h3 class='slide-title'> Validating the posterior </h3>
+
+						
+						<div class="container"  style="font-size:20px">
+
+							<div class="col">
+								<ul>
+									<li > Compare the samples generated with the true initial conditions in terms of lower dimensional summary statistics - <em> power spectrum </em>
+									</li> 
+									<br>									
+									<li class="fragment" data-fragment-index="1" > Derived quantities
+										<ul class="fragment" data-fragment-index="1"> $\rightarrow$ Cross Correlation ($r_c$)
+											<div style="text-align:center">
+											$$
+												r_c(k) = \frac{P_{ab}(k)}{\sqrt{P_a(k)P_b(k)}}
+											$$
+											</div>
+											Expected to be 1 on large scales, 0 on small scales
+										</ul>
+										<br>
+										<ul class="fragment" data-fragment-index="2">$\rightarrow$ Transfer Function ($t_f$)
+											$$t_f(k) = \sqrt{\frac{P_a(k)}{P_b(k)}}$$
+											Expected to be 1 on all scales
+										</ul>
+									</li>
+								</ul>
+							</div>		
+														
+							<div class="col" >
+								<!-- <div class="col"> -->
+								<img  class="fragment plain" data-fragment-index="3" data-src="assets/hmc_posterior.png" height="300"/>
+								<div class="fragment plain" data-fragment-index="3"
+								     style="position:absolute; float:right; top:520px; right:110px; font-size: 20px; margin:0 auto">
+									Configuration: <br>3D dark matter density data, <br>L = 200 Mpc/h boxsize, <br>N = 64 cells per side, <br>Gaussian noise (equal to Poisson shot noise)
+								</div>							
+																
+							</div>
+						
+						</div>
+						<br><br>
+
+					</section>
+
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+					<section>
+						<h3 class='slide-title'> Cost of the algorithm </h3>
+
+						<div  style="font-size:20px">
+							Auto-correlation length ($a_c$) for every mode i.e. $k$-bin
+							$$
+							\rho_j(t)  = \frac{1}{n} \sum_{i=t+1}^n (P_i(k_j) - \bar{P}(k_j)) (P_{i-t}(k_j) - \bar{P}(k_j)); \quad a_c :=  \rho_j(a_c) \leq 0.1
+							$$
+
+						</div>
+						
+						<img  class="fragment plain" data-fragment-index="1" data-src="assets/hmc_ac.png" height="300"/>
+						
+						<div class="container"  style="font-size:20px">
+							
+							<ul>
+								<li class="fragment" data-fragment-index="2" >
+									Longest auto-correlation length ~ 1000
+								</li>
+								<li class="fragment" data-fragment-index="2" >
+									Number of leapfrog steps per proposal ~ 50
+								</li>
+								<li class="fragment" data-fragment-index="3" >
+									<b class="alert">>10000 simulations </b> for a single independent sample!!
+								</li>
+								
+							</ul>
+						</div>
+
+					</section>
+
+				</section>
+				
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<!-- <section> -->
+				<!-- 	<div style="font-size:80px">21-cm Intensity Mapping Surveys</div> -->
+				<!-- </section> -->
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section >
+						
+					<section >
+						<h3 class='slide-title'>Variational Inference</h3>
+
+						<em> Approximate the posterior with a parametric distribution</em>
+						<br>
+						<br>
+						<div class="container">
+							<br>
+							<div class="col"  style="flex:0 0 20em;">
+
+								<div class="block fragment " data-fragment-index="1">
+									<div class="block-title">
+										Ingredients
+									</div>
+									<div class="block-content" style="font-size:20px">
+										<ul>
+											<li> Parametric distribution $q(z; \nu)$ with parameters $\nu$ <br>
+												$\rightarrow$ Normalizing flow with Fourier space convolutions
+											</li>
+											<br>
+											<li> Divergence (loss function) to compare distributions
+											</li>
+										</ul>
+										
+									</div>
+
+								</div>
+								<br>
+								<div class="block fragment " data-fragment-index="2">
+									<div class="block-title">
+										Backward Kullback Leibler Divergence
+									</div>
+									<div class="block-content" style="font-size:20px">
+										\begin{align}
+										D_{\mathrm{KL}}(q||p) &= \mathbb{E}_{q}(\log q - \log p) \nonumber \\
+										&= \mathbb{E}_{q}(\log q(z; nu) - \log \pi(z| y_0)) \nonumber \\
+										& \approx \sum_{z_i \sim q(z)} \bigl[ \log q(z_i; nu) - \log \pi(z_i | y_0) \bigr] \nonumber \\
+										& \leq \sum_{z_i \sim q(z)} \bigl[ \log q(z_i; nu) - \log \pi(y_0 | z_i) - \log \pi(z_i) \bigr]
+										\end{align}
+									</div>
+
+								</div>
+
+
+							</div>
+							<div class="col" style="flex:0 0 30em;">
+								<img class="fragment plain" data-fragment-index="2"  data-src="assets/bbvi_algo.png" width="1000"/>
+							</div>
+						</div>
+						
+					</section>
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+
+					<section >
+						<h3 class='slide-title'>validating variational posterior</h3>
+						<div class="container">
+							<br>
+							<div class="col"  style="flex">
+								<br>
+								<div class="block fragment " data-fragment-index="1">
+									<div class="block-title">
+										Possible reasons
+									</div>
+									<div class="block-content" style="font-size:20px">
+										<ul>
+											<li class=" fragment " data-fragment-index="1"> parametric family is not flexible enough (not the case)
+											</li>
+											<li class="fragment " data-fragment-index="1"> divergence function is not appropriate (is the case)
+											</li>
+										</ul>
+										
+									</div>
+
+								</div>
+								<br>
+								<br>
+								<div class="block fragment " data-fragment-index="2">
+									<div class="block-title">
+										Forward Kullback Leibler Divergence
+									</div>
+									<div class="block-content" style="font-size:20px">
+										\begin{align}
+										D_{\mathrm{KL}}(p||q) &= \mathbb{E}_{p}(\log p - \log q) \nonumber \\
+										&= \mathbb{E}_{\pi(z| y_0)}(\log \pi(z| y_0) - \log q(z; nu)) \nonumber \\
+										& \approx \sum_{z_i \sim \pi(z| y_0)} \bigl[ \log \pi(z_i | y_0) - \log q(z_i; nu)\bigr] \nonumber
+										\end{align}
+									</div>
+									<div class=" fragment " data-fragment-index="3" style="text-align:center">
+										But requires generating samples from the posterior!!
+									</div>
+
+								</div>
+
+
+							</div>
+							<div class="col" style="flex">
+								<img class="plain"   data-src="assets/vi_posterior.png" />
+							</div>
+						</div>
+						
+
+					</section>
+
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<section class="inverted" data-background="#000">
+					<h2>How to combine HMC and VI for the best of both worlds?</h2>
+				</section>
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<section>
+
+	
+					<section>
+						<h3 class="slide-title">Variational self-Booseted Sampling (VBS)</h3>
+						<br>
+						<!-- <em> Combine HMC and VI</em> -->
+
+						<div class="container">
+							<br>
+							<div class="col"  style="flex">
+
+								<div class="block fragment " data-fragment-index="1">
+									<div class="block-title">
+										Strategy
+									</div>
+									<div class="block-content" style="font-size:20px">
+										<ul>
+											<li class=" plain "> Use HMC samples to train $q$ on the fly
+											</li>
+											<li class="plain " > Generate proposals from $q$ to break
+												correlations in the Markov chain
+											</li>
+										</ul>
+										
+									</div>
+
+								</div>
+								<br>
+								<div class="block fragment " data-fragment-index="2">
+									<div class="block-title">
+										Two Phase Algorithm
+									</div>
+									<div class="block-content" style="font-size:20px">
+										<ul>
+											<li class=" fragment " data-fragment-index="2">Phase I- Learning  <br>
+												$\rightarrow$ HMC to generate samples <br>
+												$\rightarrow$ use these samples to learn $q$ with forward KL loss
+											</li>
+											<br>
+											<li class=" fragment " data-fragment-index="3">Phase II- Hybrid sampling <br>
+												$\rightarrow$ alternate between making proposals from HMC kernel and $q$ <br>
+												$\rightarrow$ Keep updating $q$  with all samples
+											</li>
+										</ul>
+									</div>
+
+								</div>
+
+
+							</div>
+							<div class="col" style="flex">
+								<img class="plain fragment" data-fragment-index="2"   data-src="assets/vsbs_algo.png" />
+							</div>
+						</div>
+						
+					</section>
+
+					
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+				
+					<section>
+						<h3 class='slide-title'>Validating VBS posterior</h3>
+					
+						<div class="container" style="font-size:20px">
+							<br>
+							<div class="col"  style="flex">
+								
+								<ul>
+									<li > Cross correlation $r_c$ is 1 on large scales<br>
+										&  drops to zero on small scales
+									</li>
+									<br>
+									<li > Transfer function $t_f$ is 1 on all scales
+									</li>
+									<br>
+									<li class="fragment " data-fragment-index="1"> Distribution of transfer function for VBS samples agrees with HMC samples
+									</li>
+								</ul>
+								
+
+							</div>
+							<div class="col" style="flex">
+								<img class="plain"   data-src="assets/vsbs_posterior.png" />
+							</div>
+						</div>
+						<img class="plain fragment" data-fragment-index="1"  data-src="assets/vsbs_hmc_posterior.png" height="270"/>
+			
+					</section>
+
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+				
+					<section>
+						<h3 class='slide-title'>Effeciency gain with VBS</h3>
+					
+						<div class="container" style="font-size:20px">
+							<div class="col"  style="flex">
+								
+								<ul>
+									<br>
+									<li > ~50x gains for the fiducial configuration <br>
+										L = 200 Mpc/h, N = 64 
+									</li>
+									<br><br><br><br><br><br>
+									<li class="fragment " data-fragment-index="1"> 	~10x gains for lower signal-to-noise configuration <br>
+										L = 500 Mpc/h, N = 64 
+
+									</li>
+									<br><br><br><br><br><br>
+									<li class="fragment " data-fragment-index="2">	Equivalent gains after scaling up to a higher dimensional problem <br>
+										L = 1000 Mpc/h, N = 128
+									</li>
+									<br><br><br><br>
+								</ul>
+								
+
+							</div>
+							<div class="col" style="flex">
+								<!-- <img class="plain"   data-src="assets/vsbs_ac_gains.png" /> -->
+								<img class="plain"   data-src="assets/vsbs_ac_200_64.png" />
+								<img class="plain fragment " data-fragment-index="1"   data-src="assets/vsbs_ac_500_64.png" />
+								<img class="plain fragment " data-fragment-index="2"   data-src="assets/vsbs_ac_1000_128.png" />
+							</div>
+						</div>
+			
+					</section>
+
+
+
+				</section>
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+					
+					<section>
+						<h3 class="slide-title"> Taking a closer look</h3>
+
+						<div class="container" style="font-size:20px">
+							<div class="col"  style="flex">
+
+								<ul>
+									<li > Distribution of the transfer function of VBS samples and HMC samples is similar
+									</li>
+									<br>
+									<li class="fragment " data-fragment-index="1">  Simply training the variational distribution $q$ with target samples (Forward KL loss) does not perform as well								</li>
+									<br>
+									<li class="fragment " data-fragment-index="2">	Short HMC chains are important to correct proposals generated from variational distribution
+									</li>
+									<br>
+									<li class="fragment " data-fragment-index="3">	Howeer the sample quality of VBS samples is still be lower than HMC samples
+									</li>
+								</ul>
+
+
+							</div>
+							<div class="col" style="flex">
+								<!-- <img class="plain"   data-src="assets/vsbs_ac_gains.png" /> -->
+								<img class="plain"   data-src="assets/vsbs_sample_prob.png" />
+							</div>
+						</div>
+						
+					
+					</section>
+
+
+								
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+					<section>
+					
+						<h3 class="slide-title"> Perspectives on VBS</h3>
+						
+						<br>
+								$$ \alpha = \mathrm{min}\Bigg(1, \frac{\pi^*(z_2)q(z_1;\nu)}{\pi^*(z_1)q(z_2;\nu)} \Bigg)$$
+						<br>
+						<div style="font-size:20px">
+							<div class="fragment " data-fragment-index="1" style="text-align:left">
+								Why VBS samples are of lower quality? <br>
+								
+								$\rightarrow$ Rescale the target distribution due to high variance in acceptance probability
+								
+							</div>
+							<br>
+							<br>
+							<div class="fragment " data-fragment-index="2" style="text-align:left">
+								Not learning the target distribution! <br>
+								
+								$\rightarrow$ learning a good proposal distribution for HMC <br>
+								$\rightarrow$ performing variational inference with forward KL loss, and corrections with short MCMC chains
+							</div>
+						</div>
+						<br>
+						<br>
+
+					
+					</section>
+				</section>
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section>
+						<h3 class="slide-title"> Summary </h3>
+						
+						<br>
+						<div class="block ">
+							<div class="block-title">
+								Takeaways
+							</div>
+							<div class="block-content" style="font-size:20px">
+								<ul>
+									<li class="fragment fade-up"> <b class="alert">Reconstruction of cosmological fields</b><br>
+										$\rightarrow$ High dimensional inference problem with expensive forward models
+									</li>
+									<br>
+									<li class="fragment fade-up"> <b class="alert">Hamiltonian Monte Carlo</b><br>
+										$\rightarrow$ Asymptotically accurate but slow, generates correlated samples
+									</li>
+									<br>
+									<li class="fragment fade-up"> <b class="alert">Variational Inference</b><br>
+										$\rightarrow$ Fast, but can be inaccurate due to parametric distribution and the divergence used
+									</li>
+									<br>
+									<li class="fragment fade-up"> <b class="alert">Variational self-Boosted Sampling</b><br>
+										$\rightarrow$ combine HMC and VI for the best of both worlds <br>
+										$\rightarrow$ learning better proposal for HMC <br>
+										$\rightarrow$ learn variational distribution with foward KL, correct it with short chains <br>
+									</li>
+									<br>
+									<li class="fragment fade-up"> <b class="alert">10-40x gains with VBS over HMC in terms of auto-correlation length </b><br>
+										$\rightarrow$ larger gains with higher signal-to-noise in the data  <br>
+										$\rightarrow$ larger gains with higher dimensional problems <br>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<br>
+						<p class="fragment">Thank you ! </p>
+						<br> <br> <br>
+				</section>
+				
+				<!-- <section > -->
+					
+				<!-- 	<h3 class='slide-title'>Summary</h3> -->
+					
+
+				<!-- 	<br> -->
+				<!-- 	<div class="block fragment " style="width:1200px"> -->
+				<!-- 		<div class="block-title" > -->
+				<!-- 			Forward Model Framework -->
+				<!-- 		</div> -->
+				<!-- 		<div class="block-content"> -->
+				<!-- 			<ul> -->
+				<!-- 				<li> Develop novel inference methodologies for future surveys </li> -->
+				<!-- 				<li> FlowPM: differentiable PM simulations in ML framework </li> -->
+				<!-- 				<li> Probabilistic forward models with ML enhanced cosmological simulations </li> -->
+				<!-- 		</div> -->
+				<!-- 	</div> -->
+				<!-- 	<br> -->
+				<!-- 	<div class="block fragment " style="width:1200px" > -->
+				<!-- 		<div class="block-title" > -->
+				<!-- 			Reconstruction from galaxy surveys -->
+				<!-- 		</div> -->
+				<!-- 		<div class="block-content"> -->
+				<!-- 			<ul> -->
+				<!-- 				<li> Novel neural halo model and likelihood models </li> -->
+				<!-- 				<li> Improve over standard reconstruction for BAO analysis </li> -->
+				<!-- 				<li> Reconstruct Gaussian initial conditions and velocity field for cosmological analyses </li> -->
+				<!-- 		</div> -->
+				<!-- 	</div> -->
+				<!-- 	<br> -->
+				<!-- 	<div class="block fragment " style="width:1200px"> -->
+				<!-- 		<div class="block-title" class="fragment"> -->
+				<!-- 			Reconstruction from 21cm-intensity mapping surveys -->
+				<!-- 		</div> -->
+				<!-- 		<div class="block-content"> -->
+				<!-- 			<ul> -->
+				<!-- 				<li> Lagrangian bias model for the data </li> -->
+				<!-- 				<li> Denoising - Recover large scale modes lost in the wedge  </li> -->
+				<!-- 				<li> Cross correlation with photometric surveys like LSST and CMB lensing  </li> -->
+				<!-- 		</div> -->
+				<!-- 	</div> -->
+				<!-- 	<br> -->
+				<!-- 	 <div class='fragment' style="font-size:30px"> Thank you! </div> -->
+					
+				<!-- </section> -->
+
+					<!-------------------------------------------------------------------------------->
+					
+				</div>
+			</div>
+			
+
+		<style>
+		<!--    .reveal .slides { -->
+		<!--     border: 5px solid red; -->
+		<!--     min-height: 100%; -->
+		<!--     width: 128mm; -->
+		<!--     height: 96mm; -->
+		<!-- } -->
+		.reveal .box {
+			background-color: #191919;
+			margin-left: 10px;
+			margin-right: 10px;
+			text-align: center;
+		}
+		.reveal .box-title {
+			background-color: #333333;
+			padding:1px 1px 1px 1px;
+  		color: #FFAA7F;
+  		font-weight: bold;
+		}
+
+		
+		.reveal .block {
+			background-color: #191919;
+			margin-left: 20px;
+			margin-right: 20px;
+			text-align: left;
+			padding-bottom: 0.1em;
+		}
+		.reveal .block-title {
+			background-color: #333333;
+			padding:8px 35px 8px 14px;
+  		color: #FFAA7F;
+  		font-weight: bold;
+		}
+		.reveal .block-content {
+			padding:8px 35px 8px 14px;
+		}
+		.reveal .slide-title {
+			border-left: 5px solid white;
+			text-align: left;
+			margin-left: 20px;
+			padding-left: 20px;
+		}
+		.reveal .slide-title-black {
+			border-left: 5px solid black;
+			text-align: left;
+			margin-left: 20px;
+			padding-left: 20px;
+		}
+		.reveal .alert {
+  		color: #FFAA7F;
+  		font-weight: bold;
+		}
+		.reveal .inverted {
+			filter: invert(100%);
+		}
+		</style>
+
+
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+
+				//center: false,
+				hash: true,
+				// Visibility rule for backwards navigation arrows; "faded", "hidden"
+				// or "visible"
+				controlsBackArrows: 'hidden',
+				// Display a presentation progress bar
+				progress: true,
+				// Display the page number of the current slide
+				slideNumber: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1280,
+				height: 720,
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 1.5,
+
+				dependencies: [
+					{ src: 'reveal.js/plugin/markdown/marked.js' },
+					{ src: 'reveal.js/plugin/markdown/markdown.js' },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true },
+					{ src: 'reveal.js/plugin/math/math.js', async: true },
+					{ src: 'reveal.js/plugin/reveal.js-d3/reveald3.js' },
+					{ src: 'reveal.js/plugin/reveal.js-plugins/chart/Chart.min.js' },
+					{ src: 'reveal.js/plugin/reveal.js-plugins/chart/csv2chart.js' },
+				]
+			});
+		</script>
+	</body>
+</html>
+
+
