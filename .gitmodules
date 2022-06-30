@@ -21,4 +21,5 @@
 	url = https://github.com/modichirag/reveal.js
 [submodule "ICML2022/reveal.js"]
 	path = ICML2022/reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js
+	
