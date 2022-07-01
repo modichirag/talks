@@ -96,18 +96,18 @@
 							</div>
 							<div class="block-content">
 								<ul>
-									<li class="fragment fade-up"> What do we mean by reconstruction of cosmological fields?
+									<li class="plain"> What do we mean by reconstruction of cosmological fields?
 									</li>
 									<br>
-									<li class="fragment fade-up"> Current approaches to high dimensional inference <br>
+									<li class="plain"> Current approaches to high dimensional inference <br>
 										$\rightarrow$ Hamiltonian Monte-Carlo (HMC) <br>
 										$\rightarrow$ Variational Inference (VI)
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">VBS </b>: Variational self-Boosted Sampling (VBS)
+									<li class="plain"> <b class="alert">VBS </b>: Variational self-Boosted Sampling (VBS)
 									</li>
 									<br>
-									<li class="fragment fade-up"> Perspective on VBS
+									<li class="plain"> Perspective on VBS
 									</li>
 								</ul>
 							</div>
@@ -121,71 +121,6 @@
 				<!-------------------------------------------------------------------------------->
 				<!-- <\!-------------------------------------------------------------------------------\-> -->
 				<!-- <section> -->
-	
-				<!-- 		<h3 class='slide-title'> Bayesian Reconstruction of Cosmological Fields </h3> -->
-
-
-				<!-- 		<\!-- <div> <b> Idea : </b> -\-> -->
-				<!-- 		<\!-- 	Given a forward model for the observed data, reconstruct latent fields for analysis by maximizing the posterior of the initial conditions  $(s)$ of the Universe </div> -\-> -->
-				<!-- 		<\!-- $$ \arg\max_s \  \log p(d | \mathcal{F}(s)) \ + \ p(s) $$ -\-> -->
-				<!-- 		<\!-- <\\!-- =  \underbrace{[d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)]}_{likelihood \,(\mathcal{E})} + \underbrace{s^\dagger \mathcal{S}^{-1} s}_{prior} $$ -\\-> -\-> -->
-
-				<!-- 		<div class="container"> -->
-
-				<!-- 			<div class="col"  style="flex: 0 0 32em;"> -->
-
-				<!-- 				<div class="block fragment " data-fragment-index="1"> -->
-				<!-- 					<div class="block-title"> -->
-				<!-- 						Goal -->
-				<!-- 					</div> -->
-				<!-- 					<div class="block-content"> -->
-				<!-- 						Given a forward model for the cosmological observables such as galaxies, -->
-				<!-- 						use the observed data to reconstruct the Gaussian initial conditions at the beginning of the Universe -->
-				<!-- 					</div> -->
-
-				<!-- 				</div> -->
-				<!-- 				<br> -->
-				<!-- 				<div class="block fragment " data-fragment-index="2"> -->
-				<!-- 					<div class="block-title"> -->
-				<!-- 						Bayesian Approach -->
-				<!-- 					</div> -->
-				<!-- 					<div class="block-content"> -->
-				<!-- 						Solving an inverse problem -->
-				<!-- 						$$ \arg\max_s \  \log p(d | \mathcal{F}(s)) \ + \ p(s) $$ -->
-
-				<!-- 					</div> -->
-
-				<!-- 				</div> -->
-				<!-- 				<br> -->
-
-				<!-- 				<div class="block fragment " data-fragment-index="3"> -->
-				<!-- 					<div class="block-title"> -->
-				<!-- 						Challenges -->
-				<!-- 					</div> -->
-				<!-- 					<div class="block-content"> -->
-				<!-- 						<ul> -->
-				<!-- 							<li > Very expensive forward model -->
-				<!-- 							</li> -->
-				<!-- 							<li > High Dimensional Inverse Problem (&gt $10^8$ parameters)<br> -->
-				<!-- 							$\rightarrow$ Gradient Based Algorithm <br> -->
-				<!-- 								$\rightarrow$ Differentiable Forward Models</li> -->
-				<!-- 						</ul> -->
-				<!-- 					</div> -->
-
-				<!-- 				</div> -->
-				<!-- 				<br> -->
-
-				<!-- 			</div> -->
-				<!-- 			<div class="col" style="flex: 0 0 21em;"> -->
-				<!-- 				<img class="plain"  data-src="assets/all_fields.png" /> -->
-				<!-- 				<\!-- <div class="fragment " data-fragment-index="3">  -\-> -->
-				<!-- 				<\!-- $$ \arg\max_s \  \log p(d | \mathcal{F}(s)) \ + \ p(s) $$ -\-> -->
-				<!-- 				<\!-- <\\!-- =  \underbrace{[d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)]}_{likelihood \,(\mathcal{E})} + \underbrace{s^\dagger \mathcal{S}^{-1} s}_{prior} $$ -\\-> -\-> -->
-				<!-- 				<\!-- </div> -\-> -->
-				<!-- 				<\!-- <img class="plain"  data-src="assets/opt_cycle.png" /> -\-> -->
-				<!-- 			</div> -->
-				
-				<!-- </section> -->
 				
 				<!-- <\!-------------------------------------------------------------------------------\-> -->
 				<!-------------------------------------------------------------------------------->
@@ -229,7 +164,7 @@
 									<div class="block-content"  style="font-size:20px">
 										Solve an inverse problem with the posterior
 										<br>
-										$$  p(d | \mathcal{F}(s)) \ + \ p(s) $$
+										$$  p(s|d) \propto p(d | \mathcal{F}(s)) \ + \ p(s) $$
 										<p style="text-align:center" > Use Bayesian inference algorithms </p>
 									</div>
 
@@ -245,7 +180,7 @@
 										<ul>
 											<li > Expensive & non-linear forward models
 											</li>
-											<li > High dimensional inference <br>&gt $512^3$ parameters to reconstruct density at all points in space
+											<li > High dimensional inference <br>For e.g. &gt $512^3$ parameters to reconstruct density at all points in space
 										</ul>
 									</div>
 
@@ -278,7 +213,7 @@
 				<section>
 
 					<section>
-						<h3 class='slide-title'> Hamiltonian Monte Carlo (HMC) - baseline </h3>
+						<h3 class='slide-title'> Approach 1: Hamiltonian Monte Carlo (HMC) - baseline </h3>
 						
 						<br>
 						<i> Generate samples from the posterior distribution $\pi$  </i>
@@ -288,16 +223,17 @@
 
 							<div class="col">
 								<ul>
-									<li class="fragment" data fragment-index="1"> reinterpret the parameters as a position vector $(q)$ with associated potential energy function
+									<li class="fragment" data fragment-index="1"> Construct a Hamiltonian system with parameters as a position vector $(q)$ and associated potential energy
+										function as the negative log-posterior
 										$$U(q) = -\log \pi(q)$$
-									</li> 
-									<li class="fragment" data fragment-index="2">introduce an auxiliary momentum $(p)$ for each parameter & construct Hamiltonian
-										$$H(x) = H(q, p) = U(q) + \frac{1}{2}p^TMp$$
 									</li>
-									<li class="fragment" data fragment-index="3"> to generate samples, simulate a Markov chain by evolving the system with Hamiltonian equations
+									<!-- <li class="fragment" data fragment-index="2">introduce an auxiliary momentum $(p)$ for each parameter & construct Hamiltonian -->
+									<!-- 	$$H(x) = H(q, p) = U(q) + \frac{1}{2}p^TMp$$ -->
+									<!-- </li> -->
+									<li class="fragment" data fragment-index="2"> Generate proposals for the Markov chain by simulating Hamiltonian dynamics
 									</li>
 									<br>
-									<li class="fragment" data fragment-index="4">accept/reject to maintain detailed balance
+									<li class="fragment" data fragment-index="3">accept/reject proposals to maintain detailed balance
 										$$\alpha = \mathrm{min}(1, \exp(H(x_0) - H(x_1))$$
 									</li>
 								</ul>
@@ -412,17 +348,130 @@
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
+				<!-- <section > -->
+						
+				<!-- 	<section > -->
+				<!-- 		<h3 class='slide-title'>Variational Inference</h3> -->
+
+				<!-- 		<em> Approximate the posterior with a parametric distribution</em> -->
+				<!-- 		<br> -->
+				<!-- 		<br> -->
+				<!-- 		<div class="container"> -->
+				<!-- 			<br> -->
+				<!-- 			<div class="col"  style="flex:0 0 20em;"> -->
+
+				<!-- 				<div class="block fragment " data-fragment-index="1"> -->
+				<!-- 					<div class="block-title"> -->
+				<!-- 						Ingredients -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content" style="font-size:20px"> -->
+				<!-- 						<ul> -->
+				<!-- 							<li> Parametric distribution $q(z; \nu)$ with parameters $\nu$ <br> -->
+				<!-- 								$\rightarrow$ Normalizing flow with Fourier space convolutions -->
+				<!-- 							</li> -->
+				<!-- 							<br> -->
+				<!-- 							<li> Divergence (loss function) to compare distributions -->
+				<!-- 							</li> -->
+				<!-- 						</ul> -->
+										
+				<!-- 					</div> -->
+
+				<!-- 				</div> -->
+				<!-- 				<br> -->
+				<!-- 				<div class="block fragment " data-fragment-index="2"> -->
+				<!-- 					<div class="block-title"> -->
+				<!-- 						Backward Kullback Leibler Divergence -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content" style="font-size:20px"> -->
+				<!-- 						\begin{align} -->
+				<!-- 						D_{\mathrm{KL}}(q||p) &= \mathbb{E}_{q}(\log q - \log p) \nonumber \\ -->
+				<!-- 						&= \mathbb{E}_{q}(\log q(z; nu) - \log \pi(z| y_0)) \nonumber \\ -->
+				<!-- 						& \approx \sum_{z_i \sim q(z)} \bigl[ \log q(z_i; nu) - \log \pi(z_i | y_0) \bigr] \nonumber \\ -->
+				<!-- 						& \leq \sum_{z_i \sim q(z)} \bigl[ \log q(z_i; nu) - \log \pi(y_0 | z_i) - \log \pi(z_i) \bigr] -->
+				<!-- 						\end{align} -->
+				<!-- 					</div> -->
+
+				<!-- 				</div> -->
+
+
+				<!-- 			</div> -->
+				<!-- 			<div class="col" style="flex:0 0 30em;"> -->
+				<!-- 				<img class="fragment  plain" data-fragment-index="2"  data-src="assets/bbvi_algo.png" width="1000"/> -->
+				<!-- 			</div> -->
+				<!-- 		</div> -->
+						
+				<!-- 	</section> -->
+				<!-- 	<\!-------------------------------------------------------------------------------\-> -->
+				<!-- 	<\!-------------------------------------------------------------------------------\-> -->
+
+				<!-- 	<section > -->
+				<!-- 		<h3 class='slide-title'>Validating variational posterior</h3> -->
+				<!-- 		<div class="container"> -->
+				<!-- 			<br> -->
+				<!-- 			<div class="col"  style="flex"> -->
+				<!-- 				<br> -->
+				<!-- 				<div class="block fragment " data-fragment-index="1"> -->
+				<!-- 					<div class="block-title"> -->
+				<!-- 						Possible reasons -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content" style="font-size:20px"> -->
+				<!-- 						<ul> -->
+				<!-- 							<li class=" fragment " data-fragment-index="1"> parametric family is not flexible enough (not the case) -->
+				<!-- 							</li> -->
+				<!-- 							<li class="fragment " data-fragment-index="1"> divergence function is not appropriate (is the case) -->
+				<!-- 							</li> -->
+				<!-- 						</ul> -->
+										
+				<!-- 					</div> -->
+
+				<!-- 				</div> -->
+				<!-- 				<br> -->
+				<!-- 				<br> -->
+				<!-- 				<div class="block fragment " data-fragment-index="2"> -->
+				<!-- 					<div class="block-title"> -->
+				<!-- 						Forward Kullback Leibler Divergence -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content" style="font-size:20px"> -->
+				<!-- 						\begin{align} -->
+				<!-- 						D_{\mathrm{KL}}(p||q) &= \mathbb{E}_{p}(\log p - \log q) \nonumber \\ -->
+				<!-- 						&= \mathbb{E}_{\pi(z| y_0)}(\log \pi(z| y_0) - \log q(z; nu)) \nonumber \\ -->
+				<!-- 						& \approx \sum_{z_i \sim \pi(z| y_0)} \bigl[ \log \pi(z_i | y_0) - \log q(z_i; nu)\bigr] \nonumber -->
+				<!-- 						\end{align} -->
+				<!-- 					</div> -->
+				<!-- 					<div class=" fragment " data-fragment-index="3" style="text-align:center"> -->
+				<!-- 						But requires generating samples from the posterior!! -->
+				<!-- 					</div> -->
+
+				<!-- 				</div> -->
+
+
+				<!-- 			</div> -->
+				<!-- 			<div class="col" style="flex"> -->
+				<!-- 				<img class="plain"   data-src="assets/vi_posterior.png" /> -->
+				<!-- 			</div> -->
+				<!-- 		</div> -->
+						
+
+				<!-- 	</section> -->
+
+				<!-- </section> -->
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
 				<section >
 						
-					<section >
-						<h3 class='slide-title'>Variational Inference</h3>
+						<h3 class='slide-title'>Approach 2: Variational Inference (VI)</h3>
 
 						<em> Approximate the posterior with a parametric distribution</em>
 						<br>
 						<br>
 						<div class="container">
 							<br>
-							<div class="col"  style="flex:0 0 20em;">
+							<!-- <div class="col"  style="flex:0 0 20em;"> -->
+							<div class="col">
 
 								<div class="block fragment " data-fragment-index="1">
 									<div class="block-title">
@@ -442,6 +491,7 @@
 
 								</div>
 								<br>
+								<br>
 								<div class="block fragment " data-fragment-index="2">
 									<div class="block-title">
 										Backward Kullback Leibler Divergence
@@ -457,41 +507,11 @@
 
 								</div>
 
-
 							</div>
-							<div class="col" style="flex:0 0 30em;">
-								<img class="fragment plain" data-fragment-index="2"  data-src="assets/bbvi_algo.png" width="1000"/>
-							</div>
-						</div>
-						
-					</section>
-					<!-------------------------------------------------------------------------------->
-					<!-------------------------------------------------------------------------------->
+							<div class="col" >
+								<img class="fragment plain" data-fragment-index="3"  style="position:relative; top:-40px" data-src="assets/vi_posterior.png" width="500"/>
 
-					<section >
-						<h3 class='slide-title'>Validating variational posterior</h3>
-						<div class="container">
-							<br>
-							<div class="col"  style="flex">
-								<br>
-								<div class="block fragment " data-fragment-index="1">
-									<div class="block-title">
-										Possible reasons
-									</div>
-									<div class="block-content" style="font-size:20px">
-										<ul>
-											<li class=" fragment " data-fragment-index="1"> parametric family is not flexible enough (not the case)
-											</li>
-											<li class="fragment " data-fragment-index="1"> divergence function is not appropriate (is the case)
-											</li>
-										</ul>
-										
-									</div>
-
-								</div>
-								<br>
-								<br>
-								<div class="block fragment " data-fragment-index="2">
+								<div class="block fragment " style="position:relative; top:-35px" data-fragment-index="4">
 									<div class="block-title">
 										Forward Kullback Leibler Divergence
 									</div>
@@ -510,19 +530,18 @@
 
 
 							</div>
-							<div class="col" style="flex">
-								<img class="plain"   data-src="assets/vi_posterior.png" />
-							</div>
+							
+							
 						</div>
 						
-
-					</section>
-
 				</section>
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-				
+				<!-------------------------------------------------------------------------------->
+
+
+
 				<section class="inverted" data-background="#000">
 					<h2>How to combine HMC and VI for the best of both worlds?</h2>
 				</section>
@@ -536,22 +555,22 @@
 					<section>
 						<h3 class="slide-title">Variational self-Booseted Sampling (VBS)</h3>
 						<br>
-						<!-- <em> Combine HMC and VI</em> -->
-
-						<div class="container">
+						<em> Combine HMC and VI to generate samples from the target with smaller auto-correlation length</em>
+						<br>
+						<br>
+						<Div class="container">
 							<br>
 							<div class="col"  style="flex">
 
 								<div class="block fragment " data-fragment-index="1">
 									<div class="block-title">
-										Strategy
+										Motivation
 									</div>
 									<div class="block-content" style="font-size:20px">
 										<ul>
-											<li class=" plain "> Use HMC samples to train $q$ on the fly
+											<li class=" plain "> HMC is good at generating samples from the target
 											</li>
-											<li class="plain " > Generate proposals from $q$ to break
-												correlations in the Markov chain
+											<li class="plain " > Samples generated from the variational distribution $q$ are independent
 											</li>
 										</ul>
 										
@@ -571,7 +590,8 @@
 											</li>
 											<br>
 											<li class=" fragment " data-fragment-index="3">Phase II- Hybrid sampling <br>
-												$\rightarrow$ alternate between making proposals from HMC kernel and $q$ <br>
+												$\rightarrow$ alternate b/w making proposals from HMC kernel & $q$ <br>
+												$\rightarrow$ accept HMC and variational proposals to maintain DB <br>
 												$\rightarrow$ Keep updating $q$  with all samples
 											</li>
 										</ul>
@@ -632,16 +652,17 @@
 								
 								<ul>
 									<br>
-									<li > ~50x gains for the fiducial configuration <br>
+									<li > Fiducial configuration<br>
+										~40x gains  <br>
 										L = 200 Mpc/h, N = 64 
 									</li>
 									<br><br><br><br><br><br>
-									<li class="fragment " data-fragment-index="1"> 	~10x gains for lower signal-to-noise configuration <br>
+									<li class="fragment " data-fragment-index="1"> Low signal-to-noise<br>	~10x gains  <br>
 										L = 500 Mpc/h, N = 64 
-
+										
 									</li>
 									<br><br><br><br><br><br>
-									<li class="fragment " data-fragment-index="2">	Equivalent gains after scaling up to a higher dimensional problem <br>
+									<li class="fragment " data-fragment-index="2">	Scaling to higher dimensions <br> ~10-40x gains, stronger scale dependence<br>
 										L = 1000 Mpc/h, N = 128
 									</li>
 									<br><br><br><br>
@@ -718,7 +739,7 @@
 							<br>
 							<br>
 							<div class="fragment " data-fragment-index="2" style="text-align:left">
-								Not learning the target distribution! <br>
+								Variational distribution is not learning the target distribution! <br>
 								
 								$\rightarrow$ learning a good proposal distribution for HMC <br>
 								$\rightarrow$ performing variational inference with forward KL loss, and corrections with short MCMC chains
@@ -746,25 +767,25 @@
 							</div>
 							<div class="block-content" style="font-size:20px">
 								<ul>
-									<li class="fragment fade-up"> <b class="alert">Reconstruction of cosmological fields</b><br>
+									<li class="plain"> <b class="alert">Reconstruction of cosmological fields</b><br>
 										$\rightarrow$ High dimensional inference problem with expensive forward models
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">Hamiltonian Monte Carlo</b><br>
+									<li class="plain"> <b class="alert">Hamiltonian Monte Carlo</b><br>
 										$\rightarrow$ Asymptotically accurate but slow, generates correlated samples
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">Variational Inference</b><br>
+									<li class="plain"> <b class="alert">Variational Inference</b><br>
 										$\rightarrow$ Fast, but can be inaccurate due to parametric distribution and the divergence used
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">Variational self-Boosted Sampling</b><br>
+									<li class="plain"> <b class="alert">Variational self-Boosted Sampling</b><br>
 										$\rightarrow$ combine HMC and VI for the best of both worlds <br>
 										$\rightarrow$ learning better proposal for HMC <br>
 										$\rightarrow$ learn variational distribution with foward KL, correct it with short chains <br>
 									</li>
 									<br>
-									<li class="fragment fade-up"> <b class="alert">10-40x gains with VBS over HMC in terms of auto-correlation length </b><br>
+									<li class="plain"> <b class="alert">10-40x gains with VBS over HMC in terms of auto-correlation length </b><br>
 										$\rightarrow$ larger gains with higher signal-to-noise in the data  <br>
 										$\rightarrow$ larger gains with higher dimensional problems <br>
 									</li>
