@@ -57,9 +57,15 @@
 									</div>
 								</div>
 								<div class="col" align="right">
-									<img src="assets/fl_logo3.png" class="plain" height="150"></img>
-									<br>
-									<br>
+									<div>
+										<p>
+											<br>
+											arXiv:2206.15433
+											<br>
+											with Yin Li and David Blei
+										</p>
+									</div>
+									<!-- <img src="assets/fl_logo3.png" class="plain" height="150"></img> -->
 									<!-- <img src="assets/bids-logo2.png" class="plain" height="150"></img>
 									     <img src="assets/desc-logo-inv.png" class="plain" height="200"></img> -->
 								</div>
@@ -90,7 +96,7 @@
 							</div>
 							<div class="block-content">
 								<ul>
-									<li class="fragment fade-up"> Reconstruction of cosmological fields
+									<li class="fragment fade-up"> What do we mean by reconstruction of cosmological fields?
 									</li>
 									<br>
 									<li class="fragment fade-up"> Current approaches to high dimensional inference <br>
@@ -189,39 +195,47 @@
 
 
 						<img class="plain"  data-src="assets/all_fields.png" />
+						<div>
+							$\mathcal{F}$
+							<br>
+							$s \quad \xrightarrow{\hspace{8cm}} \quad  d$
 
+						</div>
+						<br>
 						<div class="container">
 
 							<!-- <div class="col"  style="flex: 0 0 20em;"> -->
 
-							<div class="col"  style="flex">
+							<div class="col"  style="flex, position:absolute; width:700px; height:500px; ">
 
 								<div class="block fragment " data-fragment-index="1">
 									<div class="block-title">
 										Goal
 									</div>
 									<div class="block-content"  style="font-size:20px">
-										Given a forward model $\mathcal{F}$ for the cosmological observables such as galaxies,
-										use the observed data to reconstruct the Gaussian initial conditions at the beginning of the Universe
+										<div class="plain" style="text-align:center">
+										Given a forward model $\mathcal{F}$ for the cosmological observables, <br>
+										use the observed data to reconstruct the Gaussian initial conditions at the beginning of the Universe.
+										</div>
 									</div>
 
 								</div>
 							</div>
-							<div class="col"  style="flex">
+							<div class="col"  style="flex, position:absolute; width:700px; height:500px">
 								<div class="block fragment " data-fragment-index="2">
 									<div class="block-title">
 										Approach
 									</div>
 									<div class="block-content"  style="font-size:20px">
-										Solving an inverse problem
+										Solve an inverse problem with the posterior
 										<br>
-										Posterior: $$  p(d | \mathcal{F}(s)) \ + \ p(s) $$
-										Use Bayesian inference algorithms
+										$$  p(d | \mathcal{F}(s)) \ + \ p(s) $$
+										<p style="text-align:center" > Use Bayesian inference algorithms </p>
 									</div>
 
 								</div>
 							</div>
-							<div class="col"  style="flex">
+							<div class="col"  style="flex, position:absolute; width:700px; height:500px">
 
 								<div class="block fragment " data-fragment-index="3">
 									<div class="block-title">
@@ -229,9 +243,9 @@
 									</div>
 									<div class="block-content"  style="font-size:20px"
 										<ul>
-											<li > Expensive forward model
+											<li > Expensive & non-linear forward models
 											</li>
-											<li > High dimensions <br>&gt $512^3$ parameters to reconstruct density at all points in space
+											<li > High dimensional inference <br>&gt $512^3$ parameters to reconstruct density at all points in space
 										</ul>
 									</div>
 
@@ -295,7 +309,7 @@
 									<Img  style="position:absolute;top:-150px;left:0px;" data-src="assets/hmc_algo.png"/>
 
 								</div>
-								<div style="position:absolute; float:right; top:650px; right:00px; font-size: 20px; margin:0 auto">Padmanabhan et al. 2012</div>							
+								<!-- <div style="position:absolute; float:right; top:650px; right:00px; font-size: 20px; margin:0 auto">Padmanabhan et al. 2012</div>				 -->			
 								
 							</div>
 							
@@ -313,11 +327,12 @@
 
 							<div class="col">
 								<ul>
-									<li > Compare the samples generated with the true initial conditions in terms of lower dimensional summary statistics - <em> power spectrum </em>
+									<li class="fragment" data-fragment-index="1" >
+										Compare the samples generated with the true initial conditions in terms of lower dimensional summary statistics - <em> power spectrum </em>
 									</li> 
 									<br>									
-									<li class="fragment" data-fragment-index="1" > Derived quantities
-										<ul class="fragment" data-fragment-index="1"> $\rightarrow$ Cross Correlation ($r_c$)
+									<li class="fragment" data-fragment-index="2" > Derived quantities
+										<ul class="fragment" data-fragment-index="1"> $\rightarrow$ Cross Correlation ($r_c$) with true initial conditions
 											<div style="text-align:center">
 											$$
 												r_c(k) = \frac{P_{ab}(k)}{\sqrt{P_a(k)P_b(k)}}
@@ -326,7 +341,7 @@
 											Expected to be 1 on large scales, 0 on small scales
 										</ul>
 										<br>
-										<ul class="fragment" data-fragment-index="2">$\rightarrow$ Transfer Function ($t_f$)
+										<ul class="fragment" data-fragment-index="2">$\rightarrow$ Transfer Function ($t_f$) with true initial conditions
 											$$t_f(k) = \sqrt{\frac{P_a(k)}{P_b(k)}}$$
 											Expected to be 1 on all scales
 										</ul>
@@ -336,11 +351,14 @@
 														
 							<div class="col" >
 								<!-- <div class="col"> -->
-								<img  class="fragment plain" data-fragment-index="3" data-src="assets/hmc_posterior.png" height="300"/>
-								<div class="fragment plain" data-fragment-index="3"
-								     style="position:absolute; float:right; top:520px; right:110px; font-size: 20px; margin:0 auto">
-									Configuration: <br>3D dark matter density data, <br>L = 200 Mpc/h boxsize, <br>N = 64 cells per side, <br>Gaussian noise (equal to Poisson shot noise)
+								<div class="plain" 
+								     style="position:absolute; float:center; top:20px; right:60px; font-size: 20px; margin:0 auto">
+									Configuration: <br>3D dark matter density data, L = 200 Mpc/h boxsize, <br>N = 64 cells per side, Gaussian noise (= Poisson shot noise)
 								</div>							
+								<img class="plain" src="../assets/ic_gif.png"   width="250" />
+								<img  class="plain" src="../assets/ic.gif"   width="250" />
+
+								<img  class="fragment plain" data-fragment-index="2" data-src="assets/hmc_posterior.png" height="250"/>
 																
 							</div>
 						
@@ -368,7 +386,7 @@
 							
 							<ul>
 								<li class="fragment" data-fragment-index="2" >
-									Longest auto-correlation length ~ 1000
+									Longest auto-correlation length > 200
 								</li>
 								<li class="fragment" data-fragment-index="2" >
 									Number of leapfrog steps per proposal ~ 50
@@ -451,7 +469,7 @@
 					<!-------------------------------------------------------------------------------->
 
 					<section >
-						<h3 class='slide-title'>validating variational posterior</h3>
+						<h3 class='slide-title'>Validating variational posterior</h3>
 						<div class="container">
 							<br>
 							<div class="col"  style="flex">
@@ -664,7 +682,7 @@
 									<li class="fragment " data-fragment-index="2">	Short HMC chains are important to correct proposals generated from variational distribution
 									</li>
 									<br>
-									<li class="fragment " data-fragment-index="3">	Howeer the sample quality of VBS samples is still be lower than HMC samples
+									<li class="fragment " data-fragment-index="3">	However the sample quality of VBS samples is still be lower than HMC samples
 									</li>
 								</ul>
 
@@ -694,7 +712,7 @@
 							<div class="fragment " data-fragment-index="1" style="text-align:left">
 								Why VBS samples are of lower quality? <br>
 								
-								$\rightarrow$ Rescale the target distribution due to high variance in acceptance probability
+								$\rightarrow$ Rescale the target distribution $(\pi \rightarrow \pi^*)$ due to high variance in acceptance probability
 								
 							</div>
 							<br>
@@ -817,6 +835,7 @@
 		<!--     width: 128mm; -->
 		<!--     height: 96mm; -->
 		<!-- } -->
+		
 		.reveal .box {
 			background-color: #191919;
 			margin-left: 10px;
@@ -867,6 +886,7 @@
 			filter: invert(100%);
 		}
 		</style>
+
 
 
 		<script src="reveal.js/js/reveal.js"></script>
