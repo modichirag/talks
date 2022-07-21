@@ -104,11 +104,14 @@
 										$\rightarrow$ Variational Inference (VI)
 									</li>
 									<br>
-									<li class="plain"> <b class="alert">VBS </b>: Variational self-Boosted Sampling (VBS)
+									<li class="plain"> <b class="alert">VBS </b>: Variational self-Boosted Sampling (VBS) <br>
+										$\rightarrow$ Algorithm <br>
+										$\rightarrow$ Results <br>
+										$\rightarrow$ Perspectives <br>
 									</li>
-									<br>
-									<li class="plain"> Perspective on VBS
-									</li>
+									<!-- <br> -->
+									<!-- <li class="plain"> Perspective on VBS -->
+									<!-- </li> -->
 								</ul>
 							</div>
 						</div>
@@ -223,10 +226,17 @@
 
 							<div class="col">
 								<ul>
-									<li class="fragment" data fragment-index="1"> Construct a Hamiltonian system with parameters as a position vector $(q)$ and associated potential energy
-										function as the negative log-posterior
+									<!-- <li class="fragment" data fragment-index="1"> Construct a Hamiltonian system with parameters as a position vector $(q)$ and associated potential energy -->
+									<!-- 	function as the negative log-posterior -->
+									<!-- 	$$U(q) = -\log \pi(q)$$ -->
+									<!-- </li> -->
+									<li class="fragment" data fragment-index="1"> Construct a Hamiltonian system with <br>
+										$\rightarrow$ parameters as a position vector $(q)$ <br>
+										$\rightarrow$ the negative log-posterior as potential energy function
 										$$U(q) = -\log \pi(q)$$
+										$\rightarrow$ auxillary momentum $(p)$ & associated kinetic energy <br>
 									</li>
+									<br>
 									<!-- <li class="fragment" data fragment-index="2">introduce an auxiliary momentum $(p)$ for each parameter & construct Hamiltonian -->
 									<!-- 	$$H(x) = H(q, p) = U(q) + \frac{1}{2}p^TMp$$ -->
 									<!-- </li> -->
@@ -283,6 +293,9 @@
 										</ul>
 									</li>
 								</ul>
+								<br>
+								<p class="fragment" data-fragment-index="2" > Iff both $t_f$ and $r_c$ are 1 on all scales, the fields are identical </p>
+
 							</div>		
 														
 							<div class="col" >
@@ -480,7 +493,7 @@
 									<div class="block-content" style="font-size:20px">
 										<ul>
 											<li> Parametric distribution $q(z; \nu)$ with parameters $\nu$ <br>
-												$\rightarrow$ Normalizing flow with Fourier space convolutions
+												$\rightarrow$ Normalizing flow with <em > Fourier space convolutions  </em>
 											</li>
 											<br>
 											<li> Divergence (loss function) to compare distributions
@@ -543,7 +556,7 @@
 
 
 				<section class="inverted" data-background="#000">
-					<h2>How to combine HMC and VI for the best of both worlds?</h2>
+					<h2>Can we combine HMC and VI to complement each others shortcomings?</h2>
 				</section>
 				
 				<!-------------------------------------------------------------------------------->
@@ -652,20 +665,33 @@
 								
 								<ul>
 									<br>
-									<li > Fiducial configuration<br>
-										~40x gains  <br>
-										L = 200 Mpc/h, N = 64 
-									</li>
-									<br><br><br><br><br><br>
-									<li class="fragment " data-fragment-index="1"> Low signal-to-noise<br>	~10x gains  <br>
-										L = 500 Mpc/h, N = 64 
-										
-									</li>
-									<br><br><br><br><br><br>
-									<li class="fragment " data-fragment-index="2">	Scaling to higher dimensions <br> ~10-40x gains, stronger scale dependence<br>
-										L = 1000 Mpc/h, N = 128
+									<li > Experiment #1: Fiducial configuration<br>
+										<br>
+										L = 200 Mpc/h, N = 64
+										<br>
+										~40x gains in terms of auto-correlation length
 									</li>
 									<br><br><br><br>
+									<li class="fragment " data-fragment-index="1"> Experiment #2: Low signal-to-noise<br>
+										<br>
+										L = 500 Mpc/h, N = 64 
+										<br>
+										~10x gains
+										<br>
+										HMC performs much better than the fiducial case
+										
+									</li>
+									<br><br><br>
+									<li class="fragment " data-fragment-index="2">	Experiment #3: Scaling to higher dimensions <br>
+										<br>
+										L = 1000 Mpc/h, N = 128
+										<br>
+										~10-40x gains
+										<br>
+										stronger scale dependence in gains
+										
+									</li>
+									<br><br>
 								</ul>
 								
 
@@ -688,7 +714,7 @@
 				<!-------------------------------------------------------------------------------->
 				<section>
 					
-					<section>
+					<!-- <section> -->
 						<h3 class="slide-title"> Taking a closer look</h3>
 
 						<div class="container" style="font-size:20px">
@@ -698,14 +724,51 @@
 									<li > Distribution of the transfer function of VBS samples and HMC samples is similar
 									</li>
 									<br>
-									<li class="fragment " data-fragment-index="1">  Simply training the variational distribution $q$ with target samples (Forward KL loss) does not perform as well								</li>
+									<li class="fragment " data-fragment-index="1">	However the sample quality of VBS samples is slightly lower than HMC samples
+									</li>
+									<br>									
+									<li class="fragment " data-fragment-index="2">  Simply training the variational distribution $q$ with target samples (Forward KL loss) does not perform as well								</li>
 									<br>
-									<li class="fragment " data-fragment-index="2">	Short HMC chains are important to correct proposals generated from variational distribution
+									<li class="fragment " data-fragment-index="3">	Short HMC chains are important to correct proposals generated from variational distribution
 									</li>
 									<br>
-									<li class="fragment " data-fragment-index="3">	However the sample quality of VBS samples is still be lower than HMC samples
-									</li>
+
+
+									<!-- <p class="fragment " data-fragment-index="4"  style="text-align:left" > Variational distribution in VBS is not learning the target distribution! -->
+									<!-- 	<br> -->
+									<!-- 	<br> -->
+									<!--  <\!-- $\rightarrow$ -\-> -->
+									<!--  Perspective #1: learning a good proposal distribution for HMC <br> -->
+									<!--  Perspective #2: VI with forward KL loss & short MCMC corrections -->
+									<!--   </p> -->
+									
 								</ul>
+								<div class="block fragment " data-fragment-index="4">
+									<div class="block-title">
+										Perspective on VBS
+									</div>
+									<div class="block-content"  style="font-size:20px">
+										<div class="plain" style="text-align:center">
+											Variational distribution is not learning the target distribution!
+											<br>
+
+											#1: learning a good proposal distribution for HMC
+											<br>
+
+											#2: VI with forward KL loss & short MCMC corrections
+											
+										</div>
+									</div>
+								</div>
+
+								<!-- <br> -->
+								<!-- <div class="fragment " data-fragment-index="4" style="text-align:left"> -->
+								<!-- 	<p style="text-align:center" > Variational distribution in VBS <br> is not learning the target distribution! </p> -->
+								<!-- 	 <br> -->
+								<!-- 	 <\!-- $\rightarrow$ -\-> -->
+								<!-- 	 Perspective #1: learning a good proposal distribution for HMC <br> -->
+								<!-- 	Perspective #2: VI with forward KL loss & short MCMC corrections -->
+								<!-- </div> -->
 
 
 							</div>
@@ -716,40 +779,40 @@
 						</div>
 						
 					
-					</section>
+					<!-- </section> -->
 
 
 								
 					<!-------------------------------------------------------------------------------->
 					<!-------------------------------------------------------------------------------->
-					<section>
+					<!-- <section> -->
 					
-						<h3 class="slide-title"> Perspectives on VBS</h3>
+					<!-- 	<h3 class="slide-title"> Perspectives on VBS</h3> -->
 						
-						<br>
-								$$ \alpha = \mathrm{min}\Bigg(1, \frac{\pi^*(z_2)q(z_1;\nu)}{\pi^*(z_1)q(z_2;\nu)} \Bigg)$$
-						<br>
-						<div style="font-size:20px">
-							<div class="fragment " data-fragment-index="1" style="text-align:left">
-								Why VBS samples are of lower quality? <br>
+					<!-- 	<br> -->
+					<!-- 			$$ \alpha = \mathrm{min}\Bigg(1, \frac{\pi^*(z_2)q(z_1;\nu)}{\pi^*(z_1)q(z_2;\nu)} \Bigg)$$ -->
+					<!-- 	<br> -->
+					<!-- 	<div style="font-size:20px"> -->
+					<!-- 		<div class="fragment " data-fragment-index="1" style="text-align:left"> -->
+					<!-- 			Why VBS samples are of lower quality? <br> -->
 								
-								$\rightarrow$ Rescale the target distribution $(\pi \rightarrow \pi^*)$ due to high variance in acceptance probability
+					<!-- 			$\rightarrow$ Rescale the target distribution $(\pi \rightarrow \pi^*)$ due to high variance in acceptance probability -->
 								
-							</div>
-							<br>
-							<br>
-							<div class="fragment " data-fragment-index="2" style="text-align:left">
-								Variational distribution is not learning the target distribution! <br>
+					<!-- 		</div> -->
+					<!-- 		<br> -->
+					<!-- 		<br> -->
+					<!-- 		<div class="fragment " data-fragment-index="2" style="text-align:left"> -->
+					<!-- 			Variational distribution is not learning the target distribution! <br> -->
 								
-								$\rightarrow$ learning a good proposal distribution for HMC <br>
-								$\rightarrow$ performing variational inference with forward KL loss, and corrections with short MCMC chains
-							</div>
-						</div>
-						<br>
-						<br>
+					<!-- 			$\rightarrow$ learning a good proposal distribution for HMC <br> -->
+					<!-- 			$\rightarrow$ performing variational inference with forward KL loss, and corrections with short MCMC chains -->
+					<!-- 		</div> -->
+					<!-- 	</div> -->
+					<!-- 	<br> -->
+					<!-- 	<br> -->
 
 					
-					</section>
+					<!-- </section> -->
 				</section>
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
@@ -780,7 +843,7 @@
 									</li>
 									<br>
 									<li class="plain"> <b class="alert">Variational self-Boosted Sampling</b><br>
-										$\rightarrow$ combine HMC and VI for the best of both worlds <br>
+										$\rightarrow$ combine HMC and VI to generate samples from the target with smaller auto-correlation length</em> <br>
 										$\rightarrow$ learning better proposal for HMC <br>
 										$\rightarrow$ learn variational distribution with foward KL, correct it with short chains <br>
 									</li>
