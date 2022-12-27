@@ -22,9 +22,9 @@
 [submodule "ICML2022/reveal.js"]
 	path = ICML2022/reveal.js
 	url = https://github.com/modichirag/reveal.js
-[submodule "ODSL/reveal.js"]
-	path = ODSL/reveal.js
-	url = https://github.com/modichirag/reveal.js
 [submodule "ODSL_Oct2022/reveal.js"]
 	path = ODSL_Oct2022/reveal.js
+	url = https://github.com/modichirag/reveal.js
+[submodule "Yale_Jan2023/reveal.js"]
+	path = Yale_Jan2023/reveal.js
 	url = https://github.com/modichirag/reveal.js
