@@ -81,8 +81,39 @@
 
 				
 				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section data-background-color="black">
+
+					<h2 class='slide-title' style="position:absolute;top:0;"> the $\Lambda$CDM view of the Universe </h2>
+
+					<div class="container">
+						<div class="col" style="flex: 0 0 35em;">
+							<img class="plain" src="assets/WMAP_timeline.jpg" height="700px"/>
+						</div>
+						<div class="col" style="flex: 0 0 15em;">
+
+							<div class="fragment" data-fragment-index="1" style="text-align:left"> 6 fundamental parameters: </div>
+							<br>
+
+							<ol class="fragment" data-fragment-index="1">
+								<li>physical baryon density parameter</li>
+								<li>physical dark matter density parameter</li>
+								<li>the age of the universe</li>
+								<li>scalar spectral index</li>
+								<li>curvature fluctuation amplitude</li>
+								<li>reionization optical depth</li>
+							</ol>
+
+						</div>
+					</div>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+                                
 				<section>
-					<section data-background-image="assets/cmb.png" data-background-size="1400px" data-background-color="black">
+
+                                        <section data-background-image="assets/cmb.png" data-background-size="1400px" data-background-color="black">
 						<h3 class='slide-title'> next generation of cosmological probes</h3>
 						<div class="container">
 							<div class="col">
@@ -169,33 +200,32 @@
 
 					</section>
 					<!-------------------------------------------------------------------------------->
-					<!-------------------------------------------------------------------------------->
 
-					<!-- <section data-background-image="assets/LSST.jpg" > -->
-					<!-- 	<font color='black'> -->
-					<!-- 	<h2 class='slide-title-black'> <font color='black'> the Large Synoptic Survey Telescope </font> </h2> -->
-					<!-- 	<div class="container"> -->
-					<!-- 		<div class="col"> -->
-					<!-- 			<ul> -->
-					<!-- 				<li class="fragment fade-up"> 1000 images each night, 15 TB/night for 10 years</li> -->
-					<!-- 				<br> -->
-					<!-- 				<li class="fragment fade-up"> 18,000 square degrees, observed once every few days</li> -->
-					<!-- 				<br> -->
-					<!-- 				<li class="fragment fade-up"> Tens of billions of objects, each one observed $\sim1000$ times</li> -->
-					<!-- 				<br> -->
-					<!-- 				<li class="fragment fade-up"> Galaxy Clustering, Weak lensing, Supernovae and much more</li> -->
-					<!-- 			</ul> -->
-					<!-- 			<br > -->
-					<!-- 		</div> -->
-					<!-- 		<div class="col"> -->
-					<!-- 			<div class="fragment fade-up"> -->
-					<!-- 				<\!-- <font color="white">LSST forecast on dark energy parameters </font> -\-> -->
-					<!-- 				<img class="plain" data-src="assets/lsst_y10_forecast2.png" style="height :400px"/> -->
-					<!-- 			</div> -->
-					<!-- 		</div> -->
-					<!-- 	</div> -->
-					<!-- 	</font> -->
-					<!-- </section> -->
+					<section data-background-image="assets/LSST.jpg" >
+						<font color='black'>
+						<h2 class='slide-title-black'> <font color='black'> the Large Synoptic Survey Telescope </font> </h2>
+						<div class="container">
+							<div class="col">
+								<ul>
+									<li class="fragment fade-up"> 1000 images each night, 15 TB/night for 10 years</li>
+									<br>
+									<li class="fragment fade-up"> 18,000 square degrees, observed once every few days</li>
+									<br>
+									<li class="fragment fade-up"> Tens of billions of objects, each one observed $\sim1000$ times</li>
+									<br>
+									<li class="fragment fade-up"> Galaxy Clustering, Weak lensing, Supernovae and much more</li>
+								</ul>
+								<br >
+							</div>
+							<div class="col">
+								<div class="fragment fade-up">
+									<!-- <font color="white">LSST forecast on dark energy parameters </font> -->
+									<img class="plain" data-src="assets/lsst_y10_forecast2.png" style="height :400px"/>
+								</div>
+							</div>
+						</div>
+						</font>
+					</section>
 					
 				</section>
 				
@@ -203,7 +233,7 @@
 				<!-------------------------------------------------------------------------------->
 				<section>
 					<section>
-						<h3 class='slide-title'> modern cosmological surveys </h3>
+						<h3 class='slide-title'> promise of the modern cosmological surveys </h3>
 						<div class="container">
 							<div class="col" style="flex: 0 0 30em;">
 
@@ -266,73 +296,629 @@
 
 					</section>
 
-					
-					<!-------------------------------------------------------------------------------->
+				</section>
+                                
+				<!-------------------------------------------------------------------------------->
+	                        <!-------------------------------------------------------------------------------->
 
-					<section>
-						<h3  class='slide-title'>A different road: forward modeling</h3>
+                                <section>
+                                        
+				        <section>
+					        <div style="font-size:80px">Traditional cosmological analysis</div>
+				        </section>
+                                </section>
+                                
+				<!-------------------------------------------------------------------------------->
+	                        <!-------------------------------------------------------------------------------->
+
+				<section>
+                                        <section>
+                                                
+						<h3  class='slide-title'>a simple pipeline for galaxy clustering analysis</h3>
 
 						<div class='container'>
 								<div class='col'>
 
 									<ul>
-										<li > Instead of trying to analytically evaluate the likelihood,
-											let us build a forward model of the observables.</li>
+										<li> Measure the positions and estimate associated weights for each galaxy
+                                                                                        <br> Weights: incompleteness, fibre-collision, FKP...
+                                                                                </li>
 										<br>
-										<li > Each component of the model is now tractable
+										<li > Compute <b class="alert"> summary statistics </b> based on N-pt functions, e.g. power spectrum, bispectrum, 2-pt correlation function
 										</li>
 										<br>
-										<li class='fragment' data-fragment-index='0'> Cost - <b >large number of latent variables</b>.
-											<br>
-											<br>
-											<ul style="list-style:None"> 																				
-												$\rightarrow$  Effecient high dimensional inference possible with novel methods:
-										
-										
-													<ul  style="padding-left: 20px">
-														<li> Hamiltonian Monte-Carlo
-														</li>
-														<li> Variational Inference
-														</li>
-														<li> MAP+Laplace
-														</li>
-														<li> Gold Mining
-														</li>
-														<li> Dimensionality reduction by Fisher-Information Maximization
-														</li>
-													</ul>
-													<br>
-													$\rightarrow$ Benefit from fast, accurate, differentiable forward simulations
-												
-											</ul>
-											
+                                                                                <li > Construct a <b class="alert"> theory model </b> for the summary statistics, generally based on perturbation theory
 										</li>
+										<br>
+										<li> Run MCMC to recover a posterior on the model parameters using an  <b class="alert">analytic likelihood</b>
+                                                                                        <br>
+											$p(\theta | x ) \propto \underbrace{p(x | \theta)}_{\mathrm{likelihood}}  \  \underbrace{p(\theta)}_{\mathrm{prior}}$
+										</li>
+                                                                                
 										<br>
 										
 
 								</div>
 						
 								<div class='col'>
-									<img data-src="assets/pgm_lensing.png" class="plain" style="height:550px;"/>
-									<div style="float:right; font-size: 20px">Schneider et al. 2015</div>
+									<!-- <img data-src="assets/pgm_lensing.png" class="plain" style="height:550px;"/> -->
+									<!-- <div style="float:right; font-size: 20px">Schneider et al. 2015</div> -->
 								</div>
 						</div>
 					</section>
 
 					<!-------------------------------------------------------------------------------->
-					<section>
-						<h3 class='slide-title'> Bayesian Reconstruction of Cosmological Fields </h3>
+                                        
+                                        <section>
+                                                
+						<h3  class='slide-title'>Limitation 1: Summary statistics</h3>
+
+						<div class='container'>
+								<div class='col'>
+
+									<ul>
+                                                                                <br>
+										<li> Power spectrum, and 2-point correlation function are not optimal
+                                                                                </li>
+										<br>
+										<li> More for other tracers like weak lensing, voids and others
+										</li>
+										<br>
+										<li> Do not quantify how much information is left behind
+										</li>
+										<br>
+
+								</div>
+						
+								<div class='col'>
+								<div class="block fragment " data-fragment-index="1">
+									<div class="block-title">
+										A few of the proposed summary statistics
+									</div>
+									<div class="block-content", style="text-align:center">
+                                                                                bispectrum <br>
+                                                                                three point function <br>
+                                                                                trispectrum <br>
+                                                                                Post-reconstruction power spectrum <br>
+                                                                                peak counts <br>
+                                                                                k-nearest neighbor <br>
+                                                                                marked power spectrum <br>
+                                                                                density splits <br>
+                                                                                wavelet coefficients <br>
+                                                                                Minkowski functionals <br>
+                                                                                ...
+									</div>
+
+						</div>
+					</section>
 
 
-						<div> <b> Idea : </b>
-							Given a forward model for the observed data, reconstruct latent fields for analysis by maximizing the posterior of the initial conditions  $(s)$ of the Universe </div>
-						$$ \mathcal{L}(s) = \underbrace{[d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)]}_{likelihood \,(\mathcal{E})} + \underbrace{s^\dagger \mathcal{S}^{-1} s}_{prior} $$
+					<!-------------------------------------------------------------------------------->
+                                        
+                                        <section>
+                                                
+						<h3  class='slide-title'>Limitation 2: Theory model</h3>
 
+						<div class='container'>
+								<div class='col'>
+
+									<ul>
+                                                                                <br>
+										<li> Perturbative models, bias models, EFT
+                                                                                </li>
+										<br>
+										<li> Does not push to non-linear scales
+										</li>
+										<br>
+										<li> No model for non-standard summary statistics
+										</li>
+										<br>
+										<li> Hard to include survey systematics, for e.g. fibre collisions
+										</li>
+										<br>
+										<li> Emulators
+										</li>
+										<br>
+								</div>
+						
+								<div class='col'>
+								<div class="block fragment " data-fragment-index="1">
+									<div class="block-title">
+										A few of the proposed summary statistics
+									</div>
+									<div class="block-content", style="text-align:center">
+                                                                                bispectrum <br>
+                                                                                three point function <br>
+                                                                                trispectrum <br>
+                                                                                Post-reconstruction power spectrum <br>
+                                                                                peak counts <br>
+                                                                                k-nearest neighbor <br>
+                                                                                marked power spectrum <br>
+                                                                                density splits <br>
+                                                                                wavelet coefficients <br>
+                                                                                Minkowski functionals <br>
+                                                                                ...
+									</div>
+
+								</div>
+                                                                        
+									<!-- <img data-src="assets/pgm_lensing.png" class="plain" style="height:550px;"/> -->
+									<!-- <div style="float:right; font-size: 20px">Schneider et al. 2015</div> -->
+								</div>
+						</div>
+					</section>
+                                        
+
+					<!-------------------------------------------------------------------------------->
+                                        
+                                        <section>
+                                                
+						<h3  class='slide-title'>Limitation 3: Analytic Likelihoood</h3>
+
+						<div class='container'>
+								<div class='col'>
+
+									<ul>
+                                                                                <br>
+										<li> Gaussians!
+                                                                                </li>
+										<br>
+										<li> Can only be estimated for simple summary statistics
+										</li>
+										<br>
+										<li> Only on large scales
+										</li>
+										<br>
+										<li> Combining different observables, and surveys, is hard due to estimating covariance matrix
+										</li>
+										<br>
+								</div>
+						
+								<div class='col'>
+								        <div class="block fragment " data-fragment-index="1">
+									        <div class="block-title">
+										        A few of the proposed summary statistics
+									        </div>
+									        <div class="block-content", style="text-align:center">
+                                                                                        bispectrum <br>
+                                                                                        three point function <br>
+                                                                                        trispectrum <br>
+                                                                                        Post-reconstruction power spectrum <br>
+                                                                                        peak counts <br>
+                                                                                        k-nearest neighbor <br>
+                                                                                        marked power spectrum <br>
+                                                                                        density splits <br>
+                                                                                        wavelet coefficients <br>
+                                                                                        Minkowski functionals <br>
+                                                                                        ...
+									        </div>
+                                                                                
+								        </div>
+                                                                        
+								</div>
+						</div>
+					</section>
+                                </section>
+                                        
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+                                
+				<section>
+
+                                        <section>
+                                                
+						<h3  class='slide-title'>a different perspective: forward modeling</h3>
+
+                                                <br>
+						<div class="box">
+							<div class="box-title">
+								Key Idea
+							</div>
+							<div class="box-content">
+                                                                Instead of trying to analytical evaluate the likelihood of data summary statistics,
+                                                                build a computational forward model of the observables,
+                                                                i.e. use the simulator as the physical model in the inference pipeline
+							</div>
+						</div>
+
+                                                <br>
+                                                
 						<div class="container">
+							<div class='col fragment' data-fragment-index='1'>
+								<img data-src="assets/fieldinit.png" class="plain" style="height:300px;"/>
+								<b class="alert"> Linear Field </b>
+							</div>
+							<div class='col fragment' data-fragment-index='2'>
+								<img data-src="assets/fieldfin.png" class="plain " style="height:300px;"/>
+								<b class="alert"> Final Dark Matter </b>
+							</div>
+							<!-- <hr style="width: 1px; height: 400px; background: white; border: none;" /> -->
+							<div class='col fragment' data-fragment-index='3'>
+								<img data-src="assets/fieldhalo.png" class="plain " style="height:300px;"/>
+								<b class="alert"> Dark Matter Halos </b>
+							</div>
+							<div class='col fragment' data-fragment-index='4'>
+								<img data-src="assets/fieldgal.png" class="plain " style="height:300px;"/>
+								<b class="alert"> Galaxies </b>
+							</div>
+						</div>
+                                                
+						<div class="container" style="position:relative; width:1000px; height:50px; margin:0 auto;">
+							<div class='col fragment'  data-fragment-index='2'> <font size="10"> $\longrightarrow$ </font> <br> Gravity evolution <br> N-Body, PM simulations </div>
+							<div class='col fragment' data-fragment-index='3'>  <font size="10"> $\longrightarrow$ </font> <br> Group Finding <br> algorithms </div>
+							<div class='col fragment' data-fragment-index='4'>  <font size="10"> $\longrightarrow$ </font> <br> Semi-analytic &amp <br> distribution models </div>
+						<!-- 		<div class='fragment' data-fragment-index='2'> N-body simulations <div> -->
+						<!-- <div class='fragment' data-fragment-index='3'> Group Finding algorithms <div> -->
+						<!-- <div class='fragment' data-fragment-index='4'> Semi-analytic models <div> -->
+						</div>
+                                                                                                
+                                                                                                
+				        </section>
+                                        
+				        <!-------------------------------------------------------------------------------->
+
+                                        <section>
+                                                <h3  class='slide-title'>why forward modeling?</h3>
+
+                                                <br>
+                                                <div class="slide-text"> 
+                                                        <div class="box">
+                                                                <div class="box-title">
+                                                                        Key Idea
+                                                                </div>
+                                                                <div class="box-content">
+                                                                        Instead of trying to analytical evaluate the likelihood of data summary statistics,
+                                                                        build a computational forward model of the observables,
+                                                                        i.e. the simulation becomes the physical model. 
+                                                                </div>
+                                                        </div>
+
+                                                        <br>
+
+                                                        <div class="block fragment " data-fragment-index="1">
+                                                                <div class="block-title">
+                                                                        Benefits of computational forward modeling
+                                                                </div>
+                                                                <div class="block-content">
+
+                                                                        <ul>
+                                                                                <br>
+                                                                                <li> More accurate than theory models and can be used for any summary statistic that can be evaluated computationally
+                                                                                </li>
+                                                                                <br>
+                                                                                <li> Easy to incorporate survey systematic effects
+                                                                                </li>
+                                                                                <br>
+                                                                                <li> Easy to combine multiple cosmological probes by joint simulations
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="block fragment " data-fragment-index="2">
+                                                                <div class="block-title">
+                                                                        Two flavors of forward modeling approaches
+                                                                </div>
+                                                                <div class="block-content">
+
+                                                                        <ol>
+                                                                                <br>
+                                                                                <li> Field level inference/Bayesian Heirarchical modeling
+                                                                                </li>
+                                                                                <br>
+                                                                                <li> Simulations based inference/Likelihood Free Inference 
+                                                                                </li>
+                                                                                <br>
+                                                                        </ol>
+                                                                </div>
+                                                        </div>
+                                                </div>
+				        </section>
+                                        
+                                        <!-------------------------------------------------------------------------------->
+
+
+                                        <section>
+                                                <h3  class='slide-title'>why now?</h3>
+
+                                                <br>
+
+                                                <div style="text-aling:left">
+                                                        Advances in computations, statistics and machine learning.
+                                                        <br>
+                                                        
+							<ul>
+                                                                <br>
+								<li> GPU accelerations have made simulations faster
+                                                                </li>
+								<br> 
+								<li> Auto-diff
+								</li>
+								<br>
+								<li> Normalizing flows
+								</li>
+                                                                <br>
+								<li> Bayesian inference algorithms: HMC (NUTS), Variational inference
+								</li>
+                                                                <br>
+                                                                <li> Lots of funding!
+                                                                </li>
+                                                        </ul>
+
+                                                </div>
+                                                                                                
+				        </section>
+                                        
+				</section>
+                                
+
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+					<div style="font-size:80px">Field Level Inference</div>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+
+                                <section>
+                                        <section>
+                                                
+						<h3 class='slide-title'> Field Level Inference </h3>
+
+                                                <br>
+                                                <div class="slide-text">
+                                                        <div class="box">
+                                                                <div class="box-title", style="text-align:left; padding-left:20px ">
+                                                                        Key Idea
+                                                                </div>
+                                                                <div class="box-content">
+                                                                        <ul>
+                                                                                <li> use simulations to model the field-level data without any compression 
+                                                                                </li>
+                                                                                <li> simultaneously infer the initial conditions of the Universe and the cosmological parameters.
+                                                                                </li>
+                                                                        </ul>
+                                                                        
+                                                                </div>
+                                                        </div>
+
+                                                        <br>
+                                                        <div class="plain fragment",  data-fragment-index="1", style="text-align:left;">
+
+                                                        Example: reconstruct initial conditions ($z$) by maximizing the posterior, given observed data :
+                                                        $$\arg\max_z \ \log p(x_{dm} | f(z)) \ + \ p(z) $$
+                                                        </div>
+                                                        <br>
+
+                                                        </div>
+                                                        <div class="container">
+                                                                <div class="col fragment" data-fragment-index="2">
+                                                                        <img data-src="assets/init_field.png" style='height:250px;' />
+                                                                        <br> True initial conditions <br> $z_0$
+                                                                </div>
+
+                                                                <div class="col fragment" data-fragment-index="1">
+                                                                        <img data-src="assets/reconim_init.gif" style='height:250px;' />
+                                                                        <br> Reconstructed initial conditions $z$
+                                                                </div>
+
+                                                                <div class="col fragment" data-fragment-index="1">
+                                                                        <img data-src="assets/reconim_fin.gif" style='height:250px;' />
+                                                                        <br> Reconstructed dark matter distribution $x_{dm} = f(z)$
+                                                                </div>
+
+                                                                <div class="col fragment" data-fragment-index="1">
+                                                                        <img data-src="assets/fin_field.png" style='height:250px;' />
+                                                                        <br> Data <br> $x_{dm} = f(z_0)$
+                                                                </div>
+                                                        <br>
+                                                </div>
+                                        </section>
+                                </section>
+                                                
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+
+                                        <section>
+                                                
+                                                <h3 class='slide-title'> Why field level inference #1 </h3>
+                                                
+
+                                                <br>
+                                                It is the  <b class="alert"> optimal </b>  approach to cosmological analysis
+                                                
+                                                <div class="slide-text", style="position:relative;">
+                                                        <br>
+                                                        <br>
+                                                        <ul>
+                                                                <li class="fragment " data-fragment-index="1"> No information is lost by compressing data into summary statistics
+                                                                </li>
+                                                                <br>
+                                                                <li class="fragment " data-fragment-index="2"> Undo non-linear evolution to recover the Gaussian initial conditions <br>
+                                                                        $\rightarrow$ standard reconstruction for Baryon Acoustic Oscillations <br>
+                                                                        $\rightarrow$ Power spectrum is exhaustive for Gaussian fields
+                                                                </li>
+                                                        </ul>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                </div>
+                                                <div class="container">
+
+							<div class="col" >
+                                                                <img class="fragment plain"   data-fragment-index="1" width="300px" height="300px" style="position:relative;;" data-src="assets/field_level_prelim.png" />
+
+							</div>
+							<div class="col" >
+								<img class="fragment plain" data-fragment-index="2" width="350px" height="300px" style="position:relative;" data-src="assets/realbaofisher.png" /> 
+
+								<div class="fragment  " data-fragment-index="2" style="position:absolute; float:right;  bottom:-10px; right:0px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
+								<div class="fragment  " data-fragment-index="2" style="position:absolute; float:right;  bottom:10px; right:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
+							</div>
+                                                </div>
+                                                
+                                        </section>
+                                                                                
+                                        <!-------------------------------------------------------------------------------->
+                                        <section>
+                                                
+                                                <h3 class='slide-title'> Why field level inference #2 </h3>
+                                                
+
+                                                <br>
+                                                Reconstruct  <b class="alert"> latent </b>  fields to enable supplementary analysis
+                                                <br>
+                                                <br>
+                                                <div class="container">
 
 							<div class="col"  style="flex: 0 0 32em;">
 
-								<div class="block fragment " data-fragment-index="1">
+                                                                <div class="slide-text", style="position:relative;">
+                                                                        <div class="plain fragment" data-fragment-index="1">
+                                                                                <b> Example</b>: Foreground wedge in 21-cm surveys
+                                                                        </div>
+                                                                        <br>
+                                                                        
+                                                                        <ul>
+                                                                                <li class="fragment " data-fragment-index="1"> Large scale modes in the wedge are lost, 20-80% of the data
+                                                                                </li>
+                                                                                <br>
+                                                                                <li class="fragment " data-fragment-index="2"> Match field level data on small scales to recover intial conditions
+                                                                                </li>
+                                                                                <br>
+                                                                                <li class="fragment " data-fragment-index="2"> Evolve initial conditions to reconstruct large scales
+                                                                                </li>
+                                                                                <br>
+                                                                                <li class="fragment " data-fragment-index="3"> Enable cross-correlation analysis with photometric surveys and CMB lensing
+                                                                                        <br>
+                                                                                        $\rightarrow$ most promising probes for high redshift
+                                                                                </li>
+                                                                        </ul>
+                                                                        <br>
+                                                                        <br>
+                                                                        <br>
+                                                                        <div class="plain fragment" data-fragment-index="4">
+                                                                                Other latent fields: velocity field, dark matter field, reconstruct other tracer fields
+                                                                        </div>
+                                                                        <br>
+
+                                                                </div>
+                                                                
+							
+
+							</div>
+							<div class="col" style="flex: 0 0 21em;">
+
+                                                                <div style="position:relative; width:500px; height:600px; margin:0 auto;">
+                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x.png" width="150px" style="position:absolute; top:0px; left:0px;" data-fragment-index="1"/>
+                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x2.png" width="150px"  style="position:absolute; top:0px; left:175px;" data-fragment-index="1"/>
+                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x3.png" width="150px" style="position:absolute; top:0px; left:350px;" data-fragment-index="2"/>
+                                                                        <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="1" />
+                                                                        <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="2" />
+	                                                                <img class="plaint fragment" data-fragment-index="3" style="position:relative; width:400px; top:200px; text-align:center"
+								             data-src="assets/photocross-snr.png" />
+                                                                        <div  class="fragment  plain"  data-fragment-index="1" style="position:absolute; float:right; right:0px; bottom:30px; font-size:20px; margin:0 auto">Modi et al. 2019b</div>
+							        </div>
+							</div>
+                                                </div>
+
+                                        </section>
+                                        
+                                        <!-------------------------------------------------------------------------------->
+
+                                        <section>
+                                                
+                                                <h3 class='slide-title'> Why field level inference #3 </h3>
+
+
+                                                <br>
+                                                Enables  <b class="alert"> joint analysis </b>  of different cosmological probes and surveys
+                                                <br>
+                                                <br>
+
+                                                <div class="slide-text">
+                                                        <b> Bottleneck</b>: Need to model covariance matrix of different datasets
+                                                        <br>
+                                                        <br>
+                                                </div>
+                                                Example: reconstruct initial conditions ($s$) by maximizing the posterior, given observed data :
+                                                $$\log p(z, \theta | x_1, x_2) \propto  \log p(x_{1} | f(z, \theta)) + \log p(x_{2} | f(z,  \theta)) \ + \ p(z) + p(\theta) $$
+
+                                                <div class="container">
+
+							<div class="col"  style="flex: 0 0 32em;">
+
+                                                                <br>
+                                                                <ul>
+
+                                                                        <li> No information is lost in data-compression
+                                                                        </li>
+                                                                        <br>
+                                                                        <li> Undo non-linear evolution to recover information in Gaussian initial conditions
+                                                                        </li>
+                                                                        
+                                                                </ul>
+                                                                
+							
+
+							</div>
+							<div class="col" style="flex: 0 0 21em;">
+								<div style="position:relative; width:600px; height:400px; left:50px;  margin:1 auto">
+									
+									<img class="plain"   style="position:absolute;top:-10px;left:0px;" data-src="assets/field_level_prelim.png" />
+									<!-- <img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" /> -->
+                                                                        
+								</div>
+								<div class="fragment " data-fragment-index="4" style="position:relative; float:right;  top:100px; left:-140px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
+								<div class="fragment " data-fragment-index="4" style="position:relative; float:right;  top:120px; left:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
+							</div>
+                                                </div>
+                                                <div style="position:relative; width:600px; height:400px; left:50px;  margin:1 auto">
+							<img class="fragment plain" data-fragment-index="4" style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" /> 
+                                                </div>
+                                                
+                                        </section>
+                                        <!-------------------------------------------------------------------------------->
+
+				
+				</section>
+
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+					<div style="font-size:80px">Simulations Based Inference</div>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section>
+
+                                        <section>
+
+                                                <h3 class='slide-title'> Why? It's optimal </h3>
+                                                <div class="container">
+                                                                                                        
+							<div class="col"  style="flex: 0 0 32em;">
+
+                                                                <br>
+                                                                <ul>
+
+                                                                        <li> No information is lost in data-compression
+                                                                        </li>
+                                                                        <br>
+                                                                        <li> Undo non-linear evolution to recover information in Gaussian initial conditions
+                                                                        </li>
+                                                                        
+                                                                </ul>
+								        <div class="block fragment " data-fragment-index="1">
 									<div class="block-title">
 										Examples of latent fields
 									</div>
@@ -368,244 +954,17 @@
 
 							</div>
 							<div class="col" style="flex: 0 0 21em;">
-								<img class="fragment plain" data-fragment-index="2" data-src="assets/opt_cycle.png" height="350"/>
-							</div>
-				
-					</section>
+								<div style="position:relative; width:600px; height:400px; left:50px;  margin:1 auto">
+									
+									<img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" />
 
-
-				</section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				<section>
-					<div style="font-size:80px">Galaxy Clustering Surveys</div>
-				</section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				
-				<!-------------------------------------------------------------------------------->
-				<section>
-						 <h3 class='slide-title'> forward models for galaxy clustering surveys</h3>
-
-
-						<div class="container">
-							<div class='col'>
-								<img data-src="assets/fieldinit.png" class="plain" style="height:300px;"/>
-								<b class="alert"> Linear Field </b>
-							</div>
-							<div class='col fragment' data-fragment-index='2'>
-								<img data-src="assets/fieldfin.png" class="plain " style="height:300px;"/>
-								<b class="alert"> Final Dark Matter </b>
-							</div>
-							<hr style="width: 1px; height: 400px; background: white; border: none;" />
-							<div class='col fragment' data-fragment-index='3'>
-								<img data-src="assets/fieldhalo.png" class="plain " style="height:300px;"/>
-								<b class="alert"> Dark Matter Halos </b>
-							</div>
-							<div class='col fragment' data-fragment-index='4'>
-								<img data-src="assets/fieldgal.png" class="plain " style="height:300px;"/>
-								<b class="alert"> Galaxies </b>
-							</div>
-						</div>
-						<div class="container" style="position:relative; width:1000px; height:50px; margin:0 auto;">
-							<div class='col fragment'  data-fragment-index='2'> <font size="10"> $\longrightarrow$ </font> <br> N-body simulations </div>
-							<div class='col fragment' data-fragment-index='3'>  <font size="10"> $\longrightarrow$ </font> <br> Group Finding <br> algorithms </div>
-							<div class='col fragment' data-fragment-index='4'>  <font size="10"> $\longrightarrow$ </font> <br> Semi-analytic &amp <br> distribution models </div>
-						<!-- 		<div class='fragment' data-fragment-index='2'> N-body simulations <div> -->
-						<!-- <div class='fragment' data-fragment-index='3'> Group Finding algorithms <div> -->
-						<!-- <div class='fragment' data-fragment-index='4'> Semi-analytic models <div> -->
-						</div>
-
-
-				</section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section>
-					<h3 class='slide-title'> Neural halo models </h3>
-					<br><br>
-
-					<div class="container">
-
-						<div class="col" style="position:relative; width:600px; height:600px; margin:0 auto;">
-							<ul>
-								<li class="fragment" data-fragment-index="2" >Simple fully connected neural networks
-								<ul>
-									<li> No deep learning (yet) </li>
-									<li> Inference problem - keep it simple </li>
-								</ul></li>
-								<br>
-								<li class="fragment" data-fragment-index="3" >Physically motivated input features
-								<ul>
-									<li> Density field smoothed at different scales </li>
-									<li> Difference of Gaussian smoothed fields </li>
-									<li> Non-local features</li>
-								</ul></li>
-								<br>
-								<li class="fragment" data-fragment-index="4" > 2 step procedure to tackle sparsity </li>
-								<ul>
-									<li class="fragment" data-fragment-index="5"> Classification to learn position </li>
-									<li class="fragment" data-fragment-index="6"> <em>Informed</em> Regression to learn mass </li>
-									<li class="fragment" data-fragment-index="7"> Combined to give halo mass field </li>
-								</ul>
-							</ul>
-
-						</div>
-
-						<div class="col" >
-							<div style="position:relative; width:600px; height:600px; margin:0 auto;">
-								<img class=" plain" style="position:absolute;top:0;left:0;" data-src="assets/comparepredict-d.png" />
-								<img class=" plain " style="position:absolute;top:0;left:0;" data-src="assets/comparepredict-h.png" />
-
-								<img class="fragment current-visible plain" data-fragment-index="2" style="position:absolute;top:200px;left:30px;" data-src="assets/fnn.jpeg" height="150"/>
-								<img class="fragment current-visible plain" data-fragment-index="3" style="position:absolute;top:200px;left:30px;" data-src="assets/pos27ft2.png" height="200"/>
-
-								<img class="fragment current-visible plain" data-fragment-index="5" style="position:absolute;top:200px;left:-20px;" data-src="assets/nnpos.png" height="200"/>
-								<img class="fragment current-visible plain " data-fragment-index="6" style="position:absolute;top:200px;left:-20px;" data-src="assets/nnmass.png" height="200"/>
-								<img class="fragment plain" data-fragment-index="7" style="position:absolute;top:200px;left:50px;" data-src="assets/nnmodel.png" height="200"/>
-								<img class="fragment plain" data-fragment-index="7" style="position:absolute;top:0px;left:5px;" data-src="assets/comparepredict-n.png" />
-
-								<div class="fragment" data-fragment-index="2" style="position:absolute;top:450px;left:400px; float:right; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
-							</div>
-						</div>
-					</div>
-					<br><br>
-
-
-				</section>
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section>
-					<section>
-						<h3 class='slide-title'> reconstruction from halo mass field </h3>
-
-						<div style="text-align:center"> $\boxed{ \mathcal{L}(s) = [d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)] + s^\dagger S^{-1} s}$ </div>
-						<br>
-						<div class="container">
-							
-							<div class="col">
-								<ul>
-								<li  class="fragment" data-fragment-index="1"  style="text-align:left"> Smooth the fields to estimate error</li>
-								<br>
-								<li class="fragment" data-fragment-index="2" style="text-align:left">Shifted Log-Normal</li>
-								<div class="fragment" data-fragment-index="2" style="text-align:center">
-									$ \mathcal{E} = \sum_i \Bigg(\frac{\mu_N + \rm{log(M_{R,i}^{NN} + M_0)} - \rm{log(M_{R,i}^{d} + M_0)}}{2\sigma_N}\Bigg)^2 $ </div>
-								<br>
-								<li class="fragment" data-fragment-index="3" > Cross correlation : phases of fluctuations </li>
-								<div class="fragment" data-fragment-index="3" style="text-align:center">
-									$ r_c = \frac{P_{xy}}{\sqrt{P_x \times P_y}}$ </div>
-								<br>
-								
-								<li class="fragment" data-fragment-index="3" > Transfer Function : amplitude of fluctuations </li>
-								<div class="fragment" data-fragment-index="3" style="text-align:center">
-									$ t_f = \sqrt{\frac{P_{y}}{P_x} }$ </div>
-								<br>
-								
-								</ul>
-							</div>																
-							
-							<div class="col" >
-								<div style="position:relative; width:500px; height:600px; margin:0 auto;">
-								<img class="fragment" data-fragment-index="1" data-src="assets/nnnoisefield.png" height="180"/>
-								<br>
-								<img class="fragment current-visible" data-fragment-index="2" data-src="assets/nnnoisehist.png" style="position:absolute;top:200px;left:100px;" height="200"/>
-								<img class="fragment  plain" data-fragment-index="3"  data-src="assets/noannealhrecon-w.png" style="position:absolute;top:200px;left:30px;" height="300"/>
-
-							</div>
-							<div class="fragment" data-fragment-index="1" style="position:relative; float:right; top:-70px;left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
-
-						</div>
-						<br><br>
-
-					</section>
-
-
-					<!-------------------------------------------------------------------------------->
-					<section>
-						<h3 class='slide-title'> adiabatic optimization with matter field</h3>
-
-						<br>
-						<div class="container">
-							
-							<div class="col">
-								<div style="text-align:center"> $${ \mathcal{L}(s) = \Bigg(\frac{ d - \mathcal{F}(s)}{\sigma}\Bigg)^2 + s^\dagger S^{-1} s}$$ </div>
-								<br>
-								<div style="text-align:center">
-									<div class="fragment" data-fragment-index="1"> <b>Problem :</b> Simple optimization leads to poor results despite correct posterior </div>
-									<br>
-									<div style="position:relative; width:550px; height:100px; margin:0 auto;">
-
-									<ul style="text-align:left">
-										<li class="fragment" data-fragment-index="2"> Volume effect - Number of modes scale as $k^3$ </li>
-										<li class="fragment" data-fragment-index="3"> Evolution moves information from large to small scales</li>											
-										<li class="fragment" data-fragment-index="4"> Large scales are linear </li>
-									</ul>
-									</div>
-									<br>
-									<br>
-									<br>
-									<div class="fragment" data-fragment-index="5"><b>Solution :</b> Smooth residual $\mathcal{E}$ on small scales to fit the large scales first </div>
-									<br>
-									<br>
-									<br>
-									<br>
-									<br>
 								</div>
-							</div>		
-														
-							<div class="col" style="flex: 0 0 25em;">
-								<!-- <div class="col"> -->
-								<div style="position:relative; width:500px; height:300px; margin:0 auto;top:-30px">
-									<img class="fragment current-visible" data-fragment-index="0" style="position:absolute;top:0;left:0;" data-src="assets/annealinit.png" height="300"/>
-									<img class="fragment" data-fragment-index="1" style="position:absolute;top:0;left:0;" data-src="assets/noanneal.png" height="300"/>
-								</div>
-								<div style="position:relative; width:500px; height:300px; margin:0 auto;top:-30px">
-									<img class="fragment current-visible" data-fragment-index="5" style="position:absolute;top:0;left:0;" data-src="assets/annealinit.png" height="300"/>
-									<img class="fragment current-visible" data-fragment-index="6" style="position:absolute;top:0;left:0;" data-src="assets/anneal4.png" height="300"/>
-									<img class="fragment current-visible" data-fragment-index="7" style="position:absolute;top:0;left:0;" data-src="assets/anneal2.png" height="300"/>
-									<img class="fragment current-visible" data-fragment-index="8" style="position:absolute;top:0;left:0;" data-src="assets/anneal0.png" height="300"/>
-								</div>
+								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-100px; left:-140px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
+								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-120px; left:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
 							</div>
-						</div>
-						<br><br>
 
-					</section>
-
-					<!-------------------------------------------------------------------------------->
-					<section>
-						<h3 class='slide-title'> visualizing reconstruction</h3>
-
-						<div style="position:relative; width:1000px; height:300px; margin:0 auto;">							
-							<img   style="position:absolute;top:0;left:0;" data-src="assets/recontruth.png" height="500"/>
-						</div>
-						<div style="position:relative; width:1000px; height:300px; margin:0 auto;">							
-							<img class="fragment  current-visible" data-fragment-index="1"  style="position:absolute;top:0;left:0;" data-src="assets/reconinit.png" height="500"/>
-							<img class="fragment  current-visible " data-fragment-index="2"  style="position:absolute;top:0;left:0;" data-src="assets/reconrecon.png" height="500"/>
-						</div>
-						<div class="fragment" data-fragment-index="1" style="position:relative; float:right; left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
-						
-					</section>
-					<!-------------------------------------------------------------------------------->
-					<section>
-						<h3 class='slide-title'> reconstruction - 2pt functions </h3>
-
-						<div class="container" style="position:relative">
-
-							<div class="col">
-							<img data-src="assets/recontruth.png" />
-							<img data-src="assets/reconrecon.png" />
-							</div>
-							<div class="col">
-								<img class="fragment  " data-fragment-index="1"  data-src="assets/recon2pt.png" />
-							</div>
-						</div>
-						<div style="position:relative; float:right; left:-50px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
-						
-					</section>
+                                        </section>
+                                        
 					<!-------------------------------------------------------------------------------->
 					<section>
 						<h3 class='slide-title'> Baryon Acoustic Oscillations </h3>
@@ -701,45 +1060,6 @@
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				
-				<section>
-						<h3 class='slide-title'> extending forward models with deep learning </h3>
-						
-						<h4 class="fragment" data-fragment-index="0"> How to model p( galaxies | dark matter)? <h4>
-
-						<div class="container">
-							<div class="col" >
-								<ul>
-									<ul class="fragment" data-fragment-index="1"> <b>Mixture Density Networks </b>: learn the likelihood</ul>
-									<br>
-									<ul class="fragment" data-fragment-index="2"> <b>Pixel CNN++ </b>: Models the probability $p(x)$ of an image $x$ given latent input $h$
-										$$p_{\theta}(x|h) = \prod_{i=0}^{n} p_{\theta}(x_i | x_{i-1} \ldots x_0, h) $$
-									</ul>
-									
-								</ul>
-								<div class='fragment' data-fragment-index="3" style="position:relative; width:600px; height:500px; left:0px; top:0px; margin:0 auto">
-									<img class="plain"  data-src="assets/halo_sampling.png" /><br>
-									MDN model predicting distribution of halo positions
-								</div>
-							</div>
-							<div class="col" >
-								<div class="fragment" data-fragment-index="0" style="position:relative; text-align:left;font-size:25px;top:-130px">
-									$ {\mathcal{E} = \sum_i \Bigg(\frac{\mu_N + \rm{log(M_{R,i}^{NN} + M_0)} - \rm{log(M_{R,i}^{d} + M_0)}}{2\sigma_N}\Bigg)^2}$ </div>
-								<!-- <div class="col"> -->
-								<div style="position:relative; width:600px; height:300px; left:50px; top:-100px; margin:1 auto">
-							          	<img class="plain fragment current-visible" data-fragment-index="1" style="position:absolute;top:0;left:70px;" data-src="assets/MDN.png" height="550"/>
-									<img class="plain fragment " data-fragment-index="2" style="position:absolute;top:0;left:100px;" data-src="assets/pixelcnn0.png" height="250"/>
-									
-								</div>
-								<div  class="plain fragment " data-fragment-index="2" style="position:relative;float:right; top:-100px;left:-200px; font-size: 20px">van den Oord et al. 2016</div>
-								
-								
-							</div>
-							<br>
-						</div>
-
-							
-					
-				</section>
 
 				<!-- <section> -->
 				<!-- 	  <h3 class='slide-title'>introducing FlowPM: Particle-Mesh Simulations in TensorFlow</h3> -->
@@ -1221,6 +1541,7 @@
 		.reveal .block-content {
 			padding:8px 35px 8px 14px;
 		}
+                
 		.reveal .slide-title {
 			border-left: 5px solid white;
 			text-align: left;
@@ -1233,10 +1554,24 @@
 			margin-left: 20px;
 			padding-left: 20px;
 		}
+                
 		.reveal .alert {
   		color: #FFAA7F;
   		font-weight: bold;
 		}
+                
+		.reveal .slide-text {
+			text-align: left;
+			margin-left: 20px;
+		}
+                
+		.reveal .boxonly {
+			background-color:  #333333;
+			margin-left: 20px;
+			margin-right: 20px;
+			text-align: center;
+		}
+                
 		.reveal .inverted {
 			filter: invert(100%);
 		}
@@ -1288,81 +1623,4 @@
 	</body>
 </html>
 
-
-
-						<!-- <div class="container fragment"> -->
-						<!-- 	<\!-- <div class="col"> <h3> 1 </h3> </div> -\-> -->
-						<!-- 	<div class="col"> -->
-						<!-- 		<div class="box"> -->
-						<!-- 			<div class="box-title"> -->
-						<!-- 				Initial Dark Matter -->
-						<!-- 			</div> -->
-						<!-- 			<img class="plain" data-src="assets/fieldinit.png" height="200"/> -->
-
-						<!-- 		</div>								 -->
-						<!-- 	</div> -->
-						<!-- 	<div class="col"> <br><br>$\Longrightarrow$ <br>N-Body Simulation  <br>e.g. Particle Mesh Simulations</div> -->
-						<!-- 	<div class="col"> -->
-						<!-- 		<div class="box"> -->
-						<!-- 			<div class="box-title"> -->
-						<!-- 				Final Dark Matter -->
-						<!-- 			</div> -->
-						<!-- 			<img class="plain" data-src="assets/fieldfin.png" height="100"/> -->
-						<!-- 		</div> -->
-
-						<!-- 	</div> -->
-						<!-- </div> -->
-						<!-- <br><br> -->
-						<!-- <div class="container fragment"> -->
-						<!-- 	<\!-- <div class="col"> <h3> 2 </h3> </div> -\-> -->
-						<!-- 	<div class="col"> -->
-						<!-- 		<div class="box"> -->
-						<!-- 			<div class="box-title"> -->
-						<!-- 				Final Dark Matter -->
-						<!-- 			</div> -->
-						<!-- 			<img class="plain" data-src="assets/fieldfin.png" height="100"/> -->
-						<!-- 		</div>								 -->
-						<!-- 	</div> -->
-						<!-- 	<div class="col">  <br> <br>$\Longrightarrow$ <br> Group Finding Algorithm <br> e.g. Friends of Friends</div> -->
-						<!-- 	<div class="col"> -->
-						<!-- 		<div class="box"> -->
-						<!-- 			<div class="box-title"> -->
-						<!-- 				Dark Matter Halos -->
-						<!-- 			</div> -->
-						<!-- 			<img class="plain" data-src="assets/fieldhalo.png" height="100"/> -->
-						<!-- 		</div> -->
-
-						<!-- 	</div> -->
-						<!-- </div> -->
-
-						<!-- <br><br> -->
-						<!-- <div class="container fragment"> -->
-						<!-- 	<\!-- <div class="col"> <h3> 3 </h3> </div> -\-> -->
-						<!-- 	<div class="col"> -->
-						<!-- 		<div class="box"> -->
-						<!-- 			<div class="box-title"> -->
-						<!-- 				Dark Matter Halos -->
-						<!-- 			</div> -->
-						<!-- 			<img class="plain" data-src="assets/fieldhalo.png" height="100"/> -->
-						<!-- 		</div>								 -->
-						<!-- 	</div> -->
-						<!-- 	<div class="col">  <br> <br>$\Longrightarrow$ <br> Semi analytic approaches <br> Distribution Functions</div> -->
-						<!-- 	<div class="col"> -->
-						<!-- 		<div class="box"> -->
-						<!-- 			<div class="box-title"> -->
-						<!-- 				Galaxies -->
-						<!-- 			</div> -->
-						<!-- 			<img class="plain" data-src="assets/fieldgal.png" height="100"/> -->
-						<!-- 		</div> -->
-
-						<!-- 	</div> -->
-						<!-- </div> -->
-<!-- #arrow { -->
-<!--     border-right:2px solid black; -->
-<!--     border-bottom:2px solid black; -->
-<!--     width:10px; -->
-<!--     height:10px; -->
-<!--     transform: rotate(-45deg); -->
-<!--     margin-top:40px; -->
-<!-- } -->
 
