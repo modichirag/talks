@@ -728,8 +728,10 @@
                                                 
 
                                                 <br>
-                                                It is the  <b class="alert"> optimal </b>  approach to cosmological analysis
-                                                
+						<div class="boxonly" style="width:600px; padding:10px">
+							It is the  <b class="alert"> optimal </b>  approach to cosmological analysis
+						</div>
+						
                                                 <div class="slide-text", style="position:relative;">
                                                         <br>
                                                         <br>
@@ -840,45 +842,18 @@
                                                 <br>
 
                                                 <div class="slide-text">
-                                                        <b> Bottleneck</b>: Need to model covariance matrix of different datasets
-                                                        <br>
-                                                        <br>
-                                                </div>
-                                                Example: reconstruct initial conditions ($s$) by maximizing the posterior, given observed data :
-                                                $$\log p(z, \theta | x_1, x_2) \propto  \log p(x_{1} | f(z, \theta)) + \log p(x_{2} | f(z,  \theta)) \ + \ p(z) + p(\theta) $$
-
-                                                <div class="container">
-
-							<div class="col"  style="flex: 0 0 32em;">
-
-                                                                <br>
-                                                                <ul>
-
-                                                                        <li> No information is lost in data-compression
-                                                                        </li>
-                                                                        <br>
-                                                                        <li> Undo non-linear evolution to recover information in Gaussian initial conditions
-                                                                        </li>
-                                                                        
-                                                                </ul>
-                                                                
+							<div class="plain fragment", data-fragment-index="1">
+								<b> Bottleneck</b>: Traditional analysis needs to model covariance matrix of different datasets
+								$$ \log p(\theta | x_1, x_2) \propto   -\frac{1}{2}[x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] ^\dagger C^{-1}  [x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] + \log p(\theta)$$							
+							</div>
+							<div class="plain fragment", data-fragment-index="2">
+								Instead of the likelihood, capture correlations in the joint forward model: $x_1, x_2 = f( z, \theta)$
+								$$\log p(z, \theta | x_1, x_2) \propto  \log p(x_{1} | f(z, \theta)) + \log p(x_{2} | f(z,  \theta)) \ + \log p(z) + \log p(\theta) $$
+							</div>
 							
-
-							</div>
-							<div class="col" style="flex: 0 0 21em;">
-								<div style="position:relative; width:600px; height:400px; left:50px;  margin:1 auto">
-									
-									<img class="plain"   style="position:absolute;top:-10px;left:0px;" data-src="assets/field_level_prelim.png" />
-									<!-- <img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" /> -->
-                                                                        
-								</div>
-								<div class="fragment " data-fragment-index="4" style="position:relative; float:right;  top:100px; left:-140px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
-								<div class="fragment " data-fragment-index="4" style="position:relative; float:right;  top:120px; left:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
-							</div>
                                                 </div>
-                                                <div style="position:relative; width:600px; height:400px; left:50px;  margin:1 auto">
-							<img class="fragment plain" data-fragment-index="4" style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" /> 
-                                                </div>
+						<img class="fragment plain " data-fragment-index="1"  data-src="assets/vel-scatter2sm.png" height="250"/>
+								
                                                 
                                         </section>
                                         <!-------------------------------------------------------------------------------->
@@ -886,181 +861,17 @@
 				
 				</section>
 
-                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
-					<div style="font-size:80px">Simulations Based Inference</div>
-				</section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section>
-
-                                        <section>
-
-                                                <h3 class='slide-title'> Why? It's optimal </h3>
-                                                <div class="container">
-                                                                                                        
-							<div class="col"  style="flex: 0 0 32em;">
-
-                                                                <br>
-                                                                <ul>
-
-                                                                        <li> No information is lost in data-compression
-                                                                        </li>
-                                                                        <br>
-                                                                        <li> Undo non-linear evolution to recover information in Gaussian initial conditions
-                                                                        </li>
-                                                                        
-                                                                </ul>
-								        <div class="block fragment " data-fragment-index="1">
-									<div class="block-title">
-										Examples of latent fields
-									</div>
-									<div class="block-content">
-										<ul>
-											<li> Initial density field 
-											$\rightarrow$ Optimal analysis, BAO ... </li>
-											<li > Observed data field 
-											$\rightarrow$ Denoising ... </li> 
-											<li > Velocity field/Final matter density 
-											$\rightarrow$ Supplement analyses </li> 
-												
-										</ul>
-									</div>
-
-								</div>
-								<br>
-								<div class="block fragment " data-fragment-index="3">
-									<div class="block-title">
-										Challenges
-									</div>
-									<div class="block-content">
-										<ul>
-											<li >High Dimensional Optimization (&gt $10^8$ parameters)<br>
-											$\rightarrow$ Gradient Based Algorithm <br>
-												$\rightarrow$ Differentiable Forward Models</li>
-											<li > Correct Likelihood and noise model
-										</ul>
-									</div>
-
-								</div>
-								<br>
-
-							</div>
-							<div class="col" style="flex: 0 0 21em;">
-								<div style="position:relative; width:600px; height:400px; left:50px;  margin:1 auto">
-									
-									<img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" />
-
-								</div>
-								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-100px; left:-140px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
-								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-120px; left:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
-							</div>
-
-                                        </section>
-                                        
-					<!-------------------------------------------------------------------------------->
 					<section>
-						<h3 class='slide-title'> Baryon Acoustic Oscillations </h3>
-
-						<i> Most robust probes for dark energy from galaxy surveys like DESI </i>
-
+						<h3 class='slide-title'> Challenges to field level inference #1 </h3>
+						It needs differentiable simulations
 						<br>
-						<br>
-						
-						<div class="container">
-
-							<div class="col">
-								<ul>
-									<li class="fragment" data-fragment-index="0">Pressure waves in the primordial photon-baryon fluids </li> 
-									<br>									
-									<li class="fragment" data-fragment-index="0">Frozen at the time of decoupling <br>$\rightarrow$ Clustering at preferred scale </li>
-									<br>
-									<li class="fragment" data-fragment-index="3"> Damping due to non-linear evolution</li>
-									<br>
-									<div style="position:relative; width:550px; height:550px; left:50px;margin:1 auto;top:-40px">
-										<img class="fragment plain" data-fragment-index="3" data-src="assets/bao_damping.jpg"/>
-									</div>
-									<div class="fragment" data-fragment-index="3" style="position:relative; float:right; top:-230px; left:200px; font-size: 20px; margin:0 auto">Padmanabhan et al. 2012</div>
-									<br>
-								</ul>
-							</div>		
-														
-							<div class="col" >
-								<!-- <\!-- <div class="col"> -\-> -->
-								<div style="position:relative; width:600px; height:400px; left:50px;  margin:1 auto">
-									
-									<!-- <video class="fragment current-visible" data-fragment-index="0" data-autoplay  data-src="assets/bao_movie.mp4" /> -->
-									<!-- <video class="fragment current-visible" data-fragment-index="0" data-autoplay  data-src="assets/illustris_movie_cube_sub_frame.mp4" style="position:absolute;top:65px;left:0px;" /> -->
-									
-									<img class="fragment current-visible plain" data-fragment-index="0"  style="position:absolute;top:-150px;left:0px;" data-src="assets/bao_cartoon.png" />
-									<img class="fragment current-visible plain" data-fragment-index="3"  style="position:absolute;top:-150px;left:0px;" data-src="assets/bao_cartoon.png" />
-									<div class="fragment " data-fragment-index="4" style="position:absolute;top:-70px;left:40px;font-size:20px" >
-										$F_{ij} =  V_{\rm{eff}}\int_{k_{min}}^{k_{max}} \frac{\partial {\rm ln} P(k)}{\partial p_i} \frac{\partial {\rm ln} P(k)}{\partial p_j}\frac{4 \pi k^2}{2 (2\pi)^3} dk \quad \mathbf{\propto \,  r_c^4} $
-									</div>
-									
-									<img class="fragment plain" data-fragment-index="4"  style="position:absolute;top:-10px;left:0px;" data-src="assets/realrccfig.png" />
-
-								</div>
-								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-100px; left:-140px; font-size: 20px; margin:0 auto">Seo et al. 2007</div>
-								<div class="fragment current-visible" data-fragment-index="4" style="position:relative; float:right;  top:-120px; left:0px; font-size: 20px; margin:0 auto">Modi et al. 2018</div>
-								
-							</div>
-						
-						</div>
-						<br><br>
-
+						FlowPM
 					</section>
-					
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				<section>
-						<h3 class='slide-title'> reconstruction in redshift space </h3>
-
-						
-						<div class="container">
-
-							<div class="col">
-								<ul>
-									<li class="fragment" data-fragment-index="1">Forward modeling reconstructs velocity field </li> 
-									<br>									
-									<li class="fragment" data-fragment-index="2">Displace halos with velocities beyond linear theory</li>
-									<br>
-									<li class="fragment" data-fragment-index="3"> Imporvements in BAO <br><br>
-										<ul>$\rightarrow$ Over 2x gains in line-of-sight direction</ul>
-										<ul class="fragment" data-fragment-index="3"> $\rightarrow$ Same ~30% improvement in transverse direction</ul>
-									</li>
-									<br>
-									<li class="fragment" data-fragment-index="4"> Supplement other analyses - velocity power spectra, undoing redshift space distortions ...</li>
-									<br>
-									<br>
-								</ul>
-							</div>		
-														
-							<div class="col" >
-								<!-- <div class="col"> -->
-								<img class="fragment plain " data-fragment-index="1"  data-src="assets/vel-scatter2sm.png" height="250"/>
-								<img class="fragment plain" data-fragment-index="3"  data-src="assets/redrccfig.png" height="250"/>
-							</div>
-						
-						</div>
-						<br><br>
-
-					</section>
-
-
-				</section>
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
+                                        <!-------------------------------------------------------------------------------->
 				
-
 				<!-- <section> -->
 				<!-- 	  <h3 class='slide-title'>introducing FlowPM: Particle-Mesh Simulations in TensorFlow</h3> -->
 
@@ -1230,226 +1041,36 @@
 					  </div>
 				</section>
 				
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
+					<section>
+						<h3 class='slide-title'> Challenges to field level inference #1 </h3>
+						PMWD
+					</section>
+                                        <!-------------------------------------------------------------------------------->
+				
+					<section>
+						<h3 class='slide-title'> Challenges to field level inference #2 </h3>
+						High dimensional inference is hard
+					</section>
 
+                                        <!-------------------------------------------------------------------------------->
+				
+					<section>
+						<h3 class='slide-title'> Challenges to field level inference #3 </h3>
+						Correct likelihood model?
+					</section>
+					
+				</section>
+
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
 				<section>
-					<div style="font-size:80px">21-cm Intensity Mapping Surveys</div>
+					<div style="font-size:80px">Simulations Based Inference</div>
 				</section>
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-				<section >
-						
-					<h3 class='slide-title'>foreground wedge of 21-cm surveys</h3>
+				
 
-					<div class='container'>
-						<div class='col' >
-							<div class='fragment', data-fragment-index=3> At $z = 2, 4, 6$<br><br>Fraction of modes lost in </div>
-							<br>
-							<div class="box fragment" data-fragment-index=3>
-								<div class="box-title">
-									Foreground wedge
-								</div>
-								<div class="box-content">
-									<ul>
-										<li> Pessimistic : 21, 60, 88% </li>
-										<li>  Optimistic  : 7, 21, 40% </li>
-									</ul>
-								</div>
-							</div>
-							<br>
-							<div class='fragment', data-fragment-index=4> Additional modes lost due to </div>
-							<br>
-							
-							<div class="box fragment" data-fragment-index=4>
-								<div class="box-title">
-									Thermal Noise (S/N<1)
-								</div>
-								<div class="box-content">
-									<ul>
-										<li> Pessimistic : 30, 24, 9%  </li>
-										<li>  Optimistic  : 43, 51, 37% </li>
-									</ul>
-								</div>
-							</div>
-							<br>
-							<div class='fragment', data-fragment-index=5> How to recover these lost modes? <br>
-								$\Longrightarrow$ Exploit mode coupling between small and large scales
-							</div>
-							
-						</div>
-						<div class='col' >
-							<div style="position:relative; width:600px; height:600px; margin:0 auto;top:-50px">
-								<img class="fragment current-visible plain"  data-src="assets/21cmmapwhitepaper.png" style="position:absolute;top:0px;left:0px;" data-fragment-index="0" />
-								<img class="fragment current-visible plain"  data-src="assets/21cmmapwhitepaper.png" style="position:absolute;top:0px;left:0px;" data-fragment-index="1" />
-								<img class="fragment  plain"  data-src="assets/21cmwedge.png" style="position:absolute;top:400px;left:00px;" data-fragment-index="1" />
-								<img class="fragment  current-visible plain"  data-src="assets/21cmcorrupt.png" style="position:absolute;top:20px;left:100px;" data-fragment-index="2"/>
-								<img class="fragment  current-visible plain"  data-src="assets/21cmcorrupt.png" style="position:absolute;top:20px;left:100px;" data-fragment-index="3"/>
-								<img class="fragment  current-visible plain"  data-src="assets/21cmcorrupt.png" style="position:absolute;top:20px;left:100px;" data-fragment-index="4"/>
-								<img class="fragment plain"  data-src="assets/21cmloop2.png" style="position:absolute;top:0px;left:40px;" data-fragment-index="5" height="350px"/>
-								
-							</div>
-							<div  class="fragment  plain"  data-fragment-index="1" style="position:absolute; float:right; top:650px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
-
-						</div>
-					</div>
-				</section>
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				<section >
-						
-				<section >
-						<h3 class='slide-title'>Hidden Valley Simulations</h3>
-						<div> 1Gpc/h, (10,240)^3 simulation, largest LSS simulations ever run on NERSC </div>
-						<div class='container'>
-							<div class='col' style="flex: 0 0 25em; position:relative">
-								<br>
-
-								<ul>
-									<li class='fragment' data-fragment-index="1">HI content follows halo mass </li>
-									<li class='fragment' data-fragment-index="1">Dominant signal from low mass halos </li>
-									<li class='fragment' data-fragment-index="1">Satellites are HI poor </li>
-								</ul>
-								<br>
-								<br>
-								<div class="fragment" data-fragment-index="4" style="position:relative;text-align:center">
-									HI field tracers dark matter closely </div>
-								<br>
-
-								<div style="position:relative; width:600px; height:350px; left:110px; top:0px; margin:1 auto">
-									<img class="plain fragment"  data-fragment-index="4" style="position:absolute;top:0;left:25px;" data-src="assets/hvfield2.png" />
-								</div>
-							</div>
-							<div class='col' style="flex: 0 0 25em;">
-								<img class="fragment  plain"  style="position:relative;top:-30px" data-src="assets/hv_occupation.png" data-fragment-index="0" height='480px'/>
-							</div>
-							<div   style="position:absolute; float:right; top:620px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019a</div>
-							<div   style="position:absolute; float:right; top:650px;  left:650px;font-size: 20px; margin:0 auto">Simulations available at <a href="http://cyril.astro.berkeley.edu/">http://cyril.astro.berkeley.edu/ </a></div>
-
-						</div>
-					</section>
-					<!-------------------------------------------------------------------------------->
-					<!-------------------------------------------------------------------------------->
-					<section >
-						
-						<h3 class='slide-title'>Lagrangian bias model</h3>
-						<ul>
-							<li class='fragment' data-fragment-index="1">Weight the particles with lagrangian (initial) field </li>
- 							<div class='fragment' data-fragment-index="1" style="text-align:center">
-								$$w = 1 + \mathbf{b_1} \delta_L(q)+ \mathbf{b_2} (\delta^2(q) - \langle \delta^2_L(q)\rangle) +  \mathbf{b_g} (g_L(q) - \langle g_L(q)\rangle) $$
-							</div>
-							<br>
-							<li class='fragment' data-fragment-index="2">Displace them to the Eulerian (redshift space) position with N-body dynamics </li>
-							<div class='fragment' data-fragment-index="2" style="text-align:center">
-								$$ x= q + \Psi$$
-								$$\delta^b_{\rm HI} (x) = \delta_{[1]}(x) + \mathbf{b_1}\delta_{[\delta_L]}(x)  + \mathbf{b_2}\delta_{[\delta^2_L]}(x)  + \mathbf{b_g}\delta_{[g_L]}(x)$$
-							</div>
-							<br>
-							<li class='fragment' data-fragment-index="3">Fit bias parameters to minimize the difference at the field level 
-							<div class='fragment' data-fragment-index="3" style="text-align:right">
-								$$ P_{\rm err} (k) = \frac{1}{N_{\rm modes}(k)}  \sum_{\vec{k}, |\vec{k}| \sim k} | \delta^b_{\rm HI}(\vec{k}) - \delta_{\rm HI}(\vec{k})| ^2 $$
-							</div></li>
-							<br>
-						</ul>
-						<div   style="position:absolute; float:right; top:600px;  left:1000px;font-size: 20px; margin:0 auto">Schmittfull 2018, Modi et al. 2019b,c</div>
-
-							
-					</section>
-
-					<!-------------------------------------------------------------------------------->
-					<section >
-						
-						<h3 class='slide-title'>how well does the bias model fit?</h3>
-						<div class='container'>
-							<div class='col' style="flex: 0 0 25em; position:relative">
-								<div class="fragment" data-fragment-index='0'>
-									<div class="box fragment" data-fragment-index=0>
-										<div class="box-title">
-											Eulerian Model
-										</div>
-										<div class="box-content" style='font-size:20px'>
-											<ul>
-												$\delta^b_{\rm HI} (x) = {b_1^E}\delta(x) $
-												<br>
-												$\delta^b_{\rm HI} (x) = {b_1^E}\delta(x)  + {b_2^E}\delta(x)  + {b_g^E}g(x)$
-											</ul>
-										</div>
-									</div>
-									<br> <br>
-									<div class="box fragment" data-fragment-index=0>
-										<div class="box-title">
-											Lagrangian Model
-										</div>
-										<div class="box-content" style='font-size:20px'>
-											$\delta^b_{\rm HI} (x) = \delta_{[1]}(x) + {b_1}\delta_{[\delta_L]}(x)  + {b_2}\delta_{[\delta^2_L]}(x)  + {b_g}\delta_{[g_L]}(x)$
-											<br>
-											$ x= q + \Psi_{\rm ZA}$ <br>
-											$ x= q + \Psi_{\rm PM}$ <br>
-										</div>
-									</div>
-									 
-								</div>
-								<br>
-								<div class="fragment" data-fragment-index='1'> Error power spectrum motivates our likelihood <br><br>
-									$ P_{\rm err} (k) = \frac{1}{N_{\rm modes}(k)}  \sum_{\vec{k}, |\vec{k}| \sim k} | \delta^b_{\rm HI}(\vec{k}) - \delta_{\rm HI}(\vec{k})| ^2 $
-							</div>
-								
-							</div>
-
-							<div class='col' style=" position:relative">
-								<img class="fragment  plain fade-up"  data-src="assets/h1_biasfit.png" data-fragment-index="0"/>
-								<img class="fragment  plain fade-up"  data-src="assets/h1_biasfit_error.png" data-fragment-index="1" height='200px'/>
-							</div>
-						
-						</div>
-					</section>
-				</section>
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section >
-
-					<section >
-						<h3 class='slide-title'>reconstructing large scale modes</h3>
-						$$\mathcal{P}_w =  \sum_k \frac{1}{\rm N_{modes}(k)} \left( \sum_{\substack{\vec{k}, |\vec{k}|\sim k, \\ {\vec{k} \not\in w}}}  \frac{|\delta_{\rm HI}^b(\vec{k}) - \delta_{\rm HI}^n(\vec{k})|^2}{P_{\rm err}(k,\mu)} +  \sum_{\vec{k}, |\vec{k}|\sim k}  \frac{|s(\vec{k}))|^2}{P_{\rm s}(k)}  \right)$$
-
-						<div style="position:relative; width:800px; height:600px; left:100px;margin:0 auto">	
-							<img class="fragment  plain current-visible fade-up"  style="position:absolute;left:-70px;width:800px" data-src="assets/21cmrecon-noise.png" data-fragment-index="0"/>
-							<img class="fragment  "  style="position:absolute;left:-70px;width:800px" data-src="assets/21cmrecon.png" data-fragment-index="1"/>
-						</div>
-						
-						<div   style="position:absolute; float:right; top:650px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
-
-					</section>
-
-
-					<section >
-
-						<h3 class='slide-title'>science cases</h3>
-
-						<div class='container'>
-							<div class='col' style="position:relative; width:800px; height:600px; left:0px; top:0px; margin:1 auto">
-								<h4 class="alert"> Photometric Redshifts </h4>
-								$$\delta_p(k, \mu) = (b_p + f\mu^2) \mathcal{D} \delta_m(\vec{k}) + {\rm noise}$$
-								$$\mathcal{D}(k, \mu) = {\rm exp} [-k^2\mu^2\sigma_\chi^2/2]$$
-								<img class="plain fragment fade-up"  data-fragment-index="0" style="position:absolute;top:170px;left:100px;width:450px"
-								     data-src="assets/photocross-snr.png" />
-								<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
-								<div class=' fragment fade-up'   data-fragment-index="1"> <b> Also CMB Lensing cross-correlations </b> </div>
-							</div>
-							<div class='col' style="position:relative; width:800px; height:600px; left:0px; top:0px; margin:1 auto">
-								<h4 class="alert fragment" data-fragment-index="2"> Baryon Acoustic Oscillations </h4>
-								<img class="plain fragment  fade-up"  style="position:absolute;left:-70px;width:800px" data-fragment-index="2"  data-src="assets/21cmbao2d.png" />
-								<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br><br>
-								<div class=' fragment fade-up'   data-fragment-index="2">  Standard reconstruction does not reconstruct inside the wedge  </div>
-							</div>
-						</div>
-						<div   style="position:absolute; float:right; top:650px;  left:1000px;font-size: 20px; margin:0 auto">Modi et al. 2019b</div>
-
-					</section>
-
-				</section>
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 
@@ -1567,9 +1188,10 @@
                 
 		.reveal .boxonly {
 			background-color:  #333333;
-			margin-left: 20px;
-			margin-right: 20px;
+			margin: auto;
 			text-align: center;
+			border-radius: 5px;
+
 		}
                 
 		.reveal .inverted {
