@@ -115,6 +115,9 @@
 
                                         <section data-background-image="assets/cmb.png" data-background-size="1400px" data-background-color="black">
 						<h3 class='slide-title'> next generation of cosmological probes</h3>
+
+						TODO : Insert a figure with timelines of different surveys
+						
 						<div class="container">
 							<div class="col">
 								<div class="fragment fade-up" data-fragment-index='0'>
@@ -865,201 +868,378 @@
 				<!-------------------------------------------------------------------------------->
 				<section>
 					<section>
-						<h3 class='slide-title'> Challenges to field level inference #1 </h3>
-						It needs differentiable simulations
+						<h3 class='slide-title'> Roadmap to field level inference #1 </h3>
+
 						<br>
-						FlowPM
+						<b class="alert"> Fast, differentiable </b> cosmological simulations.
+						<br>
+						<br>
+						<div class="slide-text">
+							
+							<div class="container">
+                                                        	<div class="col" style="flex: 0 0 32em;" >
+									<ul>
+										<li class="fragment " data-fragment-index="1"> 	Infer initial conditions at all points in the Universe <br>
+											$\sim$ over a million unknown parameters
+											
+										</li>
+										<br>
+										<li class="fragment " data-fragment-index="2"> 	Need to use gradient based inference algorithms <br>
+											$\rightarrow$ gradient descent optimization, Hamiltonian Monte Carlo, Variational inference...<br>
+											$\rightarrow g_z = \frac{\partial\, p(z, \theta | x)}{\partial\, z},\, g_{\theta} = \frac{\partial\, p(z, \theta | x)}{\partial\, \theta}$
+										</li>
+										<br> 
+										<li class="fragment " data-fragment-index="3"> 	 <b> Automatic differentiation </b> is the hammer behind the deep learning revolution <br>
+											$\rightarrow$  <b>TensorFlow</b>, <b>JAX</b> or PyTorch.
+										</li>
+										<br>
+										<li class="fragment " data-fragment-index="4"> 	 <b> GPU accelerated </b> simulations 
+										</li>
+									</ul>
+								</div>
+								<div class="col" style="flex: 0 0 21em; text-align:center">
+									<img class=" plain fragment " data-fragment-index="3" width="300px" data-src="assets/TF_FullColor_Horizontal.png" />
+									<img class=" plain fragment " data-fragment-index="3" width="200px" height="100px"  data-src="https://raw.githubusercontent.com/google/jax/master/images/jax_logo_250px.png"  />
+								</div>
+							</div>
+							
+						</div>
 					</section>
+
                                         <!-------------------------------------------------------------------------------->
-				
-				<!-- <section> -->
-				<!-- 	  <h3 class='slide-title'>introducing FlowPM: Particle-Mesh Simulations in TensorFlow</h3> -->
 
-				<!-- 	  <div class='container'> -->
-				<!-- 		  <div class='col' style="flex: 0 0 25em;"> -->
-				<!-- 			  <img data-src="assets/github.png" class="plain" style="height:70px"/> -->
-				<!-- 			  <div> <a href="https://github.com/modichirag/flowpm">https://github.com/modichirag/flowpm</a> -->
-				<!-- 			  </div> -->
-				<!-- 			  <pre><code data-trim data-noescape> -->
-				<!-- 			  import tensorflow as tf -->
-				<!-- 			  import flowpm -->
-				<!-- 			  # Defines integration steps -->
-				<!-- 			  stages = np.linspace(0.1, 1.0, 10, endpoint=True) -->
-
-				<!-- 			  initial_conds = flowpm.linear_field(32,        # size of the cube -->
-				<!-- 							      100,       # Physical size -->
-				<!-- 							      ipklin,    # Initial powerspectrum -->
-				<!-- 							      batch_size=16) -->
-
-				<!-- 			  # Sample particles and displace them by LPT -->
-				<!-- 			  state = flowpm.lpt_init(initial_conds, a0=0.1) -->
-
-				<!-- 			  # Evolve particles down to z=0 -->
-				<!-- 			  final_state = flowpm.nbody(state, stages, 32) -->
-
-				<!-- 			  # Retrieve final density field -->
-				<!-- 			  final_field = flowpm.cic_paint(tf.zeros_like(initial_conditions), -->
-				<!-- 							 final_state[0]) -->
-
-				<!-- 			  with tf.Session() as sess: -->
-				<!-- 			      sim = sess.run(final_field) -->
-				<!-- 			  </code></pre> -->
-				<!-- 		  </div> -->
-
-				<!-- 		  <div class='col fragment' style="flex: 0 0 25em;"> -->
-						
-				<!-- 			  <img data-src="assets/TF_FullColor_Horizontal.png" class='plain' style="height: 80px;"/> -->
-				<!-- 			  <div> Readily available gradients &amp seamless interfacing with DL </div> -->
-				<!-- 			  <pre  ><code data-trim data-noescape style="height:70em;width:50em;"> -->
-				<!-- 			  import tensorflow as tf -->
-				<!-- 			  import flowpm -->
-
-				<!-- 			  linear = tf.get_variable('linear', shape=(nc, nc, nc), -->
-				<!-- 						 initializer=tf.random_normal_initializer(), trainable=True) -->
-				<!-- 			  initial_conds = flowpm.lpt_init(linear, name='icstate') -->
-				<!-- 			  final_state = flowpm.nbody(initial_conds, stages, nc, name='fnstate') -->
-
-				<!-- 			  #Likelihood term of data -->
-				<!-- 			  final = tf.zeros_like(linear) -->
-				<!-- 			  final = flowpm.cic_paint(final, final_state[0], boxsize=bs, name='final') -->
-				<!-- 			  residual = tf.multiply(tf.subtract(final, data), 1/sigma) -->
-				<!-- 			  likelihood = tf.reduce_sum(tf.multiply(residual, residual)) -->
-				<!-- 			  #likelihood = module(dict(features=final, labels=data), as_dict=True)[loss] ##DL -->
-				<!-- 			  #Prior -->
-				<!-- 			  lineark = flowpm.r2c3d(linear, norm=nc**3) -->
-				<!-- 			  prior = tf.square(tf.cast(tf.abs(lineark), tf.float32)) -->
-				<!-- 			  prior = tf.reduce_sum(tf.multiply(prior, 1/priorwt)) -->
-				<!-- 			  #Loss -->
-				<!-- 			  loss = tf.add(likelihood, prior, name='loss') -->
-				<!-- 			  optimizer = ScipyOptimizerInterface(loss, var_list=[linear], 'L-BFGS-B') -->
-
-				<!-- 			  with tf.Session() as session: -->
-				<!-- 			      optimizer.minimize(session) -->
-				<!-- 			      recon = session.run(linear) -->
-
-
-				<!-- 			  </code></pre> -->
-				<!-- 		  </div> -->
-				<!-- </section> -->
-
-				<section>
-					<h3 class='slide-title'>need differentiable simulations interfacing with deep learning elements?</h3>
-					<div class="fragment"> introducing <br> <b> <span class='alert' style="font-size:25px"> FlowPM </span> </b>: <em>Particle-Mesh Simulations in TensorFlow </em></div>
 					
-					  <div class='container fragment'>
-						  <div class='col' style="flex: 0 0 25em;">
-							  <img data-src="assets/github.png" class="plain" style="height:70px"/>
-							  <div> <a href="https://github.com/modichirag/flowpm">https://github.com/modichirag/flowpm</a>
-							  </div>
-							  <pre><code data-trim data-noescape>
-							  import tensorflow as tf
-							  import flowpm
-							  # Defines integration steps
-							  stages = np.linspace(0.1, 1.0, 10, endpoint=True)
+					<section>
+						<h3 class='slide-title'><b class="alert"> FlowPM</b>: the first particle-mesh simulations in TensorFlow</h3>
 
-							  initial_conds = flowpm.linear_field(32,        # size of the cube
-											      100,       # Physical size
-											      ipklin,    # Initial powerspectrum
-											      batch_size=16)
+						
+						<div class='container'>
+							<div class='col slide-text' style="flex: 0 0 25em;">
+								
+								<ul>
+									<li class="fragment" data-fragment-index="1">	Reconstructing the Universe in 10 lines
+										<ul>
+											<li> Automatic differentiation
+											</li>
+											<li> Access to SOTA optimization and Bayesian inference algorithms
+											</li>
+											<li>  Seamless interfacing with deep-learning tools 
+											</li>
+										</ul>
+										
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="2">	GPU accelerated simulations
+										<ul>
+											<li> $\sim$ 10 times faster than CPU simulations
+											</li>
+										</ul>
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="3">
+										Distributed to multiple GPU with Mesh-TensorFlow
+										<ul>
+											<li> 2048$^3$ simulation
+											</li>
+											<li> Distributed on 256 NVIDIA V100 GPU
+											</li>
+											<li> Runtime: 3 mins
+											</li>
+										</ul>
+									</li>
+								
+							</div>
+							
+							<div class='col' style="flex: 0 0 28em;">
 
-							  # Sample particles and displace them by LPT
-							  state = flowpm.lpt_init(initial_conds, a0=0.1)
+								<div style="position:relative; text-align:center">
+								
+									<div class="plain" style="position:absolute; margin-left:20px"> <a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a>
+									</div>
+									<div class="fragment current-visible" data-fragment-index="1" style="position:relative; top:30px; left:-15px">
+									  <pre  ><code data-trim data-noescape style="height:80em;width:49em;">
+									  import tensorflow as tf
+									  import flowpm
 
-							  # Evolve particles down to z=0
-							  final_state = flowpm.nbody(state, stages, 32)
+									  #Run simulation from variable initial conditions
+									  linear = tf.get_variable('linear', shape=(nc, nc, nc),
+												 initializer=tf.random_normal_initializer(), trainable=True)
+									  initial_conditions = flowpm.lpt_init(linear, name='icstate')
+									  final_state = flowpm.nbody(initial_conditions, stages, nc, name='fnstate')
+									  final_field = flowpm.cic_paint(tf.zeros_like(linear), final_state[0], boxsize=bs)
 
-							  # Retrieve final density field
-							  final_field = flowpm.cic_paint(tf.zeros_like(initial_conditions),
-											 final_state[0])
+									  #Likelihood term: ((data-model)/noise)^2
+									  residual = tf.multiply(tf.subtract(final_field, data), 1/sigma)
+									  neg_log_likelihood = tf.reduce_sum(tf.multiply(residual, residual))
 
-							  with tf.Session() as sess:
-							      sim = sess.run(final_field)
-							  </code></pre>
-						  </div>
+									  #Prior: (linear_modes^2 / linear_power_spectrum)
+									  lineark = flowpm.r2c3d(linear, norm=nc**3)
+									  neg_log_prior = tf.square(tf.cast(tf.abs(lineark), tf.float32))
+									  neg_log_prior = tf.reduce_sum(tf.multiply(neg_log_prior, 1/priorwt))j
 
-						  <div class='col' style="flex: 10 10 25em;">
-							  <div class="fig-container" data-file="flowpm_16.html" data-style="height: 550px;"></div>
-						  </div>
-						  <div  style="position:absolute; float:right; top:650px;  left:1000px;font-size: 15px; margin:0 auto">Credits : Francois Lanusse</div>
+									  #Loss & optimize
+									  loss = tf.add(neg_log_likelihood, neg_log_prior, name='loss')
+									  optimizer = ScipyOptimizerInterface(loss, var_list=[linear], 'L-BFGS-B')
+									  with tf.Session() as session:
+									      optimizer.minimize(session)
+									      recon = session.run(linear)
+									  </code></pre>
+								</div>
+								<img  class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:30px; left:25px" data-src="assets/flowpm_lptcompare.png"/>
+								<img  class="plain fragment" data-fragment-index="3" style="position:absolute; top:30px; left:150px" data-src="assets/mfpm_demo_1024.png" />
+							
+								
+								</div>
+							</div>
+							
+							
+						</div>
+						<div class="footer" style="text-align:left; font-size:20px; margin-left:20px">
+							  <em> Roadmap to field level inference- fast differentiable cosmological simulations </em>
+						</div>
+					</section>
+					
+				
+					<section>
+						<h3 class='slide-title'> $pmwd$: Particle Mesh with Derivatives </h3>
 
-					  </div>
+												
+						<div class='container'>
+							<div class="col" style="flex: 0 0 25em;">
+
+								<br>
+								<div class="slide-text">
+									<b> Bottleneck </b>: Back-propogation is memory limited as it saves every snapshot of the simulation.
+									<br>
+									<br>
+									<ul>
+									<li class="fragment" data-fragment-index="1"> Adjoint method: evolve adjoint variables <em> backwards </em>  in time to evaluate gradients
+										<ul>
+											<li> Neural ODE & SDE (Chen et.al.)
+											</li>
+										</ul>
+										
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="2">	Leapfrog integration is exactly reversible
+									</li>
+									<br>
+									<li class="fragment" data-fragment-index="3">
+										Memory cost of $pmwd$ simulations is <b class="alert"> independent </b>  of the number of time steps
+										<ul>
+											<li> accurate velocities & weak lensing simulations
+											</li>
+										</ul>
+									</li>
+									<br> 
+									<li class="fragment" data-fragment-index="4"> CUDA optimizations
+										<ul>
+											<li> Faster than end-to-end deep learning emulators, 100x faster than CPU simulations
+											</li>
+										</ul>
+									</li>
+								</div>
+							</div>
+							
+							<div class='col' style="flex: 0 0 10em;">
+
+									<div class="plain" style="position:absolute; top:50px; margin-left:180px"> <a href="https://github.com/eelregit/pmwd">https://github.com/eelregit/pmwd</a>
+									</div>
+
+							
+								<img  class="plain" width="500px" style="position:absolute; top:100px" data-src="assets/pmwd_table.png" />
+								<img  class="plain fragment current-visible " data-fragment-index="2"
+								      style="position:absolute; top:300px; margin-left:130px " data-src="assets/leapfrog.png" />
+								<img  class="plain fragment current-visible " data-fragment-index="3"
+								      style="position:absolute; top:300px; margin-left:130px " data-src="assets/leapfrog.png" />
+								<img  class="plain fragment" data-fragment-index="4"
+								      style="position:absolute; top:300px" width="500px" data-src="assets/pmwd_timing.png" />
+							</div>
+						</div>
+						
+					</section>
 				</section>
 
+                                <!-------------------------------------------------------------------------------->
+                                <!-------------------------------------------------------------------------------->
+
+				
 				<section>
-					<h3 class='slide-title'>reconstructing the Universe in 10 lines</h3>
+					
+					<section>
+						<h3 class='slide-title'> Roadmap to field level inference #2 </h3>
 
-					<br>
-					$$ \mathcal{L}(s) = \underbrace{[d - \mathcal{F}(s)]^\dagger N ^{-1} [d - \mathcal{F}(s)]}_{likelihood} + \underbrace{s^\dagger \mathcal{S}^{-1} s}_{prior} $$
+						<b class="alert"> Accelerated </b> Bayesian inference algorithms
+						
+						<div class="container">
+							<div class="col">
+								<div class="box fragment" data-fragment-index="1" style="position:absolute; top:150px; width:600px">
+									<div class="box-title", style="height:35px">
+										MAP estimate with gradient descent
+									</div>
+									<div class="box-content" style="font-size:smaller">
+										<br>										
+										$z_{i+1} = z_i - \epsilon \left(\nabla_z{\log p(z_i | x)} + \nabla_z \log p(z_i) \right)$
+										<br>
+										<br>
+										<div class="slide-text">
+											Good: Fast(er), $\mathcal O(100)$ iterations to reach MAP
+											<br>
+											Bad: Point estimate only <br>
+											     &nbsp &nbsp &nbsp &nbsp uncertainties using simulations (MUSE, Milea 2022)
+											<br>
+											Ugly: Approximate, no theoretical guarantees
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col">
+								<div class="box fragment" data-fragment-index="2" style="position:absolute; top:150px; width:650px">
+									<div class="box-title", style="height:35px">
+										Hamiltonian Monte Carlo (HMC)
+									</div>
+									<div class="box-content" style="font-size:smaller">
+										<br>
+										$H(z, p) = -\log p(z | x) + \frac{1}{2}p^T M^{-1} p$
+										<br>
+										$\frac{dz }{dt} = \frac{\partial H(z, p)}{\partial z},\, \frac{dp }{dt} = -\frac{\partial H(z, p)}{\partial p}$
+										<br>
+										<br>
+										<div class="slide-text">
+											Good: Asymptotically explores the entire posterior
+											<br>
+											Bad: Consecutive samples are correlated
+											<br>
+											<div class="plain fragment" data-fragment-index="3" >
+												Ugly: <b> <font color="red"> $\sim 10^4$ simulations </font> </b> for a single independent sample!!
+											</div>
 
-					  <div class='container'>
-						  <div class='col' style="flex: 0 0 25em;">
-							  <ul >
-								  <li> Readily available gradients </li>
-								  <br>
-								  <li class='fragment' data-fragment-index="1"> Seamless interfacing with DL elements for hybrid forward models and inference </li>
-								  <br>
-								  <!-- <li class='fragment' data-fragment-index="2"> Developing hybrid forward models while preserving our understanding of underlying physics </li> -->
-							  	  <!-- <br> -->
-								  <li class='fragment' data-fragment-index="3">  Collaborating with researchers at BCCP, NERSC and Google to develop exascale computing using Mesh TensorFlow for future cosmological surveys  </li>
-							  </ul>
-							  
-							  <br><br>
-						      <img data-src="assets/TF_FullColor_Horizontal.png" class='plain' style="height: 60px;"/>
-						  </div>
-						  <div class='col' style="flex: 0 0 25em;">
+										</div>
+									</div>
+								</div>
+							</div>
+							<br>
+							
+						</div>
+						<img  class="fragment plain" style="position:relative; top:320px" data-fragment-index="3" data-src="assets/hmc_ac.png" height="250px"/>
+					</section>
 
-							  <pre  ><code data-trim data-noescape style="height:70em;width:50em;">
-							  import tensorflow as tf
-							  import flowpm
+					<!-------------------------------------------------------------------------------->
 
-							  linear = tf.get_variable('linear', shape=(nc, nc, nc),
-										 initializer=tf.random_normal_initializer(), trainable=True)
-							  initial_conds = flowpm.lpt_init(linear, name='icstate')
-							  final_state = flowpm.nbody(initial_conds, stages, nc, name='fnstate')
+					<section>
+						<h3 class="slide-title">CosmicRIM: Recurrence Inference Machines for Reconstructing the Universe</h3>
 
-							  #Likelihood term of data
-							  final = tf.zeros_like(linear)
-							  final = flowpm.cic_paint(final, final_state[0], boxsize=bs, name='final')
-							  residual = tf.multiply(tf.subtract(final, data), 1/sigma)
-							  likelihood = tf.reduce_sum(tf.multiply(residual, residual))
-							  #likelihood = module(dict(features=final, labels=data), as_dict=True)[loss] ##DL
-							  #Prior
-							  lineark = flowpm.r2c3d(linear, norm=nc**3)
-							  prior = tf.square(tf.cast(tf.abs(lineark), tf.float32))
-							  prior = tf.reduce_sum(tf.multiply(prior, 1/priorwt))j
-							  #Loss
-							  loss = tf.add(likelihood, prior, name='loss')
-							  optimizer = ScipyOptimizerInterface(loss, var_list=[linear], 'L-BFGS-B')
+						<br>
+						<div class="slide-text">
+							MAP optimization:
+							<div style="font-size:smaller">
+								$$x_{i+1} = x_i - \epsilon \left[ \nabla_x{\log p(y | f(x_i))} + \nabla_x \log p(x_i) \right] = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right]$$
+							</div>
+							with update function  $\mathbf{\Gamma}(u,v) \rightarrow \epsilon(u + v)$
+							<br>
+							<br>
+							<div class="fragment" data-fragment-index="1">
+								<b class="alert"> Recurrent inference machine</b>: Learn the update function with recurrent neural networks.
+							</div>
+						</div>
+						<br>					
+						<div class="container">
+							<div class="col">
+								<img class="fragment" data-fragment-index="1" data-src="assets/cosmic_rim.png" width="400" />
+							</div>
+							
+							<div class="col">
+								<img class="fragment" data-fragment-index="2" data-src="assets/rim_rc.png" width="420" />
+								<br>
+								<div class="fragment" data-fragment-index="2" style="font-size:smaller">
+									CosmicRIM converges <b class="alert"> 40x </b> faster than L-BFGS
+								</div>
+							</div>
+							<br>
+							
+						</div>
+					</section>
 
-							  with tf.Session() as session:
-							      optimizer.minimize(session)
-							      recon = session.run(linear)
+					<!-------------------------------------------------------------------------------->
+					
 
+					<section>
+						<h3 class="slide-title">Variational (self-)Boosted Sampling</h3>
 
-							  </code></pre>
-						  </div>
-					  </div>
+						<br>
+						<em> Combine HMC and variational inference to generate samples from the posterior with smaller auto-correlation length</em>
+						<br>
+						<br>
+						<div class="slide-text">
+							<ul>
+								<li class="fragment" data-fragment-index="1" > Variational inference: approximate the target distribution with a parametric distribution $q(z; \nu)$
+								</li>
+								<br>
+								<li class="fragment" data-fragment-index="2" > Two phase algorithm:
+									<ol>
+										<li class="fragment" data-fragment-index="2" > Learn a proposal variational distribution $q$ from a short, correlated HMC chain
+											<ul> $q$: Normalizing flow with <em > Fourier space convolutions </em> (inductive bias)</ul>
+										</li>
+										<li class="fragment" data-fragment-index="3" > Alternate between generating samples from HMC kernel and variational distribution  </li>
+									</ol>
+									
+								</li>
+							</ul>
+						</div>
+						<br>
+						<img class="plain fragment" data-fragment-index="4" width="1000px"  data-src="assets/vsbs_ac_200_64.png" />
+
+					</section>
+					
+
 				</section>
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
 				
-					<section>
-						<h3 class='slide-title'> Challenges to field level inference #1 </h3>
-						PMWD
-					</section>
-                                        <!-------------------------------------------------------------------------------->
-				
-					<section>
-						<h3 class='slide-title'> Challenges to field level inference #2 </h3>
-						High dimensional inference is hard
-					</section>
-
-                                        <!-------------------------------------------------------------------------------->
-				
+				<section>
 					<section>
 						<h3 class='slide-title'> Challenges to field level inference #3 </h3>
 						Correct likelihood model?
 					</section>
 					
 				</section>
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section >
+					<h3 class='slide-title'>Story so far</h3>
+					
+
+					<br>
+					<div class="block fragment " style="width:1200px">
+						<div class="block-title" >
+							Limitations of traditional analysis
+						</div>
+						<div class="block-content">
+							<ul>
+								<li> Develop novel inference methodologies for future surveys </li>
+								<li> FlowPM: differentiable PM simulations in ML framework </li>
+								<li> Hybrid, ML enahanced cosmological simulations </li>
+						</div>
+					</div>
+					<br>
+					<div class="block fragment " style="width:1200px" >
+						<div class="block-title" >
+							Field Level Inference
+						</div>
+						<div class="block-content">
+							<ul>
+								<li> Why? Enables optimal analysis, joint analyses & reconstucts latent fields for supplementary analysis </li>
+								<li> Requires access to fast, differentiable simulations such as FlowPM and $pmwd$ (open source)</li>
+								<li> Bayesian inference algorithms can be accelerated with ML components such as in CosmicRIM and VBS </li>
+						</div>
+					</div>
+					<br>
+					
+				</section>
+
+					<!-------------------------------------------------------------------------------->
 
                                 <!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
@@ -1070,56 +1250,6 @@
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-				<section >
-					<h3 class='slide-title'>Summary</h3>
-					
-
-					<br>
-					<div class="block fragment " style="width:1200px">
-						<div class="block-title" >
-							Forward Model Framework
-						</div>
-						<div class="block-content">
-							<ul>
-								<li > Develop novel inference methodologies for future surveys </li>
-								<li> FlowPM: differentiable PM simulations in ML framework </li>
-								<li>Hybrid, ML enahanced cosmological simulations </li>
-						</div>
-					</div>
-					<br>
-					<div class="block fragment " style="width:1200px" >
-						<div class="block-title" >
-							Reconstruction from galaxy surveys
-						</div>
-						<div class="block-content">
-							<ul>
-								<li> Novel neural halo model and likelihood models </li>
-								<li> Improve over standard reconstruction for BAO analysis </li>
-								<li> Reconstruct Gaussian initial conditions and velocity field for cosmological analyses </li>
-						</div>
-					</div>
-					<br>
-					<div class="block fragment " style="width:1200px">
-						<div class="block-title" class="fragment">
-							Reconstruction from 21cm-intensity mapping surveys
-						</div>
-						<div class="block-content">
-							<ul>
-								<li> Lagrangian bias model for the data </li>
-								<li> Denoising - Recover large scale modes lost in the wedge  </li>
-								<li> Cross correlation with photometric surveys like LSST and CMB lensing  </li>
-						</div>
-					</div>
-					<br>
-					 <div class='fragment'> Thank you! </div>
-					
-				</section>
-
-					<!-------------------------------------------------------------------------------->
 					
 				</div>
 			</div>
