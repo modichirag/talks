@@ -1221,6 +1221,7 @@
 								<li> Develop novel inference methodologies for future surveys </li>
 								<li> FlowPM: differentiable PM simulations in ML framework </li>
 								<li> Hybrid, ML enahanced cosmological simulations </li>
+                                                        </ul>
 						</div>
 					</div>
 					<br>
@@ -1232,36 +1233,402 @@
 							<ul>
 								<li> Why? Enables optimal analysis, joint analyses & reconstucts latent fields for supplementary analysis </li>
 								<li> Requires access to fast, differentiable simulations such as FlowPM and $pmwd$ (open source)</li>
-								<li> Bayesian inference algorithms can be accelerated with ML components such as in CosmicRIM and VBS </li>
+							        <li> Bayesian inference algorithms can be accelerated with ML components such as in CosmicRIM and VBS </li>
+                                                        </ul>
 						</div>
 					</div>
 					<br>
 					
 				</section>
 
-					<!-------------------------------------------------------------------------------->
 
                                 <!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
 					<div style="font-size:80px">Simulations Based Inference</div>
+                                        (also goes by Likelihood Free Inference or Implicit Inference)
 				</section>
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				
+
+				<section >
+                                        <section> 
+                                                <h3 class='slide-title'>beyond traditional analysis</h3>
+
+
+                                                <br>
+                                                To extract non-linear and non-Gaussian information from cosmological fields
+                                                <br>
+                                                <br>
+                                                <br>
+                                                <div class="slide-text">
+
+                                                        <ul>
+                                                                <li class="fragment " data-fragment-index="1" >Novel statistics promise to extract more information
+                                                                        <ul style="font-size:smaller">
+                                                                                <li> wavelet moments, marked power spectrum, k-nearest neighbors & more </li>
+                                                                                <li> ML based summary statistics </li>
+                                                                        </ul>
+                                                                </li>
+                                                                <br>
+                                                                <li class="fragment " data-fragment-index="2">Challenge:
+                                                                        <ul style="font-size:smaller">
+                                                                                <li> Lack theoretical model for these statistics connecting to cosmology parameters </li>
+                                                                                <li> Lack analytic likelihood model, $p(x | \theta)$ </li>
+                                                                                <br>
+                                                                                $$ p(\theta|x) \propto \color{red}{p(x | \theta)}\, p(\theta)$$
+                                                                        </ul>
+                                                                </li>
+                                                        </ul>
+                                                        <br>
+
+                                                        <img class="plain fragment " data-fragment-index="1" style="position:absolute; top:150px; right:20px"
+                                                             data-src="assets/wavelets_eickenberg_mfield.png" width="350" />
+
+                                                </div>
+                                   
+                                        </section>
+
+
+				        <!-------------------------------------------------------------------------------->
+
+                                
+                                        <section >
+                                                <h3 class='slide-title'>simulations based inference - theory</h3>
+
+                                                <br>
+                                                <div class="block fragment " data-fragment-index="1" style=";" >
+                                                        <div class="block-title" >
+                                                                Motivation
+                                                        </div>
+                                                        <div class="block-content" style="font-size:smaller">
+                                                                <ol>
+                                                                        <li class=" fragment " data-fragment-index="1"> We can computationally evaluate these summary statistics.</li>
+                                                                        <li class=" fragment" data-fragment-index="2"> A simulator defines $p(x|\theta)$ as an <em> implicit likelihood </em> distribution i.e we can sample from it but cannot evaluate it.</li>
+                                                                </ol>
+                                                        </div>
+                                                </div>
+
+                                                <br>
+                                                        <img class="plain fragment" data-fragment-index="3" style=""
+                                                             data-src="assets/lfi_sim.png" width="700" />
+                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:410px; left:300px; font-size:14px"> $\theta \sim p(\theta)$ </div> 
+                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:410px; left:570px; font-size:14px; color:black"> $z \sim p(z)$ </div> 
+                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:410px; left:910px; font-size:14px"> $x \sim p(x|\theta)$ </div> 
+                                                        
+                                                <div class="slide-text fragment " data-fragment-index="3" style="font-size:smaller">
+                                                        <center> Generating simulations is equivalent to sampling from the joint distribution i.e. $\mathcal{D} = \{x_i, \theta_i\} \sim p(x, \theta)$ </center>
+                                                        <br>
+                                                        <!-- Inference: Assume the target posterior $p(\theta|x)$ can be modeled by a parametric conditional distribution $q_\phi(\theta | x)$. -->
+                                                        <!-- Minimizing the KL divergence between them is equivalent to -->
+                                                        <!--         $$  \min_\phi D_{KL}(p||q) \approx \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$ -->
+
+
+                                                </div>
+                                                <div class="block  fragment " data-fragment-index="4" style="" >
+                                                        <div class="block-title" >
+                                                                How to infer $p(\theta|x)$?
+                                                        </div>
+                                                        <div class="block-content" style="font-size:smaller">
+                                                                Assume the target posterior can be modeled by a parametric conditional distribution $q_\phi(\theta | x)$.
+                                                                <br>
+                                                                <div class="plain fragment" data-fragment-index="5">
+                                                                        Then, minimizing the Kullback Leibler  divergence between them leads to
+                                                                        $$  \min_\phi D_{KL}(p||q) \approx \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$ 
+                                                                        <!-- <br> -->
+                                                                        <!-- <br> -->
+                                                                        <!-- <center> $  \min_\phi D_{KL}(p||q) \approx \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $ </center> -->
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </section>
+
+
+				        <!-------------------------------------------------------------------------------->
+
+                                
+                                        <section >
+                                                <h3 class='slide-title'>simulations based inference - in practice </h3>
+
+                                                <br>
+
+                                                <div class="fragment" data-fragment-index="1">
+                                                        Generate a dataset of simulations i.e. samples from the joint distribution
+                                                        $$\mathcal{D} = \{x_i, \theta_i\}_{i\in N} \sim p(x, \theta)$$
+                                                </div>
+                                                <div class="fragment" data-fragment-index="2">
+                                                        Optimize the parameters $\phi$ of a parameteric distribution $q_\phi$ to
+                                                        $$\max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$
+                                                </div>
+
+                                                <div class="fragment" data-fragment-index="3">
+                                                        Then, in the limit of <b class="alert" > large number of samples</b>, $N$, and  <b class="alert" > sufficient flexibility </b> of $q_\phi$,
+                                                        $$ q_{\phi^*}(\theta | x) \approx  p(\theta | x) $$
+                                                </div>
+
+                                                <div class="slide-text fragment" data-fragment-index="4">
+                                                        $q_\phi$ is parameterizied as a neural network.
+                                                        <br>
+                                                        <br>
+                                                        <ul>
+                                                                <li>Mixture density network</li>
+                                                                <li>Normalizing flows</li>
+                                                        </ul>
+                                                <br>
+                                                <img class="plain " data-fragment-index="3" style="position:absolute; top:480px; left:520px"
+                                                             width="320px" data-src="assets/maf_example.png"  />
+                                                
+                                                <img class="plain " data-fragment-index="3" style="position:absolute; top:480px; left:900px"
+                                                             width="300px" data-src="assets/glow_example.png"  />
+                                                </div>
+                                        </section>
+
+                                </section>
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section >
+					<h3 class='slide-title'>Example application: <font style="font-variant:small-caps"> SimBIG</font></h3>
 					
+                                        <br>
+                                        Analyze power spectrum multipoles $P_{\ell}$ of BOSS CMASS galaxy sample
+                                        <br>
+                                        <br>
+
+                                        <div class="container">
+						<div class="col"  style="flex: 0 0 30em">
+                                                        <div class="slide-text">
+                                                                Generate 20,000 simulated galaxy catalogs with 
+                                                                <ul style="font-size:smaller">
+                                                                        <li> 1000 N-Body simulations of Quijote suite</li>
+                                                                        <li> Populate galaxies with HOD model that includes assembly, concentration and velocity bias  </li>
+                                                                        <li> Apply survey geometry and veto mask </li>
+                                                                        <li> Apply fibre collisions </li>
+                                                                        <li> Trim the galaxy catalog to match the redshift range </li>
+                                                                </ul>
+                                                                <br>
+                                                                <br>
+                                                                Analysis 
+                                                                <ul style="font-size:smaller">
+                                                                        <li> Model the power spectrum multipoles $P_0, P_2, P_4$ up to $k_{\mathrm max} < 0.5$ h/Mpc</li>
+                                                                        <li> Constrain 5 cosmology, 9 HOD and 1 nuisance parameter   </li>
+                                                                        <li> Improve $\sigma_8$ constraint by 27% over standard galaxy clustering analysis which models up to $k_{\mathrm max} =0.25$ h/Mpc  </li>
+                                                                </ul>
+
+                                                        </div>
+						</div>
+						
+						<div class="col" style="flex: 0 0 25em">
+							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_fwmodel.png" width="420" />
+							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_constraint.png" width="420" />
+						</div>
+						<br>
+						
+					</div>
+                                        
+        				
+				</section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section >
+					<h3 class='slide-title'>Roadmap for SBI #1</h3>
+					
+                                        <br>
+                                        Model misspecification
+                                        <br>
+                                        <br>
+
+                                        <div class="container">
+						<div class="col"  style="flex: 0 0 30em">
+                                                        <div class="slide-text">
+                                                                SBI relies on simulations capturing the true observed data
+                                                                <br>
+                                                                Repeat: SBI relies on simulations capturing the true observed data
+                                                                <br>
+
+                                                        </div>
+						<font color="red"> repeat exercise to lower kmax </font>
+                                                </div>
+						
+						<div class="col" style="flex: 0 0 25em">
+							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_fwmodel.png" width="420" />
+							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_constraint.png" width="420" />
+						</div>
+						<br>
+						
+					</div>
+                                        
+        				
+				</section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+
+				<section >
+					<h3 class='slide-title'>Roadmap for SBI #2</h3>
+					
+                                        <br>
+                                        Data availibility
+                                        <br>
+                                        <br>
+
+                                        <div class="container">
+						<div class="col"  style="flex: 0 0 30em">
+                                                        <div class="slide-text">
+                                                                Quijote simulations- 1000 sims
+                                                                <br>
+                                                                1 Gpc/h not enough even for BOSS
+                                                                DESI survey volume? 
+                                                                <br>
+                                                                pmwd is fast. Hybrid simulations
+                                                                <br>
+                                                                Beyond HOD models
+
+                                                        </div>
+						</div>
+						
+						<div class="col" style="flex: 0 0 25em">
+							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_fwmodel.png" width="420" />
+							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_constraint.png" width="420" />
+						</div>
+						<br>
+						
+					</div>
+       				
+       				
+				</section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+
+				<section >
+					<h3 class='slide-title'>Roadmap for SBI #3</h3>
+					
+                                        <br>
+                                        Which summary statistics to use?
+                                        <br>
+
+                                        <br>
+                                        Where to generate training dataset?
+                                        <br>
+
+                                        <br>
+                                        Which methodology to use?
+                                        NPE vs NLE vs NRE
+                                        <br>
+
+                                        <div class="container">
+						<div class="col"  style="flex: 0 0 30em">
+                                                        <div class="slide-text">
+                                                                Quijote simulations- 1000 sims
+                                                                <br>
+                                                                1 Gpc/h not enough even for BOSS
+                                                                DESI survey volume? 
+                                                                <br>
+                                                                pmwd is fast. Hybrid simulations
+                                                                <br>
+                                                                Beyond HOD models
+
+                                                        </div>
+						</div>
+						
+						<div class="col" style="flex: 0 0 25em">
+							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_fwmodel.png" width="420" />
+							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_constraint.png" width="420" />
+						</div>
+						<br>
+						
+					</div>
+       				
+				</section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				<section >
+					<h3 class='slide-title'>Summary</h3>
+					
+
+					<br>
+					<div class="block fragment " style="width:1200px">
+						<div class="block-title" >
+							Limitations of traditional analysis
+						</div>
+						<div class="block-content">
+							<ul>
+								<li> Develop novel inference methodologies for future surveys </li>
+								<li> FlowPM: differentiable PM simulations in ML framework </li>
+								<li> Hybrid, ML enahanced cosmological simulations </li>
+                                                        </ul>
+						</div>
+					</div>
+					<br>
+					<div class="block fragment " style="width:1200px" >
+						<div class="block-title" >
+							Field Level Inference
+						</div>
+						<div class="block-content">
+							<ul>
+								<li> Why? Enables optimal analysis, joint analyses & reconstucts latent fields for supplementary analysis </li>
+								<li> Requires access to fast, differentiable simulations such as FlowPM and $pmwd$ (open source)</li>
+							        <li> Bayesian inference algorithms can be accelerated with ML components such as in CosmicRIM and VBS </li>
+                                                        </ul>
+						</div>
+					</div>
+					<br>
+					
+					<div class="block fragment " style="width:1200px" >
+						<div class="block-title" >
+							Simulations Based Inference
+						</div>
+						<div class="block-content">
+							<ul>
+								<li> Use powerful summary statistics </li>
+								<li> Need to ensure robustness to model mis-specification</li>
+							        <li> Need to generate training dataset </li>
+                                                        </ul>
+						</div>
+					</div>
+					<br>
+					
+				</section>
+                                
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				
 				</div>
 			</div>
 			
 
 		<style>
-		<!--    .reveal .slides { -->
-		<!--     border: 5px solid red; -->
-		<!--     min-height: 100%; -->
-		<!--     width: 128mm; -->
-		<!--     height: 96mm; -->
-		<!-- }  -->
+		.reveal .slides {
+		     border: 1px solid red;
+		     min-height: 100%; 
+		     width: 128mm; 
+		     height: 96mm; 
+                }  
 		.reveal .box {
 			background-color: #191919;
 			margin-left: 10px;
