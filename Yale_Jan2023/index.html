@@ -1393,37 +1393,58 @@
 					<h3 class='slide-title'>Example application: <font style="font-variant:small-caps"> SimBIG</font></h3>
 					
                                         <br>
-                                        Analyze power spectrum multipoles $P_{\ell}$ of BOSS CMASS galaxy sample
+                                        First analysis of BOSS CMASS galaxy sample with simulations based inference
                                         <br>
                                         <br>
 
                                         <div class="container">
 						<div class="col"  style="flex: 0 0 30em">
                                                         <div class="slide-text">
-                                                                Generate 20,000 simulated galaxy catalogs with 
-                                                                <ul style="font-size:smaller">
-                                                                        <li> 1000 N-Body simulations of Quijote suite</li>
-                                                                        <li> Populate galaxies with HOD model that includes assembly, concentration and velocity bias  </li>
-                                                                        <li> Apply survey geometry and veto mask </li>
-                                                                        <li> Apply fibre collisions </li>
-                                                                        <li> Trim the galaxy catalog to match the redshift range </li>
-                                                                </ul>
-                                                                <br>
-                                                                <br>
-                                                                Analysis 
-                                                                <ul style="font-size:smaller">
-                                                                        <li> Model the power spectrum multipoles $P_0, P_2, P_4$ up to $k_{\mathrm max} < 0.5$ h/Mpc</li>
-                                                                        <li> Constrain 5 cosmology, 9 HOD and 1 nuisance parameter   </li>
-                                                                        <li> Improve $\sigma_8$ constraint by 27% over standard galaxy clustering analysis which models up to $k_{\mathrm max} =0.25$ h/Mpc  </li>
-                                                                </ul>
+								<ul>
+									<li class="plain fragment " data-fragment-index="1"> Data
+										<ul  style="font-size:smaller">
+										
+											<li> SDSS III survey, Baryon Oscillation Spectroscopic Survey  </li>
+											<li> Collected spectra of $\sim$ 1.4 million galaxies from 2008-2014 </li> 
+											<li> <font style="font-variant:small-caps"> SimBIG </font>  analyzed $\sim100,000$ galaxies from South Galactic Cap </li>
+										</ul>
+									</li>
+									<br>
+									<li class="plain fragment " data-fragment-index="2" > Simulations
+										<ul style="font-size:smaller">
+											<li> 1000 N-Body simulations of Quijote suite</li>
+											<li> Populate galaxies with extended HOD model  </li>
+											<li> Survey realism- survey geometry, veto mask, fibre collisions </li>
+										</ul>
+									</li>
+									<br>
+									<li class="plain fragment " data-fragment-index="3" > Analysis 
+										<ul style="font-size:smaller">
+											<li> Power spectrum multipoles ($P_0, P_2, P_4$) up to $k_{\mathrm max} < 0.5$ h/Mpc</li>
+																				  <li> Constrain 5 cosmology, 9 HOD and 1 nuisance parameter   </li>
+										</ul>
+									</li>
+									<br>
+									<li class="plain fragment " data-fragment-index="4" > Results 
+										<ul style="font-size:smaller">
+
+											<li  > Improve $\sigma_8$ constraint by <b class="alert" > 27% </b> over standard galaxy clustering analysis  </li>
+											<li  > Perturbative models can only model up to $k_{\mathrm max} =0.25$ h/Mpc  </li>
+										</ul>
+									</li>
+								</ul>
 
                                                         </div>
 						</div>
 						
 						<div class="col" style="flex: 0 0 25em">
-							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
+							<img class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/boss_telescope.jpg" width="420" />
+							<img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
                                                              data-src="assets/simbig_fwmodel.png" width="420" />
-							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
+							<img class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_fwmodel.png" width="420" />
+							<img class="plain fragment" data-fragment-index="4" style="position:absolute; top:200px; right:50px"
                                                              data-src="assets/simbig_constraint.png" width="420" />
 						</div>
 						<br>
@@ -1438,16 +1459,63 @@
 				<!-------------------------------------------------------------------------------->
 				
 				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->			
 
 				<section >
 					<h3 class='slide-title'>Roadmap for SBI #1</h3>
 					
                                         <br>
-                                        Model misspecification
+                                        Data availibility
                                         <br>
                                         <br>
 
+                                        <div class="container">
+						<div class="col"  style="flex: 0 0 30em">
+                                                        <div class="slide-text">
+								<ul>
+									<li> SimBIG only analyzed <font color="red">10%</font> of the BOSS CMASS galaxies </li>
+									<br>
+									<li> Largest available simulation suite, Quijote
+										<ul> 1000 N-Body simulations- 1Gpc/h volume, 1024$^3$ particles <br>$\sim$ 5 million CPU hours </ul>
+									</li>
+									<br>
+									<li> DESI- larger survey volume and higher resolution by an order of magnitude</li>
+									<br>
+									<li> Increasing number of parameters beyond $\Lambda$-CDM cosmology</li>
+                                                                <br>
+                                                                pmwd is fast. Hybrid simulations
+                                                                <br>
+                                                                Beyond HOD models
+
+                                                        </div>
+						</div>
+						
+						<div class="col" style="flex: 0 0 25em">
+							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_fwmodel.png" width="420" />
+							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
+                                                             data-src="assets/simbig_constraint.png" width="420" />
+						</div>
+						<br>
+						
+					</div>
+       				
+       				
+				</section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+
+				<section >
+					<h3 class='slide-title'>Roadmap for SBI #2</h3>
+					
+                                        <br>
+                                        Model misspecification
+                                        <br>
+                                        <br>
+					
                                         <div class="container">
 						<div class="col"  style="flex: 0 0 30em">
                                                         <div class="slide-text">
@@ -1477,48 +1545,6 @@
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				
-
-				<section >
-					<h3 class='slide-title'>Roadmap for SBI #2</h3>
-					
-                                        <br>
-                                        Data availibility
-                                        <br>
-                                        <br>
-
-                                        <div class="container">
-						<div class="col"  style="flex: 0 0 30em">
-                                                        <div class="slide-text">
-                                                                Quijote simulations- 1000 sims
-                                                                <br>
-                                                                1 Gpc/h not enough even for BOSS
-                                                                DESI survey volume? 
-                                                                <br>
-                                                                pmwd is fast. Hybrid simulations
-                                                                <br>
-                                                                Beyond HOD models
-
-                                                        </div>
-						</div>
-						
-						<div class="col" style="flex: 0 0 25em">
-							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_fwmodel.png" width="420" />
-							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_constraint.png" width="420" />
-						</div>
-						<br>
-						
-					</div>
-       				
-       				
-				</section>
-
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				
-
 				<section >
 					<h3 class='slide-title'>Roadmap for SBI #3</h3>
 					
