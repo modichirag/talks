@@ -290,34 +290,44 @@
 				<section>
                                         <section>
                                                 
-						<h3  class='slide-title'>a simple pipeline for galaxy clustering analysis</h3>
+						<h3  class='slide-title'>how do we do galaxy clustering analysis?</h3>
 
-						<div class='container'>
-								<div class='col'>
+                                                <div class="plain fragment" data-fragment-index="0"> <b> Data</b>: a catalog of galaxy positions and their associated weights </div>
 
-									<ul>
-										<li> Measure the positions and estimate associated weights for each galaxy
-                                                                                        <br> Weights: incompleteness, fibre-collision, FKP...
+                                                <br>
+                                                <br>
+                                                <div class='container'>
+								<div class="col" style="flex:0 0 25em; margin-left:20px">
+
+                                                                        <ol> 
+									        <li class="plain fragment" data-fragment-index="1" > Compute <b class="alert"> summary statistics </b> of choice
+                                                                                        <ul> $\rightarrow$ generally power spectrum/2-point function</ul>
                                                                                 </li>
-										<br>
-										<li > Compute <b class="alert"> summary statistics </b> based on N-pt functions, e.g. power spectrum, bispectrum, 2-pt correlation function
-										</li>
-										<br>
-                                                                                <li > Construct a <b class="alert"> theory model </b> for the summary statistics, generally based on perturbation theory
-										</li>
-										<br>
-										<li> Run MCMC to recover a posterior on the model parameters using an  <b class="alert">analytic likelihood</b>
-                                                                                        <br>
-											$p(\theta | x ) \propto \underbrace{p(x | \theta)}_{\mathrm{likelihood}}  \  \underbrace{p(\theta)}_{\mathrm{prior}}$
-										</li>
-                                                                                
-										<br>
-										
+                                                                                <br>
+                                                                                <li class="plain fragment" data-fragment-index="2" > Develop a <b class="alert"> theory prediction </b> for theses summary statistics
+                                                                                        <ul> $\rightarrow$ generally based on perturbation theory </ul>
+                                                                                </li>
+                                                                                <br>
+                                                                                <li class="plain fragment" data-fragment-index="3" > Construct an  <b class="alert">analytic likelihood</b> model 
+                                                                                        <ul> $\rightarrow$ generally assumed to be Gaussian </ul>
+                                                                                </li>
+                                                                                <br>
+                                                                                <li class="plain fragment" data-fragment-index="4"> Profit: run <b class="alert"> MCMC </b> to infer posterior on model parameters
+                                                                                        <div style="position:absolute; left:100px" > $$p(\theta | x ) \propto \underbrace{p(x | \theta)}_{\mathrm{likelihood}}  \  \underbrace{p(\theta)}_{\mathrm{prior}}$$ </div>
+
+                                                                                </li>
+                                                                        </ol>
+									<br>
 
 								</div>
 						
-								<div class='col'>
-									<!-- <img data-src="assets/pgm_lensing.png" class="plain" style="height:550px;"/> -->
+								<div class="col">
+									 <img class="plain  fragment current-visible" data-fragment-index="0" style="position:absolute; top:150px; left:180px;;" data-src="assets/desi.gif" />
+									 <img class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:200px; right:150px; height:300px;" data-src="assets/boss_dr12_data.png" />
+									 <img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:200px; right:150px; width:500px;" data-src="assets/pk_eqn3.png" />
+									 <img class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; top:200px; right:150px; width:500px;" src="assets/pk_likelihood.png" />
+									 <!-- <img class="plain fragment current-visible" data-fragment-index="4" style="position:absolute; top:150px; right:100px; height:400px;" src="assets/boss_dr12_fit.png" /> -->
+									 <img class="plain fragment current-visible" data-fragment-index="4" style="position:absolute; top:200px; right:150px; height:400px;" src="assets/misha_constraints.png" />
 									<!-- <div style="float:right; font-size: 20px">Schneider et al. 2015</div> -->
 								</div>
 						</div>
@@ -327,7 +337,7 @@
                                         
                                         <section>
                                                 
-						<h3  class='slide-title'>Limitation 1: Summary statistics</h3>
+						<h3  class='slide-title'>Limitation of current approach #1</h3>
 
 						<div class='container'>
 								<div class='col'>
