@@ -176,33 +176,6 @@
 							</div>
 					</section>
 					<!-------------------------------------------------------------------------------->
-					<section  data-background-image="assets/chime2.jpeg"  data-background-color="black">
-
-						<h2 class='slide-title'>Packed Ultra-wideband Mapping Array (PUMA)</h2>
-
-						<br>
-						<div class='container'>
-							<div class='col' style="flex: 0 0 25em;position:relative; top:-80px">
-								<ul>
-									<!-- <li class='fragment' data-fragment-index="1">A concept for an ultra-wide band, high-sensitivity and low-resolution radio telescope array </li> -->
-									<li>post-DESI, post-LSST program for dark energy</li>
-									<br>
-									<li class='fragment' data-fragment-index="2" >A concept radio telescope array for 21 cm intensity mapping in post-reionization era </li>
-									<br>
-									<li class='fragment' data-fragment-index="4">Growth and expansion history in the pre-acceleration era</li> 				
-								</ul>
-							</div>
-							<div class='col' style="flex: 0 0 25em;">
-								<div style="position:relative; width:480px; height:420px; margin:0 auto;">
-									
-									<img class="fragment current-visible plain"  data-src="assets/21cmmapwhitepaper.png" style="position:absolute;top:0px;left:0px;" data-fragment-index="2" />
-									<img data-src="assets/puma_expansion.png" class='fragment plain' data-fragment-index="4",  style="position:absolute;top:0px;left:0px;height: 370px;"/>
-								</div>
-								<div class="fragment"  data-fragment-index="2" style="position:relative; float:right; font-size: 20px; top:-20px; left:50px">CVDE White Paper: 1810.09572</div>
-							</div>
-
-					</section>
-					<!-------------------------------------------------------------------------------->
 
 					<section data-background-image="assets/LSST.jpg" >
 						<font color='black'>
@@ -663,7 +636,6 @@
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-				
 
                                 <section>
                                         <section>
@@ -737,7 +709,6 @@
 						
                                                 <div class="slide-text", style="position:relative;">
                                                         <br>
-                                                        <br>
                                                         <ul>
                                                                 <li class="fragment " data-fragment-index="1"> No information is lost by compressing data into summary statistics
                                                                 </li>
@@ -747,8 +718,6 @@
                                                                         $\rightarrow$ Power spectrum is exhaustive for Gaussian fields
                                                                 </li>
                                                         </ul>
-                                                        <br>
-                                                        <br>
                                                         <br>
                                                 </div>
                                                 <div class="container">
@@ -1465,41 +1434,57 @@
 					<h3 class='slide-title'>Roadmap for SBI #1</h3>
 					
                                         <br>
-                                        Data availibility
+                                        <b class="alert"> High fidelity simulations:</b> SBI training converges in the limit of a large number of samples. 
                                         <br>
                                         <br>
+                                        <div class="slide-text">
+                                                <ul>
+                                                        <li  class="plain fragment" data-fragment-index="1"> SimBIG only analyzed <font color="red">10%</font> of the BOSS CMASS galaxies </li>
+                                                        <br>
+                                                        <li  class="plain fragment" data-fragment-index="2"> Limited by the simulation suite, Quijote, even though it's the <em> largest </em> available
+                                                                <br>
+                                                                $\rightarrow$ 1000 N-Body simulations- 1Gpc/h volume, 1024$^3$ particles, requiring $\sim$ 5 million CPU hours
+                                                        </li>
+                                                        <br>
+                                                        <li  class="plain fragment" data-fragment-index="3"> Upcoming surveys will probe much larger survey volume & higher resolution</li>
+                                                        <br>
+                                                </ul>
 
+                                        </div>
+                                        <br>
                                         <div class="container">
-						<div class="col"  style="flex: 0 0 30em">
-                                                        <div class="slide-text">
-								<ul>
-									<li> SimBIG only analyzed <font color="red">10%</font> of the BOSS CMASS galaxies </li>
-									<br>
-									<li> Largest available simulation suite, Quijote
-										<ul> 1000 N-Body simulations- 1Gpc/h volume, 1024$^3$ particles <br>$\sim$ 5 million CPU hours </ul>
-									</li>
-									<br>
-									<li> DESI- larger survey volume and higher resolution by an order of magnitude</li>
-									<br>
-									<li> Increasing number of parameters beyond $\Lambda$-CDM cosmology</li>
-                                                                <br>
-                                                                pmwd is fast. Hybrid simulations
-                                                                <br>
-                                                                Beyond HOD models
-
+						<div class="col"  style="margin-left:70px; ">
+                                                        
+						        <div class="box fragment", data-fragment-index="4"  style="width:700px" >
+                                                                <div class="box-title">
+                                                                        Fast, hybrid simulations
+                                                                </div>
+                                                                <div class="box-content">
+                                                                        <ul>
+                                                                                <br>
+                                                                                <li class="plain fragment" data-fragment-index="4" > GPU accelerated particle-mesh (PM) simulations- $pmwd$ </li>
+                                                                                <br>
+                                                                                <li class="plain fragment" data-fragment-index="5" > Hybrid simulations with ML enhancements
+                                                                                        <ul>
+                                                                                                <li> Learn small scale forces missing in PM simulations </li>
+                                                                                                <li> Learn sub-grid, baryonic physics </li>
+                                                                                        </ul>
+                                                                                </li>
+                                                                        </ul>
+                                                                </div>
                                                         </div>
+                                                        <br>
+                                                        <br>
+                                                </div>
+						<div class="col" style="">
+							<img  class="plain fragment current-visible" data-fragment-index="4"
+							      style="position:absolute; top:400px; right:50px" width="400px" data-src="assets/pmwd_timing.png" />
+	                                                <img class="plain fragment" data-fragment-index="5" style="position:absolute; top:320px; right:50px;"
+                                                             data-src="assets/denise_hybrid.png" width="320" />
 						</div>
-						
-						<div class="col" style="flex: 0 0 25em">
-							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_fwmodel.png" width="420" />
-							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_constraint.png" width="420" />
-						</div>
-						<br>
 						
 					</div>
-       				
+       				                
        				
 				</section>
 
@@ -1512,27 +1497,57 @@
 					<h3 class='slide-title'>Roadmap for SBI #2</h3>
 					
                                         <br>
-                                        Model misspecification
+                                        <b class="alert"> Model misspecification:</b> SBI assumes that the observed data is generated from the same model (simulation)
                                         <br>
                                         <br>
 					
                                         <div class="container">
 						<div class="col"  style="flex: 0 0 30em">
                                                         <div class="slide-text">
-                                                                SBI relies on simulations capturing the true observed data
-                                                                <br>
-                                                                Repeat: SBI relies on simulations capturing the true observed data
-                                                                <br>
-
+                                                                <ul>
+                                                                        <li class="plain fragment" data-fragment-index="1" > Can be over-confident or fail catastrophically if the model is not well-specified </li>
+                                                                        <br>
+                                                                        <li  class="plain fragment" data-fragment-index="3" > Glass completely empty: we cannot model the Universe exactly. </li>
+                                                                        <br>
+                                                                        <li  class="plain fragment" data-fragment-index="4" > Glass half full: we often have multiple models for the data.
+                                                                                <ul>
+                                                                                        <li> We can be more confident in regimes where these agree. </li> 
+                                                                                        <li> Use the variations to construct invariant methodologies.  </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <br>
+                                                                        <li  class="plain fragment" data-fragment-index="5" > Informed data-cuts, physically motivated models, combined in a principled way. </li>
+                                                                </ul>
                                                         </div>
-						<font color="red"> repeat exercise to lower kmax </font>
                                                 </div>
 						
 						<div class="col" style="flex: 0 0 25em">
-							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_fwmodel.png" width="420" />
-							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_constraint.png" width="420" />
+							<img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:180px; right:150px"
+                                                             width="300px" data-src="assets/sbi_diffhod.png"  />
+							<img class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:450px; right:10px"
+                                                             width="600px" data-src="assets/sbi_modelmisspec.png"  />
+							<img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:450px; right:10px"
+                                                             width="600px" data-src="assets/sbi_modelmisspec.png"  />
+							<img class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; top:180px; right:150px"
+                                                             width="300px" data-src="assets/sbi_diffhod.png"  />
+                                                        <img class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; top:450px; right:10px"
+                                                             width="600px" data-src="assets/sbi_modelmisspec.png"  />
+                                                        
+					                <div class="block fragment current-visible" data-fragment-index="4" style="width:500px" >
+						                <div class="block-title" >
+							                Galaxy occupation models
+						                </div>
+						                <div class="block-content">
+							                <ul>
+								                <li> Halo occupation distribution (HOD) </li>
+								                <li> HOD with assembly biases</li>
+								                <li> Semi-analytic models</li>
+							                        <li> Hydro simulations </li>
+                                                                        </ul>
+						                </div>
+					                </div>
+							<img class="plain fragment " data-fragment-index="5" style="position:absolute; top:150px; right:-50px"
+                                                             height="450px" width="800px" data-src="assets/sbi_robust.png"  />
 						</div>
 						<br>
 						
@@ -1547,44 +1562,45 @@
 				
 				<section >
 					<h3 class='slide-title'>Roadmap for SBI #3</h3>
-					
-                                        <br>
-                                        Which summary statistics to use?
-                                        <br>
 
-                                        <br>
-                                        Where to generate training dataset?
-                                        <br>
 
-                                        <br>
-                                        Which methodology to use?
-                                        NPE vs NLE vs NRE
-                                        <br>
+                                        <div class="slide-text">
+                                                <br>
+                                                Other unresolved questions- 
+                                                <br>
+                                                <br>
+                                                <ul>
+                                                        <li class="plain fragment" data-fragment-index="1" >What are the optimal summary statistics?
+                                                                <ul style="font-size:smaller">
+                                                                        <li> NN based statistics, Information Maximizing neural networks, Variatoinal mutual information </li>
+                                                                        <li> How much information is left behind? </li>
+                                                                </ul>
 
-                                        <div class="container">
-						<div class="col"  style="flex: 0 0 30em">
-                                                        <div class="slide-text">
-                                                                Quijote simulations- 1000 sims
-                                                                <br>
-                                                                1 Gpc/h not enough even for BOSS
-                                                                DESI survey volume? 
-                                                                <br>
-                                                                pmwd is fast. Hybrid simulations
-                                                                <br>
-                                                                Beyond HOD models
+                                                        </li>
+                                                        <br>
+                                                        <li class="plain fragment" data-fragment-index="2" > Which SBI methodology to use?
+                                                                <ul style="font-size:smaller">
+                                                                        <li> Amortized neural posterior estimation (discussed) </li>
+                                                                        <li> Neural likelihood estimation </li>
+                                                                        <li> Neural likelihood ratios </li>
+                                                                        <li> Sequential neural posterior estimation </li>
+                                                                        <li>...</li>
+                                                                </ul>
 
-                                                        </div>
-						</div>
-						
-						<div class="col" style="flex: 0 0 25em">
-							<img class="fragment current-visible" data-fragment-index="0" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_fwmodel.png" width="420" />
-							<img class="fragment" data-fragment-index="2" style="position:absolute; top:200px; right:50px"
-                                                             data-src="assets/simbig_constraint.png" width="420" />
-						</div>
-						<br>
-						
-					</div>
+                                                        </li>
+                                                        <br>
+                                                        <li class="plain fragment" data-fragment-index="3" > Where to generate training dataset i.e. sample parameters from prior $p(\theta)$ to run simulations?
+                                                                <ul style="font-size:smaller">
+                                                                        <li> agnostic latin-hypercube over the entire parameter space </li>
+                                                                        <li> parameter combinations to break degeneracies  </li>
+                                                                        <li> Bayesian optimization </li>
+                                                                        <li> Gradient based parameter exploration </li> 
+                                                                </ul>
+                                                        </li>
+                                                        <br>
+
+                                                </ul>
+                                        </div>
        				
 				</section>
 
