@@ -239,7 +239,7 @@
 					<section data-background-image="assets/Mayall.jpg">
 						<h2 class='slide-title'>a paradigm shift</h2>
 
-						<div class="" > Unprecedented high precision data from the next generation of cosmological surveys. </div>
+						<div class="" > Large amount of high precision data from the next generation of cosmological surveys. </div>
 						
 						<div class="container">
 							<div class="col" >
@@ -292,7 +292,7 @@
 							<div class="col slide-text" style="flex:0 0 25em">
 
 								<ul>
-									<li class="fragment" data-fragment-index="0" > Unprecedented constraints on all  cosmological parameters 
+									<li class="" data-fragment-index="0" > Unprecedented constraints on all  cosmological parameters 
                                                                                 <!-- <ul> <li  >Neutrino mass (Forecast for DESI $\sim$0.02 eV)</li> </ul> -->
                                                                         </li>
 
@@ -319,7 +319,7 @@
 							
 							<div class="col" style="flex:0 0 25em">
 								
-								<img class="fragment current-visible"   data-fragment-index="0"  style="position:absolute; top:150px; right:100px; "
+								<img class="fragment fade-out"   data-fragment-index="1"  style="position:absolute; top:150px; right:100px; "
 								     data-src="assets/desi_hz0.png" />	
 								<img class="fragment current-visible"   data-fragment-index="1"  style="position:absolute; top:150px; right:100px; "
 								     data-src="assets/desi_hz1.png" />	
@@ -336,7 +336,7 @@
 
 								
 								<div style="position:absolute; right:20px; top:600px; text-align:right; font-size: smaller">
-									<div class="plain fragment " data-fragment-index="0" style=""> DESI whitepaper (Aghamousa et.al. (2016))</div>
+									<div class="plain  " data-fragment-index="0" style=""> DESI whitepaper (Aghamousa et.al. (2016))</div>
 									<div class="plain fragment " data-fragment-index="2" style=""> Verde, Treu, Riess (2019)</div>
 									<div class="plain fragment " data-fragment-index="3" style=""> Hilderbrant et.al. (KIDS collaboration) (2016)</div>
 									<div class="plain fragment " data-fragment-index="4" style=""> LSST Collaboration (2018)</div>
@@ -357,19 +357,18 @@
 					
                                         <br>
                                         <br>
+					
                                         <div class="slide-text" >
                                                 
 						<ol> 
 							<li class="plain fragment" data-fragment-index="1" > Current apporaches to cosmological analysis
-								<ul> $\rightarrow$ motivate forward modeling approaches</ul>
+								<ul> $\rightarrow$ why we need forward modeling approaches?</ul>
 							</li>
 							<br>
-							<li class="plain fragment" data-fragment-index="2" > Field level inference/Bayesian heirarchical modeling
-								<ul> $\rightarrow$ advantages and challenges </ul>
+							<li class="plain fragment" data-fragment-index="2" > Field level inference
 							</li>
 							<br>
-							<li class="plain fragment" data-fragment-index="3" > Simulations based inference/Likelihood free inference/Implicit Inference
-								<ul> $\rightarrow$  advantages and challenges </ul>
+							<li class="plain fragment" data-fragment-index="2" > Simulations based inference
 							</li>
 							<br>
 						</ol>
@@ -394,7 +393,7 @@
                                                 
 						<h3  class='slide-title'>how do we do galaxy clustering analysis?</h3>
 
-                                                <div class="plain fragment" data-fragment-index="0"> <b> Data</b>: a catalog of galaxy positions and their associated weights </div>
+                                                <div class="plain fragment" data-fragment-index="0"> <b> Data</b>: a catalog of galaxies with their positions </div>
 
                                                 <br>
                                                 <br>
@@ -454,9 +453,9 @@
                                                                         <ul class="fragment" data-fragment-index="3"> <li> New surveys are probing smaller, non-linear and non-Gaussian scales. </li>  </ul>
                                                                 </li>
                                                                 <br>
-                                                                <li class="fragment" data-fragment-index="4"> Need to go beyond 2-point function analysis. </li>
+                                                                <li class="fragment" data-fragment-index="4"> New summary statistics to go beyond 2-point function analysis. </li>
                                                                 <br>
-                                                                <li class="fragment" data-fragment-index="5"> How much information is left behind? </li>
+                                                                <li class="fragment" data-fragment-index="5"> But which of these... </li>
 								<br>
                                                         </ul>
                                                         
@@ -477,7 +476,7 @@
                                                         </span>
                                                 </span>
 
-                                                <div class="block fragment " data-fragment-index="4" style="position:absolute; bottom:-260px; right:100px; width:400px">
+                                                <div class="block fragment " data-fragment-index="5" style="position:absolute; bottom:-260px; right:100px; width:400px">
 							<div class="block-title" , style="text-align:center">
 								Proposed summary statistics
 							</div>
@@ -518,12 +517,11 @@
                                                                 <br>
                                                                 <br>
 								<li class="fragment" data-fragment-index="0"> Pertubation theory- as small perturbations beyond Gaussian random field.
-                                                                        <ul class="fragment" data-fragment-index="1"> <li> Cannot model deep in the non-linear, non-Gaussian regime </li>  </ul>
+                                                                        <ul class="fragment" data-fragment-index="1"> <li> Cannot model deep in the non-linear, non-Gaussian regime </li>
+										<li> Hard to include survey systematics like  masks, fibre collisions, PSF... </li> 
+									</ul>
                                                                 </li>
                                                                 <br>
-                                                                <li class="fragment" data-fragment-index="2"> Hard to include survey systematics
-                                                                        <ul > <li>  masks, fibre collisions, PSF... </li>  </ul>
-                                                                </li>
                                                                 <br>
                                                                 <li class="fragment" data-fragment-index="3">  No theory model yet for other summary statistics than N-point functions
                                                                         <ul > <li>  how do you model neural network based summary statistics? </li>  </ul>
@@ -532,13 +530,13 @@
                                                       </ul>
  						</div>
                                                 <img class="plain fragment" data-fragment-index="1" style="position:absolute; top:200px; right:50px; width:400px;" data-src="assets/ptfit_shifan.png" />
-                                                <img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:400px; left:50px; width:700px; text-align:center;" data-src="assets/desi_text.png" />
+                                                <!-- <img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:400px; left:50px; width:700px; text-align:center;" data-src="assets/desi_text.png" /> -->
                                                 <div style="float:right; margin-right:20px; text-align:right; font-size: smaller">
                                                         <div class="plain fragment " data-fragment-index="1" style=""> 
                                                                 <u> Modi</u>, White, Vlah (2017) <br>
                                                                 Chen, Vlah et.al. (2021)
                                                         </div> 
-                                                        <div class="plain fragment current-visible" data-fragment-index="2" style=""> DESI whitepaper (Aghamousa et.al. (2016))</div>
+                                                        <!-- <div class="plain fragment current-visible" data-fragment-index="2" style=""> DESI whitepaper (Aghamousa et.al. (2016))</div> -->
                                                 </div>
 
 					</section>
@@ -557,7 +555,7 @@
 							<ul>
                                                                 <br>
 								<li  class="plain fragment fade-in" data-fragment-index="0"> Assumed to be a Gaussian likelihood based on central limit theorem.
-                                                                        <ul class="plain fragment fade-in" data-fragment-index="1">
+                                                                        <ul class="plain fragment fade-in" data-fragment-index="0">
                                                                                 <li> Not true in all the regimes for power spectrum. </li>
                                                                                 <li> Not true for other summary statistics. </li>
                                                                         </ul>
@@ -574,7 +572,7 @@
  
                                                         </ul>
 						</div>
-                                                <span class="plain fragment fade-in" data-fragment-index="1">
+                                                <span class="plain fragment fade-in" data-fragment-index="0">
                                                         <span class="plain fragment fade-out" data-fragment-index="4">
                                                                 <img class="plain " style="position:absolute; top:150px; right:50px; width:400px;" data-src="assets/pl_divergence.png" />
                                                         </span>
@@ -582,7 +580,7 @@
                                                 <img class="fragment plain" data-fragment-index="4" style="position:absolute; top:200; right:50; width:400px;" data-src="assets/cov.png" />
                                                 
                                                 <div style="position:absolute; top:600px; right:20px; text-align:right; font-size: smaller">
-                                                        <span class="plain fragment fade-in" data-fragment-index="1">
+                                                        <span class="plain fragment fade-in" data-fragment-index="0">
                                                                 <span class="plain fragment fade-out" data-fragment-index="4">
                                                                         Hahn, Beutler et.al. (2019)
                                                                 </span>
@@ -709,7 +707,7 @@
 							</div>
 							<div class="box-content">
                                                                 <br>
-                                                                Instead of a theory model, use a computational forward models i.e. cosmological simulations as the underlying physical models for inference.
+                                                                Instead of a theory model, use a computational simulations as the underlying physical models for inference.
                                                                 <br>
                                                                 <br>
                                                                 <div class="fragment fade-in " data-fragment-index="4">
@@ -798,7 +796,7 @@
 
 
                                         <section>
-                                                <h3  class='slide-title'>now is time for forward modeling</h3>
+                                                <h3  class='slide-title'>21st century data requires 21st century methods</h3>
 
                                                 <br>
                                                 Advances in computations, statistics and machine learning over the last 5-10 years <br> have finally made forward modeling approaches feasible. 
@@ -891,7 +889,7 @@
                                                         <div class="plain fragment",  data-fragment-index="3", style=";">
 
                                                         Given observed data, we can inferring the initial conditions ($z$) by maximizing the posterior :
-                                                        $$\hat{z} =  \max_z \log p(x| f(z)) \ + \log p(z) $$
+                                                        $$\hat{z} =  \max_z \log p(z | x) \approx \max_z  \log p(x| f(z)) \ + \log p(z) $$
                                                         </div>
 
                                                         <span class="plain fragment fade-in" data-fragment-index="1">
@@ -1034,7 +1032,7 @@
 
                                                 <br>
 						<div class="boxonly" style="width:800px; padding:10px">
-							Reconstruct  <b class="alert"> latent </b>  fields to enable supplementary analysis
+							Reconstruct  <b class="alert"> latent </b>  fields to enable new analyses.
 						</div>
                                                 <br>
                                                 <div class="container">
@@ -1080,8 +1078,8 @@
                                                                         <img class="fragment  plain"  data-src="assets/21cmcorrupt_x.png" width="150px" style="position:absolute; top:0px; left:0px;" data-fragment-index="1"/>
                                                                         <img class="fragment  plain"  data-src="assets/21cmcorrupt_x2.png" width="150px"  style="position:absolute; top:0px; left:175px;" data-fragment-index="1"/>
                                                                         <img class="fragment  plain"  data-src="assets/21cmcorrupt_x3.png" width="150px" style="position:absolute; top:0px; left:350px;" data-fragment-index="2"/>
-                                                                        <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="1" />
-                                                                        <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="2" />
+                                                                        <!-- <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="1" /> -->
+                                                                        <!-- <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="2" /> -->
 	                                                                <img class="plaint fragment" data-fragment-index="3" style="position:relative; width:370px; top:160px; text-align:center"
 								             data-src="assets/photocross-snr.png" />
                                                                         <div  class="fragment  plain"  data-fragment-index="1" style="position:absolute; float:right; right:0px; top:450px; font-size:20px; text-align:right">
@@ -1125,7 +1123,7 @@
 							<div class="container">
                                                         	<div class="col" style="flex: 0 0 32em;" >
 									<ul>
-										<li class="fragment " data-fragment-index="1"> 	Infer initial conditions at all points in the Universe <br>
+										<li class=" " data-fragment-index="1"> 	Infer initial conditions at all points in the Universe <br>
 											$\sim$ over a million unknown parameters
 											
 										</li>
@@ -1133,25 +1131,32 @@
 										<li class="fragment " data-fragment-index="2"> 	Need to use gradient based inference algorithms <br>
 											$\rightarrow$ gradient descent optimization, Hamiltonian Monte Carlo, Variational inference...<br>
 										</li>
-										<br> 
-										<li class="fragment " data-fragment-index="3"> 	 <b> Automatic differentiation </b> is the hammer behind deep learning <br>
-											$\rightarrow$  <b>TensorFlow</b>, <b>JAX</b> or PyTorch.
-										</li>
+										<div class="fragment " data-fragment-index="2" style="position:relative; ">
+											$$g_z = \frac{\partial\, p(z, \Lambda | x)}{\partial\, z},\, g_{\Lambda} = \frac{\partial\, p(z, \Lambda | x)}{\partial\, \Lambda}$$
+											$$g_z \sim \frac{\partial\ f(z, \Lambda)}{\partial\, z},\, g_{\Lambda} \sim \frac{\partial\, f(z, \Lambda)}{\partial\, \Lambda}$$
+										</div>
+
+										<!-- <li class="fragment " data-fragment-index="4"> 	 <b> Automatic differentiation </b> is the hammer behind deep learning <br> -->
+										<!-- 	$\rightarrow$  <b>TensorFlow</b>, <b>JAX</b> or PyTorch. -->
+										<!-- </li> -->
 										<br>
 										<!-- <li class="fragment " data-fragment-index="4">  <b> GPU accelerated </b> simulations  -->
 										<!-- </li> -->
 									</ul>
 								</div>
 								<div class="col" style="flex: 0 0 21em; text-align:center">
-									<div class="fragment " data-fragment-index="2" style="position:relative; top:50px">
-										$$g_z = \frac{\partial\, p(z, \theta | x)}{\partial\, z},\, g_{\theta} = \frac{\partial\, p(z, \theta | x)}{\partial\, \theta}$$
-									</div>
+									<img  class="plain fragment fade-in" data-fragment-index="3" style="position:absolute; top:300px; right:50px; width:500px" data-src="assets/pmwd_table_fastpm.png" />
 
-									<img class=" plain fragment " data-fragment-index="3" style="position:relative; top:50px; width:300px"
-									     data-src="assets/TF_FullColor_Horizontal.png" />
-									<img class=" plain fragment " data-fragment-index="3" style="position:relative; top:50px; width:200px; height:100px"
-									     data-src="https://raw.githubusercontent.com/google/jax/master/images/jax_logo_250px.png"  />
+									<!-- <img class=" plain fragment " data-fragment-index="4" style="position:relative; top:50px; width:300px" -->
+									<!--      data-src="assets/TF_FullColor_Horizontal.png" /> -->
+									<!-- <img class=" plain fragment " data-fragment-index="4" style="position:relative; top:50px; width:200px; height:100px" -->
+									<!--      data-src="https://raw.githubusercontent.com/google/jax/master/images/jax_logo_250px.png"  /> -->
 									
+								</div>
+								<div  class="fragment"  data-fragment-index="3" style="position:absolute; top:550px; right:20px; font-size:20px; text-align:right">
+									Jasche & Lavaux (2018) <br>
+									Wang, Mo et.al. (2014) <br>
+									Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
 								</div>
 							</div>
 							
@@ -1160,155 +1165,6 @@
 
                                         <!-------------------------------------------------------------------------------->
 
-					
-				<!-- 	<section> -->
-				<!-- 		<h3 class='slide-title'><b class="alert"> FlowPM</b>: the first particle-mesh simulations in TensorFlow</h3> -->
-
-						
-				<!-- 		<div class='container'> -->
-				<!-- 			<div class='col slide-text' style="flex: 0 0 25em;"> -->
-								
-				<!-- 				<ul> -->
-				<!-- 					<li class="fragment" data-fragment-index="1">	Reconstructing the Universe in 10 lines -->
-				<!-- 						<ul> -->
-				<!-- 							<li> Automatic differentiation -->
-				<!-- 							</li> -->
-				<!-- 							<li> Access to SOTA optimization and Bayesian inference algorithms -->
-				<!-- 							</li> -->
-				<!-- 							<li>  Seamless interfacing with deep-learning tools  -->
-				<!-- 							</li> -->
-				<!-- 						</ul> -->
-										
-				<!-- 					</li> -->
-				<!-- 					<br> -->
-				<!-- 					<li class="fragment" data-fragment-index="2">	GPU accelerated simulations -->
-				<!-- 						<ul> -->
-				<!-- 							<li> $\sim$ 10 times faster than CPU simulations -->
-				<!-- 							</li> -->
-				<!-- 						</ul> -->
-				<!-- 					</li> -->
-				<!-- 					<br> -->
-				<!-- 					<li class="fragment" data-fragment-index="3"> -->
-				<!-- 						Distributed to multiple GPU with Mesh-TensorFlow -->
-				<!-- 						<ul> -->
-				<!-- 							<li> 2048$^3$ simulation -->
-				<!-- 							</li> -->
-				<!-- 							<li> Distributed on 256 NVIDIA V100 GPU -->
-				<!-- 							</li> -->
-				<!-- 							<li> Runtime: 3 mins -->
-				<!-- 							</li> -->
-				<!-- 						</ul> -->
-				<!-- 					</li> -->
-								
-				<!-- 			</div> -->
-							
-				<!-- 			<div class='col' style="flex: 0 0 28em;"> -->
-
-				<!-- 				<div style="position:relative; text-align:center"> -->
-								
-				<!-- 					<div class="plain" style="position:absolute; margin-left:20px"> <a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a> -->
-				<!-- 					</div> -->
-				<!-- 					<div class="fragment current-visible" data-fragment-index="1" style="position:relative; top:30px; left:-15px"> -->
-				<!-- 					  <pre  ><code data-trim data-noescape style="height:80em;width:49em;"> -->
-				<!-- 					  import tensorflow as tf -->
-				<!-- 					  import flowpm -->
-
-				<!-- 					  #Run simulation from variable initial conditions -->
-				<!-- 					  linear = tf.get_variable('linear', shape=(nc, nc, nc), -->
-				<!-- 								 initializer=tf.random_normal_initializer(), trainable=True) -->
-				<!-- 					  initial_conditions = flowpm.lpt_init(linear, name='icstate') -->
-				<!-- 					  final_state = flowpm.nbody(initial_conditions, stages, nc, name='fnstate') -->
-				<!-- 					  final_field = flowpm.cic_paint(tf.zeros_like(linear), final_state[0], boxsize=bs) -->
-
-				<!-- 					  #Likelihood term: ((data-model)/noise)^2 -->
-				<!-- 					  residual = tf.multiply(tf.subtract(final_field, data), 1/sigma) -->
-				<!-- 					  neg_log_likelihood = tf.reduce_sum(tf.multiply(residual, residual)) -->
-
-				<!-- 					  #Prior: (linear_modes^2 / linear_power_spectrum) -->
-				<!-- 					  lineark = flowpm.r2c3d(linear, norm=nc**3) -->
-				<!-- 					  neg_log_prior = tf.square(tf.cast(tf.abs(lineark), tf.float32)) -->
-				<!-- 					  neg_log_prior = tf.reduce_sum(tf.multiply(neg_log_prior, 1/priorwt))j -->
-
-				<!-- 					  #Loss & optimize -->
-				<!-- 					  loss = tf.add(neg_log_likelihood, neg_log_prior, name='loss') -->
-				<!-- 					  optimizer = ScipyOptimizerInterface(loss, var_list=[linear], 'L-BFGS-B') -->
-				<!-- 					  with tf.Session() as session: -->
-				<!-- 					      optimizer.minimize(session) -->
-				<!-- 					      recon = session.run(linear) -->
-				<!-- 					  </code></pre> -->
-				<!-- 				</div> -->
-				<!-- 				<img  class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:30px; left:25px" data-src="assets/flowpm_lptcompare.png"/> -->
-				<!-- 				<img  class="plain fragment" data-fragment-index="3" style="position:absolute; top:30px; left:150px" data-src="assets/mfpm_demo_1024.png" /> -->
-							
-								
-				<!-- 				</div> -->
-				<!-- 			</div> -->
-							
-							
-				<!-- 		</div> -->
-				<!-- 	</section> -->
-					
-				
-				<!-- 	<section> -->
-				<!-- 		<h3 class='slide-title'> $pmwd$: Particle Mesh with Derivatives </h3> -->
-
-												
-				<!-- 		<div class='container'> -->
-				<!-- 			<div class="col" style="flex: 0 0 25em;"> -->
-
-				<!-- 				<br> -->
-				<!-- 				<div class="slide-text"> -->
-				<!-- 					<b> Bottleneck </b>: Back-propogation is memory limited as it saves every snapshot of the simulation. -->
-				<!-- 					<br> -->
-				<!-- 					<br> -->
-				<!-- 					<ul> -->
-				<!-- 					<li class="fragment" data-fragment-index="1"> Adjoint method: evolve adjoint variables <em> backwards </em>  in time to evaluate gradients -->
-				<!-- 						<ul> -->
-				<!-- 							<li> Neural ODE & SDE (Chen et.al.) -->
-				<!-- 							</li> -->
-				<!-- 						</ul> -->
-										
-				<!-- 					</li> -->
-				<!-- 					<br> -->
-				<!-- 					<li class="fragment" data-fragment-index="2">	Leapfrog integration is exactly reversible -->
-				<!-- 					</li> -->
-				<!-- 					<br> -->
-				<!-- 					<li class="fragment" data-fragment-index="3"> -->
-				<!-- 						Memory cost of $pmwd$ simulations is <b class="alert"> independent </b>  of the number of time steps -->
-				<!-- 						<ul> -->
-				<!-- 							<li> accurate velocities & weak lensing simulations -->
-				<!-- 							</li> -->
-				<!-- 						</ul> -->
-				<!-- 					</li> -->
-				<!-- 					<br>  -->
-				<!-- 					<li class="fragment" data-fragment-index="4"> CUDA optimizations -->
-				<!-- 						<ul> -->
-				<!-- 							<li> Faster than end-to-end deep learning emulators, 100x faster than CPU simulations -->
-				<!-- 							</li> -->
-				<!-- 						</ul> -->
-				<!-- 					</li> -->
-				<!-- 				</div> -->
-				<!-- 			</div> -->
-							
-				<!-- 			<div class='col' style="flex: 0 0 10em;"> -->
-
-				<!-- 					<div class="plain" style="position:absolute; top:50px; margin-left:180px"> <a href="https://github.com/eelregit/pmwd">https://github.com/eelregit/pmwd</a> -->
-				<!-- 					</div> -->
-
-							
-				<!-- 				<img  class="plain" width="500px" style="position:absolute; top:100px" data-src="assets/pmwd_table.png" /> -->
-				<!-- 				<img  class="plain fragment current-visible " data-fragment-index="2" -->
-				<!-- 				      style="position:absolute; top:300px; margin-left:130px " data-src="assets/leapfrog.png" /> -->
-				<!-- 				<img  class="plain fragment current-visible " data-fragment-index="3" -->
-				<!-- 				      style="position:absolute; top:300px; margin-left:130px " data-src="assets/leapfrog.png" /> -->
-				<!-- 				<img  class="plain fragment" data-fragment-index="4" -->
-				<!-- 				      style="position:absolute; top:300px" width="500px" data-src="assets/pmwd_timing.png" /> -->
-				<!-- 			</div> -->
-				<!-- 		</div> -->
-						
-				<!-- 	</section> -->
-				<!-- </section> -->
-				
 				
                                 <!-------------------------------------------------------------------------------->
 				
@@ -1318,7 +1174,7 @@
 
 						
 						<br>
-						<div class="fragment" data-fragment-index="1" > <b class="alert "> FlowPM</b>: the first particle-mesh simulations in TensorFlow </div>
+						<div class="" data-fragment-index="1" > <b class="alert "> FlowPM</b>: the first particle-mesh simulations in TensorFlow </div>
 						<br>
 						
 						<div class='container'>
@@ -1359,8 +1215,8 @@
 								<div style="position:relative; text-align:center">
 								
 																	
-									<img  class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; top:0px; right:100px; width:500px" data-src="assets/pmwd_table_fastpm.png" />
-									<img  class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:0px; right:100px; width:500px" data-src="assets/pmwd_table_flowpm.png" />
+									<!-- <img  class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; top:0px; right:100px; width:500px" data-src="assets/pmwd_table_fastpm.png" /> -->
+									<img  class="plain  fragment fade-out" data-fragment-index="2" style="position:absolute; top:0px; right:100px; width:500px" data-src="assets/pmwd_table_flowpm.png" />
 
 									<div class="fragment current-visible" data-fragment-index="2" style="position:relative; top:-10px; left:-20px">
 									  <pre  ><code data-trim data-noescape style="height:80em;width:49em;">
@@ -1398,7 +1254,7 @@
 									Jasche & Lavaux (2018) <br>
 									Wang, Mo et.al. (2014) <br>
 									Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
-									<span class="plain fragment" data-fragment-index="1" > 
+									<span class="plain " data-fragment-index="1" > 
 										<b> <u>Modi</u></b>, Lanusse, Seljak (2020) <br>
 										<a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a>
 									</span>
@@ -1429,7 +1285,7 @@
 										<b class="alert"> $pmwd$</b><font color="white">: particle mesh with derivatives </font>
 									</div>
 									<div class="box-content" style="font-size:smaller">
-										<ul class="fragment" data-fragment-index="2">
+										<ul class="fragment" data-fragment-index="1">
 											<br>
 											<li > Adjoint method to evaluate gradients <br>
 											</li>
@@ -1437,7 +1293,7 @@
 											</li>
 											<li> Memory cost is <b class="alert"> independent </b>  of the time stepping
 											</li>
-											<li class="fragment" data-fragment-index="3">  ~100x faster than CPU simulations <br>
+											<li class="fragment" data-fragment-index="2">  ~100x faster than CPU simulations <br>
 												$\rightarrow$ faster than deep learning emulators
 											</li>
 										</ul>
@@ -1446,12 +1302,12 @@
 								
 								<br>
 
-								<div class="box fragment" data-fragment-index="4" style="">
+								<div class="box fragment" data-fragment-index="3" style="">
 									<div class="box-title", style="height:35px">
 										What's next?
 									</div>
 									<div class="box-content" style="font-size:smaller">
-										<ul class="fragment" data-fragment-index="5">
+										<ul class="fragment" data-fragment-index="3">
 											<br>
 											<li > Other observables like weak lensing, Lyman-$\alpha$
 											</li>
@@ -1474,10 +1330,10 @@
 								<img  class="plain fragment"  data-fragment-index="1" width="430px" style="position:absolute; top:100px" data-src="assets/pmwd_table.png" />
 								<img  class="plain fragment current-visible " data-fragment-index="1"
 								      style="position:absolute; top:260px; right:190px; width:300px" data-src="assets/pmwd_logo.svg" />
-
-								<img  class="plain fragment current-visible " data-fragment-index="2"
-								      style="position:absolute; top:270px; right:200px " data-src="assets/leapfrog.png" />
-								<img  class="plain fragment" data-fragment-index="3"
+								
+								<!-- <img  class="plain fragment current-visible " data-fragment-index="2" -->
+								<!--       style="position:absolute; top:270px; right:200px " data-src="assets/leapfrog.png" /> -->
+								<img  class="plain fragment" data-fragment-index="2"
 								      style="position:absolute; top:270px" width="430px" data-src="assets/pmwd_timing.png" />
 
 								<span  class="plain fragment" data-fragment-index="1" style="position:absolute; top:600px; right:20px; font-size:20px; text-align:right">
@@ -1503,8 +1359,9 @@
 						<h3 class='slide-title'> Roadmap to field level inference #2 </h3>
 
 						<br>
-						<div class="boxonly" style="width:600px; padding:10px">
-							<b class="alert"> Accelerated </b> Bayesian inference algorithms
+						<div class="boxonly" style="width:600px; height:30px; padding:5px">
+							<div class= "fragment fade-out " data-fragment-index="4" >  Bayesian inference algorithms </div>
+							<div class= "fragment" data-fragment-index="4" style="position:relative; top:-30px"> <b class="alert"> Accelerated </b> Bayesian inference algorithms </div>
 						</div>
 						<br>
 						<div class="container" style="margin-left:20px">
@@ -1515,7 +1372,7 @@
 									</div>
 									<div class="box-content" style="font-size:smaller">
 										<br>										
-										$z_{i+1} = z_i - \epsilon \left(\nabla_z{\log p(z_i | x)} + \nabla_z \log p(z_i) \right)$
+										$z_{i+1} = z_i - \epsilon \times \nabla_z \left( \log p(z_i | x) + \log p(z_i) \right)$
 										<br>
 										<br>
 										<div class="slide-text">
@@ -1573,7 +1430,7 @@
 
 						<br>
 						&nbsp &nbsp<font style="font-size:smaller">
-							$x_{i+1} = x_i - \epsilon \left[ \nabla_x{\log p(y | f(x_i))} + \nabla_x \log p(x_i) \right] = x_i - \Gamma \left(\nabla_x{\log p(y | f(x_i))}, \nabla_x \log p(x_i) \right)$
+							$x_{i+1} = x_i - \epsilon \times \nabla_x{\log p(y | f(x_i))}  = \Gamma \left[x_i , \nabla_x{\log p(y | f(x_i))} \right]$
 						</font>
 						<div class="slide-text" style="font-size:smaller">
 							<br>
@@ -1581,7 +1438,7 @@
 							<br>
 							
 							<div class="fragment" data-fragment-index="1">
-								<b> Recurrent inference machine</b>: Learn the update function with recurrent neural networks.
+								Learn the update function with recurrent neural networks $\rightarrow$ <b> recurrent inference machine</b>
 							</div>
 						</div>
 						<br>
@@ -1612,7 +1469,8 @@
 							
 						</span>
 						<div class="plain fragment" data-fragment-index="3" style="text-align:left; margin-left:20px; ">
-							<b> Still need to go beyond point estimates</b>:<br>$\rightarrow$using simulations to estiamte uncertainties.
+							How does this help?
+							<br>$\rightarrow$Using simulations to estimate uncertainties on MAP estimate.
 						</div>
 					</section>
 
@@ -1642,7 +1500,7 @@
 						<img class="plain fragment" data-fragment-index="4" width="800px"  data-src="assets/vsbs_ac_200_64.png" />
 						<div  style="position:absolute; top:620px; right:20px; font-size:20px; text-align:right">
 							Blei, Kucukelbir, McAuliffe (2016) <br>
-							<span  class="plain fragment" data-fragment-index="2" >
+							<span  class="plain fragment" data-fragment-index="1" >
 								<b><u>Modi</u></b>, Li, Blei.(2022) <br>
 								Gabrie, Rotskoff, Vanden-Eijnden (2022) <br>
 							</span>
@@ -1689,8 +1547,8 @@
 										</ul>
 									</li>
 									<br>
-									<li class="plain fragment" data-fragment-index="4" > Do likelihood models learnt with deep generative models lead to correct inference in high dimensions?
-									</li>
+									<!-- <li class="plain fragment" data-fragment-index="4" > Do likelihood models learnt with deep generative models lead to correct inference in high dimensions? -->
+									<!-- </li> -->
 								</ul>
 								<br>
 								<br>
@@ -1715,9 +1573,9 @@
 									Dai and Seljak (2021) <br>
 									Pandey, <b><u>Modi</b></u>, Wandelt (in progress) <br>
 								</span>
-								<span  class="plain fragment" data-fragment-index="4" >
-									Remy, <b><u>Modi</b></u>, Lanusse (in progress) <br>
-								</span>
+								<!-- <span  class="plain fragment" data-fragment-index="4" > -->
+								<!-- 	Remy, <b><u>Modi</b></u>, Lanusse (in progress) <br> -->
+								<!-- </span> -->
 							</div>
 							
 					</section>
@@ -2221,12 +2079,12 @@
 			
 
 		<style>
-		.reveal .slides {
-		     border: 1px solid red;
-		     min-height: 100%; 
-		     width: 128mm; 
-		     height: 96mm; 
-                }  
+		<!-- .reveal .slides { -->
+		<!--      border: 1px solid red; -->
+		<!--      min-height: 100%;  -->
+		<!--      width: 128mm;  -->
+		<!--      height: 96mm;  -->
+                <!-- }   -->
 		.reveal .box {
 			background-color: #191919;
 			margin-left: 10px;
