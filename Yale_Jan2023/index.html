@@ -298,7 +298,7 @@
                                                                         </li>
 									<br>
 									<li class="fragment" data-fragment-index="1" > Answer fundamental questions 
-                                                                                <ul> <li> E.g., neutrino mass hierarchy</li> </ul>
+                                                                                <ul> <li> E.g., neutrino mass hierarchy,<br>   properties of inflation.</li> </ul>
                                                                         </li>
 
 									<br>
@@ -311,7 +311,7 @@
 									<br>
 									<li class="fragment" data-fragment-index="4" > Great potential for new physics
 										<ul>
-											<li > E.g., nature of dark energy </li>
+											<li > E.g., nature of dark energy, dark matter </li>
 										</ul>
 									</li>
 									<br>
@@ -374,7 +374,7 @@
 					<h3  class='slide-title'>Outline of this talk</h3>
 					
                                         <br>
-					In the next 3 parts, my goal is to lay out a different way of cosmological analysis.
+					In the next 3 parts, I will discuss the future of cosmological analysis.
 					<br>
 					<br>
 					
@@ -565,14 +565,14 @@
 							<ul>
                                                                 <br>
                                                                 <br>
-								<li class="ragment" data-fragment-index="0"> Pertubation theory- as small perturbations beyond Gaussian random field.
+								<li class="ragment" data-fragment-index="0"> Pertubation theory-  small perturbations beyond Gaussian random field.
                                                                         <ul class="fragment" data-fragment-index="1"> <li> Cannot model deep in the non-linear, non-Gaussian regime </li>
-										<li> Hard to include survey systematics like  masks, fibre collisions, PSF... </li> 
+										<li> Hard to include survey systematics e.g.,  masks, fibre collisions </li> 
 									</ul>
                                                                 </li>
                                                                 <br>
                                                                 <br>
-                                                                <li class="fragment" data-fragment-index="3">  No theoretical model yet for other summary statistics than N-point functions
+                                                                <li class="fragment" data-fragment-index="3">  No models yet  for other summary statistics than N-point functions
                                                                         <ul > <li>  how do you model neural-network-based summary statistics? </li>  </ul>
                                                                 </li>
 								<br>
@@ -719,20 +719,26 @@
                                                                 <ol>
                                                                         <span class="" data-fragment-index="1">
                                                                                 <span class="fragment highlight-current-green " data-fragment-index="4">
-                                                                                        <li> Need to choose a summary statistic <br> $\rightarrow$ unclear which ones to use & and how much information is extracted. </li>
+                                                                                        <li> Need to choose a summary statistic
+                                                                                                <br> $\rightarrow$ which one to use & how much information is extracted.
+                                                                                        </li>
                                                                                 </span>
                                                                         </span>
                                                                         <br>
                                                                         <span class="" data-fragment-index="1">
                                                                                 <span class="fragment highlight-green " data-fragment-index="3">
-                                                                                        <li> Need a theoretical model  <br> $\rightarrow$ accurate in limited regimes and infeasible for new statistics </li>
+                                                                                        <li> Need a theoretical model
+                                                                                                <br> $\rightarrow$ accurate in limited regimes & infeasible for new statistics
+                                                                                        </li>
                                                                                 </span>
                                                                         </span>
                                                                         <br>
                                                                         <span class="" data-fragment-index="1">
                                                                                 <!-- <span class="fragment highlight-current-blue " data-fragment-index="4"> -->
                                                                                         <span class="fragment highlight-current-green " data-fragment-index="5">
-                                                                                                <li> Need an analytic likelihood for inference <br> $\rightarrow$ limited to Gaussian approximation </li>
+                                                                                                <li> Need an analytic likelihood for inference
+                                                                                                        <br> $\rightarrow$ limited to Gaussian approximation
+                                                                                                </li>
                                                                                 <!-- </span> -->
                                                                         </span>
                                                                         <br>
@@ -1158,40 +1164,115 @@
 						</div>
                                                 <br>
 
-                                                <div class="slide-text">
-							<div class="plain fragment", data-fragment-index="1">
-								<b> Bottleneck</b>: Traditional analysis needs to model covariance matrix of different datasets, say $x_1,\,x_2$
-								<div style="font-size:smaller">
-									$$ \log p(\theta | x_1, x_2) \propto   -\frac{1}{2}[x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] ^\dagger C^{-1}  [x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] + \log p(\theta)$$
-								</div>
-							</div>
-							<div class="plain fragment", data-fragment-index="2">
-								Instead of the likelihood, capture correlations in the joint forward model: $x_1, x_2 = f( z, \theta)$
-								<div style="font-size:smaller">
+                                                <!-- <div class="slide-text"> -->
+						<!-- 	<div class="plain fragment", data-fragment-index="1"> -->
+						<!-- 		<b> Bottleneck</b>: Traditional analysis needs to model covariance matrix of different datasets, say $x_1,\,x_2$ -->
+						<!-- 		<div style="font-size:smaller"> -->
+						<!-- 			$$ \log p(\theta | x_1, x_2) \propto   -\frac{1}{2}[x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] ^\dagger C^{-1}  [x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] + \log p(\theta)$$ -->
+						<!-- 		</div> -->
+						<!-- 	</div> -->
+						<!-- 	<div class="plain fragment", data-fragment-index="2"> -->
+						<!-- 		Instead of the likelihood, capture correlations in the joint forward model: $x_1, x_2 = f( z, \theta)$ -->
+						<!-- 		<div style="font-size:smaller"> -->
 
-									$$\log p(z, \theta | x_1, x_2) \propto  \log p(x_{1} | f(z, \theta)) + \log p(x_{2} | f(z,  \theta)) \ + \log p(z) + \log p(\theta) $$
-								</div>
-							</div>
-							<br>
+						<!-- 			$$\log p(z, \theta | x_1, x_2) \propto  \log p(x_{1} | f(z, \theta)) + \log p(x_{2} | f(z,  \theta)) \ + \log p(z) + \log p(\theta) $$ -->
+						<!-- 		</div> -->
+						<!-- 	</div> -->
+						<!-- 	<br> -->
 							
+                                                <!-- </div> -->
+						<!-- <br> -->
+						<!-- <br> -->
+						<!-- <br> -->
+						<!-- <div class="plain fragment", data-fragment-index="3" style="position:absolute; left:100px" > -->
+						<!-- 	Joint reconstruction from halo position & velocity data -->
+						<!-- 	<\!-- <br> -\-> -->
+						<!-- 	<\!-- <img class="plain"  style="position:relative; width:800px" -\-> -->
+						<!-- 	<\!--      data-src="assets/bayer_eqn.png"/> -\-> -->
+
+						<!-- </div> -->
+							
+						<!-- <img class="plain fragment"  , data-fragment-index="3" style="position:absolute; right:100px; top:400px; height:280px " -->
+						<!-- 	     data-src="assets/bayer_velrecon.png"/> -->
+
+						<!-- <div class="fragment  " data-fragment-index="3" style="position:absolute; float:right;  top:700px; right:0px; font-size: 20px; margin:0 auto">Bayer, <b><u>Modi</u></b>, Ferraro (2022) -->
+						<!-- </div> -->
+
+                                                <!-- <br> -->
+
+                                                <div class="continer">
+                                                        <div class="slide-text">
+                                                                
+                                                                <div class="col" style="flex:0 0 30em" >
+							                <div class="plain fragment", data-fragment-index="1">
+								                
+                                                                                <div style="position:relative; "> 2 datasets: $x_1$ and $x_2$ </div>
+                                                                                <br>
+                                                                                <u>Traditional analysis:</u>
+                                                                                <br>
+                                                                                <ul>
+                                                                                        <li> independent models
+                                                                                                <span style="font-size:smaller"> $\longrightarrow$ $x_1\sim t_1(\theta)$;  $x_2\sim t_2(\theta)$ </span> 
+                                                                                        </li>
+                                                                                        <li> needs to model covariance matrix </ul>
+                                                                                </ul> 
+                                                                                <br>
+                                                                                <br>
+								                <div style="font-size:smaller">
+									                <!-- $ \log p(x_1, x_2 | \theta) \propto   -\frac{1}{2}[x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] ^\dagger C^{-1}  [x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] $ -->
+									                $ \log p(x_1, x_2 | \theta) \propto  - [x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] ^\dagger \,  C ^{-1} \,   [x_{1} - t_1(\theta),\, x_2 - t_2(\theta)] $
+                                                                                        <!-- $\log p(x_1, x_2 | \theta) \propto   -\frac{1}{2}  -->
+                                                                                        <!--  \begin{bmatrix} -->
+                                                                                        <!-- x_{1}  - t_1(\theta) \\ -->
+                                                                                        <!-- x_{2}  - t_2(\theta)\\ -->
+                                                                                        <!-- \end{bmatrix}^\dagger -->
+                                                                                        <!-- C^{-1}  [x_{1} - t_1(\theta),\, x_2 - t_2(\theta)]  -->
+                                                                                        <!-- $ -->
+                                                                                        
+								                </div>
+                                                                        </div>
+                                                                        
+                                                                        <br>
+                                                                        <br>
+							                <div class="plain fragment", data-fragment-index="2">
+                                                                                <u>Forward modeling:</u>
+                                                                                <br>
+                                                                                <ul>
+                                                                                        <li>  Capture correlations in the joint forward model<br>
+                                                                                                $\rightarrow$ $x_1, x_2 \sim f(\theta)$
+                                                                                        </li>
+                                                                                </ul>
+                                                                                <br>
+                                                                                <br>
+								                <div style="font-size:smaller">
+                                                                                        
+									                $ p( x_1, x_2 | \theta) \propto p(x_{1} | f(\theta))  \times p(x_{2} | f(\theta)) $
+								                </div>
+							                </div>
+                                                                </div>
+							        <br>
+							        
+                                                        </div>
+                                                        <div class="col" style="flex:0 0 25em" >
+						                <div class="plain fragment", data-fragment-index="3" style="position:absolute; top:280px; right:100px" >
+							                Joint reconstruction from<br>
+                                                                        halo position & velocity data
+							                <!-- <br> -->
+							                <!-- <img class="plain"  style="position:relative; width:800px" -->
+							                <!--      data-src="assets/bayer_eqn.png"/> -->
+
+						                </div>
+							        
+						                <img class="plain fragment"  , data-fragment-index="3" style="position:absolute; right:100px; top:350px; height:280px "
+							             data-src="assets/bayer_velrecon.png"/>
+                                                                
+                                                        </div>
                                                 </div>
-						<br>
-						<br>
-						<br>
-						<div class="plain fragment", data-fragment-index="3" style="position:absolute; left:100px" >
-							Joint reconstruction from halo position & velocity data
-							<!-- <br> -->
-							<!-- <img class="plain"  style="position:relative; width:800px" -->
-							<!--      data-src="assets/bayer_eqn.png"/> -->
+                                                
 
+						<div class="fragment  " data-fragment-index="3" style="position:absolute; float:right;  top:650px; right:0px; font-size: 20px; margin:0 auto">Bayer, <b><u>Modi</u></b>, Ferraro (2022)
 						</div>
-							
-						<img class="plain fragment"  , data-fragment-index="3" style="position:absolute; right:100px; top:400px; height:280px "
-							     data-src="assets/bayer_velrecon.png"/>
-
-						<div class="fragment  " data-fragment-index="3" style="position:absolute; float:right;  top:700px; right:0px; font-size: 20px; margin:0 auto">Bayer, <b><u>Modi</u></b>, Ferraro (2022)
-						</div>
-								
+						
                                                 
                                         </section>
                                         <!-------------------------------------------------------------------------------->
@@ -1222,21 +1303,26 @@
 										<br>
                                                                         </div>
                                                                         <div class="plain fragment" data-fragment-index="1">
-                                                                                Example: Foregrounds in 21-cm surveys
+                                                                                Example application: 21-cm surveys
                                                                         </div>
 
                                                                         <ul>
-                                                                                <li class="fragment " data-fragment-index="1"> Large scale modes in a Fourier wedge are lost<br>
+                                                                                <br>
+                                                                                <li class="fragment " data-fragment-index="2"> Bright foregrounds <br>
+                                                                                        $\rightarrow$ large scale modes perpendicular to the line of sight are lost<br>
 											$\rightarrow$ can loose 20-80% of the data
                                                                                 </li>
                                                                                 <br>
-                                                                                <li class="fragment " data-fragment-index="2"> Match field-level data on small scales to recover initial conditions
+                                                                                <li class="fragment " data-fragment-index="3"> Match field-level data on small scales to recover initial conditions
                                                                                 </li>
                                                                                 <br>
-                                                                                <li class="fragment " data-fragment-index="3"> Evolve initial conditions to reconstruct clean data
+                                                                                <li class="fragment " data-fragment-index="4"> Evolve initial conditions to reconstruct lost modes
 											<br>
-											<div class="fragment " data-fragment-index="4"> $\rightarrow$ new science! <br>
-												 cross-correlation with photometric surveys and CMB lensing </div>
+											<div class="fragment " data-fragment-index="4">
+                                                                                                $\rightarrow$ new science! correlate with photometric surveys & CMB lensing <br>
+                                                                                                $\rightarrow$ explore high redshift Universe
+                                                                                        </div>
+                                                                                        
                                                                                 </li>
                                                                         </ul>
                                                                         <br>
@@ -1252,11 +1338,11 @@
 							<div class="col" style="flex: 0 0 21em;">
 
                                                                 <div style="position:relative; width:500px; height:600px; margin:0 auto;">
-                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x.png" width="150px" style="position:absolute; top:50px; left:0px;" data-fragment-index="1"/>
-                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x2.png" width="150px"  style="position:absolute; top:50px; left:175px;" data-fragment-index="1"/>
-                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x3.png" width="150px" style="position:absolute; top:50px; left:350px;" data-fragment-index="3"/>
-                                                                        <img class="fragment  plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:250px; left:10px;" data-fragment-index="1" />
-                                                                        <!-- <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="2" /> -->
+                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x.png" width="150px" style="position:absolute; top:100px; left:0px;" data-fragment-index="1"/>
+                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x2.png" width="150px"  style="position:absolute; top:100px; left:175px;" data-fragment-index="2"/>
+                                                                        <img class="fragment  plain"  data-src="assets/21cmcorrupt_x3.png" width="150px" style="position:absolute; top:100px; left:350px;" data-fragment-index="4  "/>
+                                                                        <!-- <img class="fragment  plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:250px; left:10px;" data-fragment-index="2" /> -->
+                                                                         <!-- <img class="fragment  current-visible plain"  data-src="assets/21cmwedge.png" style="position:absolute; top:200px; left:10px;" data-fragment-index="2" /> -->
 	                                                                <!-- <img class="plaint fragment" data-fragment-index="3" style="position:relative; width:370px; top:160px; text-align:center" -->
 								        <!--      data-src="assets/photocross-snr.png" /> -->
                                                                         <div  class="fragment  plain"  data-fragment-index="1" style="position:absolute; float:right; right:0px; top:450px; font-size:20px; text-align:right">
@@ -1408,11 +1494,15 @@
 										</ul>
 									</li>
 									<br>
+									<br>
 									
 									<li class="fragment" data-fragment-index="3"> 
 										Reconstructing the Universe in 10 lines
 									</li>
-									<br>
+
+                                                                        <br>
+                                                                        <br>
+
 									<li class="fragment" data-fragment-index="4"> Memory limited as every time-step is saved.
 										<ul class="fragment" data-fragment-index="4" style="font-size:smaller">
 											<li> <b class="alert" style="font-size:24px"> $pmwd$</b><font color="white">: particle mesh with derivatives </font></li>
@@ -1422,11 +1512,13 @@
 									</li>
 
 									<br>
-									<li class="fragment" data-fragment-index="6" style="">	GPU accelerated simulations
+									<br>
+                                                                        <li class="fragment" data-fragment-index="6" style="">	GPU accelerated simulations
 										<ul  style="font-size:smaller">
-											<li> FlowPM $\sim$10x faster than CPU simulations
+											<li> FlowPM ~10x faster than CPU simulations
 											</li>
-											<li class="fragment" data-fragment-index="7"> $pmwd$ ~100x faster <br>
+											<li class="fragment" data-fragment-index="7">
+                                                                                                $pmwd$ ~100x faster <br>
 												$\rightarrow$ faster than deep learning emulators
 										</ul>
 									</li>
@@ -1841,7 +1933,7 @@
 						<br>
 						<div class="slide-text" style="">
 							
-							1. Accelerating MAP optimization
+							<u>1. Accelerating MAP optimization</u>
 							<br>
 							<br>
 							&nbsp &nbsp<font style="font-size:smaller">
@@ -1863,7 +1955,7 @@
 							<br>
 							<br>
 							<div class="plain fragment" data-fragment-index="5" style="text-align:left; ; ">
-								2. Accelerated posterior sampling 
+								<u>2. Accelerated posterior sampling</u>
 							</div>
 							<br>
 							<font style="font-size:smaller">
@@ -2368,6 +2460,10 @@
                                                         </div>
                                                         <div class="block-content" style="font-size:smaller; height:130px">
                                                                 Assume the target posterior can be modeled by a parametric conditional distribution $q_\phi(\theta | x)$.
+                                                                <br>
+                                                                E.g.
+                                                                $ q_\phi \longrightarrow \mathcal{N}(\mu, \sigma); \{\mu = f_\phi(x), \sigma = g_\phi(x))$  
+
                                                                 <br>
                                                                 <div class="plain fragment" data-fragment-index="6">
                                                                         Then, minimizing the Kullback Leibler  divergence between them leads to
