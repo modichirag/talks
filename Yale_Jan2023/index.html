@@ -34,12 +34,13 @@
 			<div class="slides">
 
 				<!-- <section  data-background-image="assets/lsst_stills_0009_crop.jpg" > -->
+				<!-- <section  data-background-image="assets/Mayall.jpg" > -->
 				<!-- <section  data-background-image="assets/backgroundweb1.jpg" data-background-size="2500px" data-background-color="black" data-background-position='right'> -->
 				<!-- <section  data-background-image="assets/backgroundtrail2.jpg" data-background-size="cover" data-background-color="black" > -->
 				<section  data-background-image="" data-background-size="cover" data-background-color="black" >
 
 						<div class="container">
-							<div class="title" style="border-radius: 20px; background-color:rgba(0, 0, 0, 0.4);">
+							<div class="title" style="margin:auto; text-align:center; border-radius: 20px; background-color:rgba(0, 0, 0, 0.4);">
 								<h2> Forward Modeling approaches for Cosmological Analysis </h2>
 								<h4> Yale Symposium, January 27th, 2023</h4>
 							</div>
@@ -59,7 +60,7 @@
 									</div>
 								</div>
 								<div class="col">
-									<img src="assets/fl_logo_transparent.png" class="plain" height="100"></img>
+									<img style="position:relative; left:60px" src="assets/fl_logo_transparent.png" class="plain" height="100"></img>
 									<!-- <img src="assets/logo_bccp.png" class="plain" height="100"></img> -->
 									<br>
 									<br>
@@ -86,7 +87,7 @@
 				<!-------------------------------------------------------------------------------->
 				<section data-background-color="black">
 
-					<h2 class='slide-title' style=";"> Scientific interests </h2>
+					<h3 class='slide-title' style=";"> Overview of my scientific interests </h3>
 
 					
 					<div class="slide-text" style=";">
@@ -99,18 +100,18 @@
 								</div>
 								<div class="block-content" style="font-size:smaller">
 									<ul>
-                                                                                <li> Cosmological analysis
+                                                                                <li> Large scale structures of the Universe
 										        <ul>
                                                                                                 
                                                                                                 <li> Analytic methods
                                                                                                         <!-- <span style="position:absolute; right:20px"> MNRAS 472,3959(2017); JCAP 08(2017)009; JCAP 03(2020)045...</span>  -->
 										                </li>
 
-                                                                                                <li  style=""  class="fragment highlight-green" data-fragment-index="1">  Computational methods (forward modeling)
+                                                                                                <li  style="" >  Computational methods (forward modeling) &ensp; $\longleftarrow$
 
 										                </li>
                                                                                         </ul>
-										<li> Cosmological simulations & galaxy formation
+										<li> Galaxy formation
                                                                                         <!-- <span style="position:absolute; right:20px"> In preparation </span> -->
 										</li>
 									</ul>
@@ -124,7 +125,7 @@
 									2. Statistical inference and machine learning
 								</div>
 								<div class="block-content" style="font-size:smaller">
-									<span style="position:absolute; right:160px; text-align:right">with David Blei, Lawrence Saul, Bob Carpenter, Alex Barnett <br>@Center for Computational Mathematics </span>
+									<span style="position:absolute; right:160px; text-align:right">with David Blei, Lawrence Saul, Bob Carpenter, Alex Barnett <br>@Center for Computational Mathematics (CCM) </span>
 									<!-- <span style="">with David Blei, Lawrence Saul, Bob Carpenter, Alex Barnett @Center for Computational Mathematics </span>  -->
 									<ul>
 										<li> Exact sampling methods
@@ -150,10 +151,10 @@
 								</div>
 								<div class="block-content" style="font-size:smaller">
 									<ul>
-										<li> Causal inference in economics
+										<li> Causal inference in econometrics
                                                                                         <!-- <span style="position:absolute; right:20px"> NeurIPS-Casual ML (2019) </span> -->
                                                                                 </li>
-										<li> Data analysis for COVID-19
+										<li> Estimating fatality rates for COVID-19
                                                                                         <!-- <span style="position:absolute; right:20px"> Nature Communications 12,2729 (2021)</span> -->
                                                                                 </li>
 									</ul>
@@ -166,7 +167,7 @@
 				<!-------------------------------------------------------------------------------->
 				<section data-background-color="black">
 
-					<h2 class='slide-title' style="position:absolute;top:0;"> the story of our Universe </h2>
+					<h3 class='slide-title' style="position:absolute;top:0;"> The story of our Universe </h3>
 
 					<div class="container">
 
@@ -180,7 +181,7 @@
 							<br>
 							
 							<div class="fragment" data-fragment-index="1" style="font-size:smaller">
- 							        Standard model: <b class="alert"> $\Lambda$-CDM model </b> <br>  
+ 							        Simplest model:<b class="alert"> $\Lambda$-CDM </b> <br>  
 							        $\Lambda-$ cosmological constant dark energy <br>
                                                                 Cold dark matter
 
@@ -206,17 +207,16 @@
 							
 							<div class="block fragment" data-fragment-index="1" >
 								<div class="block-title">
-									6 unknowns
+									6 unknowns in $\Lambda$-CDM model
 								</div>
-								<div class="block-content" style="">
-									<br>
+								<div class="block-content" style="font-size:smaller">
 									<ol>
-										<li>physical baryon density</li>
-										<li>physical dark matter density</li>
+										<li>baryon fraction</li>
+										<li>fraction of dark matter</li>
 										<li>age of the Universe</li>
+										<li>optical depth at reionization</li>
+										<li>amplitude of curvature fluctuation</li>
 										<li>scalar spectral index</li>
-										<li>curvature fluctuation amplitude</li>
-										<li>reionization optical depth</li>
 									</ol>
 									<br>
 								</div>
@@ -245,10 +245,10 @@
 								<div class="block-title">
 									Open questions
 								</div>
-								<div class="block-content" style="">
-									<br>
+								<div class="block-content" style="font-size:smaller">
 									<ul>
-										<li>nature of dark energy & dark matter</li>
+										<li>nature of dark energy</li>
+										<li>nature of dark matter</li>
 										<li>properties of inflation</li>
 										<li>masses of neutrinos</li>
 										<li>theory of gravity (GR?)</li>
@@ -269,7 +269,7 @@
 
 					
 					<section>
-						<h3 class='slide-title'> next generation of cosmological probes</h3>
+						<h3 class='slide-title'>Next generation of cosmological probes</h3>
 						<br>
 							<div class="container">
 								<div class="col">
@@ -335,7 +335,7 @@
 
 					<section data-background-image="assets/Mayall2r.jpg" >
 					<!-- <section data-background-image="assets/LSST.jpg"> -->
-						<h2 class='slide-title'>a paradigm shift</h2>
+						<h3 class='slide-title'>A paradigm shift</h3>
 
 						<div class="" > Large amount of high precision data from the next generation of cosmological surveys. </div>
 						
@@ -382,7 +382,7 @@
 
 
 					<section>
-						<h3 class='slide-title'> promise of the modern cosmological surveys </h3>
+						<h3 class='slide-title'>Promise of the modern cosmological surveys </h3>
 
 						<br>
 						Unprecedented constraints on all  cosmological parameters 
@@ -401,7 +401,7 @@
                                                                         </li>
 
 									<br>
- 									<li class="fragment" data-fragment-index="2" > Study current tensions in $\Lambda$-CDM model
+ 									<li class="fragment" data-fragment-index="2" > Study tensions in $\Lambda$-CDM model
 										<ul>
 											<li class="fragment" data-fragment-index="2" >E.g., $\sim$4 $\sigma$ Hubble tension, <br>
 												lensing is low  </li>
@@ -409,7 +409,7 @@
 										</ul>
 									</li>
 									<br>
-									<li class="fragment" data-fragment-index="4" > Great potential for discovering new physics
+									<li class="fragment" data-fragment-index="4" > Discover new physics
 										<ul>
 											<li > E.g., nature of dark energy, dark matter </li>
 										</ul>
@@ -486,7 +486,7 @@
 					<h3  class='slide-title'>Outline of this talk</h3>
 					
                                         <br>
-					In the next 3 parts, I will discuss cosmological analysis for the next generation of surveys.
+					In the next 3 parts, I will discuss how to do cosmological analysis for the next generation of surveys.
 					<br>
 					<br>
 					<br>
@@ -651,7 +651,7 @@
                                                         
 						</div>
 						
-                                                <span class= "ragment fade-in" data-fragment-index="0" >
+                                                <span class= "fragment fade-in" data-fragment-index="0" >
                                                         <span class= "fragment fade-out" data-fragment-index="4" >
                                                                 <img class="plain" style="position:absolute; top:260px; left:170px; width:320px; ;" data-src="assets/ngfield0.png" />
                                                                 <img class="plain" style="position:absolute; top:260px; left:450px; width:320px;" data-src="assets/gfield0.png" />
@@ -774,7 +774,9 @@
 							<ul>
                                                                 <br>
 								<li  class="plain fragment fade-in" data-fragment-index="0"> Assumed to be a Gaussian likelihood based on central limit theorem.
-                                                                        <ul class="plain fragment fade-in" data-fragment-index="0">
+                                                                        <br>
+									<br>
+									<ul class="plain fragment fade-in" data-fragment-index="0">
                                                                                 <li> Not true in all the regimes even for power spectrum. </li>
                                                                                 <!-- <li> Not true for other summary statistics. </li> -->
                                                                         </ul>
@@ -783,9 +785,11 @@
 								<br>
 								<li  class="plain fragment fade-in" data-fragment-index="2"> Estimating covariance matrix is expensive! <br>
                                                                         $\rightarrow$ Number of simulations needed $\propto\, N_{data}^2$ 
-                                                                        <ul>
-                                                                                <li> 2048 full-survey realizations for BOSS survey. </li>
-                                                                                <li> Combining different observables & surveys is challenging. </li>
+                                                                        <br>
+									<br>
+									<ul>
+                                                                                <li class="plain fragment fade-in" data-fragment-index="3"> 2048 full-survey realizations for BOSS survey. </li>
+                                                                                <li class="plain fragment fade-in" data-fragment-index="3"> Combining different observables & surveys is challenging. </li>
                                                                         </ul>
 								</li>
                                                                 <br>
@@ -872,7 +876,7 @@
 
                                         <section>
                                                                                         
-						<h3  class='slide-title'>beyond traditional approaches to analysis</h3>
+						<h3  class='slide-title'>Beyond traditional approaches to analysis</h3>
 						<div class="header-right">
 							<font color="orange"> Traditional Analysis<br>
 							$\rightarrow$ Forward Modeling</font> <br>
@@ -936,7 +940,7 @@
                                                 <br>
 						<div class="box fragment" data-fragment-index="2">
 							<div class="box-title" style="padding:8px">
-								A different perspective: forward modeling
+								A different approach: forward modeling
 							</div>
 							<div class="box-content">
                                                                 <br>
@@ -961,7 +965,7 @@
 				        <!-------------------------------------------------------------------------------->
 
                                         <section>
-                                                <h3  class='slide-title'>example: forward modeling for galaxy clustering</h3>
+                                                <h3  class='slide-title'>Example: forward modeling for galaxy clustering</h3>
 						<div class="header-right">
 							<font color="orange"> Traditional Analysis<br>
 							$\rightarrow$ Forward Modeling </font> <br>
@@ -1127,7 +1131,7 @@
 								<ol>
 									<br>
 									<li class="fragment plain" data-fragment-index="1" > GPU accelerated computations <br>
-										<div style = "font-size:smaller" > $\rightarrow$ supercomputers like Perlmutter with 6000 A-100 GPUs  </div> 
+										<div style = "font-size:smaller" > $\rightarrow$ supercomputers with thousands of GPUs  </div> 
 									</li>
 									<br>
 									<li class="fragment plain" data-fragment-index="2"> Bayesian inference algorithms <br>
@@ -1143,7 +1147,9 @@
 									</li>
 									<br>
 									<li class="fragment plain" data-fragment-index="5"> Large scale resource investment<br>
-										<div style = "font-size:smaller" > $\rightarrow$ collaboration and funding opportunities </div> 
+										<div style = "font-size:smaller" > $\rightarrow$ collaboration and funding opportunities <br>
+											E.g. Yale Data Science Institute
+										</div> 
 									</li>
 									<br>
 								</ol>
@@ -1512,7 +1518,7 @@
 
                                                                 <div class="slide-text", style="position:relative;">
                                                                         <div class="plain fragment" data-fragment-index="1">
-                                                                               Probe neutral hydrogen with 21-cm surveys  e.g., CHIME, HIRAX, PUMA
+                                                                               Probe neutral hydrogen with 21-cm surveys  e.g., HIRAX, PUMA
                                                                         </div>
 
                                                                         <ul>
@@ -1520,7 +1526,7 @@
                                                                                 <li class="fragment " data-fragment-index="2"> Bright foregrounds <br>
                                                                                         <div style="font-size:smaller" >
 												$\rightarrow$ large scale modes perpendicular to the line of sight are lost<br>
-												$\rightarrow$ can loose 20-80% of the data
+												$\rightarrow$ can loose 20-80% of the data in the foreground wedge
 											</div>
                                                                                 </li>
                                                                                 <br>
@@ -1752,7 +1758,7 @@
                                                                                 <br>
                                                                                 <span style="position:relative; top:10px; font-size: 18px" > Timings for 1 step<br>of 256$^3$ simulation: </span>
                                                                                 <div style=" position:relative; top:-60px; left:0px; font-size:18px">
-                                                                                        <table   style=" font-size:16px; width:200px">
+                                                                                        <table   style=" font-size:18px; width:300px">
                                                                                                 <tbody>
                                                                                                         <tr>
                                                                                                                 <td>FastPM</td>
@@ -1781,7 +1787,7 @@
                                                                                                         </tr>
                                                                                                 </tbody>
                                                                                         </table>
-                                                                                        <div style=" position:relative; top:-80px; left:430px;" >
+                                                                                        <div style=" position:relative; top:-80px; left:480px;" >
                                                                                                 $\Big\}$ 10x faster
                                                                                                 <br>
                                                                                                 <div style="position:relative; top:10px" >
@@ -1864,7 +1870,7 @@
 								
 								<!-- <img  class="plain fragment current-visible" data-fragment-index="6" style="position:absolute; top:200px; right:30px; width:600px" -->
 								<!--       data-src="assets/flowpm_lptcompare.png"/> -->
-								<div  class="plain fragment " data-fragment-index="6" style="position:absolute; top:150px; right:100px; width:400px; font-size:16px" >
+								<div  class="plain fragment " data-fragment-index="6" style="position:absolute; top:130px; right:100px; width:460px; font-size:16px" >
 								        <img data-src="assets/pmwd_timing.png" />
                                                                         <em style="position:relative; top:-10px"> time-scaling for $pmwd$ simulations<br>
                                                                         <span class="plain fragment " data-fragment-index="7" > $\rightarrow pmwd$ is faster than deep learning emulators </span>   </em> 
@@ -2186,14 +2192,16 @@
 							<div class= "fragment" data-fragment-index="4" style="position:relative; top:-30px"> <b class="alert"> Accelerated </b> inference algorithms  in high dimensions. </div>
 						</div>
 						<br>
-						<br>
-							
+
+						<div class="container" style="margin-left:20px">
 							<div class="col">
 								<div class="box fragment" data-fragment-index="2" style="position:absolute;  width:580px">
 									<div class="box-title", style="height:35px">
-										2. Sampling with Hamiltonian Monte Carlo (HMC)
+										Sampling with Hamiltonian Monte Carlo (HMC)
 									</div>
 									<div class="box-content" style="font-size:smaller">
+										Follow gradients to obtain random samples from the posterior.
+										<br>
 										<br>
 										<!-- <div style="font-size:25px" > -->
 										<!-- 	$  \frac{dz}{dt} = \frac{\partial H(z, \tilde{p})}{\partial  \tilde{p}},\, \frac{d\tilde{p} }{dt} = -\frac{\partial H(z, \tilde{p})}{\partial z}$ -->
@@ -2205,86 +2213,118 @@
 											<b>Bad</b>: Consecutive samples are correlated
 											<br>
 											<div class="plain fragment" data-fragment-index="3" >
-												<b>Ugly </b>: <b class="alert"> $\sim 10^4$ simulations </b> for a single independent sample!!
+												<b>Ugly </b>: <b class="alert"> $\sim 10^4$ simulations </b> for every independent sample!!
 											</div>
 
 										</div>
 									</div>
 								</div>
 						        </div>
+							
+							<div class="col">
+								<div class="box fragment" data-fragment-index="5" style="position:absolute;  width:600px">
+									<div class="box-title", style="height:35px">
+										Variational self-Boosted Sampling (VBS)
+									</div>
+									<div class="box-content" style="font-size:smaller">
+										Combine HMC and variational inference.
+										<br>
+										<br>
+										<div class="slide-text">
+											1. Learn an approximate distribution for the posterior on the fly. <br>
+											<ul> $\rightarrow$ symmetry based normalizing flow (NF). </ul> <br>
+											2. Alternately sample from HMC and NF to explore the posterior. 
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="plain fragment" style="position:absolute; top:410px; left:20px" data-fragment-index="2" > True Initial conditons </div>
 						<img class="plain fragment" style="position:absolute; top:440px; left:20px" data-fragment-index="2" src="../assets/ic_gif.png"   width="230" />
 						
 						<div class="plain fragment" style="position:absolute; top:410px; left:320px" data-fragment-index="2" > HMC Samples </div>
 						<img  class="plain fragment" style="position:absolute; top:440px ; left:280px" data-fragment-index="2" src="../assets/ic.gif"   width="230" /> <!--  -->
-						<div  class="fragment plain" style="position:absolute; top:440px; left:550px; font-size:smaller" data-fragment-index="3" >
-							<img  class="plain"   data-src="assets/hmc_ac.png" height="210px"/>
+
+						<span class="plain fragment fade-in" data-fragment-index="3" >
+							<span class="plain fragment fade-out" data-fragment-index="6" >
+								<div  class=" plain" style="position:absolute; top:440px; left:550px; font-size:smaller" >
+									<img  class="plain" style="height:210px"  data-src="assets/hmc_ac.png" />
+									<br>
+									<em style="position:relative; top:-15px" > Auto-correlation length of HMC samples as function of scales for 4 chains. </em>
+								</div>
+							</span>
+						</span>
+						<div class="plain fragment fade-in" data-fragment-index="6" style="position:absolute; top:440px; left:550px; font-size:smaller" >
+							<img style="", data-src="assets/vsbs_ac_200_64.png" />
 							<br>
-							<em> Auto-correlation length of HMC samples as function of scales for 4 chains. </em>
+							<em style="position:relative; top:-15px"> VBS reduces auto-correlation length as compared to HMC by more than <b class="alert"> 10x </b> </em>
 						</div>
-						<span  class="plain fragment" data-fragment-index="3" style="position:absolute; top:410px; right:20px; font-size:20px; text-align:right">
+						
+						<span  class="plain fragment" data-fragment-index="5" style="position:absolute; top:390px; right:20px; font-size:20px; text-align:right">
 							<b><u>Modi</u></b>, Li, Blei (2022) <br>
+							<span class="plain fragment" data-fragment-index="5" > Dai and Seljak (2022)</span>
 							
 						</span>
 					</section>
 
 					<!-------------------------------------------------------------------------------->
 
-					<section>
-						<h3 class="slide-title">Accelerated Inference</h3>
-						<div class="header-right">
-							Traditional Analysis<br>
-							<font color="orange"> Field-level Inference<br>
-							$\rightarrow$ Advances </font> <br>
-							Simulation-based Inference 
-						</div>
+					<!-- <section> -->
+					<!-- 	<h3 class="slide-title">Accelerated Inference</h3> -->
+					<!-- 	<div class="header-right"> -->
+					<!-- 		Traditional Analysis<br> -->
+					<!-- 		<font color="orange"> Field-level Inference<br> -->
+					<!-- 		$\rightarrow$ Advances </font> <br> -->
+					<!-- 		Simulation-based Inference  -->
+					<!-- 	</div> -->
 
-						<br>
-						<div class="slide-text" style="">
+					<!-- 	<br> -->
+					<!-- 	<div class="slide-text" style=""> -->
                                                         
-							<br>
-							<div class="plain fragment" data-fragment-index="5" style="text-align:left; ; ">
-								<u>2. Accelerated posterior sampling</u>
-							</div>
-							<br>
-							<font style="font-size:smaller">
-								<div class="plain fragment" data-fragment-index="5" style="text-align:left; margin-left:20px; ">
-									Reduce auto-correlation length between samples.
-									<br>
-									<br>
-									<span class="plain fragment" data-fragment-index="6" >
-									<b class="alert"> Variational self-Boosted Sampling (VBS):</b> 
-									Combine HMC and variational inference using normalizing flows.
-									</span>
-								</div>
-							</font>
-							<br>
-							<div class="plain fragment" data-fragment-index="6" style="position:relative; left:50px; width:800px; font-size:smaller" >
-								<img style="position:relative; top:-20px; left:50px; width:650px; margin:auto", data-src="assets/vsbs_ac_200_64.png" />
-								<br>
-								<em style="position:relative; top:-20px;"> VBS reduces auto-correlation length of samples as compared to HMC by more than <b class="alert"> 10x </b> </em>
-							</div>
+					<!-- 		<br> -->
+					<!-- 		<div class="plain fragment" data-fragment-index="5" style="text-align:left; ; "> -->
+					<!-- 			<u>2. Accelerated posterior sampling</u> -->
+					<!-- 		</div> -->
+					<!-- 		<br> -->
+					<!-- 		<font style="font-size:smaller"> -->
+					<!-- 			<div class="plain fragment" data-fragment-index="5" style="text-align:left; margin-left:20px; "> -->
+					<!-- 				Reduce auto-correlation length between samples. -->
+					<!-- 				<br> -->
+					<!-- 				<br> -->
+					<!-- 				<span class="plain fragment" data-fragment-index="6" > -->
+					<!-- 				<b class="alert"> Variational self-Boosted Sampling (VBS):</b>  -->
+					<!-- 				Combine HMC and variational inference using normalizing flows. -->
+					<!-- 				</span> -->
+					<!-- 			</div> -->
+					<!-- 		</font> -->
+					<!-- 		<br> -->
+					<!-- 		<div class="plain fragment" data-fragment-index="6" style="position:relative; left:50px; width:800px; font-size:smaller" > -->
+					<!-- 			<img style="position:relative; top:-20px; left:50px; width:650px; margin:auto", data-src="assets/vsbs_ac_200_64.png" /> -->
+					<!-- 			<br> -->
+					<!-- 			<em style="position:relative; top:-20px;"> VBS reduces auto-correlation length of samples as compared to HMC by more than <b class="alert"> 10x </b> </em> -->
+					<!-- 		</div> -->
 							
-							<!-- <div class="plain fragment" data-fragment-index="7" style="text-align:left; margin-left:20px; font-size:smaller "> -->
-							<!-- 	<b> Road ahead</b>: 1. Combine CosmicRIM with simulations to calibrate uncertainties <br> -->
-							<!-- 	2. Extend VBS to hierarchical models & jointly sample cosmology parameters and density field. -->
-							<!-- </div> -->
+					<!-- 		<\!-- <div class="plain fragment" data-fragment-index="7" style="text-align:left; margin-left:20px; font-size:smaller "> -\-> -->
+					<!-- 		<\!-- 	<b> Road ahead</b>: 1. Combine CosmicRIM with simulations to calibrate uncertainties <br> -\-> -->
+					<!-- 		<\!-- 	2. Extend VBS to hierarchical models & jointly sample cosmology parameters and density field. -\-> -->
+					<!-- 		<\!-- </div> -\-> -->
 							
 
-						</div>
-						<br>
-						<span  class="plain fragment" data-fragment-index="3" style="position:absolute; top:600px; right:20px; font-size:20px; text-align:right">
-							Putzky and Welling (2017) <br>
-							<span  class="plain fragment" data-fragment-index="3" >
-								<b><u>Modi</u></b>, Lanusse et al.(2021) <br>
-							</span>
-							<span  class="plain fragment" data-fragment-index="5" >
-								<b><u>Modi</u></b>, Li, Blei.(2022) <br>
-								Gabrie, Rotskoff, Vanden-Eijnden (2022) <br>
-							</span>
-						</span>
+					<!-- 	</div> -->
+					<!-- 	<br> -->
+					<!-- 	<span  class="plain fragment" data-fragment-index="3" style="position:absolute; top:600px; right:20px; font-size:20px; text-align:right"> -->
+					<!-- 		Putzky and Welling (2017) <br> -->
+					<!-- 		<span  class="plain fragment" data-fragment-index="3" > -->
+					<!-- 			<b><u>Modi</u></b>, Lanusse et al.(2021) <br> -->
+					<!-- 		</span> -->
+					<!-- 		<span  class="plain fragment" data-fragment-index="5" > -->
+					<!-- 			<b><u>Modi</u></b>, Li, Blei.(2022) <br> -->
+					<!-- 			Gabrie, Rotskoff, Vanden-Eijnden (2022) <br> -->
+					<!-- 		</span> -->
+					<!-- 	</span> -->
 					
-					</section>
+					<!-- </section> -->
 
 					<!-------------------------------------------------------------------------------->
 
@@ -2307,31 +2347,32 @@
 							
 							
 							<br>
-							<ol class="plain fragment" data-fragment-index="1" >
-								<li class="plain fragment" data-fragment-index="1"> Extend variational self-boosted sampling to hierarchical models <br>
-									<div style="font-size:smaller"> $\rightarrow$ jointly sample cosmology parameters and density field. </div>
+							<ol class="plain ragment" data-fragment-index="1" >
+								<li class="plain ragment" data-fragment-index="1"> Extend variational self-boosted sampling to jointly sample cosmology parameters & the density field. <br>
+									<div style="font-size:smaller"> $\rightarrow$ hierarchical distribution </div>
 								</li>
 								<br>
 								<br>
-								<li class="plain fragment" data-fragment-index="2" > Beyond point estimate with MAP optimization <br>
-									<div style="font-size:smaller">$\rightarrow$ combine CosmicRIM with simulations to calibrate uncertainties.  </div>
+								<li class="plain ragment" data-fragment-index="2" > Maximum-a-posteriori estimate with optimization. <br>
+									<div style="font-size:smaller">$\rightarrow$ Accelerated with <b class="alert"> CosmicRIM </b> using recurrent networks.  </div>
+									<div style="font-size:smaller">$\rightarrow$ Beyond a single, point estimate by calibrating uncertainties with simulations. </div>
 								</li>
 								<br>
 							</ol>
 							<br>
 							<br>
 							<div class="plain fragment" data-fragment-index="3" >
-								Application to survey data!
+								Optimal analysis of cosmological surveys!
 							</div>
 						</div>
 
 						
 						<div class="plain" style="float:right; font-size:smaller; text-align:right">
-							<span  class="plain fragment" data-fragment-index="1" >
+							<span  class="plain ragment" data-fragment-index="1" >
 								<b><u>Modi</u></b>, Barnett, Carpenter (2021) <br>
 								<b><u>Modi</u></b>, Li, Blei (2022) <br>
 							</span>
-							<span  class="plain fragment" data-fragment-index="2" >
+							<span  class="plain ragment" data-fragment-index="2" >
 								<b><u>Modi</u></b>, Lanusse et al. (2021) <br>
 								Miliea and Seljak (2021) <br>
 								Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
@@ -2877,12 +2918,12 @@
 									<ul>
 										<li>
                                                                                         <b class="alert">Short term:</b>
-											<ul> Extending CosmicRIM and VBS for parameter estimation 
+											<ul> Extend current algorithms to parameter estimation 
 											        $\rightarrow$ application to survey data!<br> </ul>
 										<li>
                                                                                         <b class="alert">Long term:</b>
-											<ul> Enhancing differentiable simulations  </ul> 
-											<ul> Learning high dimensional data likelihood
+											<ul> Enhancing differentiable simulations.  </ul> 
+											<ul> Learning high dimensional field-level likelihood.
 												<div class="fragment"> $\rightarrow$ <b class="alert"> simulations based inference</b> overcomes the challenge of knowing the data likelihood!
 												</div>
 											</ul>
@@ -3041,8 +3082,8 @@
 										Assume the target posterior can be modeled by a parametric conditional distribution $q_\phi(\theta | x)$.
 										<br>
 										<div class="plain fragment" data-fragment-index="8">
-											Match the distribution ($q\rightarrow p$)  by maximizing the conditional probability
-											$$  \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i)$$
+											The distribution $q\rightarrow p(\theta|x)$ is matched  by maximizing the conditional probability
+											$$  \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) \quad \forall \theta_i,x_i \sim p(x, \theta)$$
 											
 											<!-- Then, minimizing the Kullback Leibler  divergence between them leads to -->
 											<!-- $$  \min_\phi D_{KL}(p||q) \approx \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$  -->
@@ -3056,7 +3097,7 @@
 								<br>
 								<br>
 								
-								$ q \longrightarrow \mathcal{N}(\mu, \sigma)$
+								$ q \longleftarrow \mathcal{N}(\mu, \sigma)$
 								<br>
 								<br>
 								<span class="fragment"  data-fragment-index="7" >
@@ -3093,7 +3134,7 @@
 									$$\mathcal{D} = \{x_i, \theta_i\}_{i\in N} \sim p(x, \theta)$$
 								</div>
 								<div class="fragment" data-fragment-index="2">
-									Assume conditional, parametric distribution $q_\phi$ and <br>
+									Assume conditional, parametric distribution $q_\phi(\theta | x)$ and <br>
                                                                         optimize the distribution parameters $\phi$
 									$$\max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$
 								</div>
@@ -3226,7 +3267,7 @@
 									<li class="plain fragment " data-fragment-index="2" > Simulations
 										<ul style="font-size:smaller">
 											<li> 2000 N-Body simulations of Quijote suite</li>
-											<li> Populate galaxies with halo occupation distribution (HOD) </li>
+											<li> Populate galaxies with halo occupation distribution model (HOD) </li>
                                                                                         <li> Survey realism- geometry, mask, fibre collisions </li>
 										</ul>
 									</li>
@@ -3417,14 +3458,14 @@
                                         <br>
                                         <div class="slide-text">
                                                 <ul>
-                                                        <li  class="plain fragment" data-fragment-index="1"> Why did <font style="font-variant:small-caps">  SimBIG</font> only analyze 100,000 galaxies  of the ~1 million mapped by BOSS.
+                                                        <li  class="plain fragment" data-fragment-index="1"> Why did <font style="font-variant:small-caps">  SimBIG</font> only analyze 100,000 galaxies  of the ~1 million mapped by BOSS?
   								<div class="plain fragment" data-fragment-index="2", style="font-size:smaller" > 
 									$\rightarrow$ limited by the simulation suite <br>
 									$\rightarrow$ Quijote, the  <b> largest</b> simulation suite with $\sim$10 million CPU hours
 								</div>
 							</li>
                                                         <br>
-                                                        <li  class="plain fragment" data-fragment-index="3"> Upcoming surveys will probe larger survey volume & higher resolution</li>
+                                                        <li  class="plain fragment" data-fragment-index="3"> Upcoming surveys will probe larger survey volume & higher resolution.</li>
                                                         <br>
                                                 </ul>
 
@@ -3433,7 +3474,7 @@
                                         <div class="container">
 						<div class="col"  style="margin-left:20px; ">
                                                         
-						        <div class="block fragment", data-fragment-index="5"  style="width:750px" >
+						        <div class="block fragment", data-fragment-index="5"  style="width:770px" >
                                                                 <div class="block-title">
                                                                         Roadmap: how do we generate training simulations?
                                                                 </div>
@@ -3444,10 +3485,10 @@
                                                                         <br>
                                                                         <br>
                                                                         <ol>
-                                                                                <li class="plain fragment" data-fragment-index="6" > <b>Gravity models:</b> learning missing small scale forces
+                                                                                <li class="plain fragment" data-fragment-index="6" > <b>Gravity models:</b> learning missing small scale forces & baryonic physics. 
                                                                                 </li>
 										<br>
-										<li class="plain fragment" data-fragment-index="6" > <b>Galaxy models:</b> beyond HOD models with accelerated SAMs <br>
+										<li class="plain fragment" data-fragment-index="6" > <b>Galaxy models:</b> beyond halo-distribution models with semi-analytic models <br>
 											$\rightarrow$ learning to plant merger trees in PM simulations
                                                                                 </li>
                                                                         </ol>
@@ -3773,7 +3814,7 @@
 										Promise of the next generation of surveys
 									</div>
 									<div class="block-content" style="font-size:smaller">
-										<br>
+
 										<ul>
 											<li class="plain" data-fragment-index="1" > Answer fundamental questions 
 											</li>
@@ -3788,11 +3829,10 @@
 								<br>
 								<div class="block fragment " style="width:600px" >
 									<div class="block-title" style="text-align:center">
-										Limited only our ability to analyze it
+										Limited only by our ability to analyze it
 
 									</div>
 									<div class="block-content" style="font-size:smaller">
-										<br>
 										
 										<ul>
 											<li class="plain" data-fragment-index="1" > choice of summary statistics
@@ -3877,7 +3917,7 @@
 
 								<div class="container fragment " data-fragment-index="1" style="width:1200px; margin:auto">
 									<ul>
-                                                                                <li> $^*$<b>Develop accelerated algorithms for parameter inference</b>
+                                                                                <li> <b>Develop accelerated algorithms for parameter inference</b>
 										        $\rightarrow$ application to surveys.
 									        </li>
 									        <li> Enhance differentiable simulations like FlowPM & PMWD. </li>
@@ -3894,7 +3934,7 @@
 								2. Simulation-based Inference
 							</div>
 							<div class="block-content" style="font-size:smaller">
-								<div class="plain" style="text-align:center" >  Using new summary statistics without explicit likelihood to extract information from non-Gaussian data. </div>
+								<div class="plain" style="text-align:center" >  Using new summary statistics without explicit likelihood to extract information from the non-Gaussian data. </div>
 								<br>
 								<!-- <div class="container fragment " style="width:1200px; margin:auto"> -->
 								<!-- 	<div class="col"> -->
@@ -3912,8 +3952,8 @@
 								<div class="container fragment " style="width:1200px; margin:auto">
 									<div class="col">
 										<ul>
-                                                                                        <li> $^*$<b>Need robustness to model mis-specification. </b> to develop confidence.</li>
-										        <li> $^*$<b>Develop ML enhanced hybrid simulations</b>  to meet training data requirements.</li>
+                                                                                        <li> <b>Need robustness to model mis-specification </b> to develop confidence in results.</li>
+										        <li> <b>Develop ML enhanced hybrid simulations</b>  to meet training data requirements.</li>
 										        <!-- <li> Optimal summaries, prior sampling, which SBI methodology...  </li> -->
                                                                                 </ul>
 									</div>
@@ -3943,7 +3983,7 @@
 						<br>
 						<br>
 						<div class="fragment" style="position:relative; top:-15px">
-                                                        To answer fundamental questions about our Universe with the next generation of cosmological surveys.
+                                                        To use the next generation of cosmological surveys in answering the fundamental questions about our Universe.
                                                         <br>
                                                         <br>
                                                         <b class="alert" > Thank you! </b>
@@ -3961,12 +4001,12 @@
 			
 
 		<style>
-		 .reveal .slides {
-		     border: 1px solid red;
-		     min-height: 100%; 
-		     width: 128mm; 
-		     height: 96mm; 
-                 }
+		 <!-- .reveal .slides { -->
+		 <!--     border: 1px solid red; -->
+		 <!--     min-height: 100%;  -->
+		 <!--     width: 128mm;  -->
+		 <!--     height: 96mm;  -->
+                 <!-- } -->
 		
 		.reveal .box {
 			background-color: #191919;
