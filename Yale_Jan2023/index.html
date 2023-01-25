@@ -93,17 +93,25 @@
 
 						<br>
 						
-							<div class="block " data-fragment-index="2" >
+							<div class="block " data-fragment-index="2" style="width:1100px">
 								<div class="block-title">
-									Astrophysics and cosmology
+									1. Astrophysics and cosmology
 								</div>
 								<div class="block-content" style="font-size:smaller">
 									<ul>
-										<li> Bias models, perturbation theory & cosmological simulations <span style="position:absolute; right:20px"> MNRAS 472,3959(2017); JCAP 08(2017)009; JCAP 03(2020)045...</span> 
-										</li>
-										<li class="fragment highlight-green" data-fragment-index="1"> Forward modeling approaches for cosmological analysis
-										</li>
-										<li> Merger trees and semi-analytic models <span style="position:absolute; right:20px"> In preparation </span>
+                                                                                <li> Cosmological analysis
+										        <ul>
+                                                                                                
+                                                                                                <li> Analytic methods
+                                                                                                        <!-- <span style="position:absolute; right:20px"> MNRAS 472,3959(2017); JCAP 08(2017)009; JCAP 03(2020)045...</span>  -->
+										                </li>
+
+                                                                                                <li  style=""  class="fragment highlight-green" data-fragment-index="1">  Computational methods (forward modeling)
+
+										                </li>
+                                                                                        </ul>
+										<li> Cosmological simulations & galaxy formation
+                                                                                        <!-- <span style="position:absolute; right:20px"> In preparation </span> -->
 										</li>
 									</ul>
 									<br>
@@ -111,33 +119,43 @@
 							</div>
 							
 							<br>
-							<div class="block " data-fragment-index="2" >
+							<div class="block " data-fragment-index="2" style="width:1100px">
 								<div class="block-title">
-									Statistical inference and machine learning
+									2. Statistical inference and machine learning
 								</div>
 								<div class="block-content" style="font-size:smaller">
-									<!-- <span style="position:absolute; right:20px; text-align:right">with David Blei, Lawrence Saul, Bob Carpenter, Alex Barnett <br>@Center for Computational Mathematics </span>  -->
-									<span style="">with David Blei, Lawrence Saul, Bob Carpenter, Alex Barnett @Center for Computational Mathematics </span> 
-									<br>
-									<br>
+									<span style="position:absolute; right:160px; text-align:right">with David Blei, Lawrence Saul, Bob Carpenter, Alex Barnett <br>@Center for Computational Mathematics </span>
+									<!-- <span style="">with David Blei, Lawrence Saul, Bob Carpenter, Alex Barnett @Center for Computational Mathematics </span>  -->
 									<ul>
-										<li> MCMC methods: Delayed rejection MCMC <span style="position:absolute; right:20px"> Bayesian Analysis (2022) </span> </li>
-										<li> Variational inference: Gaussian score matching <span style="position:absolute; right:20px"> In preparation </span>  </li>
-										<li> Accelerated inference with machine learning <span style="position:absolute; right:20px"> ICLR-SimDL (2021), ICML-ML4Astro (2022) </span> </li>
+										<li> Exact sampling methods
+                                                                                        <ul> E.g., Markov Chain Monte Carlo (MCMC) </ul>
+                                                                                        <!-- <span style="position:absolute; right:20px"> Bayesian Analysis (2022) </span> -->
+                                                                                </li>
+										<li> Approximate inference
+                                                                                        <ul> E.g., variational inference </ul>
+                                                                                        <!-- <span style="position:absolute; right:20px"> In preparation </span> -->
+                                                                                </li>
+										<li> Accelerated inference with machine learning
+                                                                                        <!-- <span style="position:absolute; right:20px"> ICLR-SimDL (2021), ICML-ML4Astro (2022) </span> -->
+                                                                                </li>
 									</ul>
 									<br>
 								</div>
 								
 							</div>
 							<br>
-							<div class="block " data-fragment-index="2" >
+							<div class="block " data-fragment-index="2" style="width:1100px">
 								<div class="block-title">
-									Interdisciplinary research
+									3. Interdisciplinary research
 								</div>
 								<div class="block-content" style="font-size:smaller">
 									<ul>
-										<li> Causal inference for econometrics <span style="position:absolute; right:20px"> NeurIPS-Casual ML (2019) </span>  </li>
-										<li> COVID-19 data analysis <span style="position:absolute; right:20px"> Nature Communications 12,2729 (2021)</span>  </li>
+										<li> Causal inference in economics
+                                                                                        <!-- <span style="position:absolute; right:20px"> NeurIPS-Casual ML (2019) </span> -->
+                                                                                </li>
+										<li> Data analysis for COVID-19
+                                                                                        <!-- <span style="position:absolute; right:20px"> Nature Communications 12,2729 (2021)</span> -->
+                                                                                </li>
 									</ul>
 									<br>
 								</div>
@@ -152,7 +170,7 @@
 
 					<div class="container">
 
-						<div class="col" style="flex: 0 0 35em;">
+						<div class="col" style="flex: 0 0 33em;">
 							<img class="plain" src="assets/WMAP_timeline.jpg" width="800px"/>
 						</div>
 						
@@ -162,7 +180,7 @@
 							<br>
 							
 							<div class="fragment" data-fragment-index="1" style="font-size:smaller">
- 							        <b class="alert"> $\Lambda$-CDM model </b> <br>  
+ 							        Standard model: <b class="alert"> $\Lambda$-CDM model </b> <br>  
 							        $\Lambda-$ cosmological constant dark energy <br>
                                                                 Cold dark matter
 
@@ -188,36 +206,52 @@
 							
 							<div class="block fragment" data-fragment-index="1" >
 								<div class="block-title">
-									6 unknown parameters
+									6 unknowns
 								</div>
-								<div class="block-content" style="font-size:smaller">
+								<div class="block-content" style="">
 									<br>
 									<ol>
-										<li>$\Omega_bh^2$: physical baryon density</li>
-										<li>$\Omega_{c}h^2$: physical dark matter density</li>
-										<li>$t_0$: age of the Universe</li>
-										<li>$n_s$: scalar spectral index</li>
-										<li>$\Delta_R^2$: curvature fluctuation amplitude</li>
-										<li>$\tau$: reionization optical depth</li>
+										<li>physical baryon density</li>
+										<li>physical dark matter density</li>
+										<li>age of the Universe</li>
+										<li>scalar spectral index</li>
+										<li>curvature fluctuation amplitude</li>
+										<li>reionization optical depth</li>
 									</ol>
 									<br>
 								</div>
 								
 							</div>
 							<br>
+							<!-- <div class="block fragment" data-fragment-index="2" > -->
+							<!-- 	<div class="block-title"> -->
+							<!-- 		Extended models -->
+							<!-- 	</div> -->
+							<!-- 	<div class="block-content" style="font-size:smaller"> -->
+							<!-- 		<br> -->
+							<!-- 		<ul> -->
+							<!-- 			<li>$\Omega_{tot}$: total energy parameter</li> -->
+							<!-- 			<li>$w_0\, w_a$: dark energy equation of state </li> -->
+							<!-- 			<li>$r$: Tensor-to-scalar ratio</li> -->
+							<!-- 			<li>$\sum_{\nu}$: sum of neutrino masses</li> -->
+							<!-- 			<li>$\Omega_\nu h^2$: physical neutrino density</li> -->
+							<!-- 			<li>...</li> -->
+							<!-- 		</ul> -->
+							<!-- 		<br> -->
+							<!-- 	</div> -->
+								
+							<!-- </div> -->
 							<div class="block fragment" data-fragment-index="2" >
 								<div class="block-title">
-									Extended models
+									Open questions
 								</div>
-								<div class="block-content" style="font-size:smaller">
+								<div class="block-content" style="">
 									<br>
 									<ul>
-										<li>$\Omega_{tot}$: total energy parameter</li>
-										<li>$w_0\, w_a$: dark energy equation of state </li>
-										<li>$r$: Tensor-to-scalar ratio</li>
-										<li>$\sum_{\nu}$: sum of neutrino masses</li>
-										<li>$\Omega_\nu h^2$: physical neutrino density</li>
-										<li>...</li>
+										<li>nature of dark energy & dark matter</li>
+										<li>properties of inflation</li>
+										<li>masses of neutrinos</li>
+										<li>theory of gravity (GR?)</li>
 									</ul>
 									<br>
 								</div>
@@ -363,7 +397,7 @@
                                                                         <!-- </li> -->
 									<br>
 									<li class="fragment" data-fragment-index="1" > Answer fundamental questions 
-                                                                                <ul> <li> E.g., neutrino mass hierarchy <br> primordial non-Gaussianity (inflation)</li> </ul>
+                                                                                <ul> <li> E.g., neutrino mass hierarchy, <br> primordial non-Gaussianity (inflation)</li> </ul>
                                                                         </li>
 
 									<br>
@@ -375,7 +409,7 @@
 										</ul>
 									</li>
 									<br>
-									<li class="fragment" data-fragment-index="4" > Great potential for new physics
+									<li class="fragment" data-fragment-index="4" > Great potential for discovering new physics
 										<ul>
 											<li > E.g., nature of dark energy, dark matter </li>
 										</ul>
@@ -608,7 +642,7 @@
                                                                         <!-- <ul class="fragment" data-fragment-index="3"> <li> New surveys are probing smaller, non-linear and non-Gaussian scales. </li>  </ul> -->
                                                                 </li>
                                                                 <br>
-                                                                <li class="fragment" data-fragment-index="4"> New summary statistics to go beyond 2-point function analysis. </li>
+                                                                <li class="fragment" data-fragment-index="4"> Other summary statistics extract more information from the non-Gaussian data. </li>
                                                                 <br>
                                                                 <!-- <li class="fragment" data-fragment-index="5"> But which of these... </li> -->
 								<br>
@@ -617,11 +651,12 @@
                                                         
 						</div>
 						
-                                                <span class= "fragment fade-in" data-fragment-index="0" >
+                                                <span class= "ragment fade-in" data-fragment-index="0" >
                                                         <span class= "fragment fade-out" data-fragment-index="4" >
-                                                                <img class="plain" style="position:absolute; top:260px; left:150px; width:320px; ;" data-src="assets/ngfield0.png" />
-                                                                <img class="plain" style="position:absolute; top:260px; left:400px; width:320px;" data-src="assets/gfield0.png" />
-                                                                <img class="plain" style="position:absolute; top:260px; left:680px; width:320px;" data-src="assets/ngfield0_pk.png" />
+                                                                <img class="plain" style="position:absolute; top:260px; left:170px; width:320px; ;" data-src="assets/ngfield0.png" />
+                                                                <img class="plain" style="position:absolute; top:260px; left:450px; width:320px;" data-src="assets/gfield0.png" />
+                                                                <!-- <img class="plain" style="position:absolute; top:260px; left:680px; width:320px;" data-src="assets/ngfield0_pk.png" /> -->
+                                                                <img class="plain" style="position:absolute; top:290px; left:800px; width:230px;" data-src="assets/ngfield0_pk_white.png" />
                                                                 
                                                                 <!-- <span class= "fragment fade-in" data-fragment-index="2" > -->
                                                                         
@@ -634,7 +669,7 @@
 
                                                 <div class="block fragment " data-fragment-index="5" style="position:absolute; bottom:-260px; right:100px; width:400px">
 							<div class="block-title" , style="text-align:center">
-								Proposed summary statistics
+								But which of these statistics?
 							</div>
 							<div class="block-content", style="text-align:center; font-size:smaller">
                                                                 bispectrum <br>
@@ -652,8 +687,8 @@
                                                         
 						</div>
                                                 
-                                                <img class="plain fragment" data-fragment-index="4" style="position:absolute; bottom:-280px; left:50px; width:380px; ;" data-src="assets/wavelets_eickenberg_mfield.png" />
-                                                <div class="plain fragment" data-fragment-index="4" style="position:absolute; bottom:-270px; left:450px; width:300px; font-size:smaller; text-align:left">
+                                                <img class="plain fragment" data-fragment-index="4" style="position:absolute; bottom:-280px; left:50px; width:360px; ;" data-src="assets/wavelets_eickenberg_mfield.png" />
+                                                <div class="plain fragment" data-fragment-index="4" style="position:absolute; bottom:-270px; left:430px; width:300px; font-size:smaller; text-align:left">
 							<em>
 								Fisher forecast for <br>
 								constraining various <br>
@@ -745,14 +780,16 @@
                                                                         </ul>
                                                                 </li>
 								<br>
-								<li  class="plain fragment fade-in" data-fragment-index="2"> Estimating covariance matrix is expensive!
+								<br>
+								<li  class="plain fragment fade-in" data-fragment-index="2"> Estimating covariance matrix is expensive! <br>
+                                                                        $\rightarrow$ Number of simulations needed $\propto\, N_{data}^2$ 
                                                                         <ul>
-                                                                                <li> Number of simulations scales as $N_{data}^2$  </li>
                                                                                 <li> 2048 full-survey realizations for BOSS survey. </li>
+                                                                                <li> Combining different observables & surveys is challenging. </li>
                                                                         </ul>
 								</li>
                                                                 <br>
-                                                                <li  class="plain fragment fade-in" data-fragment-index="4"> Combining different observables & surveys becomes challenging. </li>
+                                                                <!-- <li  class="plain fragment fade-in" data-fragment-index="4"> Combining different observables & surveys becomes challenging. </li> -->
  
                                                         </ul>
 						</div>
@@ -859,7 +896,7 @@
                                                                         </span>
                                                                         <br>
                                                                         <span class="" data-fragment-index="1">
-                                                                                <span class="fragment highlight-green " data-fragment-index="3">
+                                                                                <span class="fragment semi-fade-out " data-fragment-index="3">
                                                                                         <li> Need a theoretical model
                                                                                                 <br> $\rightarrow$ accurate in limited regimes & infeasible for new statistics
                                                                                         </li>
@@ -876,7 +913,7 @@
                                                                         </span>
                                                                         <br>
                                                                         <span class="" data-fragment-index="1">
-                                                                                <span class="fragment highlight-green " data-fragment-index="3">
+                                                                                <span class="fragment semi-fade-out " data-fragment-index="3">
                                                                                                 <li> Joint analysis of different statistics and surveys is challenging </li>
                                                                                 </span>
                                                                         </span>
@@ -1191,61 +1228,29 @@
 							</span>
                                                 </div>
 						
-						<!-- <span class="fragment fade-in" data-fragment-index="1"> -->
-						<!-- 	<span class="fragment fade-out" data-fragment-index="3"> -->
-						<!-- 	<div class="container" style="position:absolute; font-size:smaller" > -->
-						<!-- 		<div class='col rangment' data-rangment-index="1" > -->
-						<!-- 			<br> -->
-						<!-- 			<br> -->
-						<!-- 			$\Lambda$ -->
-						<!-- 			<br> -->
-						<!-- 			<b class="alert"> Cosmology </b> -->
-						<!-- 			<div style="font-size:30px"> + </div> -->
-						<!-- 			<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/> -->
-						<!-- 			<b class="alert" style="position:relative; top:-50px; ;"> Initial modes <br> $z \sim \mathcal{N}(0, 1)$</b> -->
-						<!-- 		</div> -->
-								
-						<!-- 		<div class='col rangment' data-rangment-index='2'> -->
-						<!-- 			<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/> -->
-						<!-- 			<br> -->
-						<!-- 			<b class="alert"> Initial (Linear) <br>Dark Matter </b> -->
-						<!-- 		</div> -->
-						<!-- 		<div class='col rangment' data-rangment-index='3'> -->
-						<!-- 			<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/> -->
-						<!-- 			<br> -->
-						<!-- 			<b class="alert"> Final (Evolved) <br> Dark Matter </b> -->
-						<!-- 		</div> -->
-						<!-- 		<\!-- <div class='col rangment' data-rangment-index='4'> -\-> -->
-						<!-- 		<\!-- 	<img data-src="assets/fieldhalo.png" class="plain " style="height:200px;"/> -\-> -->
-						<!-- 		<\!-- 	<br> -\-> -->
-						<!-- 		<\!--         <b class="alert"> Dark Matter <br> Halos </b> -\-> -->
-						<!-- 		<\!-- </div> -\-> -->
-						<!-- 		<div class='col rangment' data-rangment-index='5'> -->
-						<!-- 			<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/> -->
-						<!-- 			<br> -->
-						<!-- 			<b class="alert"> Galaxies <br> (Tracers) </b> -->
-						<!-- 		</div> -->
-						<!-- 		<div class='col rangment' data-rangment-index='6'> -->
-						<!-- 			$x = f(\Lambda)$ -->
-						<!-- 			<br> -->
-						<!-- 			<br> -->
-						<!-- 			<b class="alert"> Data </b> -->
-						<!-- 		</div> -->
-								
-						<!-- 	</div> -->
-							
-						<!-- 	<div class="container" style="position:absolute; top:285px; width:1100px; height:50px; left:90px; font-size:35px"> -->
-						<!-- 		<div class='col rangment' data-rangment-index='2'>  $\rightarrow$ </div> -->
-						<!-- 		<div class='col rangment' data-rangment-index='3'>  $\rightarrow$ </div> -->
-						<!-- 		<\!-- <div class='col rangment' data-rangment-index='4'>  $\rightarrow$ </div> -\-> -->
-						<!-- 		<div class='col rangment' data-rangment-index='5'>  $\rightarrow$ </div> -->
-						<!-- 		<div class='col rangment' data-rangment-index='6'>  $\rightarrow$ </div> -->
-						<!-- 	</div> -->
-                                                <!--         </span> -->
-						<!-- </span> -->
+                                                <div class="block fragment current-visible" data-fragment-index="0" style="position:absolute; bottom:30px; left:100px; width:400px">
+							<div class="block-title" , style="text-align:center">
+								But which summary statistic?
+							</div>
+							<div class="block-content", style="text-align:center; font-size:smaller">
+                                                                bispectrum <br>
+                                                                three point function <br>
+                                                                trispectrum <br>
+                                                                reconstructed power spectrum <br>
+                                                                peak counts <br>
+                                                                k-nearest neighbor <br>
+                                                                marked power spectrum <br>
+                                                                density splits <br>
+                                                                wavelet coefficients <br>
+                                                                Minkowski functionals <br>
+                                                                ...
+							</div>
+                                                        
+						</div>
+                                                
 
                                                 <div class="container">
-                                                                <div class="col fragment" data-fragment-index="4">
+                                                                <div class="col fragment" data-fragment-index="3">
                                                                         <img class="plain" data-src="assets/init_field.png" style='height:250px;' />
                                                                         <br> True initial conditions <br> $z_0$
                                                                 </div>
@@ -1322,7 +1327,7 @@
                                                         <br>
                                                 </div>
 						<br>
-                                                <div class="container" style="margin:auto; width:1000px;">
+                                                <div class="container" style="margin:auto; width:950px;">
 
 							<div class="col" >
                                                                 <img class="fragment plain"   data-fragment-index="1" width="300px" height="300px" style="position:relative;top:-10px;" data-src="assets/field_level_prelim.png" />
@@ -1332,15 +1337,15 @@
 							</div>
 							<div class="col" >
 								<img class="fragment plain" data-fragment-index="3" width="350px" height="300px" style="position:relative; top:-10px" data-src="assets/realbaofisher.png" />
-								<div class="fragment  " data-fragment-index="3" style="position:absolute; width:200px; top:400px; right:0px; font-size:smaller;  text-align:left">
+								<div class="fragment  " data-fragment-index="3" style="position:absolute; width:200px; top:400px; right:10px; font-size:smaller;  text-align:left">
 									<em> Fisher information ($\mathcal{I}$) in BAO peak for different fields as a function of scales<br> <br>$\bar{n}$: number density of halos 
 										
 									</em>
 								</div>	
 								<div class="fragment  " data-fragment-index="3" style="position:absolute; float:right;  bottom:-10px; right:0px; font-size: 20px; margin:0 auto; text-align:right">
+									<b><u>Modi</u></b>, Feng, Seljak (2018) <br>
 									Eisenstein et.a. (2007)
 									<br> Seo et al. (2007) <br>
-									<b><u>Modi</u></b>, Feng, Seljak (2018)
 								</div>
 							</div>
                                                 </div>
@@ -1497,7 +1502,7 @@
 
                                                 <br>
 						<div class="boxonly" style="width:800px; padding:10px">
-							Reconstruct  <b class="alert"> latent </b>  fields to enable new analyses.
+							Reconstruct  unobserved  fields to enable <b class="alert"> new analyses.</b>
 						</div>
 						<br>
 						<b class="alert">Unique</b> to field-level inference!
@@ -1507,7 +1512,7 @@
 
                                                                 <div class="slide-text", style="position:relative;">
                                                                         <div class="plain fragment" data-fragment-index="1">
-                                                                               21-cm surveys to probe neutral hydrogen e.g., HIRAX, PUMA
+                                                                               Probe neutral hydrogen with 21-cm surveys  e.g., CHIME, HIRAX, PUMA
                                                                         </div>
 
                                                                         <ul>
@@ -1528,7 +1533,8 @@
                                                                                 <li class="fragment " data-fragment-index="4"> Evolve initial conditions to reconstruct lost modes
 											<br>
 											<div class="fragment " data-fragment-index="4" style="font-size:smaller">
-                                                                                                $\rightarrow$ new science! correlate with photometric surveys & CMB lensing <br>
+                                                                                                $\rightarrow$ <b class="alert"> new science!</b> correlate with photometric surveys & CMB lensing
+                                                                                                <br>
                                                                                                 $\rightarrow$ explore high redshift Universe
                                                                                         </div>
                                                                                         
@@ -1547,7 +1553,9 @@
 							<div class="col" style="flex: 0 0 21em;">
 
 								<div class="fragment  plain" style="position:absolute; top:-30px; right:0px; width:200px; font-size:smaller" data-fragment-index="1">
-									<img class="plain" data-src="assets/hirax.jpg" />
+                                                                        <em> HIRAX </em>
+                                                                        <br>
+									<img class="plain" style="position:relative; top:-15px; " data-src="assets/hirax.jpg" />
 								</div>
 								
                                                                 <div style="position:relative; width:500px; height:600px; margin:0 auto; right:10px">
@@ -1639,25 +1647,27 @@
 						<div class="slide-text">
 							
 							<div class="container">
-                                                        	<div class="col" style="flex: 0 0 32em;" >
+                                                        	<div class="col" style="flex: 0 0 30em;" >
 									<ul>
-										<li class=" fragment " data-fragment-index="2"> Infer initial conditions at all points in the Universe <br>
+										<li class=" ragment " data-fragment-index="2"> Infer initial conditions at all points in the Universe <br>
 											<div style="font-size:smaller"> $\sim$ over a million unknown parameters </div>
 											
 										</li>
 										<br>
 										<li class="fragment " data-fragment-index="2"> 	Need to use gradient based inference algorithms <br>
 											<div style="font-size:smaller">
-												$\rightarrow$ gradient based optimization<br>
-												$\rightarrow$ Hamiltonian Monte Carlo (MCMC) <br>
+												E.g. gradient descent optimization, <br>
+												Hamiltonian Monte Carlo (HMC) <br>
 											</div>
 										</li>
 										<br>
+                                                                                <li class="fragment " data-fragment-index="2"> 	 Response of likelihood with cosmological parameters $\Lambda$ & <br> the initial conditions $z$. </li>
+                                                                                <br>
 										<div class="fragment " data-fragment-index="2" style="position:relative; left:100px ">
-											$g_z = \frac{\partial\, p(z, \Lambda | x)}{\partial\, z},\, g_{\Lambda} = \frac{\partial\, p(z, \Lambda | x)}{\partial\, \Lambda}$
+											$g_z = \frac{\partial\, p(x| z, \Lambda)}{\partial\, z},\, g_{\Lambda} = \frac{\partial\, p(x | z, \Lambda)}{\partial\, \Lambda}$
+											<br> 
 											<br>
-											<br>
-											$g_z \sim \frac{\partial\ f(z, \Lambda)}{\partial\, z},\, g_{\Lambda} \sim \frac{\partial\, f(z, \Lambda)}{\partial\, \Lambda}$
+											<!-- $g_z \sim \frac{\partial\ f(z, \Lambda)}{\partial\, z},\, g_{\Lambda} \sim \frac{\partial\, f(z, \Lambda)}{\partial\, \Lambda}$ -->
 										</div>
 
 										<!-- <li class="fragment " data-fragment-index="4"> 	 <b> Automatic differentiation </b> is the hammer behind deep learning <br> -->
@@ -1669,7 +1679,12 @@
 									</ul>
 								</div>
 								<div class="col" style="flex: 0 0 21em; text-align:center">
-									<img  class="plain fragment fade-in" data-fragment-index="3" style="position:absolute; top:250px; right:50px; width:500px" data-src="assets/pmwd_table_closed.png" />
+									<div  class="plain fragment fade-in" data-fragment-index="3" style="position:absolute; top:250px; right:50px; width:500px; font-size:smaller">
+                                                                                <img data-src="assets/pmwd_table_closed.png" />
+                                                                                <br>
+                                                                                <em> Examples of differentiable codes upto 2017 </em>
+                                                                        </div>
+                                                                                                                                         
 
 									<!-- <img class=" plain fragment " data-fragment-index="4" style="position:relative; top:50px; width:300px" -->
 									<!--      data-src="assets/TF_FullColor_Horizontal.png" /> -->
@@ -1677,9 +1692,9 @@
 									<!--      data-src="https://raw.githubusercontent.com/google/jax/master/images/jax_logo_250px.png"  /> -->
 									
 								</div>
-								<div  class="fragment"  data-fragment-index="3" style="position:absolute; top:520px; right:20px; font-size:20px; text-align:right">
+								<div  class="fragment"  data-fragment-index="3" style="position:absolute; top:550px; right:20px; font-size:20px; text-align:right">
 									Jasche & Lavaux (2018) <br>
-									Wang, Mo et al. (2014) <br>
+									Wang, Mo, Yang, Bosch (2014) <br>
 									<!-- Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br> -->
 								</div>
 							</div>
@@ -1689,9 +1704,7 @@
 
                                         <!-------------------------------------------------------------------------------->
 					
-					
 					<!-------------------------------------------------------------------------------->
-					
 					
 					<section>
 						<h3 class='slide-title'> Differentiable cosmological simulations</h3>
@@ -1708,7 +1721,7 @@
 								<ul>
 									<li>
 										<b class="alert "> FlowPM</b>: the first particle-mesh simulations in TensorFlow <br>
-										<ul class="fragment" data-fragment-index="1" style="font-size:smaller">
+										<ul class="fragment" data-fragment-index="1" style="font-size:18px">
 											<li> Automatic differentiation
 											</li>
 											<li> Access to SOTA inference algorithms
@@ -1718,33 +1731,63 @@
 										</ul>
 									</li>
 									<br>
-									<br>
 									
 									<li class="fragment" data-fragment-index="3"> 
 										Reconstructing the Universe in 10 lines
 									</li>
 
                                                                         <br>
-                                                                        <br>
 
 									<li class="fragment" data-fragment-index="4"> Memory limited as every time-step is saved.
-										<ul class="fragment" data-fragment-index="4" style="font-size:smaller">
-											<li> <b class="alert" style="font-size:24px"> $pmwd$</b><font color="white">: particle mesh with derivatives </font></li>
+										<ul class="fragment" data-fragment-index="4" style="font-size:18px ">
+											<li> <b class="alert" style="font-size:22px"> $pmwd$</b><font color="white">: particle mesh with derivatives </font></li>
 											<li > Reversibility of leapfrog integration with adjoint gradients </li>
-											<li> Memory cost is <b class="alert"> independent </b>  of the time stepping </li>
+											<li> Memory cost is <b > independent </b>  of the time stepping </li>
 										</ul>
 									</li>
 
 									<br>
-									<br>
                                                                         <li class="fragment" data-fragment-index="6" style="">	GPU accelerated simulations
-										<ul  style="font-size:smaller">
-											<li> FlowPM ~10x faster than CPU simulations
-											</li>
-											<li class="fragment" data-fragment-index="7">
-                                                                                                $pmwd$ ~100x faster <br>
-												$\rightarrow$ faster than deep learning emulators
-										</ul>
+                                                                                <br>
+                                                                                <br>
+                                                                                <span style="position:relative; top:10px; font-size: 18px" > Timings for 1 step<br>of 256$^3$ simulation: </span>
+                                                                                <div style=" position:relative; top:-60px; left:0px; font-size:18px">
+                                                                                        <table   style=" font-size:16px; width:200px">
+                                                                                                <tbody>
+                                                                                                        <tr>
+                                                                                                                <td>FastPM</td>
+                                                                                                                <td>1 CPU</td>
+                                                                                                                <td>40s</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                                <td>FastPM</td>
+                                                                                                                <td>32 CPU</td>
+                                                                                                                <td>3s</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                                <td>FlowPM</td>
+                                                                                                                <td>1 GPU</td>
+                                                                                                                <td>1s</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                                <td>FlowPM</td>
+                                                                                                                <td>32 GPU</td>
+                                                                                                                <td>0.4s</td>
+                                                                                                        </tr>
+                                                                                                        <tr>
+                                                                                                                <td>$pmwd$</td>
+                                                                                                                <td>1 GPU</td>
+                                                                                                                <td>0.01s</td>
+                                                                                                        </tr>
+                                                                                                </tbody>
+                                                                                        </table>
+                                                                                        <div style=" position:relative; top:-80px; left:430px;" >
+                                                                                                $\Big\}$ 10x faster
+                                                                                                <br>
+                                                                                                <div style="position:relative; top:10px" >
+                                                                                                        $\rightarrow$ 100x faster </div>
+                                                                                        </div>
+                                                                                </div>
 									</li>
 									<br>
 									<!-- <li class="fragment" data-fragment-index="8" style=""> -->
@@ -1755,7 +1798,7 @@
 									<!-- 	</ul> -->
 									<!-- </li> -->
 																			
-									<div class="container" style="position:relative; top:-350px">
+									<div class="container" style="position:relative; top:-500px">
 										<div class="col fragment current-visible" data-fragment-index="3">
 											<img class="plain" data-src="assets/reconim_init.gif" style='height:120px;' />
 										</div>
@@ -1819,26 +1862,31 @@
 								<img  class="plain fragment current-visible " data-fragment-index="4"
 								      style="position:absolute; top:350px; right:190px; width:300px" data-src="assets/pmwd_logo.svg" />
 								
-								<img  class="plain fragment current-visible" data-fragment-index="6" style="position:absolute; top:200px; right:30px; width:600px"
-								      data-src="assets/flowpm_lptcompare.png"/>
-								<img  class="plain fragment " data-fragment-index="7" style="position:absolute; top:150px; right:100px; width:470px"
-								      data-src="assets/pmwd_timing.png" />
+								<!-- <img  class="plain fragment current-visible" data-fragment-index="6" style="position:absolute; top:200px; right:30px; width:600px" -->
+								<!--       data-src="assets/flowpm_lptcompare.png"/> -->
+								<div  class="plain fragment " data-fragment-index="6" style="position:absolute; top:150px; right:100px; width:400px; font-size:16px" >
+								        <img data-src="assets/pmwd_timing.png" />
+                                                                        <em style="position:relative; top:-10px"> time-scaling for $pmwd$ simulations<br>
+                                                                        <span class="plain fragment " data-fragment-index="7" > $\rightarrow pmwd$ is faster than deep learning emulators </span>   </em> 
+                                                                </div>
 
 								<!-- <img  class="plain fragment" data-fragment-index="8" style="position:absolute; top:130px; right:120px; width:400px" data-src="assets/mfpm_demo_1024.png" /> -->
 								<!-- <div  class="plain fragment" data-fragment-index="8" style="position:absolute; top:120px; right:20px; font-size:18px"> Credits: F. Lanusse </div> -->
 								
 
-								<div   style="position:absolute; top:560px; right:20px; font-size:20px; text-align:right">
-									Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
-									<span class="plain " data-fragment-index="1" > 
+								<div   style="position:absolute; top:580px; right:20px; font-size:20px; text-align:right">
+									<span class="plain fragment fade-out " data-fragment-index="4" > 
 										<b> <u>Modi</u></b>, Lanusse, Seljak (2020) <br>
-										<a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a>
+									        Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
+										<a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a> <br>
 									</span>
-									<br>
-									<span  class="plain fragment" data-fragment-index="4" >
+									<span  class="plain fragment" data-fragment-index="4" style="position:relative; top:-100px;">
+										<b> <u>Modi</u></b>, Lanusse, Seljak (2020) <br>
+									        Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
 										Li, <b><u>Modi</u></b> et al. (2022) <br>
 										Li, Lu, <b><u>Modi</u></b> et al. (2022) <br>
-									<a href="https://github.com/eelregit/pmwd">https://github.com/eelregit/pmwd</a> <br>
+									        <a href="https://github.com/eelregit/pmwd">https://github.com/eelregit/pmwd</a> <br>
+										<a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a> <br>
 									</span>
 									
 								</div>
@@ -1852,7 +1900,6 @@
 					
 					<!-------------------------------------------------------------------------------->
 
-					
 					<section>
 						<h3 class='slide-title'> Roadmap for differentiable cosmological simulations</h3>
 						<div class="header-right">
@@ -1865,39 +1912,41 @@
 						<br>
 						<br>
 
-						Advances to be made for the next generation of cosmological surveys.
+						Advances for the next generation of cosmological surveys.
 						<br>
 						<br>
-						<div class="slide-text fragment" data-fragment-index="1">
+						<div class="slide-text ragment" data-fragment-index="1">
 							<ol   style="">
 								<br>
 								<li> Beyond particle mesh simulations <br>
-									E.g. learning sub-grid physics
+									<ul> E.g. include baryonic physics, sub-grid physics </ul>
 								</li>
 								<br>
 								<li > Beyond galaxy clustering with other observables
 									<br>
-									E.g., weak lensing, Lyman-$\alpha$
+									<ul>  E.g., weak lensing, Lyman-$\alpha$  </ul>
 								</li>
 								<br>
 								<li> Beyond $\Lambda$-CDM cosmology
 									<br>
-									E.g., massive neutrinos, primordial non-Gaussianity,
+									<ul>  E.g., massive neutrinos, primordial non-Gaussianity,
 									<br>
-									dark matter & dark energy models
+									dark matter & dark energy models  </ul>
 								</li>
 								<br>
 									
 							</ol>
 						</div>
 						
-						<div class="plain fragment" data-fragment-index="1" style="position:relative; top:-50px; float:right; font-size:smaller; text-align:right">
+						<div class="plain ragment" data-fragment-index="1" style="position:relative; top:-50px; float:right; font-size:smaller; text-align:right">
 							<b><u>Modi</b></u>, Lanusse, Seljak (2020) <br>
 							Li, <b><u>Modi</b></u> et al. (2022) <br>
 							Boehm, Feng et al. (2020) <br>
 							Lanzieri, Lanusse, <b><u>Modi</b></u> et al. (in prep) <br>
 							Lanzieri, Lanusse, et al. (2021) <br>
 							Dai and Seljak (2020) <br>
+                                                        Porqueres, Jasche, et al. (2019)
+                                                        
 						</div>
 
 						
@@ -2138,29 +2187,6 @@
 						</div>
 						<br>
 						<br>
-						<div class="container" style="margin-left:20px">
-							<div class="col">
-								<div class="box fragment" data-fragment-index="1" style="position:absolute;  width:600px">
-									<div class="box-title", style="height:35px">
-										1. MAP estimate with optimization
-									</div>
-									<div class="box-content" style="font-size:smaller">
-										<!-- <br>										 -->
-										<!-- $z_{i+1} = z_i - \epsilon \times \nabla_z \left( \log p(z_i | x) + \log p(z_i) \right)$ -->
-										<!-- <br> -->
-										<br>
-										<div class="slide-text">
-											MAP $\rightarrow$  maximum-a-posteriori estimate
-											<br>
-											<b>Good</b>: Fast(er), $\mathcal O(100)$ iterations to reach MAP
-											<br>
-											<b>Bad</b>: Point estimate only, no uncertainties
-											<br>
-											<!-- <b>Ugly</b>: Approximate, no theoretical guarantees -->
-										</div>
-									</div>
-								</div>
-							</div>
 							
 							<div class="col">
 								<div class="box fragment" data-fragment-index="2" style="position:absolute;  width:580px">
@@ -2185,8 +2211,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>
+						        </div>
 						<div class="plain fragment" style="position:absolute; top:410px; left:20px" data-fragment-index="2" > True Initial conditons </div>
 						<img class="plain fragment" style="position:absolute; top:440px; left:20px" data-fragment-index="2" src="../assets/ic_gif.png"   width="230" />
 						
@@ -2216,27 +2241,7 @@
 
 						<br>
 						<div class="slide-text" style="">
-							
-							<u>1. Accelerating MAP optimization</u>
-							<br>
-							<br>
-							&nbsp &nbsp<font style="font-size:smaller">
-								$x_{i+1} = x_i - \epsilon \times \nabla_x{\log p(y | x_i)}$  <snap class="plain fragment" data-fragment-index="1" >$ = \Gamma \left[x_i ,\, \nabla_x{\log p(y | x_i)} \right]$ </snap>
-							<br>
-							<br>
-							<div class="plain fragment" data-fragment-index="3" style="text-align:left; margin-left:20px; ">
-								<b class="alert"> CosmicRIM:</b>  Learn update function  $\mathbf{\Gamma}$ with recurrent neural networks
-							</div>
-							
-							</font>
-							
-							<div class="fragment" data-fragment-index="3" style="position:absolute; top:100px; right:20px; font-size:18px">
-								<img class="plain fragment" data-fragment-index="3" data-src="assets/rim_rc.png" width="370" />
-								<br>
-								CosmicRIM converges <b class="alert"> 40x </b> faster than L-BFGS <br>
-							</div>
-
-							<br>
+                                                        
 							<br>
 							<div class="plain fragment" data-fragment-index="5" style="text-align:left; ; ">
 								<u>2. Accelerated posterior sampling</u>
@@ -2339,6 +2344,228 @@
 					
 				</section>
 				<!-------------------------------------------------------------------------------->
+										
+
+
+
+
+                                <!--         <section> -->
+				<!-- 		<h3 class='slide-title'> Advances for field-level inference #2 </h3> -->
+				<!-- 		<div class="header-right"> -->
+				<!-- 			Traditional Analysis<br> -->
+				<!-- 			<font color="orange"> Field-level Inference<br> -->
+				<!-- 			$\rightarrow$ Advances </font> <br> -->
+				<!-- 			Simulation-based Inference  -->
+				<!-- 		</div> -->
+						
+				<!-- 		<br> -->
+				<!-- 		<div class="boxonly" style="width:700px; height:30px; padding:5px"> -->
+				<!-- 			<div class= "fragment fade-out " data-fragment-index="4" >  Inference algorithms in high dimensions. </div> -->
+				<!-- 			<div class= "fragment" data-fragment-index="4" style="position:relative; top:-30px"> <b class="alert"> Accelerated </b> inference algorithms  in high dimensions. </div> -->
+				<!-- 		</div> -->
+				<!-- 		<br> -->
+				<!-- 		<br> -->
+				<!-- 		<div class="container" style="margin-left:20px"> -->
+				<!-- 			<div class="col"> -->
+				<!-- 				<div class="box fragment" data-fragment-index="1" style="position:absolute;  width:600px"> -->
+				<!-- 					<div class="box-title", style="height:35px"> -->
+				<!-- 						1. MAP estimate with optimization -->
+				<!-- 					</div> -->
+				<!-- 					<div class="box-content" style="font-size:smaller"> -->
+				<!-- 						<\!-- <br>										 -\-> -->
+				<!-- 						<\!-- $z_{i+1} = z_i - \epsilon \times \nabla_z \left( \log p(z_i | x) + \log p(z_i) \right)$ -\-> -->
+				<!-- 						<\!-- <br> -\-> -->
+				<!-- 						<br> -->
+				<!-- 						<div class="slide-text"> -->
+				<!-- 							MAP $\rightarrow$  maximum-a-posteriori estimate -->
+				<!-- 							<br> -->
+				<!-- 							<b>Good</b>: Fast(er), $\mathcal O(100)$ iterations to reach MAP -->
+				<!-- 							<br> -->
+				<!-- 							<b>Bad</b>: Point estimate only, no uncertainties -->
+				<!-- 							<br> -->
+				<!-- 							<\!-- <b>Ugly</b>: Approximate, no theoretical guarantees -\-> -->
+				<!-- 						</div> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!-- 			</div> -->
+							
+				<!-- 			<div class="col"> -->
+				<!-- 				<div class="box fragment" data-fragment-index="2" style="position:absolute;  width:580px"> -->
+				<!-- 					<div class="box-title", style="height:35px"> -->
+				<!-- 						2. Sampling with Hamiltonian Monte Carlo (HMC) -->
+				<!-- 					</div> -->
+				<!-- 					<div class="box-content" style="font-size:smaller"> -->
+				<!-- 						<br> -->
+				<!-- 						<\!-- <div style="font-size:25px" > -\-> -->
+				<!-- 						<\!-- 	$  \frac{dz}{dt} = \frac{\partial H(z, \tilde{p})}{\partial  \tilde{p}},\, \frac{d\tilde{p} }{dt} = -\frac{\partial H(z, \tilde{p})}{\partial z}$ -\-> -->
+				<!-- 						<\!-- </div> -\-> -->
+				<!-- 						<\!-- <br> -\-> -->
+				<!-- 						<div class="slide-text"> -->
+				<!-- 							<b> Good</b>: Asymptotically explores the entire posterior -->
+				<!-- 							<br> -->
+				<!-- 							<b>Bad</b>: Consecutive samples are correlated -->
+				<!-- 							<br> -->
+				<!-- 							<div class="plain fragment" data-fragment-index="3" > -->
+				<!-- 								<b>Ugly </b>: <b class="alert"> $\sim 10^4$ simulations </b> for a single independent sample!! -->
+				<!-- 							</div> -->
+
+				<!-- 						</div> -->
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!-- 			</div> -->
+				<!-- 		</div> -->
+				<!-- 		<div class="plain fragment" style="position:absolute; top:410px; left:20px" data-fragment-index="2" > True Initial conditons </div> -->
+				<!-- 		<img class="plain fragment" style="position:absolute; top:440px; left:20px" data-fragment-index="2" src="../assets/ic_gif.png"   width="230" /> -->
+						
+				<!-- 		<div class="plain fragment" style="position:absolute; top:410px; left:320px" data-fragment-index="2" > HMC Samples </div> -->
+				<!-- 		<img  class="plain fragment" style="position:absolute; top:440px ; left:280px" data-fragment-index="2" src="../assets/ic.gif"   width="230" /> <\!--  -\-> -->
+				<!-- 		<div  class="fragment plain" style="position:absolute; top:440px; left:550px; font-size:smaller" data-fragment-index="3" > -->
+				<!-- 			<img  class="plain"   data-src="assets/hmc_ac.png" height="210px"/> -->
+				<!-- 			<br> -->
+				<!-- 			<em> Auto-correlation length of HMC samples as function of scales for 4 chains. </em> -->
+				<!-- 		</div> -->
+				<!-- 		<span  class="plain fragment" data-fragment-index="3" style="position:absolute; top:410px; right:20px; font-size:20px; text-align:right"> -->
+				<!-- 			<b><u>Modi</u></b>, Li, Blei (2022) <br> -->
+							
+				<!-- 		</span> -->
+				<!-- 	</section> -->
+
+				<!-- 	<\!-------------------------------------------------------------------------------\-> -->
+
+				<!-- 	<section> -->
+				<!-- 		<h3 class="slide-title">Accelerated Inference</h3> -->
+				<!-- 		<div class="header-right"> -->
+				<!-- 			Traditional Analysis<br> -->
+				<!-- 			<font color="orange"> Field-level Inference<br> -->
+				<!-- 			$\rightarrow$ Advances </font> <br> -->
+				<!-- 			Simulation-based Inference  -->
+				<!-- 		</div> -->
+
+				<!-- 		<br> -->
+				<!-- 		<div class="slide-text" style=""> -->
+							
+				<!-- 			<u>1. Accelerating MAP optimization</u> -->
+				<!-- 			<br> -->
+				<!-- 			<br> -->
+				<!-- 			&nbsp &nbsp<font style="font-size:smaller"> -->
+				<!-- 				$x_{i+1} = x_i - \epsilon \times \nabla_x{\log p(y | x_i)}$  <snap class="plain fragment" data-fragment-index="1" >$ = \Gamma \left[x_i ,\, \nabla_x{\log p(y | x_i)} \right]$ </snap> -->
+				<!-- 			<br> -->
+				<!-- 			<br> -->
+				<!-- 			<div class="plain fragment" data-fragment-index="3" style="text-align:left; margin-left:20px; "> -->
+				<!-- 				<b class="alert"> CosmicRIM:</b>  Learn update function  $\mathbf{\Gamma}$ with recurrent neural networks -->
+				<!-- 			</div> -->
+							
+				<!-- 			</font> -->
+							
+				<!-- 			<div class="fragment" data-fragment-index="3" style="position:absolute; top:100px; right:20px; font-size:18px"> -->
+				<!-- 				<img class="plain fragment" data-fragment-index="3" data-src="assets/rim_rc.png" width="370" /> -->
+				<!-- 				<br> -->
+				<!-- 				CosmicRIM converges <b class="alert"> 40x </b> faster than L-BFGS <br> -->
+				<!-- 			</div> -->
+
+				<!-- 			<br> -->
+				<!-- 			<br> -->
+				<!-- 			<div class="plain fragment" data-fragment-index="5" style="text-align:left; ; "> -->
+				<!-- 				<u>2. Accelerated posterior sampling</u> -->
+				<!-- 			</div> -->
+				<!-- 			<br> -->
+				<!-- 			<font style="font-size:smaller"> -->
+				<!-- 				<div class="plain fragment" data-fragment-index="5" style="text-align:left; margin-left:20px; "> -->
+				<!-- 					Reduce auto-correlation length between samples. -->
+				<!-- 					<br> -->
+				<!-- 					<br> -->
+				<!-- 					<span class="plain fragment" data-fragment-index="6" > -->
+				<!-- 					<b class="alert"> Variational self-Boosted Sampling (VBS):</b>  -->
+				<!-- 					Combine HMC and variational inference using normalizing flows. -->
+				<!-- 					</span> -->
+				<!-- 				</div> -->
+				<!-- 			</font> -->
+				<!-- 			<br> -->
+				<!-- 			<div class="plain fragment" data-fragment-index="6" style="position:relative; left:50px; width:800px; font-size:smaller" > -->
+				<!-- 				<img style="position:relative; top:-20px; left:50px; width:650px; margin:auto", data-src="assets/vsbs_ac_200_64.png" /> -->
+				<!-- 				<br> -->
+				<!-- 				<em style="position:relative; top:-20px;"> VBS reduces auto-correlation length of samples as compared to HMC by more than <b class="alert"> 10x </b> </em> -->
+				<!-- 			</div> -->
+							
+				<!-- 			<\!-- <div class="plain fragment" data-fragment-index="7" style="text-align:left; margin-left:20px; font-size:smaller "> -\-> -->
+				<!-- 			<\!-- 	<b> Road ahead</b>: 1. Combine CosmicRIM with simulations to calibrate uncertainties <br> -\-> -->
+				<!-- 			<\!-- 	2. Extend VBS to hierarchical models & jointly sample cosmology parameters and density field. -\-> -->
+				<!-- 			<\!-- </div> -\-> -->
+							
+
+				<!-- 		</div> -->
+				<!-- 		<br> -->
+				<!-- 		<span  class="plain fragment" data-fragment-index="3" style="position:absolute; top:600px; right:20px; font-size:20px; text-align:right"> -->
+				<!-- 			Putzky and Welling (2017) <br> -->
+				<!-- 			<span  class="plain fragment" data-fragment-index="3" > -->
+				<!-- 				<b><u>Modi</u></b>, Lanusse et al.(2021) <br> -->
+				<!-- 			</span> -->
+				<!-- 			<span  class="plain fragment" data-fragment-index="5" > -->
+				<!-- 				<b><u>Modi</u></b>, Li, Blei.(2022) <br> -->
+				<!-- 				Gabrie, Rotskoff, Vanden-Eijnden (2022) <br> -->
+				<!-- 			</span> -->
+				<!-- 		</span> -->
+					
+				<!-- 	</section> -->
+
+				<!-- 	<\!-------------------------------------------------------------------------------\-> -->
+
+					
+				<!-- 	<section> -->
+				<!-- 		<h3 class="slide-title">Roadmap for accelerated inference</h3> -->
+				<!-- 		<div class="header-right"> -->
+				<!-- 			Traditional Analysis<br> -->
+				<!-- 			<font color="orange"> Field-level Inference<br> -->
+				<!-- 			$\rightarrow$ Advances </font> <br> -->
+				<!-- 			Simulation-based Inference  -->
+				<!-- 		</div> -->
+
+						
+				<!-- 		<br> -->
+				<!-- 		Algorithms for parameter inference. -->
+				<!-- 		<br> -->
+				<!-- 		<br> -->
+				<!-- 		<div class="slide-text" style=""> -->
+							
+							
+				<!-- 			<br> -->
+				<!-- 			<ol class="plain fragment" data-fragment-index="1" > -->
+				<!-- 				<li class="plain fragment" data-fragment-index="1"> Extend variational self-boosted sampling to hierarchical models <br> -->
+				<!-- 					<div style="font-size:smaller"> $\rightarrow$ jointly sample cosmology parameters and density field. </div> -->
+				<!-- 				</li> -->
+				<!-- 				<br> -->
+				<!-- 				<br> -->
+				<!-- 				<li class="plain fragment" data-fragment-index="2" > Beyond point estimate with MAP optimization <br> -->
+				<!-- 					<div style="font-size:smaller">$\rightarrow$ combine CosmicRIM with simulations to calibrate uncertainties.  </div> -->
+				<!-- 				</li> -->
+				<!-- 				<br> -->
+				<!-- 			</ol> -->
+				<!-- 			<br> -->
+				<!-- 			<br> -->
+				<!-- 			<div class="plain fragment" data-fragment-index="3" > -->
+				<!-- 				Application to survey data! -->
+				<!-- 			</div> -->
+				<!-- 		</div> -->
+
+						
+				<!-- 		<div class="plain" style="float:right; font-size:smaller; text-align:right"> -->
+				<!-- 			<span  class="plain fragment" data-fragment-index="1" > -->
+				<!-- 				<b><u>Modi</u></b>, Barnett, Carpenter (2021) <br> -->
+				<!-- 				<b><u>Modi</u></b>, Li, Blei (2022) <br> -->
+				<!-- 			</span> -->
+				<!-- 			<span  class="plain fragment" data-fragment-index="2" > -->
+				<!-- 				<b><u>Modi</u></b>, Lanusse et al. (2021) <br> -->
+				<!-- 				Miliea and Seljak (2021) <br> -->
+				<!-- 				Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br> -->
+				<!-- 			</span> -->
+				<!-- 		</div> -->
+							
+
+ 							
+				<!-- 	</section> -->
+					
+				<!-- </section> -->
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
 										
 
 
@@ -2648,10 +2875,12 @@
 								<br>
 								<li> Road ahead <br>
 									<ul>
-										<li> <b class="alert">Short term:</b>
+										<li>
+                                                                                        <b class="alert">Short term:</b>
 											<ul> Extending CosmicRIM and VBS for parameter estimation 
-											$\rightarrow$ application to survey data!<br> </ul>
-										<li> <b class="alert">Long term:</b>
+											        $\rightarrow$ application to survey data!<br> </ul>
+										<li>
+                                                                                        <b class="alert">Long term:</b>
 											<ul> Enhancing differentiable simulations  </ul> 
 											<ul> Learning high dimensional data likelihood
 												<div class="fragment"> $\rightarrow$ <b class="alert"> simulations based inference</b> overcomes the challenge of knowing the data likelihood!
@@ -2732,8 +2961,8 @@
                                                                 <br>
                                                                 <li class="fragment " data-fragment-index="2">Challenge:
                                                                         <ul style="font-size:smaller">
-                                                                                <li> Lack theoretical model connecting these to cosmology parameters </li>
-                                                                                <li> Lack analytic likelihood model, $p(x | \theta)$ </li>
+                                                                                <!-- <li> Lack theoretical model connecting these to cosmology parameters </li> -->
+                                                                                Lack analytic likelihood model, $p(x | \theta)$ 
                                                                                 <br>
                                                                                 $$ p(\theta|x) \propto \color{red}{p(x | \theta)}\, p(\theta)$$
                                                                         </ul>
@@ -2786,11 +3015,12 @@
                                                 <br>
                                                         <img class="plain fragment" data-fragment-index="3" style=""
                                                              data-src="assets/lfi_sim.png" width="700" />
+                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:265px; left:310px; font-size:14px"> Model  </div> 
                                                         <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:330px; left:300px; font-size:14px"> $\theta \sim p(\theta)$ </div> 
                                                         <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:330px; left:570px; font-size:14px; color:black"> $z \sim p(z)$ </div> 
                                                         <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:330px; left:910px; font-size:14px"> $x \sim p(x|\theta)$ </div> 
 							
-                                                <div class="slide-text fragment " data-fragment-index="4" style="font-size:smaller">
+                                                <div class="slide-text fragment " data-fragment-index="3" style="font-size:smaller">
 							<br>
                                                         <center> Generating simulations is equivalent to sampling from the joint distribution, i.e., $\mathcal{D} = \{x_i, \theta_i\} \sim p(x, \theta)$ </center>
                                                         <br>
@@ -2811,13 +3041,11 @@
 										Assume the target posterior can be modeled by a parametric conditional distribution $q_\phi(\theta | x)$.
 										<br>
 										<div class="plain fragment" data-fragment-index="8">
-											Then, the distributions can be matched by maximizing the conditional probability:
+											Match the distribution ($q\rightarrow p$)  by maximizing the conditional probability
 											$$  \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i)$$
 											
 											<!-- Then, minimizing the Kullback Leibler  divergence between them leads to -->
 											<!-- $$  \min_\phi D_{KL}(p||q) \approx \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$  -->
-											<!-- <br> -->
-											<!-- <br> -->
 											<!-- <center> $  \min_\phi D_{KL}(p||q) \approx \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $ </center> -->
 										</div>
 									</div>
@@ -2829,6 +3057,7 @@
 								<br>
 								
 								$ q \longrightarrow \mathcal{N}(\mu, \sigma)$
+								<br>
 								<br>
 								<span class="fragment"  data-fragment-index="7" >
 								$\mu = f_{\phi_1}(x)$<br>
@@ -2864,7 +3093,8 @@
 									$$\mathcal{D} = \{x_i, \theta_i\}_{i\in N} \sim p(x, \theta)$$
 								</div>
 								<div class="fragment" data-fragment-index="2">
-									Optimize the parameters $\phi$ of a parameteric distribution $q_\phi$ to
+									Assume conditional, parametric distribution $q_\phi$ and <br>
+                                                                        optimize the distribution parameters $\phi$
 									$$\max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$
 								</div>
 								
@@ -2876,7 +3106,7 @@
 							
 							<div class="col"  style="flex: 0 0 30em">
 
-								<img class="plain fragment current-visible"  data-fragment-index="1" style="position:absolute; top:100px; right:50px; width:500px "
+								<img class="plain fragment fade-out"  data-fragment-index="2" style="position:absolute; top:100px; right:50px; width:500px "
 								     data-src="assets/sbi_pipeline0.png"  />
 								<img class="plain fragment current-visible"  data-fragment-index="2" style="position:absolute; top:100px; right:50px; width:500px "
 								     data-src="assets/sbi_pipeline.png"  />
@@ -2897,7 +3127,7 @@
 						<br>
 						<div class="slide-text fragment" data-fragment-index="6" style="position:relative; left:50px">
                                                         $q_\phi$ is parameterized as a neural network, e.g. normalizing flows <br>
-							$\rightarrow$ Neural posterior estimation (NPE)
+							<!-- $\rightarrow$ Neural posterior estimation (NPE) -->
 							<br>
 							<!-- <img class="plain " data-fragment-index="3" style="position:absolute; top:480px; left:520px" -->
 							<!--              width="320px" data-src="assets/maf_example.png"  /> -->
@@ -2985,7 +3215,7 @@
 						<div class="col"  style="flex: 0 0 30em">
                                                         <div class="slide-text">
 								<ul>
-									<li class="plain fragment " data-fragment-index="1"> Data
+									<li class="plain " data-fragment-index="1"> Data
 										<ul  style="font-size:smaller">
 											
 											<!-- <li> BOSS: SDSS III survey, spectra of $\sim$1.4 million galaxies from 2008-2014 </li>  -->
@@ -2996,15 +3226,15 @@
 									<li class="plain fragment " data-fragment-index="2" > Simulations
 										<ul style="font-size:smaller">
 											<li> 2000 N-Body simulations of Quijote suite</li>
-											<li> Populate galaxies with HOD model   </li>
-											<li> Survey realism- survey geometry, mask, fibre collisions </li>
+											<li> Populate galaxies with halo occupation distribution (HOD) </li>
+                                                                                        <li> Survey realism- geometry, mask, fibre collisions </li>
 										</ul>
 									</li>
 									<br>
 									<li class="plain fragment " data-fragment-index="3" > Analysis 
 										<ul style="font-size:smaller">
 											<li> Statistics: power spectrum multipoles up to $k_{\mathrm max} < 0.5$ h/Mpc</li>
-											<li> Constrain 5 cosmology, 9 HOD and 1 nuisance parameter   </li>
+											<!-- <li> Constrain 5 cosmology, 9 HOD and 1 nuisance parameter   </li> -->
 										</ul>
 									</li>
 									<br>
@@ -3027,7 +3257,7 @@
 						</div>
 						
 						<div class="col" style="flex: 0 0 25em">
-							<img class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:180px; right:30px"
+							<img class="plain fragment fade-out" data-fragment-index="2" style="position:absolute; top:180px; right:30px"
                                                              data-src="assets/boss_telescope.jpg" width="400" />
 							<img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:180px; right:30px"
                                                              data-src="assets/simbig_fwmodel.png" width="520" />
@@ -3036,9 +3266,9 @@
 							<img class="plain fragment" data-fragment-index="4" style="position:absolute; top:180px; right:30px"
                                                              data-src="assets/simbig_constraint.png" width="450" />
 						</div>
-						<div class="plain " data-fragment-index="1" style="position:absolute; bottom:0px; right:20px; font-size: 20px; text-align:right">
+						<div class="plain " data-fragment-index="1" style="position:absolute; bottom:-20px; right:20px; font-size: 20px; text-align:right">
 							Hahn et al. (including <b><u> Modi</b></u>) (2022a, 2022b) <br>
-							<span class="fragment" data-fragment-index="1" > Villaescusa-Navarro et al. (2019) </span>
+							<span class="fragment" data-fragment-index="2" > Villaescusa-Navarro et al. (2019) </span>
 						</div>
 
 						<br>
@@ -3077,7 +3307,6 @@
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				
-
 				<section >
 					<h3 class='slide-title'>Challenges to SBI #1</h3>
 						<div class="header-right">
@@ -3099,10 +3328,10 @@
 					<div class="container">
 						<div class="col"  style="flex: 0 0 33em">
                                                         <div class="slide-text">
-								
+								<br> 
 								<div class="block fragment" data-fragment-index="2" style="" >
 									<div class="block-title" >
-										Roadmap
+										Roadmap:<br>How do we use SBI when we don't have the exact model?
 									</div>
 									<div class="block-content">
 										We have multiple models for the same data observations.
@@ -3124,14 +3353,14 @@
 								<span class="plain fragment fade-out" data-fragment-index="2" > 
 									<img data-src="assets/sbi_diffhod.png"  />
 									<br>
-									<em style="font-size:smaller; position:relative; top:-10px"> SBI predictions for different data</em>
+									<em style="font-size:18px; position:relative; top:-16px"> SBI predictions for 2 different models.</em>
 								</span>
 							</span>
 					                <span class="fragment fade-in" data-fragment-index="2" >
 								<span class="fragment fade-out" data-fragment-index="5" >
 									<div class="block " style="position:absolute; top:300px; right:50px; width:400px" >
 										<div class="block-content" style="font-size:smaller">
-											<u>Models for populating galaxies:</u> 
+											<u>E.g., models for populating galaxies:</u> 
 											<ul>
 												<li> Halo occupation distribution (HOD) </li>
 												<li> HOD with assembly biases</li>
@@ -3150,9 +3379,9 @@
 								</span>
 							</span>
 							
-                                                        <div  class="plain fragment " data-fragment-index="1" style="position:absolute; top:600px; right:20px; font-size:smaller; text-align:right; font-size:smaller">
+                                                        <div  class="plain fragment " data-fragment-index="1" style="position:absolute; top:620px; right:20px; font-size:smaller; text-align:right; font-size:smaller">
+								<b><u>Modi</b></u> et al. (in preperation)<br>
 								Cannon, Ward et. al. (2022) <br>
-								<b><u>Modi</b></u> et al. (in progress)<br>
 								<span  class="plain fragment " data-fragment-index="4">
 									Arjovsky, Bottou et al. (2019) <br>
 									Chen, Kornblith et al. (2020)
@@ -3165,7 +3394,6 @@
 					</div>
 					<br>
                                         <div  class="fragment" data-fragment-index="5" style="">
-						<br>
                                                 Inter-disciplinary collaboration is necessary to move forward.
 					</div>
 
@@ -3189,8 +3417,8 @@
                                         <br>
                                         <div class="slide-text">
                                                 <ul>
-                                                        <li  class="plain fragment" data-fragment-index="1"> <font style="font-variant:small-caps"> SimBIG</font> only analyzed 100,000 galaxies  of the ~1 million mapped by BOSS.<br>Why?
-								<div class="plain fragment" data-fragment-index="2", style="font-size:smaller" > 
+                                                        <li  class="plain fragment" data-fragment-index="1"> Why did <font style="font-variant:small-caps">  SimBIG</font> only analyze 100,000 galaxies  of the ~1 million mapped by BOSS.
+  								<div class="plain fragment" data-fragment-index="2", style="font-size:smaller" > 
 									$\rightarrow$ limited by the simulation suite <br>
 									$\rightarrow$ Quijote, the  <b> largest</b> simulation suite with $\sim$10 million CPU hours
 								</div>
@@ -3210,15 +3438,19 @@
                                                                         Roadmap: how do we generate training simulations?
                                                                 </div>
                                                                 <div class="block-content" , style="font-size:smaller">
-                                                                        <div class="plain fragment" data-fragment-index="5" > Fast GPU accelerated PM simulations, e.g., $pmwd$ </div>
+                                                                        <div class="plain fragment" data-fragment-index="5" > Fast GPU accelerated particle mesh (PM) simulations, e.g., $pmwd$ </div>
 									<br>
-                                                                        <ul>
-                                                                                <li class="plain fragment" data-fragment-index="6" > <b> Gravity models:</b> hybrid simulations to learning missing small scale forces </li>
+                                                                        <span class="plain fragment" data-fragment-index="6" >Improve accuracy of PM based forward models: </span>
+                                                                        <br>
+                                                                        <br>
+                                                                        <ol>
+                                                                                <li class="plain fragment" data-fragment-index="6" > <b>Gravity models:</b> learning missing small scale forces
+                                                                                </li>
 										<br>
-										<li class="plain fragment" data-fragment-index="7" > <b>Galaxy models:</b> beyond HOD models with accelerated SAMs <br>
+										<li class="plain fragment" data-fragment-index="6" > <b>Galaxy models:</b> beyond HOD models with accelerated SAMs <br>
 											$\rightarrow$ learning to plant merger trees in PM simulations
                                                                                 </li>
-                                                                        </ul>
+                                                                        </ol>
                                                                 </div>
                                                         </div>
                                                         <br>
@@ -3228,11 +3460,11 @@
 							<div  class="plain fragment current-visible" data-fragment-index="5" style="position:absolute; top:220px; right:10px; width:400px" >
 								<img class="plain" data-src="assets/pmwd_timing.png" />
 							</div>
-	                                                <div class="plain fragment current-visible" data-fragment-index="6" style="position:absolute; top:220px; right:10px; width:430px" >
-								<img data-src="assets/denise_hybrid.png"  />
-								<em> Ratio of power spectrum of PM simulations with N-Body </em>
-							</div>
-	                                                <div class="plain fragment " data-fragment-index="7" style="position:absolute; top:200px; right:10px;">
+	                                                <!-- <div class="plain fragment current-visible" data-fragment-index="6" style="position:absolute; top:220px; right:10px; width:430px" > -->
+							<!-- 	<img data-src="assets/denise_hybrid.png"  /> -->
+							<!-- 	<em> Ratio of power spectrum of PM simulations with N-Body </em> -->
+							<!-- </div> -->
+	                                                <div class="plain fragment " data-fragment-index="6" style="position:absolute; top:210px; right:10px;">
 								<img class="plain" data-src="assets/merger_trees.png" width="430px" /><br>
 								<em> Ensemble of ML generated & N-Body trees </em>
 								
@@ -3243,9 +3475,9 @@
 								Dai and Seljak (2020) <br>
 								Mildenhall, Srinivasan et al. (2020) <br>
 								</span>
-								<span class="fragment" data-fragment-index="7" >
+								<span class="fragment" data-fragment-index="6" >
 									Nguyen, <b><u>Modi</b></u>, Somerville et al. (in prep) <br>
-									<img class="plain fragment " data-fragment-index="7" style="position:relative; top:-110px; left:-320px; width:100px" 
+									<img class="plain fragment " data-fragment-index="6" style="position:relative; top:-110px; left:-320px; width:100px" 
 									     data-src="assets/tringyun.jpg"  /><br>
 								</span>
 							</div>
@@ -3255,6 +3487,8 @@
        				                
        				
 				</section>
+
+
 
 
 
@@ -3534,7 +3768,7 @@
 							<div class="col slide-text" style="flex:0 0 25em">
 
 								
-								<div class="block fragment " data-fragment-index="1" style="width:600px" >
+								<div class="block  " data-fragment-index="1" style="width:600px" >
 									<div class="block-title" style="text-align:center">
 										Promise of the next generation of surveys
 									</div>
@@ -3579,16 +3813,16 @@
 							<div class="col" style="flex:0 0 25em">
 
 								
-								<div class="plain fragment" data-fragment-index="1"   style="position:absolute; top:150px; right:290px; width:300px; font-size:18px" >
+								<div class="plain " data-fragment-index="1"   style="position:absolute; top:150px; right:290px; width:300px; font-size:18px" >
 									<img data-src="assets/desi_hz1.png" />
 									<br>
 								</div>
 
-								<div  class="plain fragment" data-fragment-index="1"  style="position:absolute; top:250px; right:0px; width:300px; font-size:18px">
+								<div  class="plain " data-fragment-index="1"  style="position:absolute; top:250px; right:0px; width:300px; font-size:18px">
 									<img class="plain" data-src="assets/hubble_tension.png" />
 								</div>
 								
-								<div class="plain fragment" data-fragment-index="1"  style="position:absolute; top:380px; right:330px; width:300px; font-size:18px" >
+								<div class="plain " data-fragment-index="1"  style="position:absolute; top:380px; right:330px; width:300px; font-size:18px" >
 									<img data-src="assets/lsst_y10_forecast2.png" />	
 								</div>
 
@@ -3622,23 +3856,33 @@
 								1. Field-level Inference
 							</div>
 							<div class="block-content" style="font-size:smaller">
-								<div class="plain" style="text-align:center" > Model the data without any compression. </div>
+								<div class="plain" style="text-align:center" > Model the data without any compression for optimal analyses, joint analyses and new science cases. </div>
 								<br>
-								<div class="container fragment " data-fragment-index="2" style="width:1200px; margin:auto">
-									<div class="col">
-										<div class="plain" style="text-align:center" > <u>Past Work</u> </div>
-										<li> Optimal, joint analysis & new science. </li>
-										<li> Fast, differentiable simulations: FlowPM & $pmwd$. </li>
-										<li> Accelerate inference algorithms: CosmicRIM & VBS. </li>
-									</div>
-									<div class="col">
-										<div class="plain" style="text-align:center" > <u>Roadmap</u> </div>
-										<li> $^*$<b>Algorithms for parameter inference</b>
-											$\rightarrow$ application to surveys.
-										</li>
-										<li> Enhance differentiable simulations. </li>
-										<li> Learn data likelihood. </li>
-									</div>
+								<!-- <div class="container fragment " data-fragment-index="2" style="width:1200px; margin:auto"> -->
+								<!-- 	<div class="col"> -->
+								<!-- 		<div class="plain" style="text-align:center" > <u>Past Work</u> </div> -->
+								<!-- 		<li> Optimal, joint analysis & new science. </li> -->
+								<!-- 		<li> Fast, differentiable simulations: FlowPM & $pmwd$. </li> -->
+								<!-- 		<li> Accelerate inference algorithms: CosmicRIM & VBS. </li> -->
+								<!-- 	</div> -->
+								<!-- 	<div class="col"> -->
+								<!-- 		<div class="plain" style="text-align:center" > <u>Roadmap</u> </div> -->
+								<!-- 		<li> $^*$<b>Algorithms for parameter inference</b> -->
+								<!-- 			$\rightarrow$ application to surveys. -->
+								<!-- 		</li> -->
+								<!-- 		<li> Enhance differentiable simulations. </li> -->
+								<!-- 		<li> Learn data likelihood. </li> -->
+								<!-- 	</div> -->
+								<!-- </div> -->
+
+								<div class="container fragment " data-fragment-index="1" style="width:1200px; margin:auto">
+									<ul>
+                                                                                <li> $^*$<b>Develop accelerated algorithms for parameter inference</b>
+										        $\rightarrow$ application to surveys.
+									        </li>
+									        <li> Enhance differentiable simulations like FlowPM & PMWD. </li>
+									        <!-- <li> Learn data likelihood at the field level. </li> -->
+                                                                        </ul> 
 								</div>
 
 							</div>
@@ -3650,28 +3894,37 @@
 								2. Simulation-based Inference
 							</div>
 							<div class="block-content" style="font-size:smaller">
-								<div class="plain" style="text-align:center" >  Using new summary statistics without explicit likelihood. </div>
+								<div class="plain" style="text-align:center" >  Using new summary statistics without explicit likelihood to extract information from non-Gaussian data. </div>
 								<br>
+								<!-- <div class="container fragment " style="width:1200px; margin:auto"> -->
+								<!-- 	<div class="col"> -->
+								<!-- 		<div class="plain" style="text-align:center" > <u>Current Work</u> </div> -->
+								<!-- 		<li> Application to galaxy clustering data with SimBIG. </li> -->
+								<!-- 		<li> Explore sensitivity to simulation models. <br><br></li> -->
+								<!-- 	</div> -->
+								<!-- 	<div class="col"> -->
+								<!-- 		<div class="plain" style="text-align:center" > <u>Roadmap</u> </div> -->
+								<!-- 		<li> $^*$<b>Robustness to model mis-specification. </b> </li> -->
+								<!-- 		<li> $^*$<b>ML enhanced hybrid simulations for training data. </b> </li> -->
+								<!-- 		<li> Optimal summaries, prior sampling, which SBI methodology...  </li> -->
+								<!-- 	</div> -->
+								<!-- </div> -->
 								<div class="container fragment " style="width:1200px; margin:auto">
 									<div class="col">
-										<div class="plain" style="text-align:center" > <u>Current Work</u> </div>
-										<li> Application to galaxy clustering data with SimBIG. </li>
-										<li> Explore sensitivity to simulation models. <br><br></li>
-									</div>
-									<div class="col">
-										<div class="plain" style="text-align:center" > <u>Roadmap</u> </div>
-										<li> $^*$<b>Robustness to model mis-specification. </b> </li>
-										<li> $^*$<b>ML enhanced hybrid simulations for training data. </b> </li>
-										<li> Optimal summaries, prior sampling, which SBI methodology...  </li>
+										<ul>
+                                                                                        <li> $^*$<b>Need robustness to model mis-specification. </b> to develop confidence.</li>
+										        <li> $^*$<b>Develop ML enhanced hybrid simulations</b>  to meet training data requirements.</li>
+										        <!-- <li> Optimal summaries, prior sampling, which SBI methodology...  </li> -->
+                                                                                </ul>
 									</div>
 								</div>
 
 							</div>
 						</div>
 
-						<img class="plain fragment current-visible"   data-fragment-index="2" style="position:absolute;top: 420px; left:150px; width:250px; " data-src="assets/field_level_prelim.png" />
+						<img class="plain fragment current-visible"   data-fragment-index="1" style="position:absolute;top: 420px; left:150px; width:250px; " data-src="assets/field_level_prelim.png" />
 
-						<div class="plain fragment current-visible"   data-fragment-index="2"  style="position:absolute; top: 420px; right:150px; width:500px; height:600px; margin:0 auto;">
+						<div class="plain fragment current-visible"   data-fragment-index="1"  style="position:absolute; top: 420px; right:150px; width:500px; height:600px; margin:0 auto;">
 							
                                                         <div class="  plain" style="position:absolute;  left:0px; width:150px; font-size:smaller" >
 								True<br>Distribution
@@ -3688,7 +3941,13 @@
 							</div>
 						</div>
 						<br>
-						<div class="fragment alert" style="position:relative; top:-15px"> Thank you! </div>
+						<br>
+						<div class="fragment" style="position:relative; top:-15px">
+                                                        To answer fundamental questions about our Universe with the next generation of cosmological surveys.
+                                                        <br>
+                                                        <br>
+                                                        <b class="alert" > Thank you! </b>
+                                                </div>
 
 					</section>
 				</section>
@@ -3702,12 +3961,12 @@
 			
 
 		<style>
-		<!-- .reveal .slides { -->
-		<!--      border: 1px solid red; -->
-		<!--      min-height: 100%; -->
-		<!--      width: 128mm; -->
-		<!--      height: 96mm; -->
-                <!-- } -->
+		 .reveal .slides {
+		     border: 1px solid red;
+		     min-height: 100%; 
+		     width: 128mm; 
+		     height: 96mm; 
+                 }
 		
 		.reveal .box {
 			background-color: #191919;
