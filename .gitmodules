@@ -28,3 +28,6 @@
 [submodule "Yale_Jan2023/reveal.js"]
 	path = Yale_Jan2023/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "CCNSeminar/reveal.js"]
+	path = CCNSeminar/reveal.js
+	url = https://github.com:modichirag/reveal.js
