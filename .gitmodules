@@ -30,4 +30,4 @@
 	url = https://github.com/modichirag/reveal.js
 [submodule "CCNSeminar/reveal.js"]
 	path = CCNSeminar/reveal.js
-	url = https://github.com:modichirag/reveal.js
+	url = git@github.com:modichirag/reveal.js.git

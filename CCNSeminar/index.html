@@ -466,312 +466,6 @@
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
                                 
-				<section>
-
-                                        <!-- <section> -->
-                                                
-					<!-- 	<h3  class='slide-title'>a different perspective: forward modeling</h3> -->
-
-                                        <!--         <br> -->
-					<!-- 	<div class="box"> -->
-					<!-- 		<div class="box-title"> -->
-					<!-- 			Key Idea -->
-					<!-- 		</div> -->
-					<!-- 		<div class="box-content"> -->
-                                        <!--                         Instead of trying to analytical evaluate the likelihood of data summary statistics, -->
-                                        <!--                         build a computational forward model of the observables, -->
-                                        <!--                         i.e. use the simulator as the physical model in the inference pipeline -->
-					<!-- 		</div> -->
-					<!-- 	</div> -->
-
-                                        <!--         <br> -->
-                                                
-					<!-- 	<div class="container"> -->
-					<!-- 		<div class='col fragment' data-fragment-index='1'> -->
-					<!-- 			<img data-src="assets/fieldinit.png" class="plain" style="height:300px;"/> -->
-					<!-- 			<b class="alert"> Linear Field </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='2'> -->
-					<!-- 			<img data-src="assets/fieldfin.png" class="plain " style="height:300px;"/> -->
-					<!-- 			<b class="alert"> Final Dark Matter </b> -->
-					<!-- 		</div> -->
-					<!-- 		<\!-- <hr style="width: 1px; height: 400px; background: white; border: none;" /> -\-> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'> -->
-					<!-- 			<img data-src="assets/fieldhalo.png" class="plain " style="height:300px;"/> -->
-					<!-- 			<b class="alert"> Dark Matter Halos </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='4'> -->
-					<!-- 			<img data-src="assets/fieldgal.png" class="plain " style="height:300px;"/> -->
-					<!-- 			<b class="alert"> Galaxies </b> -->
-					<!-- 		</div> -->
-					<!-- 	</div> -->
-                                                
-					<!-- 	<div class="container" style="position:relative; width:1000px; height:50px; margin:0 auto;"> -->
-					<!-- 		<div class='col fragment'  data-fragment-index='2'> <font size="10"> $\longrightarrow$ </font> <br> Gravity evolution <br> N-Body, PM simulations </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'>  <font size="10"> $\longrightarrow$ </font> <br> Group Finding <br> algorithms </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='4'>  <font size="10"> $\longrightarrow$ </font> <br> Semi-analytic &amp <br> distribution models </div> -->
-					<!-- 	<\!-- 		<div class='fragment' data-fragment-index='2'> N-body simulations <div> -\-> -->
-					<!-- 	<\!-- <div class='fragment' data-fragment-index='3'> Group Finding algorithms <div> -\-> -->
-					<!-- 	<\!-- <div class='fragment' data-fragment-index='4'> Semi-analytic models <div> -\-> -->
-					<!-- 	</div> -->
-                                                                                                
-                                                                                                
-				        <!-- </section> -->
-
-                                        <section>
-                                                                                        
-						<h3  class='slide-title'>Beyond traditional approaches to analysis</h3>
-						<div class="header-right">
-							<font color="orange"> Traditional Analysis<br>
-							$\rightarrow$ Forward Modeling</font> <br>
-							Field-level Inference<br>
-							Simulation-based Inference
-						</div>
-						
-                                                <br>
-						<div class="block " data-fragment-index="1">
-							<div class="block-title">
-								Current Limitations
-							</div>
-							<div class="block-content" style="font-size:smaller">
-                                                                <ol>
-                                                                        <span class="" data-fragment-index="1">
-                                                                                <span class="fragment highlight-current-green " data-fragment-index="4">
-                                                                                        <li> Need to choose a summary statistic
-                                                                                                <br> $\rightarrow$ which one to use & how much information is extracted.
-                                                                                        </li>
-                                                                                </span>
-                                                                        </span>
-                                                                        <br>
-                                                                        <span class="" data-fragment-index="1">
-                                                                                <span class="fragment semi-fade-out " data-fragment-index="3">
-                                                                                        <li> Need a theoretical model
-                                                                                                <br> $\rightarrow$ accurate in limited regimes & infeasible for new statistics
-                                                                                        </li>
-                                                                                </span>
-                                                                        </span>
-                                                                        <br>
-                                                                        <span class="" data-fragment-index="1">
-                                                                                <!-- <span class="fragment highlight-current-blue " data-fragment-index="4"> -->
-                                                                                        <span class="fragment highlight-current-green " data-fragment-index="5">
-                                                                                                <li> Need an analytic likelihood for inference
-                                                                                                        <br> $\rightarrow$ limited to Gaussian approximation
-                                                                                                </li>
-                                                                                <!-- </span> -->
-                                                                        </span>
-                                                                        <br>
-                                                                        <span class="" data-fragment-index="1">
-                                                                                <span class="fragment semi-fade-out " data-fragment-index="3">
-                                                                                                <li> Joint analysis of different statistics and surveys is challenging </li>
-                                                                                </span>
-                                                                        </span>
-                                                                </ol>
-							</div>
-						</div>
-						<!-- <div class="slide-text"> -->
-						<!-- 	<b class="alert"> Limitations</b>  of traditional analysis: -->
-                                                <!--         <br> -->
-                                                <!--         <br>  -->
-						<!-- 	<ol style="font-size:smaller"> -->
-                                                <!--                 <li> Need to choose a summary statistic <br> $\rightarrow$ unclear which ones to use & and how much information is extracted. </li> -->
-                                                <!--                 <br> -->
-                                                <!--                 <li> Need a theory model  <br> $\rightarrow$ accurate in limited regimes and infeasible for new statistics </li> -->
-                                                <!--                 <br> -->
-                                                <!--                 <li> Need an analytic likelihood for inference  <br> $\rightarrow$ limited to Gaussian approximation & joint analysis is challenging. </li> -->
-						<!-- 	</ol> -->
-						<!-- </div> -->
-
-                                                <br>
-						<div class="box fragment" data-fragment-index="2">
-							<div class="box-title" style="padding:8px">
-								A different approach: forward modeling
-							</div>
-							<div class="box-content">
-                                                                <br>
-                                                                Instead of theoretical models, use computational simulation as the underlying physical models for inference.
-                                                                <br>
-                                                                <br>
-                                                                <div class="fragment fade-in " data-fragment-index="4">
-                                                                        <div class="fragment highlight-current-green" data-fragment-index="4"> 1. Field-level Inference / Bayesian Hierarchical Modeling </div>
-                                                                </div> 
-                                                                <div class="fragment fade-in " data-fragment-index="5">
-                                                                        <div class="fragment highlight-current-green" data-fragment-index="5">  2. Simulation-based Inference / Likelihood Free Inference / Implicit Inference  
-                                                                        </div>
-                                                                </div> 
-							</div>
-                                                </div>
-                                                <br>
-                                                
-                                                                                                
-                                                                                                
-				        </section>
-
-				        <!-------------------------------------------------------------------------------->
-
-                                        <section>
-                                                <h3  class='slide-title'>Example: forward modeling for galaxy clustering</h3>
-						<div class="header-right">
-							<font color="orange"> Traditional Analysis<br>
-							$\rightarrow$ Forward Modeling </font> <br>
-							Field-level Inference<br>
-							Simulation-based Inference
-						</div>
-                                                                                                
-                                                <br>
-						$x \sim  f(\Lambda)$ <br>
-						<div style="font-size:smaller" > data $\sim$ forward model (cosmology) </div>
-
-						<div class="container" style="font-size:smaller">
-                                                        <div class='col fragment' data-fragment-index="1" >
-								<br>
-								<br>
-                                                                $\Lambda$
-                                                                <br>
-								<b class="alert"> Cosmology </b>
-								<div style="font-size:30px"> + </div>
-								<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/>
-								<b class="alert" style="position:relative; top:-50px; ;"> Initial modes <br> $z \sim \mathcal{N}(0, 1)$</b>
-							</div>
-
-							<div class='col fragment' data-fragment-index='2'>
-								<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/>
-                                                                <br>
-								<b class="alert"> Initial (Linear) <br>Dark Matter </b>
-							</div>
-							<div class='col fragment' data-fragment-index='3'>
-								<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/>
-								<br>
-                                                                <b class="alert"> Final (Evolved) <br> Dark Matter </b>
-							</div>
-							<!-- <div class='col fragment' data-fragment-index='4'> -->
-							<!-- 	<img data-src="assets/fieldhalo.png" class="plain " style="height:200px;"/> -->
-							<!-- 	<br> -->
-                                                        <!--         <b class="alert"> Dark Matter <br> Halos </b> -->
-							<!-- </div> -->
-							<div class='col fragment' data-fragment-index='5'>
-								<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/>
-                                                                <br>
-                                                                <b class="alert"> Galaxies <br> (Tracers) </b>
-							</div>
-							<div class='col fragment' data-fragment-index='6'>
-                                                                $x = f(\Lambda)$
-								<br>
-                                                                <br>
-                                                                <b class="alert"> Data </b>
-							</div>
-                                                        
-						</div>
-                                                
-						<img class="plain fragment" data-fragment-index="0" style="position:absolute; top:90px; right:20px; width:300px;" data-src="assets/pk_eqn3.png" />
-						
-						<div class="container" style="position:absolute; top:325px; width:1100px; height:50px; left:90px; font-size:35px">
-							<div class='col fragment' data-fragment-index='2'>  $\rightarrow$ </div>
-							<div class='col fragment' data-fragment-index='3'>  $\rightarrow$ </div>
-							<!-- <div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -->
-							<div class='col fragment' data-fragment-index='5'>  $\rightarrow$ </div>
-							<div class='col fragment' data-fragment-index='6'>  $\rightarrow$ </div>
-						</div>
-                                                                                                
-						<div class="container" style="position:relative; top:20px; width:1100px; height:50px; margin:0 auto; font-size:17px">
-							<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div>
-							<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body/<br>PM simulations) <br> ($\mathbf{\Lambda}$) </div>
-							<!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -->
-							<div class='col fragment' data-fragment-index='5'>  Halo finding + <br>Halo distribution/<br> Semi-analytic models <br> ($\mathbf{\theta}$)  </div>
-							<div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div>
-						</div>
-                                                                                                
-                                                
-				        </section>
-
-                                        <!-- <section> -->
-                                        <!--         <h3  class='slide-title'>example: forward modeling for galaxy clustering</h3> -->
-					<!-- 	<div class="header-right"> -->
-					<!-- 		<font color="orange"> Traditional Analysis<br> -->
-					<!-- 		$\rightarrow$ Forward Modeling </font> <br> -->
-					<!-- 		Field-level Inference<br> -->
-					<!-- 		Simulation-based Inference -->
-					<!-- 	</div> -->
-                                                                                                
-                                        <!--         <br> -->
-					<!-- 	$x = f(\Lambda)$  -->
-
-					<!-- 	<div class="container" style="font-size:smaller"> -->
-                                        <!--                 <div class='col fragment' data-fragment-index="1" > -->
-					<!-- 			<br> -->
-					<!-- 			<br> -->
-                                        <!--                         $\Lambda$ -->
-                                        <!--                         <br> -->
-					<!-- 			<b class="alert"> Cosmology </b> -->
-					<!-- 			<div style="font-size:30px"> + </div> -->
-					<!-- 			<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/> -->
-					<!-- 			<b class="alert" style="position:relative; top:-45px; ;"> Initial modes <br> $z \sim \mathcal{N}(0, 1)$</b> -->
-					<!-- 		</div> -->
-
-					<!-- 		<div class='col fragment' data-fragment-index='2'> -->
-					<!-- 			<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/> -->
-                                        <!--                         <br> -->
-					<!-- 			<b class="alert"> Initial (Linear) <br>Dark Matter </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'> -->
-					<!-- 			<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/> -->
-					<!-- 			<br> -->
-                                        <!--                         <b class="alert"> Final (Evolved) <br> Dark Matter </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='4'> -->
-					<!-- 			<img data-src="assets/fieldhalo.png" class="plain " style="height:200px;"/> -->
-					<!-- 			<br> -->
-                                        <!--                         <b class="alert"> Dark Matter <br> Halos </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='5'> -->
-					<!-- 			<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/> -->
-                                        <!--                         <br> -->
-                                        <!--                         <b class="alert"> Galaxies <br> (Tracers) </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='6'> -->
-                                        <!--                         $x = f(\Lambda)$ -->
-					<!-- 			<br> -->
-                                        <!--                         <br> -->
-                                        <!--                         <b class="alert"> Data </b> -->
-					<!-- 		</div> -->
-                                                        
-					<!-- 	</div> -->
-                                                
-					<!-- 	<img class="plain fragment" data-fragment-index="0" style="position:absolute; top:90px; right:20px; width:300px;" data-src="assets/pk_eqn3.png" /> -->
-					<!-- 	<div class="container" style="position:absolute; top:285px; width:1100px; height:50px; left:90px; font-size:35px"> -->
-					<!-- 		<div class='col fragment' data-fragment-index='2'>  $\rightarrow$ </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'>  $\rightarrow$ </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='5'>  $\rightarrow$ </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='6'>  $\rightarrow$ </div> -->
-					<!-- 	</div> -->
-                                                                                                
-					<!-- 	<div class="container" style="position:relative; top:20px; width:1100px; height:50px; margin:0 auto; font-size:17px"> -->
-					<!-- 		<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body/<br>PM simulations) <br> ($\mathbf{\Lambda}$) </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='5'>  Halo distribution/<br> Semi-analytic models <br> ($\mathbf{\theta}$)  </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -->
-					<!-- 	</div> -->
-                                                                                                
-                                                
-				        <!-- </section> -->
-                                        
-                                        <!-------------------------------------------------------------------------------->
-
-
-                                        
-				</section>
-                                
-
-                                <!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-                                <section class="" data-background="">
-					<div style="font-size:80px">2. Field-level Inference</div>
-				</section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
                                 <section>
                                         <section>
                                                 
@@ -862,14 +556,294 @@
                                                 </div>
                                         </section>
                                 </section>
+
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+                                
+
+				<!-- <section> -->
+
+                                <!--         <section> -->
+                                                                                        
+				<!-- 		<h3  class='slide-title'>Beyond traditional approaches to analysis</h3> -->
+				<!-- 		<div class="header-right"> -->
+				<!-- 			<font color="orange"> Traditional Analysis<br> -->
+				<!-- 			$\rightarrow$ Forward Modeling</font> <br> -->
+				<!-- 			Field-level Inference<br> -->
+				<!-- 			Simulation-based Inference -->
+				<!-- 		</div> -->
+						
+                                <!--                 <br> -->
+				<!-- 		<div class="block " data-fragment-index="1"> -->
+				<!-- 			<div class="block-title"> -->
+				<!-- 				Current Limitations -->
+				<!-- 			</div> -->
+				<!-- 			<div class="block-content" style="font-size:smaller"> -->
+                                <!--                                 <ol> -->
+                                <!--                                         <span class="" data-fragment-index="1"> -->
+                                <!--                                                 <span class="fragment highlight-current-green " data-fragment-index="4"> -->
+                                <!--                                                         <li> Need to choose a summary statistic -->
+                                <!--                                                                 <br> $\rightarrow$ which one to use & how much information is extracted. -->
+                                <!--                                                         </li> -->
+                                <!--                                                 </span> -->
+                                <!--                                         </span> -->
+                                <!--                                         <br> -->
+                                <!--                                         <span class="" data-fragment-index="1"> -->
+                                <!--                                                 <span class="fragment semi-fade-out " data-fragment-index="3"> -->
+                                <!--                                                         <li> Need a theoretical model -->
+                                <!--                                                                 <br> $\rightarrow$ accurate in limited regimes & infeasible for new statistics -->
+                                <!--                                                         </li> -->
+                                <!--                                                 </span> -->
+                                <!--                                         </span> -->
+                                <!--                                         <br> -->
+                                <!--                                         <span class="" data-fragment-index="1"> -->
+                                <!--                                                 <\!-- <span class="fragment highlight-current-blue " data-fragment-index="4"> -\-> -->
+                                <!--                                                         <span class="fragment highlight-current-green " data-fragment-index="5"> -->
+                                <!--                                                                 <li> Need an analytic likelihood for inference -->
+                                <!--                                                                         <br> $\rightarrow$ limited to Gaussian approximation -->
+                                <!--                                                                 </li> -->
+                                <!--                                                 <\!-- </span> -\-> -->
+                                <!--                                         </span> -->
+                                <!--                                         <br> -->
+                                <!--                                         <span class="" data-fragment-index="1"> -->
+                                <!--                                                 <span class="fragment semi-fade-out " data-fragment-index="3"> -->
+                                <!--                                                                 <li> Joint analysis of different statistics and surveys is challenging </li> -->
+                                <!--                                                 </span> -->
+                                <!--                                         </span> -->
+                                <!--                                 </ol> -->
+				<!-- 			</div> -->
+				<!-- 		</div> -->
+				<!-- 		<\!-- <div class="slide-text"> -\-> -->
+				<!-- 		<\!-- 	<b class="alert"> Limitations</b>  of traditional analysis: -\-> -->
+                                <!--                 <\!--         <br> -\-> -->
+                                <!--                 <\!--         <br>  -\-> -->
+				<!-- 		<\!-- 	<ol style="font-size:smaller"> -\-> -->
+                                <!--                 <\!--                 <li> Need to choose a summary statistic <br> $\rightarrow$ unclear which ones to use & and how much information is extracted. </li> -\-> -->
+                                <!--                 <\!--                 <br> -\-> -->
+                                <!--                 <\!--                 <li> Need a theory model  <br> $\rightarrow$ accurate in limited regimes and infeasible for new statistics </li> -\-> -->
+                                <!--                 <\!--                 <br> -\-> -->
+                                <!--                 <\!--                 <li> Need an analytic likelihood for inference  <br> $\rightarrow$ limited to Gaussian approximation & joint analysis is challenging. </li> -\-> -->
+				<!-- 		<\!-- 	</ol> -\-> -->
+				<!-- 		<\!-- </div> -\-> -->
+
+                                <!--                 <br> -->
+				<!-- 		<div class="box fragment" data-fragment-index="2"> -->
+				<!-- 			<div class="box-title" style="padding:8px"> -->
+				<!-- 				A different approach: forward modeling -->
+				<!-- 			</div> -->
+				<!-- 			<div class="box-content"> -->
+                                <!--                                 <br> -->
+                                <!--                                 Instead of theoretical models, use computational simulation as the underlying physical models for inference. -->
+                                <!--                                 <br> -->
+                                <!--                                 <br> -->
+                                <!--                                 <div class="fragment fade-in " data-fragment-index="4"> -->
+                                <!--                                         <div class="fragment highlight-current-green" data-fragment-index="4"> 1. Field-level Inference / Bayesian Hierarchical Modeling </div> -->
+                                <!--                                 </div>  -->
+                                <!--                                 <div class="fragment fade-in " data-fragment-index="5"> -->
+                                <!--                                         <div class="fragment highlight-current-green" data-fragment-index="5">  2. Simulation-based Inference / Likelihood Free Inference / Implicit Inference   -->
+                                <!--                                         </div> -->
+                                <!--                                 </div>  -->
+				<!-- 			</div> -->
+                                <!--                 </div> -->
+                                <!--                 <br> -->
+                                                
+                                                                                                
+                                                                                                
+				<!--         </section> -->
+
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
+				<!-- 	<section> -->
+				<!-- 		 <h3 class='slide-title'> Forward Models in Cosmology</h3> -->
+
+				<!-- 		<\!-- <div class="container fragment"> -\-> -->
+				<!-- 		<\!-- 	<\\!-- <div class="col"> <h3> 1 </h3> </div> -\\-> -\-> -->
+				<!-- 		<\!-- 	<div class="col"> -\-> -->
+				<!-- 		<\!-- 		<div class="box"> -\-> -->
+				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
+				<!-- 		<\!-- 				Initial Dark Matter -\-> -->
+				<!-- 		<\!-- 			</div> -\-> -->
+				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldinit.png" height="200"/> -\-> -->
+
+				<!-- 		<\!-- 		</div>								 -\-> -->
+				<!-- 		<\!-- 	</div> -\-> -->
+				<!-- 		<\!-- 	<div class="col"> <br><br>$\Longrightarrow$ <br>N-Body Simulation  <br>e.g. Particle Mesh Simulations</div> -\-> -->
+				<!-- 		<\!-- 	<div class="col"> -\-> -->
+				<!-- 		<\!-- 		<div class="box"> -\-> -->
+				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
+				<!-- 		<\!-- 				Final Dark Matter -\-> -->
+				<!-- 		<\!-- 			</div> -\-> -->
+				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldfin.png" height="100"/> -\-> -->
+				<!-- 		<\!-- 		</div> -\-> -->
+
+				<!-- 		<\!-- 	</div> -\-> -->
+				<!-- 		<\!-- </div> -\-> -->
+				<!-- 		<\!-- <br><br> -\-> -->
+				<!-- 		<\!-- <div class="container fragment"> -\-> -->
+				<!-- 		<\!-- 	<\\!-- <div class="col"> <h3> 2 </h3> </div> -\\-> -\-> -->
+				<!-- 		<\!-- 	<div class="col"> -\-> -->
+				<!-- 		<\!-- 		<div class="box"> -\-> -->
+				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
+				<!-- 		<\!-- 				Final Dark Matter -\-> -->
+				<!-- 		<\!-- 			</div> -\-> -->
+				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldfin.png" height="100"/> -\-> -->
+				<!-- 		<\!-- 		</div>								 -\-> -->
+				<!-- 		<\!-- 	</div> -\-> -->
+				<!-- 		<\!-- 	<div class="col">  <br> <br>$\Longrightarrow$ <br> Group Finding Algorithm <br> e.g. Friends of Friends</div> -\-> -->
+				<!-- 		<\!-- 	<div class="col"> -\-> -->
+				<!-- 		<\!-- 		<div class="box"> -\-> -->
+				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
+				<!-- 		<\!-- 				Dark Matter Halos -\-> -->
+				<!-- 		<\!-- 			</div> -\-> -->
+				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldhalo.png" height="100"/> -\-> -->
+				<!-- 		<\!-- 		</div> -\-> -->
+
+				<!-- 		<\!-- 	</div> -\-> -->
+				<!-- 		<\!-- </div> -\-> -->
+
+				<!-- 		<\!-- <br><br> -\-> -->
+				<!-- 		<\!-- <div class="container fragment"> -\-> -->
+				<!-- 		<\!-- 	<\\!-- <div class="col"> <h3> 3 </h3> </div> -\\-> -\-> -->
+				<!-- 		<\!-- 	<div class="col"> -\-> -->
+				<!-- 		<\!-- 		<div class="box"> -\-> -->
+				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
+				<!-- 		<\!-- 				Dark Matter Halos -\-> -->
+				<!-- 		<\!-- 			</div> -\-> -->
+				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldhalo.png" height="100"/> -\-> -->
+				<!-- 		<\!-- 		</div>								 -\-> -->
+				<!-- 		<\!-- 	</div> -\-> -->
+				<!-- 		<\!-- 	<div class="col">  <br> <br>$\Longrightarrow$ <br> Semi analytic approaches <br> Distribution Functions</div> -\-> -->
+				<!-- 		<\!-- 	<div class="col"> -\-> -->
+				<!-- 		<\!-- 		<div class="box"> -\-> -->
+				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
+				<!-- 		<\!-- 				Galaxies -\-> -->
+				<!-- 		<\!-- 			</div> -\-> -->
+				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldgal.png" height="100"/> -\-> -->
+				<!-- 		<\!-- 		</div> -\-> -->
+
+				<!-- 		<\!-- 	</div> -\-> -->
+				<!-- 		<\!-- </div> -\-> -->
+
+				<!-- 		<div class="container"> -->
+				<!-- 			<div class='col'> -->
+				<!-- 				<img data-src="assets/fieldinit.png" class="plain" style="height:300px;"/> -->
+				<!-- 				<b class="alert"> Linear Field </b> -->
+				<!-- 			</div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='2'> -->
+				<!-- 				<img data-src="assets/fieldfin.png" class="plain " style="height:300px;"/> -->
+				<!-- 				<b class="alert"> Final Dark Matter </b> -->
+				<!-- 			</div> -->
+				<!-- 			<hr style="width: 1px; height: 400px; background: white; border: none;" /> -->
+				<!-- 			<div class='col fragment' data-fragment-index='3'> -->
+				<!-- 				<img data-src="assets/fieldhalo.png" class="plain " style="height:300px;"/> -->
+				<!-- 				<b class="alert"> Dark Matter Halos </b> -->
+				<!-- 			</div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='4'> -->
+				<!-- 				<img data-src="assets/fieldgal.png" class="plain " style="height:300px;"/> -->
+				<!-- 				<b class="alert"> Galaxies </b> -->
+				<!-- 			</div> -->
+				<!-- 		</div> -->
+				<!-- 		<div class="container" style="position:relative; width:1000px; height:50px; margin:0 auto;"> -->
+				<!-- 			<div class='col fragment'  data-fragment-index='2'> <font size="10"> $\longrightarrow$ </font> <br> N-body simulations </div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='3'>  <font size="10"> $\longrightarrow$ </font> <br> Group Finding <br> algorithms </div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='4'>  <font size="10"> $\longrightarrow$ </font> <br> Semi-analytic &amp <br> distribution models </div> -->
+				<!-- 		<\!-- 		<div class='fragment' data-fragment-index='2'> N-body simulations <div> -\-> -->
+				<!-- 		<\!-- <div class='fragment' data-fragment-index='3'> Group Finding algorithms <div> -\-> -->
+				<!-- 		<\!-- <div class='fragment' data-fragment-index='4'> Semi-analytic models <div> -\-> -->
+				<!-- 		</div> -->
+				<!-- 	</section> -->
+
+
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
+
+                                <!--         <section> -->
+                                <!--                 <h3  class='slide-title'>Example: forward modeling for galaxy clustering</h3> -->
+				<!-- 		<div class="header-right"> -->
+				<!-- 			<font color="orange"> Traditional Analysis<br> -->
+				<!-- 			$\rightarrow$ Forward Modeling </font> <br> -->
+				<!-- 			Field-level Inference<br> -->
+				<!-- 			Simulation-based Inference -->
+				<!-- 		</div> -->
+                                                                                                
+                                <!--                 <br> -->
+				<!-- 		$x \sim  f(\Lambda)$ <br> -->
+				<!-- 		<div style="font-size:smaller" > data $\sim$ forward model (cosmology) </div> -->
+
+				<!-- 		<div class="container" style="font-size:smaller"> -->
+                                <!--                         <div class='col fragment' data-fragment-index="1" > -->
+				<!-- 				<br> -->
+				<!-- 				<br> -->
+                                <!--                                 $\Lambda$ -->
+                                <!--                                 <br> -->
+				<!-- 				<b class="alert"> Cosmology </b> -->
+				<!-- 				<div style="font-size:30px"> + </div> -->
+				<!-- 				<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/> -->
+				<!-- 				<b class="alert" style="position:relative; top:-50px; ;"> Initial modes <br> $z \sim \mathcal{N}(0, 1)$</b> -->
+				<!-- 			</div> -->
+
+				<!-- 			<div class='col fragment' data-fragment-index='2'> -->
+				<!-- 				<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/> -->
+                                <!--                                 <br> -->
+				<!-- 				<b class="alert"> Initial (Linear) <br>Dark Matter </b> -->
+				<!-- 			</div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='3'> -->
+				<!-- 				<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/> -->
+				<!-- 				<br> -->
+                                <!--                                 <b class="alert"> Final (Evolved) <br> Dark Matter </b> -->
+				<!-- 			</div> -->
+				<!-- 			<\!-- <div class='col fragment' data-fragment-index='4'> -\-> -->
+				<!-- 			<\!-- 	<img data-src="assets/fieldhalo.png" class="plain " style="height:200px;"/> -\-> -->
+				<!-- 			<\!-- 	<br> -\-> -->
+                                <!--                         <\!--         <b class="alert"> Dark Matter <br> Halos </b> -\-> -->
+				<!-- 			<\!-- </div> -\-> -->
+				<!-- 			<div class='col fragment' data-fragment-index='5'> -->
+				<!-- 				<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/> -->
+                                <!--                                 <br> -->
+                                <!--                                 <b class="alert"> Galaxies <br> (Tracers) </b> -->
+				<!-- 			</div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='6'> -->
+                                <!--                                 $x = f(\Lambda)$ -->
+				<!-- 				<br> -->
+                                <!--                                 <br> -->
+                                <!--                                 <b class="alert"> Data </b> -->
+				<!-- 			</div> -->
+                                                        
+				<!-- 		</div> -->
+                                                
+				<!-- 		<img class="plain fragment" data-fragment-index="0" style="position:absolute; top:90px; right:20px; width:300px;" data-src="assets/pk_eqn3.png" /> -->
+						
+				<!-- 		<div class="container" style="position:absolute; top:325px; width:1100px; height:50px; left:90px; font-size:35px"> -->
+				<!-- 			<div class='col fragment' data-fragment-index='2'>  $\rightarrow$ </div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='3'>  $\rightarrow$ </div> -->
+				<!-- 			<\!-- <div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -\-> -->
+				<!-- 			<div class='col fragment' data-fragment-index='5'>  $\rightarrow$ </div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='6'>  $\rightarrow$ </div> -->
+				<!-- 		</div> -->
+                                                                                                
+				<!-- 		<div class="container" style="position:relative; top:20px; width:1100px; height:50px; margin:0 auto; font-size:17px"> -->
+				<!-- 			<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body/<br>PM simulations) <br> ($\mathbf{\Lambda}$) </div> -->
+				<!-- 			<\!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -\-> -->
+				<!-- 			<div class='col fragment' data-fragment-index='5'>  Halo finding + <br>Halo distribution/<br> Semi-analytic models <br> ($\mathbf{\theta}$)  </div> -->
+				<!-- 			<div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -->
+				<!-- 		</div> -->
+                                                                                                
+                                                
+				<!--         </section> -->
+
+                                        
+                                <!--         <\!-------------------------------------------------------------------------------\-> -->
+
+
+                                        
+				<!-- </section> -->
                                                 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
-					<div style="font-size:40px">In addition to inferring a handful of cosmology parameters, <br>
+					<div style="font-size:32px">In addition to inferring a handful of cosmology parameters, <br>
 						we now also wish to estimate millions of latent parameters.<br>
 						<div class="fragment"> Why?</div>
-						<br>
 						<br>
 						<div class="container fragment" style="margin:auto; width:800px; font-size:24px">
 							<div class="col">
@@ -881,24 +855,8 @@
 							</div>
 						</div>
 
-					</div>
-				</section>
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-				<section>
-					<div style="font-size:30px">Field-level inference enables: <br>
 						<br>
-						1. optimal cosmological analysis, <br>
-						2. joint analyses of different datasets, <br>
-						3. unique opportunities for new science cases.
-						<br>
-						<br>
-						<div class="fragment"> So what do we need to enable it?</div>
-						<!-- <div class="fragment" style="font-size:24px"> -->
-						<!-- 	<div class="boxonly alert" style="background-color:#44444; position:absolute; top:300px; left:200px; border-radius: 100px; width:220px"> <br>1. Differentiable<br>Simulations<br><br> </div> -->
-						<!-- 	<div class="boxonly alert" style="position:absolute; top:300px; left:550px; border-radius: 100px; width:220px"> <br>2. High dimensional<br>inference<br><br> </div> -->
-						<!-- 	<div class="boxonly alert" style="position:absolute; top:300px; left:900px; border-radius: 100px; width:220px; "> <br>3. Data<br>likelihood<br><br> </div> -->
-						<!-- </div> -->
+						<div class="fragment" style="font-size:32px"> So what do we need to enable it?</div>
 						<br>
 						<div class="container fragment" style="font-size:24px; width:800px; margin:auto">
 							<div class="col">
@@ -910,18 +868,15 @@
 							<!-- </div> -->
 						</div>
 
+
 					</div>
-					<!-- <div style="font-size:40px">Roadmap to field-level inference-<br> -->
-					<!-- 	advances, challeges & the way ahead -->
-					<!-- 	<div class="fragment"> </div> -->
-					<!-- </div> -->
 				</section>
 
                                 <!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
 					<section>
-						<h3 class='slide-title'> Advances for field-level inference #1 </h3>
+						<h3 class='slide-title'> Differentiable simulations #1 </h3>
 						<div class="header-right">
 							Traditional Analysis<br>
 							<font color="orange"> Field-level Inference<br>
@@ -2655,27 +2610,6 @@
 					    </div>
 				    </section>
 
-				    <!-- <section> -->
-				    <!-- 	    <h3 class="slide-title">Inside an RNN Cell</h3> -->
-				    <!-- 	    <img data-src="assets/LSTM_GRU.png" height="600px" /> -->
-				    <!-- 	    (<a href="https://towardsdatascience.com/illustrated-guide-to-lstms-and-gru-s-a-step-by-step-explanation-44e9eb85bf21">source</a>) -->
-				    <!-- </section> -->
-
-				    <section>
-					    <h3 class="slide-title">Illustration on inverse problems</h3>
-					    <br>
-					    <br>
-					    <br>
-					    <br>
-					    <div>
-						    <img data-src="assets/IllustrationRIM.png" /><br>
-						    From left to right: input masked image, increasing number of steps of solutions, ground truth.
-					    </div>
-					    <br>
-					    <br>
-					    <br>
-					    <br>
-				    </section>
 			    </section>
 
 			    <section>
