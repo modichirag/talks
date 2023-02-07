@@ -73,8 +73,6 @@
                                                 
 					<h3  class='slide-title'>Outline of this talk</h3>
 					
-                                        <br>
-					In this talk, I will talk about:
 					<br>
 					<br>
 					<br>
@@ -83,7 +81,7 @@
                                                 
 						<ol> 
 							<li class="plain ragment" data-fragment-index="1" > Cosmology & cosmological analysis
-								<ul> $\rightarrow$ why do we want to recosntruct the initial conditions of the Universe? </ul>
+								<ul> $\rightarrow$ why do we want to reconstruct the initial conditions of the Universe? </ul>
 							</li>
 							<br>
 							<li class="plain ragment" data-fragment-index="2" > Differentiable cosmological simulations
@@ -91,14 +89,14 @@
                                                                 <ul> $\rightarrow$ FlowPM and $pmwd$ </ul>
 							</li>
 							<br>
-							<li class="plain ragment" data-fragment-index="2" > CosmicRIM
+							<li class="plain ragment" data-fragment-index="2" > Accelerating high dimensional optimization
                                                                 <span style="position:absolute; right:160px; text-align:right">Modi, Lanusse, Seljak et al. (2021) </span>
-                                                                <ul> $\rightarrow$ accelerating high dimensional optimization  </ul>
+                                                                <ul> $\rightarrow$ CosmicRIM  </ul>
 							</li>
 							<br>
-							<li class="plain ragment" data-fragment-index="2" > Variational self-Boosted sampling (VBS)
+							<li class="plain ragment" data-fragment-index="2" > Accelerating posterior sampling in high dimensions 
                                                                 <span style="position:absolute; right:160px; text-align:right">Modi, Li, Blei et al. (2022) </span>
-                                                                <ul> $\rightarrow$ accelerating sampling in high dimensions </ul>
+                                                                <ul> $\rightarrow$ Variational self-Boosted sampling (VBS)  </ul>
 							</li>
 							<br>
 						</ol>
@@ -182,7 +180,7 @@
 
 					<section data-background-image="assets/Mayall2r.jpg" >
 					<!-- <section data-background-image="assets/LSST.jpg"> -->
-						<h3 class='slide-title'>A paradigm shift</h3>
+						<h3 class='slide-title'>Paradigm shift in cosmology</h3>
 
 						<div class="" > Large amount of high precision data from the next generation of cosmological surveys. </div>
 						
@@ -457,7 +455,7 @@
 			        <!-------------------------------------------------------------------------------->
 			        <!-------------------------------------------------------------------------------->
                                 <section class="" data-background="">
-				        <div style="font-size:40px">Forward modeling approaches and the field level inference</div>
+				        <div style="font-size:40px">How can we overcome these limitations in the future?</div>
 			        </section>
                             
 				<!-------------------------------------------------------------------------------->
@@ -486,19 +484,19 @@
 								</div>
                                                         </div>
 
-                                                        <br>
-                                                        <div class="plain fragment",  data-fragment-index="6", style=";">
-								$$ \log p(z | x) \propto  \log p(x| f(z)) \ + \log p(z) $$
-								E.g., infer the initial conditions ($z$) by maximizing the posterior: $\hat{z} =  \max_z \log p(z | x)$
-                                                        </div>
+                                                        <!-- <br> -->
+                                                        <!-- <div class="plain fragment",  data-fragment-index="6", style=";"> -->
+							<!-- 	$$ \log p(z | x) \propto  \log p(x| f(z)) \ + \log p(z) $$ -->
+							<!-- 	E.g., infer the initial conditions ($z$) by maximizing the posterior: $\hat{z} =  \max_z \log p(z | x)$ -->
+                                                        <!-- </div> -->
 							<br>
 							
                                                         <span class="plain fragment fade-in" data-fragment-index="1">
-								<span class="plain fragment fade-out" data-fragment-index="6">
+								<span class="plain ragment fade-out" data-fragment-index="6">
 									<!-- <img class="plain" style="position:absolute; left:-300px; top:250px" data-src="assets/fwdmodel.png" style='height:500px;' /> -->
-									<img class="plain" style="position:absolute; left:50px; top:400px; width:900px" data-src="assets/fwdmodel2.png"  />
+									<img class="plain" style="position:absolute; left:50px; top:300px; width:900px" data-src="assets/fwdmodel2.png"  />
                                                                         <br>
-                                                                        <div class="container" style="position:relative; width:830px; left:100px; top:200px; font-size:16px">
+                                                                        <div class="container" style="position:relative; width:830px; left:100px; top:250px; font-size:16px">
 							                        <div class='col ragment' data-fragment-index='1'>   <br> Boltzmann<br>equations </div>
 							                        <div class='col ragment'  data-fragment-index='1'>  <br> N-Body Gravity<br>simulations </div>
 							                        <div class='col ragment' data-fragment-index='1'>   <br> Galaxy occupation <br> models </div>
@@ -537,7 +535,7 @@
 						        <!--         </div> -->
                                                         <!-- </div> -->
                                                         
-                                                <div class="block fragment current-visible" data-fragment-index="0" style="position:absolute; top:400px; left:100px; width:400px">
+                                                <div class="block fragment current-visible" data-fragment-index="0" style="position:absolute; top:300px; left:100px; width:400px">
 							<div class="block-title" , style="text-align:center">
 								But which summary statistic?
 							</div>
@@ -557,266 +555,63 @@
                                                         
 						</div>
                                                 
-
-                                                <div class="container" style="position:absolute; top:400px; left:50px; margin:auto; width:1200px" >
-                                                                <div class="col fragment" data-fragment-index="6">
-                                                                        <img class="plain" data-src="assets/init_field.png" style='height:250px;' />
-                                                                        <br> True initial conditions <br> $z_0$
-                                                                </div>
-
-                                                                <div class="col fragment" data-fragment-index="6">
-                                                                        <img class="plain" data-src="assets/reconim_init.gif" style='height:250px;' />
-                                                                        <br> Reconstructed initial conditions $z$
-                                                                </div>
-
-                                                                <div class="col fragment" data-fragment-index="6">
-                                                                        <img class="plain" data-src="assets/reconim_fin.gif" style='height:250px;' />
-                                                                        <br> Reconstructed data <br> $x' = f(z)$
-                                                                </div>
-
-                                                                <div class="col " data-fragment-index="1">
-                                                                        <img class="plain" data-src="assets/fin_field.png" style='height:250px;' />
-                                                                        <br> Data <br> $x = f(z_0)$
-                                                                </div>
-                                                        <br>
+                                                <div  style="position:absolute; top:300px; right:20px; width:400px">
+                                                        <img class="plain" data-src="assets/fieldgal.png" style='height:250px;' />
+                                                        <br> Data <br> $x = f(z_0)$
                                                 </div>
+						
+                                                <!-- <div class="container" style="position:absolute; top:400px; left:50px; margin:auto; width:1200px" > -->
+                                                <!--                 <div class="col fragment" data-fragment-index="6"> -->
+                                                <!--                         <img class="plain" data-src="assets/init_field.png" style='height:250px;' /> -->
+                                                <!--                         <br> True initial conditions <br> $z_0$ -->
+                                                <!--                 </div> -->
+
+                                                <!--                 <div class="col fragment" data-fragment-index="6"> -->
+                                                <!--                         <img class="plain" data-src="assets/reconim_init.gif" style='height:250px;' /> -->
+                                                <!--                         <br> Reconstructed initial conditions $z$ -->
+                                                <!--                 </div> -->
+
+                                                <!--                 <div class="col fragment" data-fragment-index="6"> -->
+                                                <!--                         <img class="plain" data-src="assets/reconim_fin.gif" style='height:250px;' /> -->
+                                                <!--                         <br> Reconstructed data <br> $x' = f(z)$ -->
+                                                <!--                 </div> -->
+
+                                                <!--                 <div class="col " data-fragment-index="1"> -->
+                                                <!--                         <img class="plain" data-src="assets/fieldgal.png" style='height:250px;' /> -->
+                                                <!--                         <br> Data <br> $x = f(z_0)$ -->
+                                                <!--                 </div> -->
+                                                <!--         <br> -->
+                                                <!-- </div> -->
                                         </section>
                                 </section>
 
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-                                
-
-
-
-				<!--         </section> -->
-
-				<!--         <\!-------------------------------------------------------------------------------\-> -->
-				<!-- 	<section> -->
-				<!-- 		 <h3 class='slide-title'> Forward Models in Cosmology</h3> -->
-
-				<!-- 		<\!-- <div class="container fragment"> -\-> -->
-				<!-- 		<\!-- 	<\\!-- <div class="col"> <h3> 1 </h3> </div> -\\-> -\-> -->
-				<!-- 		<\!-- 	<div class="col"> -\-> -->
-				<!-- 		<\!-- 		<div class="box"> -\-> -->
-				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
-				<!-- 		<\!-- 				Initial Dark Matter -\-> -->
-				<!-- 		<\!-- 			</div> -\-> -->
-				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldinit.png" height="200"/> -\-> -->
-
-				<!-- 		<\!-- 		</div>								 -\-> -->
-				<!-- 		<\!-- 	</div> -\-> -->
-				<!-- 		<\!-- 	<div class="col"> <br><br>$\Longrightarrow$ <br>N-Body Simulation  <br>e.g. Particle Mesh Simulations</div> -\-> -->
-				<!-- 		<\!-- 	<div class="col"> -\-> -->
-				<!-- 		<\!-- 		<div class="box"> -\-> -->
-				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
-				<!-- 		<\!-- 				Final Dark Matter -\-> -->
-				<!-- 		<\!-- 			</div> -\-> -->
-				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldfin.png" height="100"/> -\-> -->
-				<!-- 		<\!-- 		</div> -\-> -->
-
-				<!-- 		<\!-- 	</div> -\-> -->
-				<!-- 		<\!-- </div> -\-> -->
-				<!-- 		<\!-- <br><br> -\-> -->
-				<!-- 		<\!-- <div class="container fragment"> -\-> -->
-				<!-- 		<\!-- 	<\\!-- <div class="col"> <h3> 2 </h3> </div> -\\-> -\-> -->
-				<!-- 		<\!-- 	<div class="col"> -\-> -->
-				<!-- 		<\!-- 		<div class="box"> -\-> -->
-				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
-				<!-- 		<\!-- 				Final Dark Matter -\-> -->
-				<!-- 		<\!-- 			</div> -\-> -->
-				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldfin.png" height="100"/> -\-> -->
-				<!-- 		<\!-- 		</div>								 -\-> -->
-				<!-- 		<\!-- 	</div> -\-> -->
-				<!-- 		<\!-- 	<div class="col">  <br> <br>$\Longrightarrow$ <br> Group Finding Algorithm <br> e.g. Friends of Friends</div> -\-> -->
-				<!-- 		<\!-- 	<div class="col"> -\-> -->
-				<!-- 		<\!-- 		<div class="box"> -\-> -->
-				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
-				<!-- 		<\!-- 				Dark Matter Halos -\-> -->
-				<!-- 		<\!-- 			</div> -\-> -->
-				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldhalo.png" height="100"/> -\-> -->
-				<!-- 		<\!-- 		</div> -\-> -->
-
-				<!-- 		<\!-- 	</div> -\-> -->
-				<!-- 		<\!-- </div> -\-> -->
-
-				<!-- 		<\!-- <br><br> -\-> -->
-				<!-- 		<\!-- <div class="container fragment"> -\-> -->
-				<!-- 		<\!-- 	<\\!-- <div class="col"> <h3> 3 </h3> </div> -\\-> -\-> -->
-				<!-- 		<\!-- 	<div class="col"> -\-> -->
-				<!-- 		<\!-- 		<div class="box"> -\-> -->
-				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
-				<!-- 		<\!-- 				Dark Matter Halos -\-> -->
-				<!-- 		<\!-- 			</div> -\-> -->
-				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldhalo.png" height="100"/> -\-> -->
-				<!-- 		<\!-- 		</div>								 -\-> -->
-				<!-- 		<\!-- 	</div> -\-> -->
-				<!-- 		<\!-- 	<div class="col">  <br> <br>$\Longrightarrow$ <br> Semi analytic approaches <br> Distribution Functions</div> -\-> -->
-				<!-- 		<\!-- 	<div class="col"> -\-> -->
-				<!-- 		<\!-- 		<div class="box"> -\-> -->
-				<!-- 		<\!-- 			<div class="box-title"> -\-> -->
-				<!-- 		<\!-- 				Galaxies -\-> -->
-				<!-- 		<\!-- 			</div> -\-> -->
-				<!-- 		<\!-- 			<img class="plain" data-src="assets/fieldgal.png" height="100"/> -\-> -->
-				<!-- 		<\!-- 		</div> -\-> -->
-
-				<!-- 		<\!-- 	</div> -\-> -->
-				<!-- 		<\!-- </div> -\-> -->
-
-				<!-- 		<div class="container"> -->
-				<!-- 			<div class='col'> -->
-				<!-- 				<img data-src="assets/fieldinit.png" class="plain" style="height:300px;"/> -->
-				<!-- 				<b class="alert"> Linear Field </b> -->
-				<!-- 			</div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='2'> -->
-				<!-- 				<img data-src="assets/fieldfin.png" class="plain " style="height:300px;"/> -->
-				<!-- 				<b class="alert"> Final Dark Matter </b> -->
-				<!-- 			</div> -->
-				<!-- 			<hr style="width: 1px; height: 400px; background: white; border: none;" /> -->
-				<!-- 			<div class='col fragment' data-fragment-index='3'> -->
-				<!-- 				<img data-src="assets/fieldhalo.png" class="plain " style="height:300px;"/> -->
-				<!-- 				<b class="alert"> Dark Matter Halos </b> -->
-				<!-- 			</div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='4'> -->
-				<!-- 				<img data-src="assets/fieldgal.png" class="plain " style="height:300px;"/> -->
-				<!-- 				<b class="alert"> Galaxies </b> -->
-				<!-- 			</div> -->
-				<!-- 		</div> -->
-				<!-- 		<div class="container" style="position:relative; width:1000px; height:50px; margin:0 auto;"> -->
-				<!-- 			<div class='col fragment'  data-fragment-index='2'> <font size="10"> $\longrightarrow$ </font> <br> N-body simulations </div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='3'>  <font size="10"> $\longrightarrow$ </font> <br> Group Finding <br> algorithms </div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='4'>  <font size="10"> $\longrightarrow$ </font> <br> Semi-analytic &amp <br> distribution models </div> -->
-				<!-- 		<\!-- 		<div class='fragment' data-fragment-index='2'> N-body simulations <div> -\-> -->
-				<!-- 		<\!-- <div class='fragment' data-fragment-index='3'> Group Finding algorithms <div> -\-> -->
-				<!-- 		<\!-- <div class='fragment' data-fragment-index='4'> Semi-analytic models <div> -\-> -->
-				<!-- 		</div> -->
-				<!-- 	</section> -->
-
-
-				<!--         <\!-------------------------------------------------------------------------------\-> -->
-
-                                <!--         <section> -->
-                                <!--                 <h3  class='slide-title'>Example: forward modeling for galaxy clustering</h3> -->
-				<!-- 		<div class="header-right"> -->
-				<!-- 			<font color="orange"> Traditional Analysis<br> -->
-				<!-- 			$\rightarrow$ Forward Modeling </font> <br> -->
-				<!-- 			Field-level Inference<br> -->
-				<!-- 			Simulation-based Inference -->
-				<!-- 		</div> -->
-                                                                                                
-                                <!--                 <br> -->
-				<!-- 		$x \sim  f(\Lambda)$ <br> -->
-				<!-- 		<div style="font-size:smaller" > data $\sim$ forward model (cosmology) </div> -->
-
-				<!-- 		<div class="container" style="font-size:smaller"> -->
-                                <!--                         <div class='col fragment' data-fragment-index="1" > -->
-				<!-- 				<br> -->
-				<!-- 				<br> -->
-                                <!--                                 $\Lambda$ -->
-                                <!--                                 <br> -->
-				<!-- 				<b class="alert"> Cosmology </b> -->
-				<!-- 				<div style="font-size:30px"> + </div> -->
-				<!-- 				<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/> -->
-				<!-- 				<b class="alert" style="position:relative; top:-50px; ;"> Initial modes <br> $z \sim \mathcal{N}(0, 1)$</b> -->
-				<!-- 			</div> -->
-
-				<!-- 			<div class='col fragment' data-fragment-index='2'> -->
-				<!-- 				<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/> -->
-                                <!--                                 <br> -->
-				<!-- 				<b class="alert"> Initial (Linear) <br>Dark Matter </b> -->
-				<!-- 			</div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='3'> -->
-				<!-- 				<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/> -->
-				<!-- 				<br> -->
-                                <!--                                 <b class="alert"> Final (Evolved) <br> Dark Matter </b> -->
-				<!-- 			</div> -->
-				<!-- 			<\!-- <div class='col fragment' data-fragment-index='4'> -\-> -->
-				<!-- 			<\!-- 	<img data-src="assets/fieldhalo.png" class="plain " style="height:200px;"/> -\-> -->
-				<!-- 			<\!-- 	<br> -\-> -->
-                                <!--                         <\!--         <b class="alert"> Dark Matter <br> Halos </b> -\-> -->
-				<!-- 			<\!-- </div> -\-> -->
-				<!-- 			<div class='col fragment' data-fragment-index='5'> -->
-				<!-- 				<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/> -->
-                                <!--                                 <br> -->
-                                <!--                                 <b class="alert"> Galaxies <br> (Tracers) </b> -->
-				<!-- 			</div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='6'> -->
-                                <!--                                 $x = f(\Lambda)$ -->
-				<!-- 				<br> -->
-                                <!--                                 <br> -->
-                                <!--                                 <b class="alert"> Data </b> -->
-				<!-- 			</div> -->
-                                                        
-				<!-- 		</div> -->
-                                                
-				<!-- 		<img class="plain fragment" data-fragment-index="0" style="position:absolute; top:90px; right:20px; width:300px;" data-src="assets/pk_eqn3.png" /> -->
-						
-				<!-- 		<div class="container" style="position:absolute; top:325px; width:1100px; height:50px; left:90px; font-size:35px"> -->
-				<!-- 			<div class='col fragment' data-fragment-index='2'>  $\rightarrow$ </div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='3'>  $\rightarrow$ </div> -->
-				<!-- 			<\!-- <div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -\-> -->
-				<!-- 			<div class='col fragment' data-fragment-index='5'>  $\rightarrow$ </div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='6'>  $\rightarrow$ </div> -->
-				<!-- 		</div> -->
-                                                                                                
-				<!-- 		<div class="container" style="position:relative; top:20px; width:1100px; height:50px; margin:0 auto; font-size:17px"> -->
-				<!-- 			<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body/<br>PM simulations) <br> ($\mathbf{\Lambda}$) </div> -->
-				<!-- 			<\!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -\-> -->
-				<!-- 			<div class='col fragment' data-fragment-index='5'>  Halo finding + <br>Halo distribution/<br> Semi-analytic models <br> ($\mathbf{\theta}$)  </div> -->
-				<!-- 			<div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -->
-				<!-- 		</div> -->
-                                                                                                
-                                                
-				<!--         </section> -->
-
-                                        
-                                <!--         <\!-------------------------------------------------------------------------------\-> -->
-
-
-                                        
-				<!-- </section> -->
-                                                
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
+				
 				<section>
-					<div style="font-size:32px">In addition to inferring a handful of cosmology parameters, <br>
-						we now also wish to estimate millions of latent parameters.<br>
-						<div class="fragment"> Why?</div>
-						<br>
-						<div class="container fragment" style="margin:auto; width:800px; font-size:24px">
-							<div class="col">
-								<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:160px"> <br>1.<br>Optimal<br>analysis<br><br> </div></div>
-							<div class="col">
-								<div class="boxonly alert" style="border-radius: 100px; width:160px">  <br>2.<br>Joint<br>analysis<br><br> </div> </div>
-							<div class="col">
-								<div class="boxonly alert" style="border-radius: 100px; width:160px; ">  <br>3.<br> New science<br>cases<br><br> </div>
-							</div>
-						</div>
-
-						<br>
-						<div class="fragment" style="font-size:32px"> What do we need to enable field level inference?</div>
-						<br>
-						<div class="container fragment" style="font-size:24px; width:800px; margin:auto">
-							<div class="col">
-								<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:220px"> <br>1.<br> Differentiable<br>Simulations<br><br> </div></div>
-							<div class="col">
-								<div class="boxonly alert" style="border-radius: 100px; width:220px"> <br>2. <br>High dimensional<br>inference<br><br> </div> </div>
-							<!-- <div class="col"> -->
-							<!-- 	<div class="boxonly alert" style="border-radius: 100px; width:220px; "> <br>3. Data<br>likelihood<br><br> </div> -->
-							<!-- </div> -->
-						</div>
-
-
+					<br>
+					<div class="" style="font-size:32px"> How do we infer the initial density field at all points in the Universe, <br>
+						which can be millions of unknown parmaters?
 					</div>
+					<br>
+					<div class="container fragment" style="font-size:24px; width:800px; margin:auto">
+						<div class="col">
+							<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:220px"> <br>1.<br> Differentiable<br>Simulations<br><br> </div></div>
+						<div class="col">
+							<div class="boxonly alert" style="border-radius: 100px; width:220px"> <br>2. <br>High dimensional<br>inference<br><br> </div> </div>
+						<!-- <div class="col"> -->
+						<!-- 	<div class="boxonly alert" style="border-radius: 100px; width:220px; "> <br>3. Data<br>likelihood<br><br> </div> -->
+						<!-- </div> -->
+					</div>
+					
 				</section>
 
                                 <!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
 					<section>
-						<h3 class='slide-title'> #1. Why differentiable simulations?</h3>
+						<h3 class='slide-title'> Why differentiable simulations?</h3>
 
                                                 
 						<br>
@@ -850,7 +645,7 @@
 								</div>
 								<div class="col" style="flex: 0 0 21em; text-align:center">
                                                                         <div class="fragment " data-fragment-index="2" style="position:relative; left:10px ">
-										$g_z = \frac{\partial\, p(x| z, \Lambda)}{\partial\, z},\, g_{\Lambda} = \frac{\partial\, p(x | z, \Lambda)}{\partial\, \Lambda}$
+										$$g_z = \frac{\partial\, p(x| z, \Lambda)}{\partial\, z},\, g_{\Lambda} = \frac{\partial\, p(x | z, \Lambda)}{\partial\, \Lambda}$$
 										<br> 
 										<br>
 									</div>
@@ -865,9 +660,10 @@
 					<!-------------------------------------------------------------------------------->
 
 					<section>
-					        <h3 class='slide-title'>what are cosmological simualations?</h3>
+					        <h3 class='slide-title'>Opening up the cosmological simulations</h3>
                                                 
-					        <b>Fast Particle-Mesh scheme</b>: approximate gravitational forces by estimating densities on a grid.
+						Evolving dark-matter particles under gravity. <br>
+					        <b>Particle-Mesh simulations</b>: approximate gravitational forces by estimating densities on a grid.
                                                 
 					        <div class='container'>
 						        <div class='col'>
@@ -876,18 +672,19 @@
 									        <br>
 									        <br>
 									        <ul>
-										        <li class="fragment" data-fragment-index="1"> Estimate the density of particles on a mesh<br>
-											        => compute gravitational forces by FFT
+										        <li class="fragment" data-fragment-index="1"> Estimate the density of particles on a mesh
 										        </li>
+											<br>
                                                                                         
-										        <br>
-                                                                                        
-										<li class="fragment" data-fragment-index="2"> Interpolate forces at particle positions
-										</li>
-                                                                                
-										<br>
-                                                                                
-										        <li class="fragment" data-fragment-index="3"> Update particle velocity and positions, and iterate
+										        <li class="fragment" data-fragment-index="2"> Compute gravitational forces by FFT
+										        </li>
+											<br>
+											
+											<li class="fragment" data-fragment-index="3"> Interpolate forces at particle positions
+											</li>
+											<br>
+											
+										        <li class="fragment" data-fragment-index="4"> Update particle velocity and positions, and iterate
 										        </li>
 									        </ul>
 								        </li>
@@ -904,15 +701,16 @@
 							        <div style="position:relative; width:550px; height:550px; margin:0 auto;">
 								        <img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="0" />
 								        <img class="fragment current-visible plain" data-src="assets/particle_density_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="1" />
-								        <img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="2" />
-								        <img class="fragment  plain" data-src="assets/particle_positions_1.png" style="position:absolute;top:0;left:0;" data-fragment-index="3" />
+								        <img class="fragment current-visible plain" data-src="assets/particle_density_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="2" />
+								        <img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="3" />
+								        <img class="fragment  plain" data-src="assets/particle_positions_1.png" style="position:absolute;top:0;left:0;" data-fragment-index="4" />
                                                                         
 							        </div>
                                                                 
 						        </div>
 					        </div>
                                                 
-					        <div class="fragment"> $\Longrightarrow$ Only a series of FFTs and interpolations.</div>
+					        <div class="fragment" style="position:relative; top:-50px;"> $\Longrightarrow$ Only a series of FFTs and interpolations.</div>
 				        </section>
                                         
                                         <!-------------------------------------------------------------------------------->
@@ -1049,7 +847,6 @@
 								<b> Bottleneck </b>: Memory limited as every snapshot of the simulation is saved to estimate the gradients.
 								<br>
 								<br>
-								<br>
 								
 								<div class="box fragment" data-fragment-index="1" style="">
 									<div class="box-title", style="height:35px">
@@ -1069,6 +866,9 @@
 								</div>
 								
 								<br>
+								<img  class="plain fragment current-visible" data-fragment-index="1" width="400px" style="position:absolute; top:430px; left:100px "
+								      data-src="assets/adjoint.png" />
+
                                                                 <div class="plain  slide-text fragment" data-fragment-index="2" style=""> $\rightarrow$ GPU accelerated simulations
                                                                         <br>
                                                                         <br>
