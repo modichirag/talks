@@ -13,3 +13,14 @@ To create a new presentation, the easy steps are -
 - do git submodule update --init in the presentation folder and its reveal.js submodule
 - npm install
 - cross fingers, "npm start" to run locally and commit 
+
+It is possible npm install fails with ERR code 1
+This might happen due to old package.json and new version of npm
+To resolve this error, you need to upgrade the dependency module that causes the error.
+Then follow the following steps:
+# check your package.json for dependency updates
+npx npm-check-updates
+# 👇 write newer version in package.json
+npx npm-check-updates -u
+# 👇 install the latest version
+npm install
