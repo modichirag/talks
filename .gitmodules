@@ -40,3 +40,6 @@
 [submodule "MLX_May2023/reveal.js"]
 	path = MLX_May2023/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "MIAPbP_June2023/reveal.js"]
+	path = MIAPbP_June2023/reveal.js
+	url = https://github.com/modichirag/reveal.js

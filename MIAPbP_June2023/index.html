@@ -1,0 +1,1827 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Forward Modeling approaches for Cosmological Analysis</title>
+
+		<meta name="description" content="Yale Presentation">
+		<meta name="author" content="Chirag Modi">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<link rel="stylesheet" href="reveal.js/css/reset.css">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/darkenergy.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
+		
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<!-- <section  data-background-image="assets/lsst_stills_0009_crop.jpg" > -->
+				<!-- <section  data-background-image="assets/Mayall.jpg" > -->
+				<!-- <section  data-background-image="assets/backgroundweb1.jpg" data-background-size="2500px" data-background-color="black" data-background-position='right'> -->
+				<!-- <section  data-background-image="assets/backgroundtrail2.jpg" data-background-size="cover" data-background-color="black" > -->
+				<section  data-background-image="" data-background-size="cover" data-background-color="black" >
+
+						<div class="container">
+							<div class="title" style="margin:auto; text-align:center; border-radius: 20px; background-color:rgba(0, 0, 0, 0.4);">
+								<h2> Field-level inference with differentiable simulations for cosmological analysis</h2>
+								<h4> Differentiable and Probabilistic Programming for Fundamental Physics <br>June 2023, MIAPbP, Garching</h4>
+							</div>
+						</div>
+
+						<hr>
+						<div style="border-radius: 20px; background-color:rgba(0, 0, 0, 0);">
+							<div class="container" >
+								<div class="col">
+									<div align="left" style="margin-left: 20px;">
+										<br>
+										<h3>Chirag Modi</h3>
+										<p>Center for Computational Astrophysics<br>Center for Computational Mathematics<br>Flatiron Institute</p>
+										
+										<br>
+										
+									</div>
+								</div>
+								<div class="col">
+									<img style="position:relative; left:60px" src="assets/fl_logo_transparent.png" class="plain" height="100"></img>
+									<!-- <img src="assets/logo_bccp.png" class="plain" height="100"></img> -->
+									<br>
+									<br>
+									<!-- <img src="assets/bids-logo2.png" class="plain" height="150"></img>
+									     <img src="assets/desc-logo-inv.png" class="plain" height="200"></img> -->
+								</div>
+							</div>
+						</div>
+				</section>
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<!-- <section data-background-image="assets/WMAP_timeline.jpg" data-background-size="1100px" data-background-color="black"> -->
+				<!-- 	<\!-- <h2 class='slide-title' style="position:absolute;top:0;"> the $\Lambda$CDM view of the Universe </h3> -\-> -->
+				<!-- 	<h2 class='slide-title' style="position:relative;top:0;"> the $\Lambda$CDM view of the Universe </h2> -->
+				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
+
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+                                <section>
+                                                
+					<h3  class='slide-title'>Takeaways of this talk</h3>
+					
+                                        <br>
+					3 lessons from working on field-level inference in cosmology
+					<br>
+					<br>
+					<br>
+					
+                                        <div class="slide-text" >
+                                                
+						<ol> 
+							<li class="plain " data-fragment-index="1" > Beyond conventional or optimal analysis
+								<ul> $\rightarrow$ using inferred latent parameters for robust optimal analysis, and new ways of cosmological analysis </ul>
+							</li>
+							<br>
+							<li class="plain " data-fragment-index="2" > Assisting automatic differentiation
+                                                                <ul> $\rightarrow$ custom gradients for some operations can be better than auto-diff gradients </ul>
+							</li>
+							<br>
+							<li class="plain " data-fragment-index="2" > High dimensional inference is hard
+                                                                <ul> $\rightarrow$ differentiable programming might not be the end of the journey
+								</ul>
+							</li>
+							<br>
+						</ol>
+					</div>
+					
+					</section>
+
+				<!-------------------------------------------------------------------------------->
+	                        <!-------------------------------------------------------------------------------->
+				<section>
+					<div style="font-size:30px">Setting the stage:<br>
+						<br>
+						What is field level inference, and why?
+						<br>
+						<br>
+					</div>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+	                        <!-------------------------------------------------------------------------------->
+				<section data-background-color="black">
+
+					<h3 class='slide-title' style="position:absolute;top:0;"> The story of our Universe </h3>
+					<div class="header-right">
+						<font color="orange"> $\rightarrow$ Novel analysis with latents </font><br>
+						Custom gradients for auto-diff  <br>
+						High dimensional inference<br>
+					</div>
+					<div class="container">
+
+						<div class="col" style="flex: 0 0 33em;">
+							<img class="plain" src="assets/WMAP_timeline.jpg" width="800px"/>
+						</div>
+						
+						<div class="plain  fragment " data-fragment-index="1" style="position:absolute; top:150px; right:30px; height:400px; text-align:right; font-size:20px">
+							<img class="plain" data-src="assets/sdss_pie2.jpg" />
+							<br>
+							Credits: M. Blanton and SDSS
+						</div>
+						<div class="col" style="flex: 0 0 20em;">
+
+							<br>
+							
+							<!-- <div class="fragment" data-fragment-index="2" style=""> -->
+ 							<!--         Standard model:<b class="alert"> $\Lambda$-CDM </b> <br>   -->
+							<!--         $\Lambda$: cosmological constant dark energy <br> -->
+                                                        <!--         CDM: Cold dark matter -->
+
+							<!-- </div> -->
+							<!-- <br> -->
+							<!-- <br> -->
+
+							<!-- <div class="block fragment" data-fragment-index="2" > -->
+							<!-- 	<div class="block-title"> -->
+							<!-- 		Open questions -->
+ 							<!-- 	</div> -->
+							<!-- 	<div class="block-content" style="font-size:smaller"> -->
+							<!-- 		<ul> -->
+							<!-- 			<li>What is dark energy?</li> -->
+							<!-- 			<li>What is dark matter made of?</li> -->
+							<!-- 			<li>How did inflation happen?</li> -->
+							<!-- 			<li>What are the masses of neutrinos?</li> -->
+							<!-- 			<li>Is GR the theory of gravity?</li> -->
+							<!-- 			<li>...</li> -->
+							<!-- 		</ul> -->
+							<!-- 		<br> -->
+							<!-- 	</div> -->
+								
+							<!-- </div> -->
+							
+						</div>
+					</div>
+				</section>
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+	                        <!-------------------------------------------------------------------------------->
+
+				<section>
+                                        <section>
+                                                
+						<h3  class='slide-title'>How do we do galaxy clustering analysis?</h3>
+						<div class="header-right">
+							<font color="orange"> $\rightarrow$ Novel analysis with latents </font><br>
+							Custom gradients for auto-diff  <br>
+							High dimensional inference<br>
+						</div>
+						
+                                                <div class="plain " data-fragment-index="1"> <b> Data</b>: a catalog of galaxies with their positions. </div>
+
+                                                <br>
+                                                <br>
+                                                <div class='container'>
+								<div class="col" style="flex:0 0 25em; margin-left:20px">
+
+                                                                        <ol> 
+									        <li class="plain fragment" data-fragment-index="1" > Compute <b class="alert"> summary statistics </b> of choice
+                                                                                        <ul style="font-size:smaller"> $\rightarrow$ generally 2-point correlation function or power spectrum</ul>
+                                                                                </li>
+										<div class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:300px; left:200px; height:150px">
+											$$\xi_2(|x_1-x_2|) = \langle \delta(x_1) \delta(x_2) \rangle$$ 
+											<img class="plain " data-fragment-index="1" style="position:relative; left:50px" data-src="assets/2ptcorrelation.png" />
+										</div>
+										<br>
+                                                                                <li class="plain fragment" data-fragment-index="2" > Develop <b class="alert"> theoretical predictions </b> for these summary statistics
+                                                                                        <ul style="font-size:smaller"> $\rightarrow$ generally based on perturbation theory </ul>
+                                                                                </li>
+                                                                                <br>
+                                                                                <li class="plain fragment" data-fragment-index="3" > Construct an  <b class="alert">analytic likelihood</b> model 
+                                                                                        <ul style="font-size:smaller"> $\rightarrow$ generally assumed to be Gaussian </ul>
+                                                                                </li>
+                                                                                <br>
+                                                                                <li class="plain fragment" data-fragment-index="4"> Profit: run <b class="alert"> MCMC </b> to infer posterior on model parameters,
+											<span style="font-size:smaller"> $\,p(\theta | x ) \propto p(x | \theta)  \ p(\theta)$ </span>
+                                                                                        <!-- <div style="position:absolute; left:100px" > $p(\theta | x ) \propto \underbrace{p(x | \theta)}_{\mathrm{likelihood}}  \  \underbrace{p(\theta)}_{\mathrm{prior}}$ -->
+											<!-- </div> -->
+											<!-- <div style="position:absolute; left:100px" > $p(\theta | x ) \propto p(x | \theta)  \ p(\theta)$ -->
+											<!-- </div> -->
+
+                                                                                </li>
+                                                                        </ol>
+									<br>
+									<br>
+									<div class="plain fragment" data-fragment-index="5" style="">
+										<!-- <div class="alert "  > Moving ahead, each of these steps is a limiting factor! </div> -->
+										<em  > Moving ahead, each of these steps is a limiting factor! </em>
+									</div>
+
+								</div>
+						
+								<div class="col">
+									 <!-- <img class="plain  fragment fade-out" data-fragment-index="1" style="position:absolute; top:150px; left:180px;;" data-src="assets/desi.gif" /> -->
+									 <img class="plain  fragment fade-out" data-fragment-index="1" style="position:absolute; top:150px; left:390px; height:500px" data-src="assets/sdss_pie2.jpg" />
+									 <!-- <img class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:200px; right:100px; height:300px;" data-src="assets/boss_dr12_data.png" /> -->
+									 <div class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:200px; right:100px; height:300px; font-size:smaller">
+										 <img  data-src="assets/boss_dr12_fit_corr.png" />
+										 <br>
+										 <em> Measurement of 2-pt correlation function from BOSS survey </em>
+									 </div>
+									 
+									 <div class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:200px; right:100px; width:500px; font-size:smaller">
+										 <img data-src="assets/pk_eqn3.png" />
+										 <br>
+										 <em> An example of perturbation theory integrals </em>
+
+									 </div>
+									 <div class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; top:200px; right:100px; width:500px; font-size:smaller;">
+										 <img src="assets/pk_likelihood.png" />
+										 <br>
+										 <em> Gaussian likelihood function for power spectrum </em>
+									 </div>
+									 <div class="plain fragment" data-fragment-index="4" style="position:absolute; top:150px; right:120px; height:450px;; font-size:smaller;">
+										 <img src="assets/misha_constraints.png" />
+										 <br>
+										 <em style="position:relative; top:-10px"> Example constraints from BOSS data analysis </em>
+									 </div>
+									 
+									 <div class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; bottom:10px; right:20px; font-size: 20px"> Credit: M. Blanton and the Sloan Digital Sky Survey.</div>
+									 <div class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; bottom:0px; right:20px; font-size: 20px; text-align:right">
+										 Ross et al. (2016)<br>
+										 Beutler et al. (including <b><u> CM</b></u>) (2016)</div>
+									 <div class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; bottom:0px; right:20px; font-size: 20px; text-align:right">
+										 Ross et al. (2016)<br>
+										 Beutler et al. (including <b><u> CM</b></u>) (2016)</div>
+									 <div class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; bottom:0px; right:20px; font-size: 20px">
+										 Kobayashi, Nishimichi et al. (2022)</div>
+									 <div class="plain fragment" data-fragment-index="4" style="position:absolute; bottom:-10px; right:20px; font-size: 20px">
+										 Ivanov, Simonovic, Zaldarriaga (2020)</div>
+								</div>
+						</div>
+					</section>
+
+					<!-------------------------------------------------------------------------------->
+
+                                        <section>
+                                                
+						<h3  class='slide-title'>Limitations of current analyses </h3>
+						<div class="header-right">
+							<font color="orange"> $\rightarrow$ Novel analysis with latents </font><br>
+							Custom gradients for auto-diff  <br>
+							High dimensional inference<br>
+						</div>
+
+                                                <br>
+								
+						<div class="slide-text">
+							<ol> 
+								<li>
+									We need to choose a <b class="alert"> summary </b> statistic.
+									<br>
+									<br>
+									<ul>
+										<li class="plain" data-fragment-index="0"> Power spectrum (and 2-point correlation function) is <em> no longer </em>  sufficient.
+										</li>
+										<br>
+										<li class="plain" data-fragment-index="2"> Other summary statistics extract more information from the non-Gaussian data. </li>
+										<br>
+										<!-- <li class="fragment" data-fragment-index="5"> But which of these... </li> -->
+									</ul>		
+								</li>
+								<li class="fragment" data-fragment-index="2">
+									We need <b class="alert"> theoretical </b>  models of the summary statistics.
+								</li>
+								
+							</ol>
+                                                        <div class="plain fragment" data-fragment-index="2" style="position:absolute; top:350px; left:50px; width:600px; font-size:smaller; text-align:center" >
+								<img  style=" width:400px;" data-src="assets/ptfit_shifan.png" />
+								<br>
+								<em> Breakdown of perturbation theory on small scales (k>0.2 h/Mpc) </em>
+						</div>
+
+                                                        
+						</div>
+						
+                                                <!-- <span class= "fragment fade-in" data-fragment-index="0" > -->
+                                                <!--         <span class= "fragment fade-out" data-fragment-index="2" > -->
+                                                <!--                 <img class="plain" style="position:absolute; top:260px; left:170px; width:320px; ;" data-src="assets/ngfield0.png" /> -->
+                                                <!--                 <img class="plain" style="position:absolute; top:260px; left:450px; width:320px;" data-src="assets/gfield0.png" /> -->
+                                                <!--                 <\!-- <img class="plain" style="position:absolute; top:260px; left:680px; width:320px;" data-src="assets/ngfield0_pk.png" /> -\-> -->
+                                                <!--                 <img class="plain" style="position:absolute; top:290px; left:800px; width:230px;" data-src="assets/ngfield0_pk_white.png" /> -->
+                                                                
+                                                <!--                 <\!-- <span class= "fragment fade-in" data-fragment-index="2" > -\-> -->
+                                                                        
+                                                <!--                 <\!--         <img class="plain" style="position:absolute; top:480px; left:150px; width:320px; ;" data-src="assets/ngfield1.png" /> -\-> -->
+                                                <!--                 <\!--         <img class="plain" style="position:absolute; top:480px; left:400px; width:320px; ;" data-src="assets/gfield1.png" /> -\-> -->
+                                                <!--                 <\!--         <img class="plain" style="position:absolute; top:480px; left:680px; width:320px; ;" data-src="assets/ngfield1_pk.png" /> -\-> -->
+                                                <!--                 <\!-- </span> -\-> -->
+                                                <!--         </span> -->
+                                                <!-- </span> -->
+
+                                                <div class="plain" data-fragment-index="1" style="position:absolute; top:310px; right:100px; width:400px">
+							<div class="block-title" , style="text-align:center">
+								But which of these statistics?
+							</div>
+							<div class="block-content", style="text-align:center; font-size:smaller">
+                                                                three point function <br>
+                                                                bispectrum <br>
+                                                                trispectrum <br>
+                                                                peak counts <br>
+                                                                k-nearest neighbor <br>
+                                                                marked power spectrum <br>
+                                                                density splits <br>
+                                                                wavelet coefficients <br>
+                                                                Minkowski functionals <br>
+                                                                ...
+							</div>
+                                                        
+						</div>
+                                                
+					</section>
+
+                                </section>
+                                        
+
+			        <!-------------------------------------------------------------------------------->
+			        <!-------------------------------------------------------------------------------->
+                                <section class="" data-background="">
+				        <div style="font-size:40px">How can we overcome these limitations in the future?</div>
+			        </section>
+                            
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+                                
+                                <section>
+                                        <section>
+                                                
+						<h3 class='slide-title'> Field-level Inference with forward modeling</h3>
+						<div class="header-right">
+							<font color="orange"> $\rightarrow$ Novel analysis with latents </font><br>
+							Custom gradients for auto-diff  <br>
+							High dimensional inference<br>
+						</div>
+                                                
+                                                <br>
+                                                <div class="">
+							<div class="boxonly" style="width:1100px; padding:10px">
+                                                                Use <b class="alert" >computational simulations</b> to forward-model the field-level data <b class="alert" >without any compression.</b> <br>
+								<div class="fragment" data-fragment-index="2">
+									$\rightarrow$ Simultaneously infer the initial conditions of the Universe and the cosmological parameters.
+								</div>
+                                                        </div>
+
+                                                        <br>
+                                                        <div class="plain fragment",  data-fragment-index="3", style=";">
+								$$ \log p(z | x) \propto  \log p(x| f(z)) \ + \log p(z) $$
+								E.g., infer the initial conditions ($z$) by maximizing the posterior: $\hat{z} =  \max_z \log p(z | x)$
+                                                        </div>
+							<br>
+							
+                                                        <div class="plain fragment fade-in" data-fragment-index="1" style="position:absolute; left:50px; top:300px; width:900px">
+								<span class="plain fragment fade-out" data-fragment-index="3">
+									<!-- <img class="plain" style="position:absolute; left:-300px; top:250px" data-src="assets/fwdmodel.png" style='height:500px;' /> -->
+									<div style="text-align:center; font-size:smaller"> Computational forward-models in cosmology </div>
+									<img class="plain"  data-src="assets/fwdmodel3.png"  />
+								</span>
+							</div>
+                                                </div>
+						
+                                                <div class="block fragment fade-out" data-fragment-index="1" style="position:absolute; bottom:30px; left:100px; width:400px">
+							<div class="block-title" , style="text-align:center">
+								But which summary statistic?
+							</div>
+							<div class="block-content", style="text-align:center; font-size:smaller">
+                                                                bispectrum <br>
+                                                                three point function <br>
+                                                                trispectrum <br>
+                                                                reconstructed power spectrum <br>
+                                                                peak counts <br>
+                                                                k-nearest neighbor <br>
+                                                                marked power spectrum <br>
+                                                                density splits <br>
+                                                                wavelet coefficients <br>
+                                                                Minkowski functionals <br>
+                                                                ...
+							</div>
+                                                        
+						</div>
+                                                
+
+                                                <div class="container">
+                                                                <div class="col fragment" data-fragment-index="3">
+                                                                        <img class="plain" data-src="assets/init_field.png" style='height:250px;' />
+                                                                        <br> True initial conditions <br> $z_0$
+                                                                </div>
+
+                                                                <div class="col fragment" data-fragment-index="3">
+                                                                        <img class="plain" data-src="assets/reconim_init.gif" style='height:250px;' />
+                                                                        <br> Reconstructed initial conditions $z$
+                                                                </div>
+
+                                                                <div class="col fragment" data-fragment-index="3">
+                                                                        <img class="plain" data-src="assets/reconim_fin.gif" style='height:250px;' />
+                                                                        <br> Reconstructed data <br> $x' = f(z)$
+                                                                </div>
+
+                                                                <div class="col " data-fragment-index="1">
+                                                                        <img class="plain" data-src="assets/fin_field.png" style='height:250px;' />
+                                                                        <br> Data <br> $x = f(z_0)$
+                                                                </div>
+                                                        <br>
+                                                </div>
+                                        </section>
+                                </section>
+				
+				
+				
+                                                
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+					<div style="font-size:40px">1.<br>In addition to inferring a handful of cosmology parameters, <br>
+						we now also wish to estimate millions of latent parameters.<br>
+						<div class="plain"> Why?</div>
+						<br>
+						<br>
+						<div class="container " style="margin:auto; width:800px; font-size:24px">
+							<div class="col">
+								<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:200px"> <br>1.<br>Optimal<br>analysis<br>(implicit vs explicit)<br><br> </div></div>
+							<div class="col">
+								<div class="boxonly alert" style="border-radius: 100px; width:200px; ">  <br>2.<br> New ways of analysis<br>(information<br>gap)<br><br> </div>
+							</div>
+						</div>
+
+					</div>
+				</section>
+
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+
+
+
+                                        <section>
+                                                
+                                                <h3 class='slide-title'> 1. (Robust) optimal inference </h3>
+						<div class="header-right">
+							<font color="orange"> $\rightarrow$ Novel analysis with latents </font><br>
+							Custom gradients for auto-diff  <br>
+							High dimensional inference<br>
+						</div>
+                                                
+                                                <br>
+						<!-- <div class="boxonly" style="width:600px; padding:10px"> -->
+						<!-- 	It is the  <b class="alert"> optimal </b>  approach to cosmological analysis -->
+						<!-- </div> -->
+						
+                                                <div class="container" style="margin:auto; ">
+
+							<div class="col" >
+								<ul>
+									<li class="plain " data-fragment-index="1"> Optimal approach to cosmological analysis<br>
+										<div style="font-size:smaller">
+											$\rightarrow$ no information is lost by compressing data into summary statistics.
+										</div>
+									</li>
+									<br>
+									<li class="fragment " data-fragment-index="2"> Implicit inference (LFI/SBI) vs Explicit inference<br>
+										<div class="fragment " data-fragment-index="3" style="font-size:smaller">
+											$\rightarrow$ Model misspecification! <br>
+										</div>
+										
+									</li>
+									<br>
+									<li class="fragment " data-fragment-index="4"> Latents give us a handle to identify model misspecification<br>
+										<div style="font-size:smaller">
+											$\rightarrow$ Reconstructed initial density field should be Gaussian <br>
+											$\rightarrow$ Looking for systematic residuals in reconstructed data <br>
+											$\rightarrow$ Posterior predictive checks with independent data observables <br>
+										</div>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="col" style="margin:auto; ">
+                                                                <img class="fragment fade-out"   data-fragment-index="3" style="position:absolute; top:100px; right:100px; width:300px"
+								     data-src="assets/field_level_prelim.png" />
+                                                                <img class="fragment plain"   data-fragment-index="3" style="position:absolute; top:100px; right:100px; width:500px"
+								     data-src="assets/sbi_halofinder_marginals.png" />
+								
+								<div class="plain " data-fragment-index="1" style="position:absolute; float:right; ; text-align:right; top:480px; right:60px; font-size: 20px; margin:0 auto">
+									<b><u>Modi</u></b> et al. (in preparation) <br>
+								</div>
+								
+							</div>
+
+</div>
+
+
+</section>
+
+                                        <!-------------------------------------------------------------------------------->
+                                        <!-------------------------------------------------------------------------------->
+                                        <section>
+                                                
+                                                <h3 class='slide-title'> 2. Novel analysis </h3>
+						<div class="header-right">
+							<font color="orange"> $\rightarrow$ Novel analysis with latents </font><br>
+							Custom gradients for auto-diff  <br>
+							High dimensional inference<br>
+						</div>
+						
+                                                <br>
+						<div class="boxonly" style="width:1000px; padding:10px">
+							Reconstruct  unobserved  fields to enable <b class="alert"> new analyses,</b> unique to field-level inference.
+						</div>
+						<br>
+
+                                                <div class="container" style="position:relative; top:-20px">
+							<div class="col"  style="flex: 0 0 32em;">
+
+                                                                <div class="slide-text", style="position:relative;">
+                                                                        <div class="plain fragment" data-fragment-index="1">
+                                                                               Case study: Neutral hydrogen (21-cm) surveys like HIRAX, PUMA
+                                                                        </div>
+
+                                                                        <ul>
+                                                                                <br>
+                                                                                <li class="fragment " data-fragment-index="2"> Bright foregrounds <br>
+                                                                                        <div style="font-size:smaller" >
+												$\rightarrow$ large scale modes perpendicular to the line of sight are lost<br>
+												$\rightarrow$ can loose 20-80% of the data in the foreground wedge
+											</div>
+                                                                                </li>
+                                                                                <br>
+										<li class="fragment " data-fragment-index="2"> Severely impacts our ability to probe high-redshift Universe <br>
+                                                                                        <div style="font-size:smaller" >
+												$\rightarrow$ No overlap with CMB-lensing and photometric surveys
+											</div>
+                                                                                </li>
+										<br>
+                                                                                <li class="fragment " data-fragment-index="3"> Field-level inference can recover lost modes <br>
+                                                                                        <div style="font-size:smaller" >
+												$\rightarrow$ match small scale data, recover initial conditions, forward model them <br>
+												$\rightarrow$ recover cross-correlation with other probes
+											</div>
+                                                                                </li>
+                                                                                <br>
+                                                                                <!-- <li class="fragment " data-fragment-index="4"> Evolve initial conditions to reconstruct lost modes -->
+										<!-- 	<br> -->
+										<!-- 	<div class="fragment " data-fragment-index="4" style="font-size:smaller"> -->
+                                                                                <!--                 $\rightarrow$ <b class="alert"> new science!</b> correlate with photometric surveys & CMB lensing -->
+                                                                                <!--                 <br> -->
+                                                                                <!--                 $\rightarrow$ explore high redshift Universe -->
+                                                                                <!--         </div> -->
+                                                                                        
+                                                                                <!-- </li> -->
+                                                                        </ul>
+                                                                        <br>
+                                                                        <br>
+                                                                        <br>
+                                                                </div>
+                                                                <div class="plain fragment" data-fragment-index="5" style="font-size:smaller; position:relative; top:-50px; left:20px">
+                                                                        Other e.g. initial density for primordial physics, dark matter for galaxy formation.
+                                                                </div>
+                                                                
+							
+							</div>
+							<div class="col" style="flex: 0 0 21em;">
+
+                                                                <div style="position:relative; width:500px; height:600px; margin:0 auto; right:10px; top:-100px">
+                                                                        <div class="fragment  plain" style="position:absolute; top:100px; left:0px; width:150px; font-size:smaller" data-fragment-index="1">
+										True<br>Distribution
+										<img class="plain" data-src="assets/21cmcorrupt_x.png" />
+									</div>
+                                                                        <div class="fragment  plain"  style="position:absolute; top:100px; left:175px; width:150px; font-size:smaller;" data-fragment-index="2">
+										Noisy<br>Data
+										<img class="  plain"  data-src="assets/21cmcorrupt_x2.png" />
+									</div>
+									
+                                                                        <div class="fragment  plain"  style="position:absolute; top:100px; left:350px;  width:150px; font-size:smaller" data-fragment-index="3 ">
+										Reconstructed Data
+										<img class="  plain"  data-src="assets/21cmcorrupt_x3.png"/>
+									</div>
+									<img class="fragment current-visible"  data-src="assets/21cmwedge.png" style="position:absolute;top:350px;left:00px;" data-fragment-index="2" />
+	                                                                <img class="plaint fragment" data-fragment-index="3" style="position:relative; width:300px; top:300px; text-align:center"
+								             data-src="assets/photocross-snr.png" />
+									
+                                                                        <div  class="fragment  plain"  data-fragment-index="1" style="position:absolute; float:right; right:0px; top:550px; font-size:20px; text-align:right">
+										<b><u>Modi</u></b>, White et al. (2019) <br>
+										<b><u>Modi</u></b>, Castorina et al. (2019) <br>
+										<b><u>Modi</u></b>, White et al. (2021) <br>
+									</div>
+							        </div>
+							</div>
+                                                </div>
+
+                                        </section>
+                                        
+
+				
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+					<div style="font-size:30px">Takeaway 1: <br>
+						<br>
+						Access to latent parameters (initial conditions of the Universe) can improve robustness of optimal analysis,
+						and completely novel science cases (information gap). 
+						<br>
+						<br>
+					</div>
+				</section>
+
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+                                <!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+					<section>
+					        <h3 class='slide-title'>Towards differentiable cosmological simulations</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							<font color="orange"> $\rightarrow$ Custom gradients for auto-diff  </font> <br>
+							High dimensional inference<br>
+						</div>
+
+						Evolving dark-matter particles under gravity. <br>
+					        <b class="alert">Particle-Mesh simulations</b>: approximate gravitational forces by estimating densities on a grid.
+                                                
+					        <div class='container'>
+						        <div class='col'>
+							        <ul>
+								        <li class="plain fade-in" data-fragment-index="0">The numerical scheme:
+									        <br>
+									        <br>
+									        <ul>
+										        <li class="plain" data-fragment-index="1"> Estimate the density of particles on a mesh
+										        </li>
+											<br>
+                                                                                        
+										        <li class="plain" data-fragment-index="2"> Compute gravitational forces by FFT
+										        </li>
+											<br>
+											
+											<li class="plain" data-fragment-index="3"> Interpolate forces at particle positions
+											</li>
+											<br>
+											
+										        <li class="plain" data-fragment-index="4"> Update particle velocity and positions, and iterate
+										        </li>
+									        </ul>
+								        </li>
+								        <br>
+                                                                        
+								        <li class='plain'> Fast and simple, at the cost of approximating short range interactions.
+								        </li>
+                                                                        
+							        </ul>
+						        </div>
+                                                        
+						        <div class='col'>
+                                                                
+							        <div style="position:relative; width:550px; height:550px; margin:0 auto;">
+								        <!-- <img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="0" /> -->
+								        <!-- <img class="fragment current-visible plain" data-src="assets/particle_density_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="1" /> -->
+								        <!-- <img class="fragment current-visible plain" data-src="assets/particle_density_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="2" /> -->
+								        <!-- <img class="fragment current-visible plain" data-src="assets/particle_positions_0.png" style="position:absolute;top:0;left:0;" data-fragment-index="3" /> -->
+								        <img class="plain" data-src="assets/particle_positions_1.png" style="position:absolute;top:0;left:0;" data-fragment-index="4" />
+                                                                        
+							        </div>
+                                                                
+						        </div>
+					        </div>
+                                                
+					        <div class="plain" style="position:relative; top:-50px;"> $\Longrightarrow$ Only a series of FFTs and interpolations.</div>
+				        </section>
+                                        
+                                        <!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+
+					<section>
+						<h3 class='slide-title'>Introducing <b class="alert"> FlowPM</b>: Particle-Mesh Simulations in TensorFlow</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							<font color="orange"> $\rightarrow$ Custom gradients for auto-diff  </font> <br>
+							High dimensional inference<br>
+						</div>
+
+						<br>
+						<br>
+						<div class='container'>
+							<div class='col slide-text' style="flex: 0 0 25em;">
+								
+								<ul>
+									<li class="ragment" data-fragment-index="2"> Access to
+										<ul>
+											<li> Automatic differentiation
+											</li>
+											<li> Access to SOTA inference algorithms
+											</li>
+											<li>  Seamless interfacing with deep-learning tools
+											</li>
+										</ul>
+                                                                                <br>
+									<div class="plain" data-fragment-index="3">
+										$\rightarrow$ Reconstructing the Universe in 10 lines
+									</div>
+									<div class="container">
+										<div class="col plain" data-fragment-index="3">
+											<img class="plain" data-src="assets/reconim_init.gif" style='height:120px;' />
+										</div>
+										
+										<div class="col plain" data-fragment-index="3">
+											<img class="plain" data-src="assets/reconim_fin.gif" style='height:120px;' />
+										</div>
+										
+										<div class="col plain " data-fragment-index="3">
+											<img class="plain" data-src="assets/fin_field.png" style='height:120px;' />
+										</div>
+										<br>
+									</div>
+									
+									</li>
+									<br>
+								
+							</div>
+							
+							<div class='col' style="flex: 0 0 28em;">
+
+								<div style="position:relative; text-align:center">
+								
+																	
+									<!-- <img  class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; top:0px; right:100px; width:500px" data-src="assets/pmwd_table_fastpm.png" /> -->
+									<!-- <img  class="plain  fragment fade-out" data-fragment-index="3" style="position:absolute; top:0px; right:100px; width:500px" data-src="assets/pmwd_table_flowpm.png" /> -->
+
+									<div class="plain" data-fragment-index="3" style="position:relative; top:-10px; left:-20px">
+									  <pre  ><code data-trim data-noescape style="height:80em;width:49em;">
+									  import tensorflow as tf
+									  import flowpm
+
+									  #Run simulation from variable initial conditions
+									  linear = tf.get_variable('linear', shape=(nc, nc, nc),
+												 initializer=tf.random_normal_initializer(), trainable=True)
+									  initial_conditions = flowpm.lpt_init(linear, name='icstate')
+									  final_state = flowpm.nbody(initial_conditions, stages, nc, name='fnstate')
+									  final_field = flowpm.cic_paint(tf.zeros_like(linear), final_state[0], boxsize=bs)
+
+									  #Likelihood term: ((data-model)/noise)^2
+									  residual = tf.multiply(tf.subtract(final_field, data), 1/sigma)
+									  neg_log_likelihood = tf.reduce_sum(tf.multiply(residual, residual))
+
+									  #Prior: (linear_modes^2 / linear_power_spectrum)
+									  lineark = flowpm.r2c3d(linear, norm=nc**3)
+									  neg_log_prior = tf.square(tf.cast(tf.abs(lineark), tf.float32))
+									  neg_log_prior = tf.reduce_sum(tf.multiply(neg_log_prior, 1/priorwt))j
+
+									  #Loss & optimize
+									  loss = tf.add(neg_log_likelihood, neg_log_prior, name='loss')
+									  optimizer = ScipyOptimizerInterface(loss, var_list=[linear], 'L-BFGS-B')
+									  with tf.Session() as session:
+									      optimizer.minimize(session)
+									      recon = session.run(linear)
+									  </code></pre>
+								</div>
+								<!-- <img  class="plain fragment current-visible" data-fragment-index="4" style="position:absolute; top:30px; left:25px" data-src="assets/flowpm_lptcompare.png"/> -->
+								<!-- <img  class="plain fragment" data-fragment-index="5" style="position:absolute; top:0px; left:150px" data-src="assets/mfpm_demo_1024.png" /> -->
+								<!-- <div  class="plain fragment" data-fragment-index="5" style="position:absolute; top:-10px; right:20px; font-size:20px"> Credits: F. Lanusse </div> -->
+								<div   style="position:absolute; top:410px; right:20px; font-size:20px; text-align:right">
+									Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
+									<span class="plain " data-fragment-index="1" >
+										<b> <u>Modi</u></b>, Lanusse, Seljak (2020) <br>
+										<a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a>
+									</span>
+								</div>
+								
+								</div>
+							</div>
+							
+						</div>
+
+					</section>
+
+
+                                        <!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+                                        
+					<section>
+						<h3 class='slide-title'> Advances in differentiable cosmological simulations </h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							<font color="orange"> $\rightarrow$ Custom gradients for auto-diff  </font> <br>
+							High dimensional inference<br>
+						</div>
+
+						<div class='container'>
+							<div class="col" style="flex: 0 0 25em; margin-left:20px">
+
+								<br>
+								<br>
+								<b> Bottleneck </b>: Memory limited as every snapshot of the simulation is saved to estimate the gradients.
+								<br>
+								<br>
+								
+								<div class="box fragment" data-fragment-index="1" style="">
+									<div class="box-title", style="height:35px">
+										<b class="alert"> $pmwd$</b><font color="white">: particle mesh with derivatives </font>
+									</div>
+									<div class="box-content" style="font-size:smaller">
+										<ul class="fragment" data-fragment-index="1">
+											<br>
+											<li > Exploit reversibility of leapfrog integration in adjoint gradient evaluation
+											</li>
+											<br>
+											<li  class="fragment" data-fragment-index="2"> Memory cost is <b class="alert"> independent </b>  of the time stepping
+											</li>
+											<br>
+										</ul>
+									</div>
+								</div>
+								
+								<br>
+								<img  class="plain fragment current-visible" data-fragment-index="1" width="400px" style="position:absolute; top:430px; left:100px "
+								      data-src="assets/adjoint.png" />
+								<img  class="plain fragment current-visible" data-fragment-index="2" width="400px" style="position:absolute; top:430px; left:100px "
+								      data-src="assets/adjoint.png" />
+
+                                                                <div class="plain  slide-text fragment" data-fragment-index="3" style=""> $\rightarrow$ GPU accelerated simulations
+                                                                        <br>
+                                                                        <br>
+                                                                        <span style="position:relative; top:10px; font-size: 18px" > Timings for 1 step<br>of 256$^3$ simulation: </span>
+                                                                        <div style=" position:relative; top:-60px; left:30px; font-size:18px">
+                                                                                <table   style=" font-size:18px; width:300px">
+                                                                                        <tbody>
+                                                                                                <tr>
+                                                                                                        <td>FastPM</td>
+                                                                                                        <td>1 CPU</td>
+                                                                                                        <td>40s</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                                <td>FastPM</td>
+                                                                                                                <td>32 CPU</td>
+                                                                                                                <td>3s</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td>FlowPM</td>
+                                                                                                        <td>1 GPU</td>
+                                                                                                        <td>1s</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td>FlowPM</td>
+                                                                                                                <td>32 GPU</td>
+                                                                                                        <td>0.4s</td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                        <td>$pmwd$</td>
+                                                                                                        <td>1 GPU</td>
+                                                                                                        <td>0.01s</td>
+                                                                                                </tr>
+                                                                                                </tbody>
+                                                                                </table>
+                                                                                <div style=" position:relative; top:-80px; left:480px;" >
+                                                                                        $\Big\}$ 10x faster
+                                                                                        <br>
+                                                                                        <div style="position:relative; top:10px" >
+                                                                                                $\rightarrow$ 100x faster </div>
+                                                                                </div>
+                                                                        </div>
+								</div>
+
+							</div>
+							
+							<div class='col' style="flex: 0 0 10em;">
+
+
+ 								
+								<img  class="plain fragment fade-out" data-fragment-index="1" width="430px" style="position:absolute; top:100px" data-src="assets/pmwd_table_flowpm.png" />
+								<span class="plain fragment fade-in"  data-fragment-index="1">
+								<span class="plain fragment fade-out"  data-fragment-index="3">
+									<img  class="plain "  data-fragment-index="3" width="430px" style="position:absolute; top:100px" data-src="assets/pmwd_table.png" />
+									<img  class="plain  " data-fragment-index="1"
+									      style="position:absolute; top:260px; right:190px; width:300px" data-src="assets/pmwd_logo.svg" />
+									
+									<img  class="plain " data-fragment-index="1"
+									      style="position:absolute; top:420px; right:200px " data-src="assets/leapfrog.png" />
+								</span>
+								</span>
+								
+								<div  class="plain fragment " data-fragment-index="3" style="position:absolute; top:130px; right:100px; width:460px; font-size:16px" >
+									<img data-src="assets/pmwd_timing.png" />
+                                                                        <em style="position:relative; top:-10px"> time-scaling for $pmwd$ simulations<br>
+										<span class="plain fragment " data-fragment-index="4" > $\rightarrow pmwd$ is faster than deep learning emulators </span>   </em> 
+                                                                </div>
+
+
+								<span  class="plain fragment" data-fragment-index="1" style="position:absolute; top:600px; right:20px; font-size:20px; text-align:right">
+									Li, <b><u>Modi</u></b> et al. (2022) <br>
+									Li, Lu, <b><u>Modi</u></b> et al. (2022) <br>
+									<a href="https://github.com/eelregit/pmwd">https://github.com/eelregit/pmwd</a> <br>
+									<a href="https://github.com/DifferentiableUniverseInitiative/JaxPM">https://github.com/DifferentiableUniverseInitiative/JaxPM</a> <br>
+									
+								</span>
+							</div>
+						</div>
+						
+					</section>
+				</section>
+
+				
+
+				<!-------------------------------------------------------------------------------->
+                                <!-------------------------------------------------------------------------------->
+
+				<section>
+					<h3 class='slide-title'> Open problems in differentiable cosmological simulations </h3>
+					<div class="header-right">
+						Novel analysis with latents<br>
+						<font color="orange"> $\rightarrow$ Custom gradients for auto-diff  </font> <br>
+						High dimensional inference<br>
+					</div>
+					<br>
+					
+					<img class="plain" style="width:900px" data-src="assets/fwdmodel3.png"  />
+					<br>
+					<div class="slide-text" style="">
+						<ul class="plain" data-fragment-index="1">
+							<br>
+							<li > Parallelizing cosmological simulations over multiple GPU
+							</li>
+							<li > Modeling baryons emulate hydro-simulations)
+							</li>
+							<li > Finding dark matter halos <br>
+								$\rightarrow$ cluster finding- friends of friends (FoF)/DBSCAN
+							</li>
+							<br>
+						</ul>
+					</div>
+					<img class="plain" style="position:absolute; right:50px; top:480px; width:400px" data-src="assets/fof.png"  />
+					<br>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+                                <!-------------------------------------------------------------------------------->
+
+				<section>
+					<div style="font-size:30px">Takeaway 2: <br>
+						<br>
+						Automatic differentiation can benefit from custom gradients, as breaking down composite functions into atomic functions with chain-rule may not always be the most effecient.  
+						<br>
+						<br>
+					</div>
+				</section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+
+				
+                                <section class="" data-background="">
+				        <div style="font-size:40px">Using differentiable simulations for high dimensional inference
+                                                <br>
+                                                <br>
+                                                1. Maximum-a-posteriori estimate (MAP optimization)
+                                        </div>
+			        </section>
+                                
+			        <!-------------------------------------------------------------------------------->
+			        <!-------------------------------------------------------------------------------->
+				
+			        <section>
+					<h3 class="slide-title"> MAP optimization in action</h3>
+					<div class="header-right">
+						Novel analysis with latents<br>
+						Custom gradients for auto-diff <br>
+						<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+					</div>
+
+					
+				    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$
+				    <!-- <div style="float:right; font-size: 16px">credit: <a href="https://github.com/modichirag">C. Modi</a></div> -->
+				    <br>
+				    <div class="container">
+					    <div class="col ragment fade-up" data-fragment-index="1">
+						    <img class="plain" data-src="assets/init_field.png" style='height:250px;' />
+						    <br> True initial conditions <br> $s_0$
+					    </div>
+
+					    <div class="col">
+						    <img class="plain" data-src="assets/reconim_init.gif" style='height:250px;' />
+						    <br> Reconstructed initial conditions $s$
+					    </div>
+
+					    <div class="col">
+						    <img class="plain"  data-src="assets/reconim_fin.gif" style='height:250px;' />
+						    <br> Reconstructed dark matter distribution $x_{dm} = f(s)$
+					    </div>
+
+					    <div class="col">
+						    <img class="plain"  data-src="assets/fin_field.png" style='height:250px;' />
+						    <br> Data <br> $x_{dm} = f(s_0)$
+					    </div>
+				    </div>
+				    <br>
+				    <br>
+
+				    <div class="ragment" data-fragment-index="1">
+					    Check out this blogpost for more details <br> <a href=https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html>
+						    https://blog.tensorflow.org/2020/03/simulating-universe-in-tensorflow.html</a>
+				    </div>
+			    </section>
+
+
+			    <section>
+				    <h3 class="slide-title">If only MAP optimization was easy...</h3>
+				    <div class="header-right">
+					    Novel analysis with latents<br>
+					    Custom gradients for auto-diff <br>
+					    <font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+				    </div>
+				    
+				    <div style="font-size:smaller">
+					    Small, synthetic problem with correct forward model and likelihood
+					    $$\arg\max_s \ \log p(x_{dm} | f(s)) \ + \ p(s) $$
+				    </div>
+				    <div class="container" style="font-size:smaller">
+					    <div class="col">
+						    Direct optimization
+						    <div style="position:relative; width:600px; height:410px; margin:0 auto;">
+							    <img style="position:absolute;top:0;left:0px;" data-src="assets/recon_illustration0.png" height="350" />
+							    <img class="fragment " data-fragment-index="1" style="position:absolute;top:0;left:0px;" data-src="assets/recon_illustration1.png" height="350" />
+						    </div>
+
+					    </div>
+					    <div class="col " data-fragment-index="">
+						    <span class="fragment fade-in" data-fragment-index="2"> ad-hoc annealing </span>
+						    <div style="position:relative; width:600px; height:410px; margin:0 auto;">
+							    <ul class="fragment fade-out" data-fragment-index="2"> $\rightarrow$ Cross Correlation ($r_c$) with true initial conditions
+								    <div style="text-align:center">
+									    $$
+									    r_c(k) = \frac{P_{ab}(k)}{\sqrt{P_a(k)P_b(k)}}
+									    $$
+								    </div>
+							    </ul>
+							    <br>
+							    <ul class="fragment fade-out" data-fragment-index="2">$\rightarrow$ Transfer Function ($t_f$) with true initial conditions
+								    $$t_f(k) = \sqrt{\frac{P_a(k)}{P_b(k)}}$$
+							    </ul>
+                                                            
+							    <img class="fragment " data-fragment-index="2" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration2.png" height="350" />
+							    <img class="fragment " data-fragment-index="3" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration3.png" height="350" />
+							    <img class="fragment " data-fragment-index="4" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration4.png" height="350" />
+							    <img class="fragment " data-fragment-index="5" style="position:absolute;top:0;left:5px;" data-src="assets/recon_illustration5.png" height="350" />
+						    </div>
+					    </div>
+				    </div>
+
+				    <div style="font-size:smaller">
+					    <ul>
+						    <li class="fragment" data-fragment-index="1"> Direct optimization of MAP leads to poor solutions on large scales.
+						    </li>
+						    <li class="fragment" data-fragment-index="2">Annealing recovers unbiased large scales, but at the cost of ad-hoc tempering procedure.
+						    </li>
+					    </ul>
+				    </div>
+			    </section>
+
+
+			    
+			    <!-------------------------------------------------------------------------------->
+			    <!-------------------------------------------------------------------------------->
+				
+
+                                
+			        <section class="" data-background="#000">
+				        <h3>High dimensional optimization is hard, can we <br><b>learn to optimize</b>?</h3>
+			        </section>
+
+                                <!-------------------------------------------------------------------------------->
+			        <!-------------------------------------------------------------------------------->
+				
+
+			        <section>
+				        <h3 class="slide-title">A closer look at the optimization algorithm</h3>
+					<div class="header-right">
+						Novel analysis with latents<br>
+						Custom gradients for auto-diff <br>
+						<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+					</div>
+				        <br>
+                                        
+				        $$\arg\max_x \ \log p(y | f(x)) \ + \ p(x) $$
+                                        
+				        <div class="container">
+					        <div class="col">
+						        <ul>
+							        <li> Standard Gradient Descent Algorithm:
+								        $$x_{i+1} = x_i - \epsilon  \nabla_x \big(\log p(y | f(x_i)) + \log p(x_i) \big)$$
+								        <br>
+								        <div class="fragment" data-fragment-index="2">$$x_{i+1} = \Gamma \Big(x_i,\, \nabla_x \big(\log p(y | f(x_i)) + \log p(x_i)\big ) \Big)$$
+									        with <b class="alert">update function</b> $\Gamma (u,v) \rightarrow u + \epsilon v$ </div>
+							        </li>
+							        <br>
+							        <br>
+							        <li class="fragment" data-fragment-index="2"> Many algorithms (e.g. ADAM, LBFGS) can expressed in this form with a different choice of $\Gamma$.
+							        </li>
+						        </ul>
+                                                        
+					        </div>
+					        <div class="col fragment" data-fragment-index="2">
+						        <img data-src="assets/map_graph.png" />
+					        </div>
+				        </div>
+                                        
+				        <br>
+				        <div class="fragment">
+					        $\Longrightarrow$ What if we could learn this update function?
+				        </div>
+                                        
+			        </section>
+                                <!-------------------------------------------------------------------------------->
+			        <!-------------------------------------------------------------------------------->
+				
+
+                                <section>
+                                        <section>
+                                                <h3 class="slide-title">CosmicRIM: Recurrence Inference Machines for Initial Condition Reconstruction</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							Custom gradients for auto-diff <br>
+							<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+						</div>
+
+                                                <div class="container">
+                                                        <div class="col">
+                                                                <div style="text-align:right; float:right; font-size: 20px"> <b>Modi</b>, Lanusse et.al. (2021)
+                                                                        <br>
+                                                                        Putzky & Welling (2017)
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <br>
+
+                                                <div class="container">
+
+                                                        <div class="col">
+                                                                Recurrent Neural Network Architecture
+                                                                <img data-src="assets/cosmic_rim.png" width="450" />
+                                                        </div>
+
+                                                        <div class="col">
+
+                                                                <ul>
+                                                                        <li > Multiscale, U-Net architecture</li>
+                                                                        <ul> $\rightarrow$ Different evolution on small and large scales
+                                                                        </ul>
+                                                                        <br> 
+                                                                        <li>Input <br>
+                                                                                <ul> $\rightarrow$ current position on the optimization path ($x_i$) </ul>
+                                                                                <ul> $\rightarrow$ gradient of the objective function scaled with ADAM update ($a_i$) </ul>
+                                                                        </li>
+                                                                        <br>
+                                                                        <li>Output <br>
+                                                                                <ul> $\rightarrow$ Updated position, i.e. next iteration ($x_{i+1}$) </ul>
+                                                                                
+                                                                        </li>
+                                                                        <br>
+
+
+                                                                </ul>
+
+                                                        </div>
+                                                </div>
+                                                <br>
+                                        </section>
+					
+                                        <section>
+                                                <h3 class="slide-title">Experiments</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							Custom gradients for auto-diff <br>
+							<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+						</div>
+
+                                                <div class="block ">
+                                                        <div class="block-title">
+                                                                Settings
+                                                        </div>
+                                                        <div class="block-content">
+                                                                <ul>
+                                                                        <li>Data: Halo mass weighted field, $\bar{n}=10^{-3}$ (h/Mpc)$^3$
+                                                                        </li>
+                                                                        <li>Forward model: $64^3$ particles, 400 Mpc/h box, 2LPT dynamics with 2nd order bias model
+                                                                        </li>
+                                                                        <li> RIM: 10 steps, trained under L2 loss
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+                                                </div>
+
+                                                <div class="container">
+
+                                                        <div class="col">
+                                                                Initial conditions cross-correlation
+                                                                <img data-src="assets/rim_rc.png" width="420" />
+
+                                                        </div>
+                                                        <div class="col">
+                                                                Transfer function<br>
+                                                                <img data-src="assets/rim_transfer.png" width="420" />
+                                                        </div>
+
+                                                </div>
+                                                <ul>
+                                                        <li>CosmicRIM: Learn to optimize by embedding a Neural Network in the optimization algorithm.<br>
+                                                                $\Longrightarrow$ converges <b class="alert"> 40x</b> faster than LBFGS.</li>
+                                                </ul>
+
+                                        </section>
+					
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+					
+					<section>
+						<h3 class="slide-title">What does RIM learn</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							Custom gradients for auto-diff <br>
+							<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+						</div>
+						<div class='container'>
+							<div class='col' style="flex: 0 0 25em;">
+								<br><br>
+								<ul >
+									<li > Physically motivated annealing
+										<ul>
+											<li>  large scales are reconstructed before small scales </li>
+										</ul>
+										<br>
+									<li class="plain fragment"> Local minima i.e. ADAM/L-BFGS starting from RIM output do not improve results
+									</li>
+								</ul>
+								
+							</div>
+							<div class='col' style="flex: 0 0 25em;">
+								<div style="position:relative; width:600px; height:400px; top:00px; left:50px;  margin:1 auto">
+									<img  style="position:absolute;left:20px;" data-src="assets/rim_rc_steps.png"/>
+								</div> 
+							</div>
+						</div>
+						
+					</section>
+					
+					
+			        </section>
+				
+				
+
+    
+			    <!-------------------------------------------------------------------------------->
+			    <!-------------------------------------------------------------------------------->
+                            <section class="" data-background="">
+				    <div style="font-size:40px">Beyond MAP estimate:<br>
+                                    accelerating posterior inference with machine learning tools  </div>
+			    </section>
+                            
+			    <!-------------------------------------------------------------------------------->
+			    <!-------------------------------------------------------------------------------->
+
+			    <!-------------------------------------------------------------------------------->
+                            <!-------------------------------------------------------------------------------->
+			    
+			    
+				<section>
+					
+					<section>
+						<h3 class='slide-title'>Inferring posterior in high dimensions</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							Custom gradients for auto-diff <br>
+							<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+						</div>
+						
+						<br>
+
+						<div class="container" style="margin-left:20px">
+							<div class="col">
+								<div class="box fragment" data-fragment-index="2" style="position:absolute;  width:580px">
+									<div class="box-title", style="height:35px">
+										1. Hamiltonian Monte Carlo (HMC)
+									</div>
+									<div class="box-content" style="font-size:smaller">
+										Use gradients to obtain random samples from the posterior.
+										<br>
+										<br>
+										<!-- <div style="font-size:25px" > -->
+										<!-- 	$  \frac{dz}{dt} = \frac{\partial H(z, \tilde{p})}{\partial  \tilde{p}},\, \frac{d\tilde{p} }{dt} = -\frac{\partial H(z, \tilde{p})}{\partial z}$ -->
+										<!-- </div> -->
+										<!-- <br> -->
+										<div class="slide-text">
+											<b> Good</b>: Asymptotically explores the entire posterior
+											<br>
+											<b>Bad</b>: Consecutive samples are correlated
+											<br>
+											<div class="plain fragment" data-fragment-index="3" >
+												<b>Ugly </b>: <b class="alert"> $\sim 10^4$ simulations </b> for every independent sample!!
+											</div>
+
+										</div>
+									</div>
+								</div>
+						        </div>
+							
+							<div class="col">
+								<div class="box fragment" data-fragment-index="5" style="position:absolute;  width:600px">
+									<div class="box-title", style="height:35px">
+										2. Variational Inference (VI)
+									</div>
+									<div class="box-content" style="font-size:smaller">
+										Approximate the posterior with a parametric distribution $q(z; \nu)$
+										<br>
+										<br>
+										<div class="slide-text">
+											<b> Good</b>: Fast- based on optimization; independent samples
+											<br>
+											<b>Bad</b>: Needs flexible variational family
+											<ul> <b> $\rightarrow$ Normalizing flow with Fourier space convolutions </b> </ul>
+											<br>
+											<div class="plain fragment" data-fragment-index="3" >
+												<b>Ugly </b>: also depends on the divergence (loss) used for training
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="col"> -->
+							<!-- 	<div class="box fragment" data-fragment-index="5" style="position:absolute;  width:600px"> -->
+							<!-- 		<div class="box-title", style="height:35px"> -->
+							<!-- 			2. Variational self-Boosted Sampling (VI) -->
+							<!-- 		</div> -->
+							<!-- 		<div class="box-content" style="font-size:smaller"> -->
+							<!-- 			Combine HMC and variational inference. -->
+							<!-- 			<br> -->
+							<!-- 			<br> -->
+							<!-- 			<div class="slide-text"> -->
+							<!-- 				1. Learn an approximate distribution for the posterior on the fly. <br> -->
+							<!-- 				<ul> $\rightarrow$ symmetry based normalizing flow (NF). </ul> <br> -->
+							<!-- 				2. Alternately sample from HMC and NF to explore the posterior.  -->
+							<!-- 			</div> -->
+							<!-- 		</div> -->
+							<!-- 	</div> -->
+							<!-- </div> -->
+						</div>
+
+						
+						<span class="plain fragment fade-in" data-fragment-index="2" >
+							<span class="plain " data-fragment-index="" >
+								<div class="plain fragment" style="position:absolute; top:350px; left:50px; font-size:smaller" data-fragment-index="2" > True Initial conditons </div>
+								<img class="plain fragment" style="position:absolute; top:400px; left:90px; " data-fragment-index="2"
+								     src="../assets/ic_gif.png" />
+								
+								<div class="plain fragment" style="position:absolute; top:350px; left:340px; font-size:smaller" data-fragment-index="2" > HMC Samples </div>
+								<img  class="plain fragment" style="position:absolute; top:400px ; left:335px" data-fragment-index="2"
+								      src="../assets/ic.gif"    /> 
+							</span>
+						</span>
+						
+						<span class="plain fragment fade-in" data-fragment-index="3" >
+							<span class="plain " data-fragment-index="" >
+								<div  class=" plain" style="position:absolute; top:350px; left:550px; font-size:smaller" >
+									<img  class="plain" style="height:210px"  data-src="assets/hmc_ac.png" />
+									<br>
+									<em style="position:relative; top:-15px" > Auto-correlation length of HMC samples as function of scales for 4 chains. </em>
+								</div>
+							</span>
+						</span>
+							
+						
+					</section>
+				</section>
+
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+
+
+				<section class="" data-background="#000">
+					<h3>Can we combine HMC and VI to complement each others shortcomings?</h3>
+				</section>
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<section>
+
+	
+					<section>
+						<h3 class="slide-title">Variational self-Booseted Sampling (VBS)</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							Custom gradients for auto-diff <br>
+							<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+						</div>
+						<br>
+						<em> Combine HMC and VI to generate samples from the target with smaller auto-correlation length</em>
+						<br>
+						<br>
+						<Div class="container">
+							<br>
+							<div class="col"  style="flex">
+
+								<div class="block fragment " data-fragment-index="1">
+									<div class="block-title">
+										Motivation
+									</div>
+									<div class="block-content" style="font-size:20px">
+										<ul>
+											<li class=" plain "> HMC is good at generating samples from the target
+											</li>
+											<li class="plain " > Samples generated from the variational distribution $q$ are independent
+											</li>
+										</ul>
+										
+									</div>
+
+								</div>
+								<br>
+								<div class="block fragment " data-fragment-index="2">
+									<div class="block-title">
+										Two Phase Algorithm
+									</div>
+									<div class="block-content" style="font-size:20px">
+										<ul>
+											<li class=" fragment " data-fragment-index="2">Phase I- Learning  <br>
+												$\rightarrow$ HMC to generate samples <br>
+												$\rightarrow$ use these samples to learn $q$ with forward KL loss
+											</li>
+											<br>
+											<li class=" fragment " data-fragment-index="3">Phase II- Hybrid sampling <br>
+												$\rightarrow$ alternate b/w making proposals from HMC kernel & $q$ <br>
+												$\rightarrow$ accept HMC and variational proposals to maintain DB <br>
+												$\rightarrow$ Keep updating $q$  with all samples
+											</li>
+										</ul>
+									</div>
+
+								</div>
+
+
+							</div>
+							<div class="col" style="flex; text-align:right">
+								<img class="plain fragment" data-fragment-index="2"   data-src="assets/vsbs_algo.png" />
+                                                                <br>
+                                                                Modi, Li, Blei (2022)
+							</div>
+						</div>
+						
+					</section>
+
+					<!-------------------------------------------------------------------------------->
+					<!-------------------------------------------------------------------------------->
+				
+					<section>
+						<h3 class='slide-title'>Efficiency gain with VBS</h3>
+						<div class="header-right">
+							Novel analysis with latents<br>
+							Custom gradients for auto-diff <br>
+							<font color="orange"> $\rightarrow$ High dimensional inference </font> <br>
+						</div>
+					
+						<div class="container" style="font-size:20px">
+							<div class="col"  style="flex">
+								
+								<ul>
+									<br>
+									<li > Experiment #1: Fiducial configuration<br>
+										<br>
+										L = 200 Mpc/h, N = 64
+										<br>
+										~40x gains in terms of auto-correlation length
+									</li>
+									<br><br><br><br>
+									<li > Experiment #2: Low signal-to-noise<br>
+										<br>
+										L = 500 Mpc/h, N = 64 
+										<br>
+										~10x gains
+										<br>
+										HMC performs much better than the fiducial case
+										
+									</li>
+									<br><br><br>
+									<li >	Experiment #3: Scaling to higher dimensions <br>
+										<br>
+										L = 1000 Mpc/h, N = 128
+										<br>
+										~10-40x gains
+										<br>
+										stronger scale dependence in gains
+										
+									</li>
+									<br><br>
+								</ul>
+								
+
+							</div>
+							<div class="col" style="flex">
+								<!-- <img class="plain"   data-src="assets/vsbs_ac_gains.png" /> -->
+								<img class="plain"   data-src="assets/vsbs_ac_200_64.png" />
+								<img class="plain "   data-src="assets/vsbs_ac_500_64.png" />
+								<img class="plain " data-src="assets/vsbs_ac_1000_128.png" />
+							</div>
+						</div>
+			
+					</section>
+					<!-- <section> -->
+					<!-- 	<h3 class='slide-title'>Efficiency gain with VBS</h3> -->
+					
+					<!-- 	<div class="container" style="font-size:20px"> -->
+					<!-- 		<div class="col"  style="flex"> -->
+								
+					<!-- 			<ul> -->
+					<!-- 				<br> -->
+					<!-- 				<li > Experiment #1: Fiducial configuration<br> -->
+					<!-- 					<br> -->
+					<!-- 					L = 200 Mpc/h, N = 64 -->
+					<!-- 					<br> -->
+					<!-- 					~40x gains in terms of auto-correlation length -->
+					<!-- 				</li> -->
+					<!-- 				<br><br><br><br> -->
+					<!-- 				<li class="fragment " data-fragment-index="0"> Experiment #2: Low signal-to-noise<br> -->
+					<!-- 					<br> -->
+					<!-- 					L = 500 Mpc/h, N = 64  -->
+					<!-- 					<br> -->
+					<!-- 					~10x gains -->
+					<!-- 					<br> -->
+					<!-- 					HMC performs much better than the fiducial case -->
+										
+					<!-- 				</li> -->
+					<!-- 				<br><br><br> -->
+					<!-- 				<li class="fragment " data-fragment-index="0">	Experiment #3: Scaling to higher dimensions <br> -->
+					<!-- 					<br> -->
+					<!-- 					L = 1000 Mpc/h, N = 128 -->
+					<!-- 					<br> -->
+					<!-- 					~10-40x gains -->
+					<!-- 					<br> -->
+					<!-- 					stronger scale dependence in gains -->
+										
+					<!-- 				</li> -->
+					<!-- 				<br><br> -->
+					<!-- 			</ul> -->
+								
+
+					<!-- 		</div> -->
+					<!-- 		<div class="col" style="flex"> -->
+					<!-- 			<\!-- <img class="plain"   data-src="assets/vsbs_ac_gains.png" /> -\-> -->
+					<!-- 			<img class="plain"   data-src="assets/vsbs_ac_200_64.png" /> -->
+					<!-- 			<img class="plain fragment " data-fragment-index="0"   data-src="assets/vsbs_ac_500_64.png" /> -->
+					<!-- 			<img class="plain fragment " data-fragment-index="0"   data-src="assets/vsbs_ac_1000_128.png" /> -->
+					<!-- 		</div> -->
+					<!-- 	</div> -->
+			
+					<!-- </section> -->
+
+
+
+				</section>
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+    
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+					<div style="font-size:30px">Takeaway 3: <br>
+						<br>
+						High dimensional inference is hard, and we can benefit from domain specific ML tools and optimization/sampling algorithms.
+						<br>
+						<br>
+					</div>
+				</section>
+
+			    <!-------------------------------------------------------------------------------->
+			    <!-------------------------------------------------------------------------------->
+                            <section class="" data-background="">
+				    <div style="font-size:80px">Summary</div>
+			    </section>
+                            
+			    <!-------------------------------------------------------------------------------->
+			    <!-------------------------------------------------------------------------------->
+			    
+				<section>
+					<h3 class="slide-title"> Summary </h3>
+
+                                        <br>
+                                        
+					<div class="block ">
+						<div class="block-title">
+								Main Takeaways
+						</div>
+						<div class="block-content">
+							<ul>
+								<li class="plain fade-up"> <b class="alert">Field level inference for cosmological analysis</b><br>
+									$\Longrightarrow$ Field level inference for optimal cosmological analysis.<br>
+									$\Longrightarrow$ Latent parameters can be used to develop new analysis
+								</li>
+								<br>
+								<li class="plain fade-up"> <b class="alert">Differentiable cosmological simulations (FlowPM, Mesh-FlowPM, JaxPM, $pmwd$)</b><br>
+									$\Longrightarrow$ Custom gradients for effecient scaling <br>
+									$\Longrightarrow$ To do- multi-GPU scaling, halo-finding, hydro (baryon) simulations
+								</li>
+								<br>
+								<li class="plain fade-up"> <b class="alert">High dimensional inference</b><br>
+									$\Longrightarrow$ ML tools to assist optimization and inference <br>
+									$\Longrightarrow$ Need to think about domain specific algorithms and NN (NF) architectures
+								</li>
+							</ul>
+						</div>
+					</div>
+					<br>
+                                        
+					<br>
+					<p class="fragment">Thank you ! </p>
+					<br> <br> <br>
+				</section>
+                            
+                                
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+				
+				</div>
+			</div>
+			
+
+		<style>
+		 <!-- .reveal .slides { -->
+		 <!--     border: 1px solid red; -->
+		 <!--     min-height: 100%; -->
+		 <!--     width: 128mm; -->
+		 <!--     height: 96mm; -->
+                 <!-- } -->
+		
+		.reveal .box {
+			background-color: #191919;
+			margin-left: 10px;
+			margin-right: 10px;
+			text-align: center;
+		}
+		.reveal .box-title {
+			background-color: #333333;
+			padding:1px 1px 1px 1px;
+  		color: #FFAA7F;
+  		font-weight: bold;
+		}
+
+		
+		.reveal .block {
+			background-color: #191919;
+			margin-left: 20px;
+			margin-right: 20px;
+			text-align: left;
+			padding-bottom: 0.1em;
+		}
+		.reveal .block-title {
+			background-color: #333333;
+			padding:8px 35px 8px 14px;
+  		color: #FFAA7F;
+  		font-weight: bold;
+		}
+		.reveal .block-content {
+			padding:8px 35px 8px 14px;
+		}
+                
+		.reveal .slide-title {
+			border-left: 5px solid white;
+			text-align: left;
+			margin-left: 20px;
+			padding-left: 20px;
+                <!-- position: absolute; -->
+                <!-- top: 100px; -->
+                <!-- left: 0; -->
+                }
+		
+		.reveal .slide-title-black {
+			border-left: 5px solid black;
+			text-align: left;
+			margin-left: 20px;
+			padding-left: 20px;
+		}
+                
+		.reveal .alert {
+  		color: #FFAA7F;
+  		font-weight: bold;
+		}
+                
+		.reveal .slide-text {
+			text-align: left;
+			margin-left: 20px;
+		}
+                
+		.reveal .boxonly {
+			background-color:  #333333;
+			margin: auto;
+			text-align: center;
+			border-radius: 5px;
+
+		}
+                
+		.reveal .inverted {
+			filter: invert(100%);
+		}
+
+		.reveal div.header-left {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0;
+                margin: 20px;
+		font-size: 14px;
+		
+            }
+		.reveal div.header-right {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0;
+                margin: 20px;
+		font-size: 14px;
+		text-align:right
+		
+            }
+		</style>
+
+
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+
+				//center: false,
+				hash: true,
+				// Visibility rule for backwards navigation arrows; "faded", "hidden"
+				// or "visible"
+				controlsBackArrows: 'hidden',
+				// Display a presentation progress bar
+				progress: true,
+				// Display the page number of the current slide
+				slideNumber: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// The "normal" size of the presentation, aspect ratio will be preserved
+				// when the presentation is scaled to fit different resolutions. Can be
+				// specified using percentage units.
+				width: 1280,
+				height: 720,
+				// Factor of the display size that should remain empty around the content
+				margin: 0.1,
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 1.5,
+
+				dependencies: [
+					{ src: 'reveal.js/plugin/markdown/marked.js' },
+					{ src: 'reveal.js/plugin/markdown/markdown.js' },
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true },
+					{ src: 'reveal.js/plugin/math/math.js', async: true },
+					{ src: 'reveal.js/plugin/reveal.js-d3/reveald3.js' },
+					{ src: 'reveal.js/plugin/reveal.js-plugins/chart/Chart.min.js' },
+					{ src: 'reveal.js/plugin/reveal.js-plugins/chart/csv2chart.js' },
+				]
+			});
+		</script>
+	</body>
+</html>
+
+
