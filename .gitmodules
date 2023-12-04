@@ -43,3 +43,6 @@
 [submodule "MIAPbP_June2023/reveal.js"]
 	path = MIAPbP_June2023/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "Vienna_Oct2023/reveal.js"]
+	path = Vienna_Oct2023/reveal.js
+	url = git@github.com:modichirag/reveal.js.git
