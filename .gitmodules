@@ -45,4 +45,7 @@
 	url = https://github.com/modichirag/reveal.js
 [submodule "Vienna_Oct2023/reveal.js"]
 	path = Vienna_Oct2023/reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js
+[submodule "UNAM_Dec2023/reveal.js"]
+	path = UNAM_Dec2023/reveal.js
+	url = https://github.com/modichirag/reveal.js
