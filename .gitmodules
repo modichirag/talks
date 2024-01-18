@@ -51,4 +51,4 @@
 	url = https://github.com/modichirag/reveal.js
 [submodule "CSU_Jan2023/reveal.js"]
 	path = CSU_Jan2023/reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js
