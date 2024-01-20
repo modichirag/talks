@@ -1525,10 +1525,14 @@
 											<span class="plain fragment" data-fragment-index="7" style="font-size:20px">
 												Learn the likelihood distribution.
 												<br>
-												Model the likelihood with a parametric distribution $q_\phi$,
+												Model the likelihood with a parametric distribution $q$<span style="color:red" >$_\phi$</span>,
 												e.g.,
-												<span class="plain"  style="font-size:18px">$\, {N}(\mu = f_\phi(\theta), \sigma = g_\phi(\theta))$
+												<span class="plain"  style="font-size:18px">$\, {N}(\mu = f$<span style="color:red" >$_\phi$</span>$(\theta), \sigma = g$<span style="color:red" >$_\phi$</span>$(\theta))$
 												</span>
+												<!-- Model the likelihood with a parametric distribution $q_\phi$, -->
+												<!-- e.g., -->
+												<!-- <span class="plain"  style="font-size:18px">$\, {N}(\mu = f_\phi(\theta), \sigma = g_\phi(\theta))$ -->
+												<!-- </span> -->
 											</span>
 										</span>
 										<br>
@@ -1883,14 +1887,15 @@
 						<br>
 						<div class="slide-text" style="font-size:22px">
 							<ul>
-								<li  class="plain" data-fragment-index="1" style="font-size:22px"> Why did <font style="font-variant:small-caps">  SimBIG</font> only analyze 100,000 galaxies  of the ~1 million galaxies mapped by BOSS?
+								<li  class="plain" data-fragment-index="1" style="font-size:20px"> Why did <font style="font-variant:small-caps">  SimBIG</font> only analyze 100,000 galaxies <br>
+									of the ~1 million galaxies mapped by BOSS?
   									<div class="plain fragment" data-fragment-index="2", style="font-size:20px" > 
 										$\quad \rightarrow$ limited by the simulation suite <br>
 										$\quad \rightarrow$ Quijote, the  <b> largest</b> simulation suite
 									</div>
 								</li>
 								<br>
-								<li  class="plain fragment" data-fragment-index="2"> Upcoming surveys like DESI, LSST, Euclid
+								<li  class="plain fragment" data-fragment-index="2" style="font-size:20px"> Upcoming surveys like DESI, LSST, Euclid
   									<div class="plain fragment" data-fragment-index="2", style="font-size:20px" > 
 										$\quad \rightarrow$ probe larger volume, <br>
 										$\quad \rightarrow$ require higher resolution simulations <br>
@@ -1904,14 +1909,14 @@
 							<br>
 
 							<div  class='fragment' data-fragment-index="3">
-								<img style="position:absolute; top:270px; right:80px; width:420px"
+								<img style="position:absolute; top:170px; right:50px; width:450px"
 								     data-src="assets/cartoon_resources.jpeg"  />
 							</div>
-							<div class='fragment' data-fragment-index="3" style="position:absolute; top:480px; left:50px; width:600px; text-align:center">
+							<div class='fragment' data-fragment-index="3" style="position:absolute; top:480px; left:20px; width:750px; text-align:center">
 								
 								<b class="alert"> We do not have the computational resources </b><br>
-								to generate training simulations<br>
-								for the next generation of cosmological surveys.
+								to generate training simulations
+								for the upcoming cosmological surveys.
 							</div>
 							
 						</div>
@@ -2109,7 +2114,7 @@
 											</span>
 											<br>
 											<span class="plain fragment" data-fragment-index="7" style="font-size:20px">
-												$\quad \rightarrow$ Beyond empirical models: constrain galaxy formation
+												$\quad \rightarrow$ Constrain galaxy formation <em>with</em> cosmology
 											</span>
                                                                                 </span>
 
@@ -2162,7 +2167,7 @@
 							<div class="plain fragment fade-in" data-fragment-index="5" style="position:absolute; top:240px; right:10px;">
 								<span class="plain fragment fade-out" data-fragment-index="6">
 									<img class="plain" data-src="assets/merger_tree_example.png" width="420px" /><br>
-									<span style="font-size:16px; position:relative; top:-20px">
+									<span style="font-size:20px; position:relative; top:-20px">
 										Halo merger-trees.
 										Credits: Frank van den Bosch</span>
 									
@@ -2331,9 +2336,10 @@
 				
                                 <section class="" data-background="">
 					<div style="font-size:35px">
-						SBI is promising.<br>
-						But is this the best we can do?
+						SBI is promising.
 						<br>
+                                                <!-- <img class="plain" " data-src="assets/best_can_do.png" style='position:absolute; left:60px; top:0px; height:250px;' /> -->
+                                                <img class="plain" data-src="assets/best_can_do.png" style=' height:300px;' />
 						<br>
 						<div class="data fragment" style="font-size:70px">3. Field-level Inference</div>
 						<br>
