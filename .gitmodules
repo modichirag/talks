@@ -52,3 +52,6 @@
 [submodule "CSU_Jan2023/reveal.js"]
 	path = CSU_Jan2023/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "Arizona_Feb2024/reveal.js"]
+	path = Arizona_Feb2024/reveal.js
+	url = https://github.com/modichirag/reveal.js
