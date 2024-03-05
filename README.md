@@ -14,6 +14,7 @@ To create a new presentation, the easy steps are -
 - npm install
 - cross fingers, "npm start" to run locally and commit 
 
+<NPM ISSUES>
 It is possible npm install fails with ERR code 1
 This might happen due to old package.json and new version of npm
 To resolve this error, you need to upgrade the dependency module that causes the error.
@@ -24,3 +25,11 @@ npx npm-check-updates
 npx npm-check-updates -u
 # 👇 install the latest version
 npm install
+
+
+<NPM Back compatibility>
+On linux devices, apparently we still need to use the old version of npm.
+Some previous projects have a copy of old package.json and package-lock.json that can be used.
+But for a backup, a copy is also stored in this main folder -> package.json.old_version & its lock.
+These can be used after removing the 'old_version' in the file name.
+For completeness, there is a also a copy of the new version.
