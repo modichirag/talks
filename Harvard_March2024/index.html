@@ -41,7 +41,7 @@
 
 						<div class="container">
 							<div class="title" style="margin:auto; text-align:center; border-radius: 20px; background-color:rgba(0, 0, 0, 0.4);">
-								<h2> Statistical Inference for Natural Sciences </h2>
+								<h2> Bayesian Inference for Natural Sciences </h2>
                                                                 <h3> with Applications to Astrophysics </h3>
 								<h4> SEAS, Harvard University<br>March 21st, 2024</h4>
 							</div>
@@ -163,60 +163,467 @@
 								</div>
 							</div>
 							<div style="position:absolute; float:right;  text-align:right; font-size:16px; top:610px; right:10px">
-									<b><u> Modi</b></u> and Philcox (2023) <br>
-									<b><u> Modi</b></u> and Seljak (2019) <br>
-									<b><u> Modi</b></u>, Carpenter and Barnett (2022) <br>
+								<b><u> Modi</b></u> and Philcox (2023) <br>
+								<b><u> Modi</b></u> and Seljak (2019) <br>
+								<b><u> Modi</b></u>, Carpenter and Barnett (2022) <br>
 							</div>
 				</section>
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-				
-				<!-- <section data-background-image="assets/WMAP_timeline.jpg" data-background-size="1100px" data-background-color="black"> -->
-				<!-- 	<\!-- <h2 class='slide-title' style="position:absolute;top:0;"> the $\Lambda$CDM view of the Universe </h3> -\-> -->
-				<!-- 	<h2 class='slide-title' style="position:relative;top:0;"> the $\Lambda$CDM view of the Universe </h2> -->
-				<!-- 	<\!-- <img class="plain" data-src="assets/WMAP_timeline.jpg" /> -\-> -->
-				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
-				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
-				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
-				<!-- 	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br>	<br> -->
 
-				
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-				<section data-background-color="black">
+                                
+				<section>
+                                        <section data-background-color="black">
 
-					<h3 class='slide-title' style="position:absolute;top:0;"> Bayesian inference </h3>
+					        <h3 class='slide-title' style="position:absolute;top:0;"> Bayesian inference </h3>
+                                                
+                                                <br>
+                                                <br>
+					        <div class="slide-text" style="margin-left:50px;">
+                                                        
+                                                        We wish to learn about <u>parameters</u>: $\theta \in \mathcal{R}^D$ <br>
+                                                        $$\textrm{Prior:} \quad \theta \sim p(\theta)$$
+                                                        
+                                                        We observe <u>data</u> ($x$)  which is informtive about these parameters <br>
+                                                        Probabilistic model: $f(\theta \rightarrow x)$
+                                                        $$\textrm{Likelihood:} \quad x \sim p(x|\theta)$$
+                                                        
+                                                        Inference: 
+                                                        $$\textrm{Posterior:} \quad x \sim p(\theta | x)$$
+                                                        
+                                                        Bayes theorem:
+                                                        $$p(\theta | x)  = \frac{p(x|\theta) \times p(\theta)}{p(x)} \propto p(x|\theta) \times p(\theta)$$
+                                                        
+                                        </div>
+                                        
+                                        </section>
+
+                                        <!-------------------------------------------------------------------------------->
+
+                                        <section data-background-color="black">
+
+                                                <h3 class='slide-title' style="position:absolute;top:0;"> Inferential tasks </h3>
+                                                
+                                                <br>
+                                                <br>
+					        <div class="slide-text" style="margin-left:50px;">
+
+					                <div class="container">
+                                                                
+						                <div class="col" style="flex: 0 0 33em;">
+                                                                        $p(\theta | x)$ directly is rarely useful. We are actually interested in :
+                                                                        <br>
+                                                                        <br>
+                                                                        
+                                                                        <ul>
+                                                                                <li> Parameter estimates: $\hat{\theta}$, $\hat{\theta}^2...$
+                                                                                        $$ \hat{\theta}  = \int \theta\, p (\theta | x) \, \textrm{d} \theta$$
+                                                                                </li>
+                                                                                <br>
+                                                                                <li> Event probabilities i.e. $g(\theta) \in A$
+                                                                                        $$ p(A) = \int I(g(\theta) \in A )\, p (\theta | x) \,  \textrm{d} \theta$$
+                                                                                </li>
+                                                                                <br>
+                                                                                <li> Posterior predictive probabilities of new events $\tilde x$
+                                                                                $$ p (\tilde x | x) = \int p (\tilde x | \theta)\, p (\theta | x) \, \textrm{d} \theta$$
+                                                                                </li>
+                                                                                <br>
+                                                                        </ul>
+                                                                </div>
+                                                                
+                                                                <div class="col fragment" style="flex: 0 0 30em;">
+                                                                        Approximate these integrals with Monte-Carlo integration:
+                                                                        
+                                                                        $$ \hat{\theta}  = \int \theta\, p (\theta | x) \, \textrm{d} \theta \approx \sum_{\theta_i \sim p(\theta | x)} \theta_i$$
+
+                                                                        $\longrightarrow$ Draw samples from the posterior distribution.
+                                                                </div>
+                                                </div>
+                                                
+                                        </section>
                                         
                                 </section>
-                                
                                 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
 
                                         <section data-background-color="black">
-					<h3 class='slide-title' style="position:absolute;top:0;"> Setup statistical inference in cosmology: what is cosmology? </h3>
+					        <h3 class='slide-title' style="position:absolute;top:0;"> Cosmology: the story of our Universe </h3>
+					        <div class="container">
 
+						<div class="col" style="flex: 0 0 33em;">
+							<img class="plain" src="assets/WMAP_timeline.jpg" width="800px"/>
+						</div>
+						
+						<div class="plain  fragment current-visible" data-fragment-index="1" style="position:absolute; top:150px; right:30px; height:400px; text-align:right; font-size:20px">
+							<img class="plain" data-src="assets/sdss_pie2.jpg" />
+							<br>
+							Credits: M. Blanton and SDSS
+						</div>
+						<div class="col" style="flex: 0 0 20em;">
+
+							<br>
+							
+							<div class="fragment" data-fragment-index="2" style="">
+ 							        Standard model:<b class="alert"> $\Lambda$-CDM </b> <br>  
+							        $\Lambda$: cosmological constant dark energy <br>
+                                                                CDM: Cold dark matter
+
+							</div>
+							<br>
+							<br>
+							<div class="block fragment current-visible" data-fragment-index="2" >
+								<div class="block-title">
+ 									6 parameters in $\Lambda$-CDM model
+ 								</div>
+								<div class="block-content" style="font-size:20px">
+                                                                        $$\theta = (\Omega_b, \Omega_m, H, \tau, \sigma_8, n_s)$$ 
+
+									<ol>
+										<li>baryon density fraction ($\Omega_b$)</li>
+										<li>dark matter density fraction ($\Omega_m$)</li>
+										<li>rate of acceleration of the Universe ($H$)</li>
+										<li>optical depth at reionization ($\tau$) </li>
+										<li>amplitude of density fluctuations ($\sigma_8$)</li>
+										<li>scalar spectral index ($n_s$)</li>
+									</ol>
+                                                                        <br>
+                                                                        <!-- Extended models: -->
+                                                                        <!-- <ol> -->
+                                                                        <!--         Massive neutrinos ($m_\nu$)  -->
+                                                                        <!--         Massive neutrinos ($m_\nu$)  -->
+                                                                        <!-- </ol> -->
+	 							</div>
+                                                                
+							</div>
+                                                        <br>
+
+							<!-- <img class="plain fragment current-visible" data-fragment-index="2" data-src="assets/lcdm.png" /> -->
+							
+							<div class="block fragment" data-fragment-index="3" style="position:absolute; top:250px; right:30px; width:400px">
+								<div class="block-title">
+									Open questions
+								</div>
+								<div class="block-content" style="font-size:20px">
+									<ul>
+										<li>What is dark energy?</li>
+										<li>What is dark matter made of?</li>
+										<li>How did inflation happen?</li>
+										<li>What are the masses of neutrinos?</li>
+										<li>Is general relativity correct?</li>
+										<li>...</li>
+									</ul>
+									<br>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+                                                        
+                                                        
                                         </section>
                                         
 				        <!-------------------------------------------------------------------------------->
                                         
                                         <section data-background-color="black">
-					<h3 class='slide-title' style="position:absolute;top:0;"> What is field level inference? </h3>
+					        
+						<h3 class='slide-title'>Next generation of cosmology</h3>
+						<br>
+						<div class="container" style="font-size:20px; ">
+                                                        <div class="col" style="flex: 0 0 42em;">
 
+								<div class="plain" style="position:absolute; top:90px; left:50px">
+									<img src="assets/desi_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
+									<div style="position:relative; top:-75px; left:-60px; " > DESI </div>
+								</div>
+								<div class="plain" style="position:absolute; top:90px; left:300px">
+									<img src="assets/euclid_telescope.jpg" class="plain"  height="150" width="250" style="border:none"></img>	
+									<div style="position:relative; top:-75px; left:50px" > Euclid </div>
+								</div>
+								<div class="plain" style="position:absolute; top:90px; left:550px">
+									<img src="assets/spherex_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
+									<div style="position:relative; top:-75px; left:70px" > SphereX</div>
+								</div>
+								
+								<div class="plain" style="position:absolute; top:280px; left:160px">
+									<img src="assets/lsst_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
+									<div style="position:relative; top:-160px; left:-80px" > LSST</div>
+								</div>
+								<div class="plain" style="position:absolute; top:280px; left:440px">
+									<img src="assets/SO_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
+									<div style="position:relative; top:-105px; left:-60px" >Simons<br>Observatory</div>
+								</div>
+								
+								<div class="plain" style="position:absolute; top:480px; left:50px">
+									<img src="assets/roman_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
+									<div style="position:relative; top:-75px; left:-70px" > Roman<br>Telescope</div>
+								</div>
+								<div class="plain" style="position:absolute; top:480px; left:300px">
+									<img src="assets/hirax_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
+									<div style="position:relative; top:-50px; left:-70px; color:white" > HIRAX </div>
+								</div>
+								<div class="plain" style="position:absolute; top:480px; left:550px">
+									<img src="assets/cmbs4_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
+									<div style="position:relative; top:-50px; left:-60px; color:black;" >CMB-S4</div>
+								</div>
+                                                                
+							</div>
+                                                        
+                                                        <div class="col fragment" data-fragment-index="0" style="flex: 0 0 20em;">
+                                                                
+                                                                  <!-- <img src="assets/desi_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img> -->
+								<br>
+								<div class="fragment" data-fragment-index="0">
+									<b class="alert"> Dark Energy Spectroscopic Instrument (DESI) </b>
+									<br>
+									<ul style="">
+										<li> One-third of the night sky over 5 years</li>
+										<li> 35 million galaxies and quasars</li>
+										<li class="fragment" data-fragment-index="0"> Has mapped out <b><u> more galaxies than all of the previous 3D surveys combined.</u></b>
+                                                                                        <ul>
+                                                                                                $\rightarrow$ 1.2 million galaxies in the first 6 months, same as BOSS survey in 5 years.
+                                                                                        </ul> 
+									</ul>
+								</div>
+								<br>
+								<img class="plain fragment fade-in"  data-fragment-index="0" data-src="assets/sdss_vs_desi.jpg" style="position:absolute; right:20px; width:450px; height:210px" />
+								<br>
+ 								<div class="fragment"  data-fragment-index="0" style="position:absolute; font-size: 16px; top: 650px; right:20px">
+									DESI Collaboration: 1611.00036</div>
+							</div>
+							                         
+                                                </div>
+                                                
+						<br>
+						
+                                                
                                         </section>
                                         
 				        <!-------------------------------------------------------------------------------->
                                         
                                         <section data-background-color="black">
-					<h3 class='slide-title' style="position:absolute;top:0;"> Why is it challenging? </h3>
 
+					        <h3 class='slide-title' style=""> How do we extract information from this dataset? </h3>
+                                                
+                                                <br>
+                                                <br>
+                                                <div class='container'>
+							<div class="col" style="flex:0 0 30em; margin-left:20px; font-size:22px">
+                                                                
+								<ul>
+                                                                        Data ($x$) : 2-point correlation function or power spectrum
+                                                                        
+								        <div class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:300px; left:200px; height:150px">
+									        $$\xi(|r_1-r_2|) = \langle \delta(r_1) \delta(r_2) \rangle$$
+									        <img class="plain " data-fragment-index="1" style="position:relative; left:0px" data-src="assets/2ptcorrelation.png" />
+								        </div>
+                                                                        
+                                                                        <br>
+                                                                        <br>
+
+                                                                        <span  class="plain fragment" data-fragment-index="2" > Can be modeled theoretically using effective field theories (EFT)
+                                                                                <br>
+                                                                                <span style="font-size:20px">
+                                                                                        $$p(x | \theta) = \mathcal{N}(\mu (\theta), \Sigma (\theta))$$
+                                                                                </span>
+                                                                        </span>
+                                                                        <span class="plain fragment" data-fragment-index="4"> Infer the posterior on model parameters using Bayesian inference:
+										<span style="font-size:20px"> $\,p(\theta | x ) \propto p(x | \theta)  \ p(\theta)$ </span>
+                                                                                
+                                                                        </span>
+
+                                                                </ul>
+								<br>
+								<br>
+								<div class="plain fragment" data-fragment-index="5" style="text-align:center">
+									<!-- <div class="alert "  > Moving ahead, each of these steps is a limiting factor! </div> -->
+									<em  > However this is not sufficient moving forward! </em>
+								</div>
+                                                                        
+                                                        </div>
+						        
+							<div class="col" style="font-size:20px">
+								<div>
+                                                                        <img class="plain" data-fragment-index="1" style="position:absolute; top:0px; right:50px; height:200px" data-src="assets/sdss_pie2.jpg" />
+                                                                        <span style="position:absolute; text-align:right; right:10px; top:200px; font-size: 16px"> Credit: SDSS
+                                                                        </span>
+                                                                </div>
+
+								<div class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:250px; right:100px; height:280px; font-size:20px">
+									<img  data-src="assets/boss_dr12_fit_corr.png" />
+									<br>
+									<em> Measurement of 2-pt correlation function from BOSS survey </em>
+								</div>
+								
+								<div class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:250px; right:100px; width:500px; font-size:20px">
+									<img data-src="assets/pk_eqn3.png" />
+									<br>
+									<em> An example of EFT integrals to predict the mean of the power-spectrum </em>
+                                                                        
+								</div>
+ 								<div class="plain fragment current-visible" data-fragment-index="4" style="position:absolute; top:250px; right:120px; height:360px;; font-size:20px;">
+									<img src="assets/misha_constraints.png" />
+									<br>
+									<em style="position:relative; top:-10px"> Example constraints from BOSS data analysis </em>
+								</div>
+								
+							</div>
+
+                                                        <span class="container fragment fade-in" data-fragment-index="5" style="position:absolute; top:420px; left:120px; width:1000px; height:300px; font-size:20px; " >
+							        <div class='col '  style="top:50px">
+								        <img data-src="assets/ngfield0.png" class="plain" style="top:10px; height:240px;"/>
+								        <span style="position:relative; top:-20px;" >
+									        Our Universe
+								        </span>
+							        </div>
+							        <div class='col  ' style="top:50px">
+								        <img data-src="assets/gfield0.png" class="plain " style="height:240px;"/>
+								<span style="position:relative; top:-20px;" > Gaussian random field </span>
+                                                                
+							        </div>
+							        <div class='col  ' style="top:50px">
+								        <br>
+								        <img data-src="assets/ngfield0_pk_white.png" class="plain " style="height:190px;"/>
+								<br>
+								<br>
+								<span style="position:relative; top:-20px;" > Power spectrum </span>
+							        </div>
+							        
+                                                        </span>
+
+                                                        <div class="plain fragment current-visible" data-fragment-index="1" style="position:absolute; top:600px; right:20px; font-size: 16px; text-align:right">
+								Ross et al. (2016)<br>
+								Beutler et al. (including <b><u> CM</b></u>) (2016)</div>
+							<div class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:600px; right:20px; font-size: 16px; text-align:right">
+								Ross et al. (2016)<br>
+								Beutler et al. (including <b><u> CM</b></u>) (2016)</div>
+							<div class="plain fragment current-visible" data-fragment-index="4" style="position:absolute; top:680px; right:20px; font-size: 16px">
+								Ivanov, Simonovic, Zaldarriaga (2020)</div>
+
+						</div>
+                                                
+                                                
                                         </section>
                                         
-
+                                        
                                 </section>
                                 
                                 
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+                                <section> 
+                                        <section data-background-color="black">
+
+
+                                                <h3 class='slide-title' style=""> Field-level inference: holy-grail of cosmological analysis </h3>
+
+
+                                                <br>
+                                                Model the field-level data without any compression and use it for inference.
+
+                                                <div class="slide-text", style="position:relative;">
+                                                        <br>
+                                                        <br>
+
+                                                        <span class="fragment " data-fragment-index="1"> No information is lost by compressing data into low-dimensional summary statistics.
+                                                        </span>
+                                                        <br>
+                                                         <img class="fragment plain"   data-fragment-index="1" width="350px" height="300px" style="position:relative;top:50px;left:250px" data-src="assets/field_level_prelim.png" />
+                                                        <br>
+
+                                                        <div class="fragment  " data-fragment-index="1" style="font-size: 16px; position:relative; top:80px; left:-20px; text-align:right;">
+                                                                <b><u>Modi</u></b> et al. (in preparation)
+                                                                <br>
+                                                                <b><u>Modi</u></b>, Feng, Seljak (2017)
+                                                                <br>
+                                                                Leclercq and Heavens (2021)
+                                                        </div>
+                                                </div>
+
+                                                <div>
+                                                        <img class="plain fragment grow" data-fragment-index="1" style="position:absolute; top:175px; right:165px; height:200px"
+                                                             data-src="assets/sdss_pie2.jpg" />
+                                                        <img class="plain fragment semi-fade-out" data-fragment-index="1" style="position:absolute; top:425px; right:120px; height:200px"
+                                                             data-src="assets/boss_dr12_fit_corr.png" />
+                                                  </div>
+                                                
+                                        </section>
+                                        
+                                        <!-------------------------------------------------------------------------------->
+
+                                        <section data-background-color="black">
+
+
+                                                <h3 class='slide-title' style=""> Modeling for field-level inference </h3>
+
+                                                                                                <br>
+						$x \sim  f(\Lambda)$ <br>
+						<div style="font-size:20px" > data $\sim$ forward model (cosmology) </div>
+
+						<div class="container" style="font-size:20px">
+                                                        <div class='col fragment' data-fragment-index="1" >
+								<br>
+								<br>
+                                                                $\Lambda$
+                                                                <br>
+								<b class="alert"> Cosmology </b>
+								<div style="font-size:30px"> + </div>
+								<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/>
+								<br>
+								<b class="alert" style="position:relative; top:-50px; ;"> Initial phases <br> $z \sim {N}(0, 1)$</b>
+							</div>
+
+							<div class='col fragment' data-fragment-index='2'>
+								<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/>
+                                                                <br>
+								<b class="alert"> Initial (Linear) <br>Dark Matter </b>
+							</div>
+							<div class='col fragment' data-fragment-index='3'>
+								<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/>
+								<br>
+                                                                <b class="alert"> Final (Evolved) <br> Dark Matter </b>
+							</div>
+							<div class='col fragment' data-fragment-index='5'>
+								<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/>
+                                                                <br>
+                                                                <b class="alert"> Galaxies <br> (Tracers) </b>
+							</div>
+							<div class='col fragment' data-fragment-index='6'>
+                                                                $x = f(\Lambda)$
+								<br>
+                                                                <br>
+                                                                <b class="alert"> Data </b>
+							</div>
+                                                        
+						</div>
+                                                
+						<img class="plain fragment" data-fragment-index="0" style="position:absolute; top:90px; right:20px; width:300px;" data-src="assets/pk_eqn3.png" />
+						
+						<div class="container" style="position:absolute; top:325px; width:1100px; height:50px; left:90px; font-size:35px">
+							<div class='col fragment' data-fragment-index='2'>  $\rightarrow$ </div>
+							<div class='col fragment' data-fragment-index='3'>  $\rightarrow$ </div>
+							<!-- <div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -->
+							<div class='col fragment' data-fragment-index='5'>  $\rightarrow$ </div>
+							<div class='col fragment' data-fragment-index='6'>  $\rightarrow$ </div>
+						</div>
+                                                                                                
+						<div class="container" style="position:relative; top:10px; width:1100px; height:50px; margin:0 auto; font-size:18px">
+							<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div>
+							<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body simulations) <br> ($\mathbf{\Lambda}$) </div>
+							<!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -->
+							<div class='col fragment' data-fragment-index='5'>  Halo finding + <br>Galaxy models <br> ($\mathbf{\theta}$)  </div>
+							<div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div>
+						</div>
+
+                                        </section>
+                                        
+                                        
+                                </section> 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section data-background-color="black">
@@ -3784,12 +4191,12 @@
 			
 
 		<style>
-		/* .reveal .slides { */
-		/*     border: 1px solid red; */
-		/*     min-height: 100%; */
-		/*     width: 128mm; */
-		/*     height: 96mm; */
-                /* } */
+		.reveal .slides {
+		    border: 1px solid red;
+		    min-height: 100%;
+		    width: 128mm;
+		    height: 96mm;
+                }
 		
 		.reveal .box {
 			background-color: #191919;
