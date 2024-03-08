@@ -1085,54 +1085,71 @@
 					<!-------------------------------------------------------------------------------->
 					<!-------------------------------------------------------------------------------->
 					<section>
-						<h3 class='slide-title'> Validating the posterior </h3>
+						<h3 class='slide-title'> Inferring the initial conditions of the Universe</h3>
 
-						
-						<div class="container"  style="font-size:20px">
+						<br>
+						<div class="container"  style="font-size:20px; margin-left:20px">
 
-							<div class="col">
-								<ul>
-									<li class="fragment" data-fragment-index="1" >
-										Compare the samples generated with the true initial conditions in terms of lower dimensional summary statistics - <em> power spectrum </em>
-									</li> 
-									<br>									
-									<li class="fragment" data-fragment-index="2" > Derived quantities
-										<ul class="fragment" data-fragment-index="1"> $\rightarrow$ Cross Correlation ($r_c$) with true initial conditions
-											<div style="text-align:center">
-											$$
-												r_c(k) = \frac{P_{ab}(k)}{\sqrt{P_a(k)P_b(k)}}
-											$$
-											</div>
-											Expected to be 1 on large scales, 0 on small scales
-										</ul>
+							<div class="col"  style="flex:0 0 28em;"> 
+									<div class="plain"  style="text-align:left">
+										Data ($x$): 3D dark matter density data
 										<br>
-										<ul class="fragment" data-fragment-index="2">$\rightarrow$ Transfer Function ($t_f$) with true initial conditions
-											$$t_f(k) = \sqrt{\frac{P_a(k)}{P_b(k)}}$$
-											Expected to be 1 on all scales
-										</ul>
-									</li>
-								</ul>
-								<br>
-								<p class="fragment" data-fragment-index="2" > Iff both $t_f$ and $r_c$ are 1 on all scales, the fields are identical </p>
+										<br>
+										Parameters ($\theta$): $\,z$, initial conditions at $64^3$ resolution
+										<br>
+										<br>
+										Likelihood $p(x|\theta) = \mathcal{N}(f(z), \sigma)$
+										<br>
+										$f$: particle-mesh simulation
 
+										<br>
+									</div>
+
+									<br>
+									<br>
+									<div class="plain fragment" data-fragment-index="1" style="text-align:left" >
+										
+										Quantitative comparision with summary statistics:<br>
+										Power spectrum: $P(k) \sim \delta_D(k - k') \langle \delta(k) \delta(k')\rangle $
+									<br>
+									<br>
+									<ul class="fragment" data-fragment-index="1"> $\rightarrow$ Cross Correlation: $r_c(k) = \frac{P_{ab}(k)}{\sqrt{P_a(k)P_b(k)}}$
+										<br>
+										<em> Expectation: 1 on large scales, 0 on small scales</em> 
+									</ul>
+									<br>
+									<br>
+									<ul class="fragment" data-fragment-index="1">$\rightarrow$ Transfer Function: $t_f (k) = \sqrt{\frac{P_a(k)}{P_b(k)}}$
+										<br>
+										<em> Expectation: 1 on all scales </em>
+									</ul>
+									<br>
+									<!-- <p class="fragment" data-fragment-index="2" > Iff both $t_f$ and $r_c$ are 1 on all scales, the fields are identical </p> -->
+
+									
+									</div>							
+
+									<br>
 							</div>		
 														
-							<div class="col" >
-								<!-- <div class="col"> -->
-								<div class="plain" 
-								     style="position:absolute; float:center; top:20px; right:60px; font-size: 20px; margin:0 auto">
-									Configuration: <br>3D dark matter density data, L = 200 Mpc/h boxsize, <br>N = 64 cells per side, Gaussian noise (= Poisson shot noise)
-								</div>							
-								<img class="plain" src="../assets/ic_gif.png"   width="250" />
-								<img  class="plain" src="../assets/ic.gif"   width="250" />
+							<div class="col"  style="flex:0 0 35em;">
 
-								<img  class="fragment plain" data-fragment-index="2" data-src="assets/hmc_posterior.png" height="250"/>
+								<div>
+									<br>
+									<img class="plain" src="../assets/ic_gif.png"   width="200" />
+									&nbsp;
+									<img  class="plain" src="../assets/ic.gif"   width="200" />
+									&nbsp;
+									<img  class="plain" src="../assets/dm_data.png"   width="200" />
+
+								</div>
+								<img  class="fragment plain" data-fragment-index="2" height="300px" width="700px" data-src="assets/hmc_posterior.png" />
 																
 							</div>
 						
 						</div>
 						<br><br>
-
+						
 					</section>
 
 					<!-------------------------------------------------------------------------------->
@@ -1143,28 +1160,19 @@
 						<div  style="font-size:20px">
 							Auto-correlation length ($a_c$) for every mode i.e. $k$-bin
 							$$
-							\rho_j(t)  = \frac{1}{n} \sum_{i=t+1}^n (P_i(k_j) - \bar{P}(k_j)) (P_{i-t}(k_j) - \bar{P}(k_j)); \quad a_c :=  \rho_j(a_c) \leq 0.1
+							\rho_j(t)  = \frac{1}{n} \sum_{i=t+1}^n \big(P_i(k_j) - \bar{P}(k_j)\big) \big(P_{i-t}(k_j) - \bar{P}(k_j)\big); \quad a_c :=  \rho_j(a_c) \leq 0.1
 							$$
 
 						</div>
 						
 						<img  class="fragment plain" data-fragment-index="1" data-src="assets/hmc_ac.png" height="300"/>
 						
-						<div class="container"  style="font-size:20px">
-							
-							<ul>
-								<li class="fragment" data-fragment-index="2" >
-									Longest auto-correlation length > 200
-								</li>
-								<li class="fragment" data-fragment-index="2" >
-									Number of leapfrog steps per proposal ~ 50
-								</li>
-								<li class="fragment" data-fragment-index="3" >
-									<b class="alert">>10000 simulations </b> for a single independent sample!!
-								</li>
-								
-							</ul>
-						</div>
+						<ul class="fragment" data-fragment-index="2" style="font-size:20px; text-align:center">
+
+							Auto-correlation lengths can be 1000 samples long,
+							<br>
+							<b class="alert">~10,000 simulations </b> for a single independent sample!!
+						</ul>
 
 					</section>
 
@@ -1190,135 +1198,200 @@
                                                 
                                                 <h3 class='slide-title' style="position:absolute;top:0;"> Variational Inference </h3>
 
+						<div style="position:absolute; top:20px; right:20px; width:600px; text-align:right; font-size:20px">
+                                                        Goal: Generate samples from the posterior <span style="font-size:20px" > $p(\theta|x)$ </span> <br>
+                                                        to approximate expectations  <span style="font-size:20px" > $\int f(\theta) p(\theta | x) \mathrm{d}\theta$</span>.
+                                                </div>
+						
                                                 <br> 
-
-                                                Goal: Infer the posterior $p(\theta | x)$ and use it for evaluating $\int f(\theta) p(\theta | x) \mathrm{d}\theta$.
-
                                                 <br>
-						<em> Approximate the posterior with a simpler parametric distribution</em>
 						<br>
-                                                $$ p(\theta | x) \approx q_{\phi} (\theta) $$
-
-                                                
-						<div class="container">
+						<div style="text-align:center; font-size:21px"> Approximate the posterior with a simpler parametric distribution
 							<br>
-							<!-- <div class="col"  style="flex:0 0 20em;"> -->
-							<div class="col">
+							<span style="font-size:20px" > $$ p(\theta | x) \approx q_{\phi} (\theta) $$ </span>
+							Fit parameters $\phi$ to minimize a dissimilarity metric $d(q;p)$
+						</div>
+                                                
+						<div class="container" style="font-size:20px">
+							<br>
+							<div class="col" style="text-align:left; margin-left:20px">
 
-								<div class="block fragment " data-fragment-index="1">
-									<div class="block-title">
-										Ingredients
-									</div>
-									<div class="block-content" style="font-size:20px">
-										<ul>
-											<li> Parametric distribution $q(z; \nu)$ with parameters $\nu$ <br>
-												$\rightarrow$ Normalizing flow with <em > Fourier space convolutions  </em>
-											</li>
-											<br>
-											<li> Divergence (loss function) to compare distributions
-											</li>
-										</ul>
-										
-									</div>
-
-								</div>
 								<br>
 								<br>
-								<div class="block fragment " data-fragment-index="2">
-									<div class="block-title">
-										Backward Kullback Leibler Divergence
-									</div>
+								E.g. $q_\phi = \mathcal{N}(\mu, \Sigma)$, then
+								$\phi = (\mu, \Sigma)$
+								<br>
+								<br>
+								<span class="fragment" data-fragment-index="2">
+									<u>Reverse Kullback-Leibler Divergence</u>
 									<div class="block-content" style="font-size:20px">
 										\begin{align}
 										D_{\mathrm{KL}}(q||p) &= \mathbb{E}_{q}(\log q - \log p) \nonumber \\
-										&= \mathbb{E}_{q}(\log q(z; nu) - \log \pi(z| y_0)) \nonumber \\
-										& \approx \sum_{z_i \sim q(z)} \bigl[ \log q(z_i; nu) - \log \pi(z_i | y_0) \bigr] \nonumber \\
-										& \leq \sum_{z_i \sim q(z)} \bigl[ \log q(z_i; nu) - \log \pi(y_0 | z_i) - \log \pi(z_i) \bigr]
+										& \approx \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta | x) \bigr] \nonumber \\
+										& \leq  \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta,  x) \bigr] 
 										\end{align}
 									</div>
-
-								</div>
+								</span>
+								
+								<br>
+								<br>
 
 							</div>
 							<div class="col" >
-								<!-- <img class="fragment plain" data-fragment-index="3"  style="position:relative; top:-40px" data-src="assets/vi_posterior.png" width="500"/> -->
-								<img class="fragment plain" data-fragment-index="3"  style="position:relative; top:-40px" data-src="assets/vi_cartoon.png" width="500"/>
-
-								<div class="block fragment " style="position:relative; top:-35px" data-fragment-index="4">
-									<div class="block-title">
-										Forward Kullback Leibler Divergence
-									</div>
-									<div class="block-content" style="font-size:20px">
-										\begin{align}
-										D_{\mathrm{KL}}(p||q) &= \mathbb{E}_{p}(\log p - \log q) \nonumber \\
-										&= \mathbb{E}_{\pi(z| y_0)}(\log \pi(z| y_0) - \log q(z; nu)) \nonumber \\
-										& \approx \sum_{z_i \sim \pi(z| y_0)} \bigl[ \log \pi(z_i | y_0) - \log q(z_i; nu)\bigr] \nonumber
-										\end{align}
-									</div>
-									<div class=" fragment " data-fragment-index="3" style="text-align:center">
-										But requires generating samples from the posterior!!
-									</div>
-
-								</div>
-
-
+								<img class="fragment plain" data-fragment-index="2"  style="position:relative; top:20px" data-src="assets/vi_cartoon.png" width="500"/>
+								
+								
 							</div>
 							
 							
 						</div>
 						
-				</section>
-
-                                </section>
-                                <br>
-                                <br>
-                                <!-- <div class="slide-text"> -->
-                                <!--         <ul> -->
-                                <!--                 <li> Setup variational distributions </li> -->
-                                <!--                                 <li> Setup a divergence </li> -->
-                                <!--                 <li> Show some example cases of applications </li> -->
-                                                
-                                <!--         </ul> -->
-                                <!-- </div> -->
-                                
-                               
-                                                        
-				                        <!-------------------------------------------------------------------------------->
-                                                        
-                                                        <section data-background-color="black">
-
-                                                <h3 class='slide-title' style="position:absolute;top:0;"> Application on field-level inference with Gaussian families </h3>
-
-                                                <br>
-                                                <br>
-                                                <div class="slide-text">
-                                                        <ul>
-                                                                <li> Setup the Gaussian varaitional family </li>
-                                                                <li> Show results --> define transfer function and cross correlation </li>
-                                                        </ul>
-                                                </div>
-
-                                        </section>
-
-                                
-				        <!-------------------------------------------------------------------------------->
+					</section>
+					
+ 					<!-------------------------------------------------------------------------------->
                                         
-                                        <section data-background-color="black">
-
-                                                <h3 class='slide-title' style="position:absolute;top:0;"> Application on field-level inference with normalizing flows </h3>
-
+					<section data-background-color="black">
+						
+                                                <h3 class='slide-title' style="position:absolute;top:0;"> Inferring initial conditions of the Universe with VI </h3>
+						
                                                 <br>
                                                 <br>
-                                                <div class="slide-text">
-                                                        <ul>
-                                                                <li> Introduce normalizing flows </li>
-                                                                <li> Results with normalizing flows </li>
+                                                <div class="slide-text" style="text-align:left; margin-left:20px; font-size:20px">
+							Choice of variational distribution:
+                                                        <br>
+							<br>
+							<ul>
+								<li class="fragment strike" data-fragment-index="1"> Mean-field Gaussian </li>
+								<br>
+								<li class="fragment" data-fragment-index="2"> Normalizing flows <br>
+									$\rightarrow$ sequence of bijective functions parameterized with neural networks
+									<br>
+									<span class="fragment" data-fragment-index="3">
+										$\rightarrow$ symmetry-based flows using Fourier space convolutions
+									</span>
+								</li>
                                                         </ul>
+							<br>
+							<br>
+							<br>
+							<span class="fragment" data-fragment-index="3">
+								$D(q||p)$: Reverse KL matches entropy, is mode-seeking. <br>
+								$D(p||q)$: Froward KL matches variance.
+								<br>
+								<span class="fragment" data-fragment-index="4">
+									... but requires samples from the target distribution.
+								</span>
+							</span>
+							
                                                 </div>
+								
+						<img class="plain fragment" data-fragment-index="2" style="position:absolute; top:100px; right:75px; width:450px"
+						     data-src="assets/nf_cartoon.png" />
+						<img class="fragment plain" data-fragment-index="3"  style="position:absolute; top:300px; right:20px; width:600px"
+						     data-src="assets/vi_posterior.png"/>
+						<img class="fragment plain" data-fragment-index="3"  style="position:absolute; top:400px; left:100px; width:400px"
+						     data-src="assets/mfvb.png"/>
 
-                                        </section>
+					</section>
+				
+                                </section>
+				
 
+                                
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
 
+				
+                                <section>
+					<h3 class="slide-title">Variational self-Boosted Sampling (VBS)</h3>
+					
+ 					<div style="font-size:22px"> Combine HMC and VI to generate samples from the target with smaller auto-correlation length.
+					</div>
+					<br>
+					<div class="container">
+						<br>
+						<div class="col"  style="flex">
+							
+							<div class="block fragment " data-fragment-index="1">
+								<div class="block-title">
+									Motivation
+								</div>
+								<div class="block-content" style="font-size:20px">
+									<ul>
+										<li class=" plain "> HMC generates samples from the target.
+										</li>
+										<li class="plain " > Samples generated from the variational distribution are independent.
+										</li>
+									</ul>
+									
+								</div>
+								
+							</div>
+							<br>
+							<div class="block fragment " data-fragment-index="2">
+								<div class="block-title">
+									Strategy
+								</div>
+								<div class="block-content" style="font-size:20px">
+									<ul>
+										<li class=" fragment " data-fragment-index="2">Train NF with samples generated from HMC on-the-fly. 
+										</li>
+										<br>
+										<li class=" fragment " data-fragment-index="2">Alternately generate proposals from HMC kernel and the variational distribution. <br>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<br>
+							<em class="fragment" data-fragment-index="3" style="position:relative; top:0px; font-size:20px"> VBS reduces auto-correlation length of MCMC chains
+								<br>as compared to HMC by more than <b class="alert"> 10x </b> </em>
+							
+							
+						</div>
+						<div class="col" style="flex">
+							<img class="plain fragment fade-in" data-fragment-index="2" style="position:absolute; top:150px; right:60px; width:500px"
+							     data-src="assets/vsbs_posterior.png" />
+							
+							<div class="plain fragment fade-in" data-fragment-index="3" style="position:absolute; top:400px; right:0px; font-size:20px" >
+								<img style="right:30px; width:650px; ", data-src="assets/vsbs_ac_200_64.png" />
+								<br>
+							</div>
+							
+							<span  class="plain fragment" data-fragment-index="3" style="position:absolute; top:640px; right:20px; font-size:16px; text-align:right">
+								<b><u>Modi</u></b>, Li, Blei (2022) <br>
+								Dai and Seljak (2022)
+								
+							</span>
+							
+						</div>
+					</div>
+					<br> 
+					<span class="plain fragment" data-fragment-index="4" style="position:relative;  font-size:20px"> Similar techniques can be used to sample from multi-modal distributions, e.g. detecting phase transitions.
+					</span>
+					
+				</section>
+				
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				
+
+                                <section>
+					<h3 class="slide-title">Summary so far</h3>
+					
+                                        <ul>
+						<li> Automatic differentiation for using inference algorithms.
+						</li>
+						<li> HMC is expensive.
+						</li>
+						<li> VI is fast, but can be inaccurae.
+						</li>
+						<li> Combinations of HMC and VI can be fast and accurate.
+						</li>
+					</ul>
+
+					<br>
+					Focused on inferring initial conditions, not the cosmology parameters. Why?
+					Hierarchical distribution!
                                 </section>
 
                                 
@@ -1326,68 +1399,21 @@
 				<!-------------------------------------------------------------------------------->
 
                                 <section> 
-                                        <section data-background-color="black">
 
-                                                <h3 class='slide-title' style="position:absolute;top:0;"> MCMC methods </h3>
-
-                                                <br>
-                                                <br>
-                                                <div class="slide-text">
-                                                        <ul>
-                                                                <li> Introduce MCMC and HMC </li>
-                                                        </ul>
-                                                </div>
-
-                                        </section>
-
-				        <!-------------------------------------------------------------------------------->
-                                        <section data-background-color="black">
-
-                                                <h3 class='slide-title' style="position:absolute;top:0;"> HMC on field level inference </h3>
-
-                                                <br>
-                                                <br>
-                                                <div class="slide-text">
-                                                        <ul>
-                                                                <li> Introduce MCMC and HMC </li>
-                                                        </ul>
-                                                </div>
-
-                                        </section>
-
-
-                                </section>
-
-                                
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-                                <section> 
-                                        <section data-background-color="black">
-
-                                                <h3 class='slide-title' style="position:absolute;top:0;"> Variational self boosted sampling : HMC + VI </h3>
-
-                                                <br>
-                                                <br>
-                                                <div class="slide-text">
-                                                        <ul>
-                                                                <li> Introduce MCMC and HMC </li>
-                                                        </ul>
-                                                </div>
-
-                                        </section>
-
-
-                                </section>
-
-                                
-                                
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
-
-                                <section> 
-
+                                        <div style="font-size:40px">
                                                 Advances in HMC and VI 
+                                        </div>
+					<br>
+					<div class="container fragment"  data-fragment-index="2" style="margin:auto; width:600px; font-size:26px">
+						<div class="col">
+							<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:200px">
+								<br>1.<br>Delayed rejection <br> HMC <br>  </div></div>
+						<!-- <div class="col"> -->
+							<!-- 	<div class="boxonly alert" style="border-radius: 100px; width:160px">  <br>2.<br>Joint<br>analysis<br><br> </div> </div> -->
+						<div class="col">
+							<div class="boxonly alert" style="border-radius: 100px; width:200px; ">  <br>2.<br> Score matching VI<br><br> </div>
+						</div>
+					</div>
 
                                 </section>
 
