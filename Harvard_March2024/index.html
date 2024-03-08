@@ -1427,31 +1427,33 @@
 
                                                 <h3 class='slide-title' style=""> Hierarchical models </h3>
 
-                                                <br>
-                                                <br>
                                                 <div class="slide-text">
                                                         <div style="text-align:center">
-                                                                $\mu, \sigma \sim p(\mu, \sigma)$
-                                                                <br>
-                                                                $\mu_i, \sigma_i \sim p(\mu_i, \sigma_i | \mu, \sigma)$
+                                                                $$\mu, \sigma \sim p(\mu, \sigma)$$
+                                                                $$\mu_i, \sigma_i \sim p(\mu_i, \sigma_i | \mu, \sigma)$$
                                                         </div>
                                                         <br>
                                                         <div class="plain fragment" data-fragment-index="1" >
                                                                 Strongly coupled individual and population parameters.
                                                                 <br>
-                                                                Multiscale distribution: condition number varies over orders of magnitude
+                                                                <u> Multiscale distribution</u>: condition number varies over orders of magnitude.
 
                                                         </div>
                                                         <br>
-                                                                
+                                                        <div class="plain fragment" data-fragment-index="2" >
+								HMC & NUTS are <b class="alert" > not able </b>  to robustly sample these distributions.
+								<br>
+								<br>
+								<span class="fragment" data-fragment-index="3" > $\rightarrow$ Need very different step-sizes for leapfrog integration in HMC. </span>
+                                                        </div>
 							<div class="plain " style="position:absolute; top:100px; right:0px; " >
-								<img style="border:none; height:200px; width:350px", data-src="assets/hierarchical_model.png" />
+								<img style="border:none; height:280px; width:450px", data-src="assets/hierarchical_model.png" />
                                                         </div>
-							<div class="plain fragment" data-fragment-index="1"  style="position:absolute; top:200px; right:50px; ">
-                                                                <img style="top:500px; left:150px; height:180px; width:200px; border:none; ", data-src="assets/funnel2.png" />
+							<div class="plain fragment" data-fragment-index="1"  style="position:absolute; top:400px; right:100px; ">
+                                                                <img style="height:250px; width:300px; border:none; ", data-src="assets/funnel2.png" />
                                                         </div>
-							<div class="plain fragment" data-fragment-index="1"  style="position:absolute; top:200px; right:50px; ">
-                                                                <img style="top:500px; left:150px; height:180px; width:200px; border:none; ", data-src="assets/funnel_nuts.png" />
+							<div class="plain fragment" data-fragment-index="2"  style="position:absolute; top:400px; left:250px; ">
+                                                                <img style="height:250px; width:250px; border:none; ", data-src="assets/funnel_nuts.png" />
                                                         </div>
                                                 </div>
                                                 <br>
@@ -1468,24 +1470,35 @@
                                                 <br>
                                                 <br>
                                                 <div style="font-size:20px">
-                                                        When faced with a rejection, make another proposal with a different transition kernel that has a better chance of  getting accepted
+                                                        When faced with a rejection, make another proposal<br>
+							with a <u>different transition kernel</u> that has a better chance of  getting accepted.
                                                 </div>
+						<br>
                                                 <div class="slide-text">
-
-                                                        Need very different step-sizes for leapfrog integration in HMC.
                                                         <br>
                                                         <div class="plain fragment" data-fragment-index="1" >
                                                                 Strongly coupled individual and population parameters.
                                                         </div>
                                                         
                                                                 
-							<div class="plain " style="position:absolute; top:100px; right:0px; " >
-								<img style="border:none; height:200px; width:350px", data-src="assets/hierarchical_model.png" />
-                                                        </div>
-							<div class="plain fragment" data-fragment-index="1"  style="position:absolute; top:200px; right:50px; ">
-                                                                <img style="top:500px; left:150px; height:180px; width:200px; border:none; ", data-src="assets/funnel2.png" />
+							<div class="plain fragment" data-fragment-index="1"  style="position:absolute; top:400px; right:100px; ">
+                                                                <img style="height:250px; width:300px; border:none; ", data-src="assets/funnel2.png" />
                                                         </div>
                                                 </div>
+						<div style="position:absolute; top:200px; right:50px; font-size:20px">
+							HMC: $\quad x$  <span style="position:relative; font-size:30px; top:5px" > $\longrightarrow$ </span> $y$ 
+							<span style="position:relative; top:-20px; left:-70px"> $\mathcal{F}_1$ 
+						</div>
+						
+						<div style="position:absolute; top:250px; right:50px; font-size:20px">
+							<!-- $x$  $\xrightarrow{\mathcal{F}_1}$  $y$  -->
+							DRHMC: $\quad x$  <span style="position:relative; font-size:30px; top:5px" > $\longrightarrow$ </span> $y$ 
+							<span style="position:relative; top:-20px; left:-70px"> $\mathcal{F}_1$ 
+						</div>
+						<div style="position:absolute; top:280px; right:130px; font-size:20px">
+							<span style="font-size:40px" > $\downarrow$ </span><br> $\quad y$ 
+							<span style="position:relative; top:-50px; left:-20px"> $\mathcal{F}_2$ 
+						</div>
                                                 <br>
                                                 <br>
                                                 <br>
