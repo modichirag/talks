@@ -573,36 +573,50 @@
                                                 <h3 class='slide-title' style=""> Modeling for field-level inference </h3>
                                                 
                                                 <br>
-						$x \sim  f(\theta)$ <br>
+						$x \sim  p(x|\theta)$ <br>
 						<div style="font-size:20px" > data $\sim$ probabilistic forward model (cosmology) </div>
 
+                                                <br>
 						<div class="container" style="font-size:20px">
                                                         <div class='col fragment' data-fragment-index="1" >
 								<br>
 								<br>
                                                                 $\Lambda$
                                                                 <br>
-								<b class="alert"> Cosmology </b>
-								<div style="font-size:30px"> + </div>
-								<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/>
-								<br>
-								<b class="alert" style="position:relative; top:-50px; ;"> Initial phases <br> $z \sim {N}(0, 1)$</b>
+								<b class="alert" style="position:relative; top:0px"> Cosmology </b>
+                                                                <br>
+						                <span style="font-size:18px" style="position:relative; top:-15px"> $\Lambda \sim p(\Lambda)$ </span>
+                                                                <br>
+                                                                <br>
+                                                                <br>
+                                                                
 							</div>
 
 							<div class='col fragment' data-fragment-index='2'>
 								<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/>
                                                                 <br>
-								<b class="alert"> Initial (Linear) <br>Dark Matter </b>
+								<b class="alert" style="position:relative; top:-15px"> Initial (Linear) <br>Dark Matter
+                                                                </b>
+                                                                <br>
+						                <span style="font-size:18px; position:relative; top:-15px"> $z \sim \mathcal{N}(0, g(\Lambda))$    </span>
+
+                                                                
 							</div>
 							<div class='col fragment' data-fragment-index='3'>
 								<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/>
 								<br>
-                                                                <b class="alert"> Final (Evolved) <br> Dark Matter </b>
+                                                                <b class="alert" style="position:relative; top:-15px"> Final (Evolved) <br> Dark Matter </b>
+                                                                <br>
+						                <span style="font-size:18px; position:relative; top:-15px"> $\delta = f(z,\Lambda)$    </span>
+
 							</div>
 							<div class='col fragment' data-fragment-index='4'>
 								<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/>
                                                                 <br>
-                                                                <b class="alert"> Galaxies <br> (Data, $x$) </b>
+                                                                <b class="alert" style="position:relative; top:-15px"> Galaxies <br> (Data, $x$) </b>
+                                                                <br>
+						                <span style="position:relative; top:-15px" style="font-size:18px"> $x \sim p(x|\delta, \phi)$    </span>
+
 							</div>
 							<!-- <div class='col fragment' data-fragment-index='6'> -->
                                                         <!--         $x = f(\Lambda)$ -->
@@ -627,7 +641,7 @@
 							<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div>
 							<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body simulations) <br> ($\mathbf{\Lambda}$) </div>
 							<!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -->
-							<div class='col fragment' data-fragment-index='4'>  Galaxy models & <br>survey systematics <br> ($\mathbf{\phi}$)  </div>
+ 							<div class='col fragment' data-fragment-index='4'>  Galaxy models & <br>survey systematics <br> ($\phi\sim p(\phi)$)  </div>
 							<!-- <div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -->
 						</div>
                                                 <img class="plain  fragment fade-out" data-fragment-index="3" style="position:absolute; top:10px; right:20px; height:250px;" data-src="assets/WMAP_timeline.jpg" />
@@ -643,7 +657,85 @@
 
                                         </section>
                                         
+
                                         
+                                        <!-- <section data-background-color="black"> -->
+
+
+                                        <!--         <h3 class='slide-title' style=""> Modeling for field-level inference </h3> -->
+                                                
+                                        <!--         <br> -->
+					<!-- 	$x \sim  f(\theta)$ <br> -->
+					<!-- 	<div style="font-size:20px" > data $\sim$ probabilistic forward model (cosmology) </div> -->
+
+					<!-- 	<div class="container" style="font-size:20px"> -->
+                                        <!--                 <div class='col fragment' data-fragment-index="1" > -->
+					<!-- 			<br> -->
+					<!-- 			<br> -->
+                                        <!--                         $\Lambda$ -->
+                                        <!--                         <br> -->
+					<!-- 			<b class="alert"> Cosmology </b> -->
+					<!-- 			<div style="font-size:30px"> + </div> -->
+					<!-- 			<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/> -->
+					<!-- 			<br> -->
+					<!-- 			<b class="alert" style="position:relative; top:-50px; ;"> Initial phases <br> $z \sim {N}(0, 1)$</b> -->
+					<!-- 		</div> -->
+
+					<!-- 		<div class='col fragment' data-fragment-index='2'> -->
+					<!-- 			<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/> -->
+                                        <!--                         <br> -->
+					<!-- 			<b class="alert"> Initial (Linear) <br>Dark Matter </b> -->
+					<!-- 		</div> -->
+					<!-- 		<div class='col fragment' data-fragment-index='3'> -->
+					<!-- 			<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/> -->
+					<!-- 			<br> -->
+                                        <!--                         <b class="alert"> Final (Evolved) <br> Dark Matter </b> -->
+					<!-- 		</div> -->
+					<!-- 		<div class='col fragment' data-fragment-index='4'> -->
+					<!-- 			<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/> -->
+                                        <!--                         <br> -->
+                                        <!--                         <b class="alert"> Galaxies <br> (Data, $x$) </b> -->
+					<!-- 		</div> -->
+					<!-- 		<\!-- <div class='col fragment' data-fragment-index='6'> -\-> -->
+                                        <!--                 <\!--         $x = f(\Lambda)$ -\-> -->
+					<!-- 		<\!-- 	<br> -\-> -->
+                                        <!--                 <\!--         <br> -\-> -->
+                                        <!--                 <\!--         <b class="alert"> Data </b> -\-> -->
+					<!-- 		<\!-- </div> -\-> -->
+                                                         
+					<!-- 	</div> -->
+                                                
+					<!-- 	<\!-- <img class="plain fragment" data-fragment-index="0" style="position:absolute; top:90px; right:20px; width:300px;" data-src="assets/pk_eqn3.png" /> -\-> -->
+						
+					<!-- 	<div class="container" style="position:absolute; top:325px; width:1000px; height:50px; left:130px; font-size:35px"> -->
+					<!-- 		<div class='col fragment' data-fragment-index='2'>  $\rightarrow$ </div> -->
+					<!-- 		<div class='col fragment' data-fragment-index='3'>  $\rightarrow$ </div> -->
+					<!-- 		<\!-- <div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -\-> -->
+					<!-- 		<div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -->
+					<!-- 		<\!-- <div class='col fragment' data-fragment-index='6'>  $\rightarrow$ </div> -\-> -->
+					<!-- 	</div> -->
+                                                                                                
+					<!-- 	<div class="container" style="position:relative; top:-10px; width:1000px; height:50px; left:0px; margin:0 auto; font-size:18px"> -->
+					<!-- 		<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div> -->
+					<!-- 		<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body simulations) <br> ($\mathbf{\Lambda}$) </div> -->
+					<!-- 		<\!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -\-> -->
+ 					<!-- 		<div class='col fragment' data-fragment-index='4'>  Galaxy models & <br>survey systematics <br> ($\mathbf{\phi}$)  </div> -->
+					<!-- 		<\!-- <div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -\-> -->
+					<!-- 	</div> -->
+                                        <!--         <img class="plain  fragment fade-out" data-fragment-index="3" style="position:absolute; top:10px; right:20px; height:250px;" data-src="assets/WMAP_timeline.jpg" /> -->
+                                        <!--         <span class="fragment fade-out" data-fragment-index="4"> -->
+                                        <!--                 <img class="plain  fragment fade-in" data-fragment-index="3" style="position:absolute; top:10px; right:20px;;" data-src="assets/nbodysim.gif" /> -->
+                                        <!--         </span> -->
+                                        <!--         <img class="plain  fragment fade-in" data-fragment-index="4" style="position:absolute; top:50px; right:20px; height:150px;" data-src="assets/galaxypeaks.jpg" /> -->
+
+                                        <!--         <div class='fragment' data-fragment-index='6'> -->
+                                        <!--                 $$\theta = (\Lambda, z, \phi)$$ -->
+                                        <!--         </div> -->
+						
+
+                                        <!-- </section> -->
+                                        
+
                                         
                                         <!-------------------------------------------------------------------------------->
 
@@ -653,7 +745,7 @@
                                                 <h3 class='slide-title' style=""> Challenges for inference </h3>
 
 
-						$x \sim  f(\Lambda, z, \phi)$
+						$x \sim  p(x | \Lambda, z, \phi)$
                                                 <br>
                                                 <br>
 						<div class="slide-text" style="font-size:20px">
