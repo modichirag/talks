@@ -276,20 +276,20 @@
 							</div>
 							<br>
 							<br>
-							<div class="block fragment current-visible" data-fragment-index="2" >
+							<div class="block fragment current-visible" data-fragment-index="2" style="width:450px" >
 								<div class="block-title">
  									6 parameters in $\Lambda$-CDM model
  								</div>
 								<div class="block-content" style="font-size:20px">
-                                                                        $$\theta = (\Omega_b, \Omega_m, H, \tau, \sigma_8, n_s)$$ 
+                                                                        $$\theta = (\Omega_b, \Omega_m, H, \sigma_8, n_s, \tau)$$ 
 
 									<ol>
 										<li>baryon density fraction ($\Omega_b$)</li>
 										<li>dark matter density fraction ($\Omega_m$)</li>
 										<li>rate of acceleration of the Universe ($H$)</li>
-										<li>optical depth at reionization ($\tau$) </li>
 										<li>amplitude of density fluctuations ($\sigma_8$)</li>
-										<li>scalar spectral index ($n_s$)</li>
+										<li>variation of fluctuations with scales ($n_s$)</li>
+										<li>optical depth to background radiation ($\tau$) </li>
 									</ol>
                                                                         <br>
                                                                         <!-- Extended models: -->
@@ -335,7 +335,7 @@
 						<h3 class='slide-title'>Next generation of cosmology</h3>
 						<br>
 						<div class="container" style="font-size:20px; ">
-                                                        <div class="col" style="flex: 0 0 42em;">
+                                                        <div class="col" style="flex: 0 0 40em; ">
 
 								<div class="plain" style="position:absolute; top:90px; left:50px">
 									<img src="assets/desi_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img>
@@ -374,7 +374,7 @@
                                                                 
 							</div>
                                                         
-                                                        <div class="col fragment" data-fragment-index="0" style="flex: 0 0 20em;">
+                                                        <div class="col fragment" data-fragment-index="0" style="flex: 0 0 25em;">
                                                                 
                                                                   <!-- <img src="assets/desi_telescope.jpg" class="plain" height="150" width="250" style="border:none"></img> -->
 								<br>
@@ -382,11 +382,10 @@
 									<b class="alert"> Dark Energy Spectroscopic Instrument (DESI) </b>
 									<br>
 									<ul style="">
-										<li> One-third of the night sky over 5 years</li>
-										<li> 35 million galaxies and quasars</li>
+										<li> 35 million galaxies and quasars over 5 years</li>
 										<li class="fragment" data-fragment-index="0"> Has mapped out <b><u> more galaxies than all of the previous 3D surveys combined.</u></b>
 											<br>
-                                                                                        $\,\rightarrow$ 1.2 million galaxies in the first 6 months, same as BOSS survey in 5 years.
+                                                                                        $\,\rightarrow$ 1.2 million galaxies in the first 6 months, same as the last big survey in 5 years.
 									</ul>
 								</div>
 								<br>
@@ -522,46 +521,90 @@
 				<!-------------------------------------------------------------------------------->
 
                                 <section> 
+                                        <!-- <section data-background-color="black"> -->
+
+
+                                        <!--         <h3 class='slide-title' style=""> Field-level inference: holy-grail of cosmological analysis </h3> -->
+
+
+                                        <!--         <br> -->
+                                        <!--         Model the field-level data without any compression and use it for inference. -->
+
+                                        <!--         <div class="slide-text", style="position:relative;"> -->
+                                        <!--                 <br> -->
+                                        <!--                 <br> -->
+
+                                        <!--                 <span class="fragment " data-fragment-index="1"> No information is lost by compressing data into low-dimensional summary statistics. -->
+                                        <!--                 </span> -->
+                                        <!--                 <br> -->
+                                        <!--                  <img class="fragment plain"   data-fragment-index="1" width="350px" height="300px" style="position:relative;top:50px;left:250px" data-src="assets/field_level_prelim.png" /> -->
+                                        <!--                 <br> -->
+                                        <!--                 <br> -->
+                                        <!--                 <br> -->
+                                        <!--                 <span class="fragment " data-fragment-index="1"> Reconstruct unobserved fields to develop new cosmological probes. -->
+                                        <!--                         <br> -->
+                                        <!--                         Modi, White et al. (2019a,b; 2021).  -->
+                                        <!--                 </span> -->
+
+                                        <!--                 <div class="fragment  " data-fragment-index="1" style="font-size: 16px; position:relative; top:-10px; left:-20px; text-align:right;"> -->
+                                        <!--                         <b><u>Modi</u></b> et al. (in preparation) -->
+                                        <!--                         <br> -->
+                                        <!--                         <b><u>Modi</u></b>, Feng, Seljak (2017) -->
+                                        <!--                         <br> -->
+                                        <!--                         Leclercq and Heavens (2021) -->
+                                        <!--                 </div> -->
+                                        <!--         </div> -->
+
+                                        <!--         <div> -->
+                                        <!--                 <img class="plain fragment grow" data-fragment-index="1" style="position:absolute; top:175px; right:165px; height:200px" -->
+                                        <!--                      data-src="assets/sdss_pie2.jpg" /> -->
+                                        <!--                 <img class="plain fragment semi-fade-out" data-fragment-index="1" style="position:absolute; top:425px; right:120px; height:200px" -->
+                                        <!--                      data-src="assets/boss_dr12_fit_corr.png" /> -->
+                                        <!--           </div> -->
+                                                
+                                        <!-- </section> -->
+                                        
+                                        <!-------------------------------------------------------------------------------->
                                         <section data-background-color="black">
 
 
-                                                <h3 class='slide-title' style=""> Field-level inference: holy-grail of cosmological analysis </h3>
+                                                <h3 class='slide-title' style=""> How do we extract <b class="alert" >all</b> the information from this data? </h3>
 
 
                                                 <br>
-                                                Model the field-level data without any compression and use it for inference.
+                                                Model the galaxy field: full three-dimensional distribution of galaxies.
+                                                <!-- field-level data without any compression and use it for inference. -->
 
                                                 <div class="slide-text", style="position:relative;">
                                                         <br>
                                                         <br>
 
-                                                        <span class="fragment " data-fragment-index="1"> No information is lost by compressing data into low-dimensional summary statistics.
+                                                        <span class="fragment " data-fragment-index="1"> Modeling individual galaxies, instead of low-dimensional summary statistics.
                                                         </span>
                                                         <br>
-                                                         <img class="fragment plain"   data-fragment-index="1" width="350px" height="300px" style="position:relative;top:50px;left:250px" data-src="assets/field_level_prelim.png" />
-                                                        <br>
-                                                        <br>
-                                                        <br>
-                                                        <span class="fragment " data-fragment-index="1"> Reconstruct unobserved fields to develop new cosmological probes.
-                                                                <br>
-                                                                Modi, White et al. (2019a,b; 2021). 
+                                                        <span class="fragment " data-fragment-index="2"> No information is lost by data compression.
                                                         </span>
+                                                        <br>
+                                                         <img class="fragment plain"   data-fragment-index="2" width="350px" height="300px" style="position:relative;top:50px;left:250px" data-src="assets/field_level_prelim.png" />
+                                                        <br>
 
-                                                        <div class="fragment  " data-fragment-index="1" style="font-size: 16px; position:relative; top:-10px; left:-20px; text-align:right;">
-                                                                <b><u>Modi</u></b> et al. (in preparation)
+                                                        
+                                                        <div class="plain" style="position:absolute; top:20px; right:165px; ">
+                                                                <img style="height:225px; border:none"
+                                                                     data-src="assets/sdss_pie2.jpg" />
+                                                        </div>
+                                                        <div class="plain fragment fade-in" data-fragment-index="1" style="position:absolute; top:260px; right:130px; font-size:20px">
+                                                                <img  style="height:200px; border:none"  data-src="assets/boss_dr12_fit_corr.png" />
                                                                 <br>
-                                                                <b><u>Modi</u></b>, Feng, Seljak (2017)
-                                                                <br>
+                                                                <span style="position:relative; top:-12px; "> Spatial clustering statistics </span>
+                                                        </div>
+                                                        
+                                                        <div class="fragment  " data-fragment-index="2" style="font-size: 18px; position:absolute; top:520px; right:20px; text-align:right;">
+                                                                <b><u>Modi</u></b> et al. (in preparation);
+                                                                <b><u>Modi</u></b>, Feng, Seljak (2017);
                                                                 Leclercq and Heavens (2021)
                                                         </div>
                                                 </div>
-
-                                                <div>
-                                                        <img class="plain fragment grow" data-fragment-index="1" style="position:absolute; top:175px; right:165px; height:200px"
-                                                             data-src="assets/sdss_pie2.jpg" />
-                                                        <img class="plain fragment semi-fade-out" data-fragment-index="1" style="position:absolute; top:425px; right:120px; height:200px"
-                                                             data-src="assets/boss_dr12_fit_corr.png" />
-                                                  </div>
                                                 
                                         </section>
                                         
@@ -595,7 +638,7 @@
 							<div class='col fragment' data-fragment-index='2'>
 								<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/>
                                                                 <br>
-								<b class="alert" style="position:relative; top:-15px"> Initial (Linear) <br>Dark Matter
+								<b class="alert" style="position:relative; top:-15px"> Initial <br>Dark Matter
                                                                 </b>
                                                                 <br>
 						                <span style="font-size:18px; position:relative; top:-15px"> $z \sim \mathcal{N}(0, g(\Lambda))$    </span>
@@ -605,7 +648,7 @@
 							<div class='col fragment' data-fragment-index='3'>
 								<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/>
 								<br>
-                                                                <b class="alert" style="position:relative; top:-15px"> Final (Evolved) <br> Dark Matter </b>
+                                                                <b class="alert" style="position:relative; top:-15px"> Final <br> Dark Matter </b>
                                                                 <br>
 						                <span style="font-size:18px; position:relative; top:-15px"> $\delta = f(z,\Lambda)$    </span>
 
@@ -645,10 +688,10 @@
 							<!-- <div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -->
 						</div>
                                                 <img class="plain  fragment fade-out" data-fragment-index="3" style="position:absolute; top:10px; right:20px; height:250px;" data-src="assets/WMAP_timeline.jpg" />
-                                                <span class="fragment fade-out" data-fragment-index="4">
+                                                <span class="fragment" data-fragment-index="3">
                                                         <img class="plain  fragment fade-in" data-fragment-index="3" style="position:absolute; top:10px; right:20px;;" data-src="assets/nbodysim.gif" />
                                                 </span>
-                                                <img class="plain  fragment fade-in" data-fragment-index="4" style="position:absolute; top:50px; right:20px; height:150px;" data-src="assets/galaxypeaks.jpg" />
+                                                <!-- <img class="plain  fragment fade-in" data-fragment-index="4" style="position:absolute; top:50px; right:20px; height:150px;" data-src="assets/galaxypeaks.jpg" /> -->
 
                                                 <div class='fragment' data-fragment-index='6'>
                                                         $$\theta = (\Lambda, z, \phi)$$
@@ -656,84 +699,6 @@
 						
 
                                         </section>
-                                        
-
-                                        
-                                        <!-- <section data-background-color="black"> -->
-
-
-                                        <!--         <h3 class='slide-title' style=""> Modeling for field-level inference </h3> -->
-                                                
-                                        <!--         <br> -->
-					<!-- 	$x \sim  f(\theta)$ <br> -->
-					<!-- 	<div style="font-size:20px" > data $\sim$ probabilistic forward model (cosmology) </div> -->
-
-					<!-- 	<div class="container" style="font-size:20px"> -->
-                                        <!--                 <div class='col fragment' data-fragment-index="1" > -->
-					<!-- 			<br> -->
-					<!-- 			<br> -->
-                                        <!--                         $\Lambda$ -->
-                                        <!--                         <br> -->
-					<!-- 			<b class="alert"> Cosmology </b> -->
-					<!-- 			<div style="font-size:30px"> + </div> -->
-					<!-- 			<img data-src="assets/modes.png" class="plain" style="position:relative; top:-30px; height:150px;"/> -->
-					<!-- 			<br> -->
-					<!-- 			<b class="alert" style="position:relative; top:-50px; ;"> Initial phases <br> $z \sim {N}(0, 1)$</b> -->
-					<!-- 		</div> -->
-
-					<!-- 		<div class='col fragment' data-fragment-index='2'> -->
-					<!-- 			<img data-src="assets/fieldinit.png" class="plain" style="height:200px;"/> -->
-                                        <!--                         <br> -->
-					<!-- 			<b class="alert"> Initial (Linear) <br>Dark Matter </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'> -->
-					<!-- 			<img data-src="assets/fieldfin.png" class="plain " style="height:200px;"/> -->
-					<!-- 			<br> -->
-                                        <!--                         <b class="alert"> Final (Evolved) <br> Dark Matter </b> -->
-					<!-- 		</div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='4'> -->
-					<!-- 			<img data-src="assets/fieldgal.png" class="plain " style="height:200px;"/> -->
-                                        <!--                         <br> -->
-                                        <!--                         <b class="alert"> Galaxies <br> (Data, $x$) </b> -->
-					<!-- 		</div> -->
-					<!-- 		<\!-- <div class='col fragment' data-fragment-index='6'> -\-> -->
-                                        <!--                 <\!--         $x = f(\Lambda)$ -\-> -->
-					<!-- 		<\!-- 	<br> -\-> -->
-                                        <!--                 <\!--         <br> -\-> -->
-                                        <!--                 <\!--         <b class="alert"> Data </b> -\-> -->
-					<!-- 		<\!-- </div> -\-> -->
-                                                         
-					<!-- 	</div> -->
-                                                
-					<!-- 	<\!-- <img class="plain fragment" data-fragment-index="0" style="position:absolute; top:90px; right:20px; width:300px;" data-src="assets/pk_eqn3.png" /> -\-> -->
-						
-					<!-- 	<div class="container" style="position:absolute; top:325px; width:1000px; height:50px; left:130px; font-size:35px"> -->
-					<!-- 		<div class='col fragment' data-fragment-index='2'>  $\rightarrow$ </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'>  $\rightarrow$ </div> -->
-					<!-- 		<\!-- <div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -\-> -->
-					<!-- 		<div class='col fragment' data-fragment-index='4'>  $\rightarrow$ </div> -->
-					<!-- 		<\!-- <div class='col fragment' data-fragment-index='6'>  $\rightarrow$ </div> -\-> -->
-					<!-- 	</div> -->
-                                                                                                
-					<!-- 	<div class="container" style="position:relative; top:-10px; width:1000px; height:50px; left:0px; margin:0 auto; font-size:18px"> -->
-					<!-- 		<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div> -->
-					<!-- 		<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body simulations) <br> ($\mathbf{\Lambda}$) </div> -->
-					<!-- 		<\!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -\-> -->
- 					<!-- 		<div class='col fragment' data-fragment-index='4'>  Galaxy models & <br>survey systematics <br> ($\mathbf{\phi}$)  </div> -->
-					<!-- 		<\!-- <div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -\-> -->
-					<!-- 	</div> -->
-                                        <!--         <img class="plain  fragment fade-out" data-fragment-index="3" style="position:absolute; top:10px; right:20px; height:250px;" data-src="assets/WMAP_timeline.jpg" /> -->
-                                        <!--         <span class="fragment fade-out" data-fragment-index="4"> -->
-                                        <!--                 <img class="plain  fragment fade-in" data-fragment-index="3" style="position:absolute; top:10px; right:20px;;" data-src="assets/nbodysim.gif" /> -->
-                                        <!--         </span> -->
-                                        <!--         <img class="plain  fragment fade-in" data-fragment-index="4" style="position:absolute; top:50px; right:20px; height:150px;" data-src="assets/galaxypeaks.jpg" /> -->
-
-                                        <!--         <div class='fragment' data-fragment-index='6'> -->
-                                        <!--                 $$\theta = (\Lambda, z, \phi)$$ -->
-                                        <!--         </div> -->
-						
-
-                                        <!-- </section> -->
                                         
 
                                         
@@ -751,15 +716,15 @@
 						<div class="slide-text" style="font-size:20px">
 
                                                         <ol>
-                                                                <li> High-dimensional inference <br>
-                                                                        $\rightarrow$ $z$ can be billions on unknown parameters
+                                                                <li class="fragment highlight-green" data-fragment-index="2"> High-dimensional inference <br>
+                                                                        $\rightarrow$ $z$ can be millions of unknown parameters
                                                                 </li>
                                                                 <br>
                                                                 <li> Computationally expensive models <br>
                                                                         $\rightarrow$ $N$-body simulation under gravity
                                                                 </li>
                                                                 <br>
-                                                                <li> Hierarchical model <br>
+                                                                <li class="fragment highlight-green" data-fragment-index="2"> Hierarchical model <br>
                                                                         $\rightarrow$ Difficult posterior geometry
                                                                 </li>
                                                                         
@@ -769,8 +734,8 @@
                                                         <br>
                                                         <br>
                                                         <br>
-                                                        <div class="fragment" data-fragment-index="1" style="width:500px; text-align:center">
-                                                                <b> Bayesian inference problems or inverse problems span all natural and social science disciplines.</b> 
+                                                        <div class="fragment alert" data-fragment-index="1" style="width:500px; text-align:center">
+                                                                Bayesian inference problems or inverse problems span all natural and social science disciplines. 
                                                         </div>
                                                 </div>
                                                                   
@@ -794,7 +759,7 @@
                                                         <br>
                                                         <span style="position:relative; top:-12px"> Monitoring & remediation  </span>
                                                 </div>
-						<div class="plain fragment " data-fragment-index="1" style="position:absolute; top:67 0px; right:20px; font-size: 16px">
+						<div class="plain fragment " data-fragment-index="1" style="position:absolute; top:675px; right:20px; font-size: 16px">
 							Woodbury and Rubin. (2000);  Kulakova, Arampatzis et al. (2017);  Conrad, Davis et al. (2017);  Dong, Haines et al. (2021)
                                                 </div>
                                                         
@@ -815,22 +780,22 @@
 					<div class="slide-text">
                                                 
                                                 <ul>
-                                                        <li> Explicit Inference: when you have access to the data likelihood $p(x|\theta)$.  </li>
+                                                        <li> 1. High dimensional inference in cosmology with field-level inference.  </li>
                                                         <br>
                                                         <ul>
-                                                                <li> Automatic differentiation: tools to facilitate inference </li>
+                                                                <li> Tools  </li>
                                                                 <li> Algorithms for high-dimensional inference
                                                                         <ul>
                                                                                 $\rightarrow$ Variational Inference (VI) <br>
                                                                                 $\rightarrow$ Hamiltonian Monte-Carlo (HMC)
                                                                         </ul>
                                                                 </li> 
-                                                                <li> Advances in HMC and VI. </li>
                                                         </ul>
                                                         <br>
-                                                        <li> Implicit Inference: when we do not have access to the data likelihood explicitly. </li>
+                                                        <li> New algorithms for Bayesian inference </li>
+                                                        <br>
                                                         <br> 
-                                                        <li> Putting it all together </li>
+                                                        <!-- <li> Putting it all together </li> -->
                                                 </ul>
                                         </div>
                                         
@@ -862,7 +827,7 @@
                                                         	<div class="col" style="flex: 0 0 30em;" >
 									<ul>
 										<li class=" plain " > High-dimensional inference<br>
-											<div style="font-size:20px">  Initial conditions of the Universe $\sim$ million unknown parameters </div>
+											<div style="font-size:20px">  Initial conditions $\sim$ millions of unknown parameters </div>
 											
   										</li>
 										<br>
@@ -872,10 +837,11 @@
 											</div>
 										</li>
 										<br>
-                                                                                <li class="fragment " data-fragment-index="1"> 	 Response of likelihood to the underlying parameters. </li>
+                                                                                <li class="fragment " data-fragment-index="1"> 	 Response of posterior to the underlying parameters. </li>
                                                                                 <br>
 										<div class="fragment " data-fragment-index="1" style="position:relative; left:100px ">
-											$g = \frac{\partial\, p(x| \theta)}{\partial\, \theta}$
+											<!-- $g = \frac{\partial\, p(x| \theta)}{\partial\, \theta}$ -->
+											$g = \frac{\partial\, p(\theta | x)}{\partial\, \theta} = $ <span style="color:orange">$\frac{\partial\, p(x| \theta)}{\partial\, \theta}$</span> $+ \frac{\partial\, p(\theta)}{\partial\, \theta}$
 											<br> 
 										</div>
                                                                                 <br>
@@ -888,17 +854,17 @@
 							        </div>
 								<div class="col" style="flex: 0 0 21em; text-align:center">
                                                                         <img class="plain  fragment fade-in" data-fragment-index="3" style="position:absolute; top:50px; right:300px;;" data-src="assets/nbodysim.gif" />
-                                                                        <img class="plain  fragment fade-in" data-fragment-index="4" style="position:absolute; top:100px; right:100px;;" data-src="assets/frustrated_programmer2.gif" />
+                                                                        <img class="plain  fragment fade-in" data-fragment-index="3" style="position:absolute; top:100px; right:100px;;" data-src="assets/frustrated_programmer2.gif" />
 
-									<div  class="plain fragment fade-in" data-fragment-index="3" style="position:absolute; top:300px; right:120px; width:400px; font-size:20px">
-                                                                                <img data-src="assets/pmwd_table_fastpm.png" />
-                                                                                <br>
-                                                                                <em> Examples of differentiable codes upto 2017 </em>
-                                                                        </div>
+									<!-- <div  class="plain fragment fade-in" data-fragment-index="3" style="position:absolute; top:300px; right:120px; width:400px; font-size:20px"> -->
+                                                                        <!--         <img data-src="assets/pmwd_table_fastpm.png" /> -->
+                                                                        <!--         <br> -->
+                                                                        <!--         <em> Examples of differentiable codes upto 2017 </em> -->
+                                                                        <!-- </div> -->
                                                                         <br>
                                                                         
 								</div>
-                                                                <div class="fragment " data-fragment-index="5" style="position:absolute; top:450px; width:600px; font-size:20px">
+                                                                <div class="fragment " data-fragment-index="5" style="position:absolute; top:420px; width:600px; font-size:20px">
 									<b> Automatic differentiation:</b> the hammer behind deep learning <br>
 									$\longrightarrow$  TensorFlow, JAX, Pytorch, Stan and more
 									<br>
@@ -927,7 +893,7 @@
 					<!-------------------------------------------------------------------------------->
 					
 					<section>
-						<h3 class='slide-title'> Differentiable cosmological simulations</h3>
+						<h3 class='slide-title'> Automatically Differentiable simulations</h3>
 
 						<br>
 						<div class='container'>
@@ -936,8 +902,6 @@
 									<li>
 										<b class="alert "> FlowPM</b>: the first particle-mesh simulations in TensorFlow <br>
 										<ul class="plain" data-fragment-index="1" style="font-size:20px">
-											<li> Automatic differentiation
-											</li>
 											<li> Access to SOTA inference algorithms
 											</li>
 											<li>  Seamless interfacing with deep-learning tools 
@@ -945,22 +909,23 @@
 										</ul>
 									</li>
 									<br>
-									<img  class="plain  fragment fade-out" data-fragment-index="1" style="position:absolute; top:250px; left:70px; width:450px"
-									      data-src="assets/pmwd_table_flowpm.png" />
+									<!-- <img  class="plain  fragment fade-out" data-fragment-index="1" style="position:absolute; top:250px; left:70px; width:450px" -->
+									<!--       data-src="assets/pmwd_table_flowpm.png" /> -->
 									
 
-									<li class="fragment" data-fragment-index="1"> 
-										Reconstructing the Universe in 10 lines<br>
-										<ul> <li> Maximum-a-posteriori estimate </ul>
-									</li>
+									<!-- <li class="fragment" data-fragment-index="1">  -->
+									<!-- 	Reconstructing the Universe in 10 lines<br> -->
+									<!-- 	<ul> <li> Maximum-a-posteriori estimate </ul> -->
+									<!-- </li> -->
 
                                                                         <br>
 
-									<li class="fragment" data-fragment-index="2"> Naive implementation: memory limited
+									<li class="fragment" data-fragment-index="2"> Naive implementation: memory grows with time-steps
 										<ul class="fragment" data-fragment-index="2" style="font-size:20px ">
 											<li> <b class="alert" style="font-size:22px"> $pmwd$</b><font color="white">: particle mesh with derivatives </font></li>
-											<li > Exploit reversibility of leapfrog integration. </li>
-											<li> Constant memory frootprint  </li>
+											<li > Customized adjoint gradients for time-integration. </li>
+                                                                                        <li> Can run 100s of time-steps </li>
+											<!-- <li> Constant memory frootprint  </li> -->
 										</ul>
 									</li>
 
@@ -1006,85 +971,84 @@
 								</ul>
 								
 								
-								<div class="plain fragment" data-fragment-index="7" style=" position:absolute; top:650px; left:60px; text-align:center" >
-                                                                        Similar efforts underway across disciplines.
+								<p class="plain fragment alert" data-fragment-index="7" style="position:absolute; top:570px; left:90px; text-align:center" >
+                                                                        Similar efforts are underway across disciplines.
                                                                         
-                                                                </div>
+                                                                </p>
                                                                 
-								<div class="container" style="position:relative; top:-450px">
-									<div class="col fragment current-visible" data-fragment-index="1">
-										<img class="plain" data-src="assets/reconim_init.gif" style='height:120px;' />
-									</div>
+								<!-- <div class="container" style="position:relative; top:-450px"> -->
+								<!-- 	<div class="col fragment current-visible" data-fragment-index="1"> -->
+								<!-- 		<img class="plain" data-src="assets/reconim_init.gif" style='height:120px;' /> -->
+								<!-- 	</div> -->
 									
-									<div class="col fragment current-visible" data-fragment-index="1">
-										<img class="plain" data-src="assets/reconim_fin.gif" style='height:120px;' />
-									</div>
+								<!-- 	<div class="col fragment current-visible" data-fragment-index="1"> -->
+								<!-- 		<img class="plain" data-src="assets/reconim_fin.gif" style='height:120px;' /> -->
+								<!-- 	</div> -->
 									
-									<div class="col fragment current-visible " data-fragment-index="1">
-										<img class="plain" data-src="assets/fin_field.png" style='height:120px;' />
-									</div>
-									<br>
-								</div>
+								<!-- 	<div class="col fragment current-visible " data-fragment-index="1"> -->
+								<!-- 		<img class="plain" data-src="assets/fin_field.png" style='height:120px;' /> -->
+								<!-- 	</div> -->
+								<!-- 	<br> -->
+								<!-- </div> -->
 								
-							</div>
+ 							</div>
 							
 							<div class='col' style="flex: 0 0 28em;">
 
-								<div class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; top:70px; right:100px" >
+								<div class="plain fragment fade-out" data-fragment-index="7" style="position:absolute; top:70px; right:100px" >
                                                                         <div  style="position:relative; float:right; top:20px;  font-size: 15px; ">Credits : Francois Lanusse</div>
                                                                         <br>
                                                                         <img  style=" border:none" data-src="assets/flowpm.gif" />
                                                                 </div>
 
-								<div style="">
 								
 									<!-- <img  class="plain  fragment fade-out" data-fragment-index="3" style="position:absolute; top:150px; right:100px; width:450px" -->
 									<!--       data-src="assets/pmwd_table_flowpm.png" /> -->
 									<!-- <img  class="plain fragment current-visible" data-fragment-index="4" style="position:absolute; top:150px; right:100px; width:450px" -->
 									<!--       data-src="assets/pmwd_table_flowpm.png" /> -->
-								        <div   class="fragment fade-out" data-fragment-index="7">
-									        <img  class="plain fragment"  data-fragment-index="2" style="position:absolute; top:150px; right:100px; width:450px"
-									              data-src="assets/pmwd_table.png" />
-									</div>
-                                                                        
-									<div class="fragment current-visible" data-fragment-index="1" style="position:absolute; top:130px; right:20px">
-									  <pre  ><code data-trim data-noescape style="height:80em;width:49em;">
-									  import tensorflow as tf
-									  import flowpm
+								        <!-- <div   class="fragment fade-out" data-fragment-index="7"> -->
+									<!--         <img  class="plain fragment"  data-fragment-index="2" style="position:absolute; top:150px; right:100px; width:450px" -->
+									<!--               data-src="assets/pmwd_table.png" /> -->
+									<!-- </div> -->
+                                                                
+								<!-- <div class="fragment current-visible" data-fragment-index="1" style="position:absolute; top:130px; right:20px"> -->
+								<!-- 	  <pre  ><code data-trim data-noescape style="height:80em;width:49em;"> -->
+								<!-- 	  import tensorflow as tf -->
+								<!-- 	  import flowpm -->
+                                                                          
+								<!-- 	  #Run simulation from variable initial conditions -->
+								<!-- 	  linear = tf.get_variable('linear', shape=(nc, nc, nc), -->
+								<!-- 				 initializer=tf.random_normal_initializer(), trainable=True) -->
+								<!-- 	  initial_conditions = flowpm.lpt_init(linear, name='icstate') -->
+								<!-- 	  final_state = flowpm.nbody(initial_conditions, stages, nc, name='fnstate') -->
+								<!-- 	  final_field = flowpm.cic_paint(tf.zeros_like(linear), final_state[0], boxsize=bs) -->
 
-									  #Run simulation from variable initial conditions
-									  linear = tf.get_variable('linear', shape=(nc, nc, nc),
-												 initializer=tf.random_normal_initializer(), trainable=True)
-									  initial_conditions = flowpm.lpt_init(linear, name='icstate')
-									  final_state = flowpm.nbody(initial_conditions, stages, nc, name='fnstate')
-									  final_field = flowpm.cic_paint(tf.zeros_like(linear), final_state[0], boxsize=bs)
+								<!-- 	  #Likelihood term: ((data-model)/noise)^2 -->
+								<!-- 	  residual = tf.multiply(tf.subtract(final_field, data), 1/sigma) -->
+								<!-- 	  neg_log_likelihood = tf.reduce_sum(tf.multiply(residual, residual)) -->
 
-									  #Likelihood term: ((data-model)/noise)^2
-									  residual = tf.multiply(tf.subtract(final_field, data), 1/sigma)
-									  neg_log_likelihood = tf.reduce_sum(tf.multiply(residual, residual))
+								<!-- 	  #Prior: (linear_modes^2 / linear_power_spectrum) -->
+								<!-- 	  lineark = flowpm.r2c3d(linear, norm=nc**3) -->
+								<!-- 	  neg_log_prior = tf.square(tf.cast(tf.abs(lineark), tf.float32)) -->
+								<!-- 	  neg_log_prior = tf.reduce_sum(tf.multiply(neg_log_prior, 1/priorwt))j -->
 
-									  #Prior: (linear_modes^2 / linear_power_spectrum)
-									  lineark = flowpm.r2c3d(linear, norm=nc**3)
-									  neg_log_prior = tf.square(tf.cast(tf.abs(lineark), tf.float32))
-									  neg_log_prior = tf.reduce_sum(tf.multiply(neg_log_prior, 1/priorwt))j
-
-									  #Loss & optimize
-									  loss = tf.add(neg_log_likelihood, neg_log_prior, name='loss')
-									  optimizer = ScipyOptimizerInterface(loss, var_list=[linear], 'L-BFGS-B')
-									  with tf.Session() as session:
-									      optimizer.minimize(session)
-									      recon = session.run(linear)
-									  </code></pre>
-								</div>
+								<!-- 	  #Loss & optimize -->
+								<!-- 	  loss = tf.add(neg_log_likelihood, neg_log_prior, name='loss') -->
+								<!-- 	  optimizer = ScipyOptimizerInterface(loss, var_list=[linear], 'L-BFGS-B') -->
+								<!-- 	  with tf.Session() as session: -->
+								<!-- 	      optimizer.minimize(session) -->
+								<!-- 	  recon = session.run(linear) -->
+								<!-- 	  </code></pre> -->
+								<!-- </div> -->
 
  							
 
-								<div   class="fragment fade-out" data-fragment-index="7">
+								<div   class="fragment fade-out" data-fragment-index="6">
 								        <img  class="plain fragment " data-fragment-index="2"
-								              style="position:absolute; top:350px; right:190px; width:300px" data-src="assets/pmwd_logo.svg" />
+								              style="position:absolute; top:380px; left:100px; width:300px" data-src="assets/pmwd_logo.svg" />
                                                                         
-								        <img  class="plain fragment current-visible " data-fragment-index="2"
-								              style="position:absolute; top:450px; left:80px; width:350px" data-src="assets/adjoint.png" />
+								        <!-- <img  class="plain fragment current-visible " data-fragment-index="2" -->
+								        <!--       style="position:absolute; top:450px; left:80px; width:350px" data-src="assets/adjoint.png" /> -->
 								        
 								        <div   style="position:absolute; top:580px; right:20px; font-size:16px; text-align:right">
 									        <span class="plain fragment fade-out " data-fragment-index="2" > 
@@ -1092,11 +1056,14 @@
 									                Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
 										        <a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a> <br>
 									        </span>
-									        <img  class="plain fragment" data-fragment-index="2"
-									              style="border:none; width:130px; height:110px; position:absolute; top:-50px; left:0px "
-									      data-src="../assets/epod.jpg" />
+									        <div  class="plain fragment" data-fragment-index="2" style="position:absolute; top:-10px; left:00px">
+									                <img style="border:none; width:120px; height:100px;   "
+									                     data-src="../assets/epod.jpg" />
+                                                                                        <br>
+                                                                                        <span style="position:relative; top:-80px; right:-40px " > Epod<br>Kwan </span>
+                                                                                </div>
 									        
-									        <span  class="plain fragment" data-fragment-index="2" style="position:relative; top:-100px; font-size:16px">
+									        <span  class="plain fragment" data-fragment-index="2" style="position:relative; top:-70px; font-size:16px">
 										        <b> <u>Modi</u></b>, Lanusse, Seljak (2020) <br>
 									                Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
 										        Li, <b><u>Modi</u></b> et al. (2022) <br>
@@ -1109,33 +1076,32 @@
 								        </div>
                                                                 </div>
 								
-								</div>
 							</div>
 							
-							<div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:30px; right:30px; text-align:center; font-size:18px">
+							<div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:50px; right:20px; text-align:center; font-size:18px">
                                                                 <img class="plain   "  style="width:280px;" data-src="assets/diffsim_combustion.png" />
                                                                 <br>
                                                                 <span style="position:relative; top:-12px"> Combustion kinetic modeling </span>
                                                         </div>
-                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:80px; right:350px; text-align:center; font-size:18px">
+                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:100px; right:350px; text-align:center; font-size:18px">
                                                                 <img  style=" width:280px;" data-src="assets/diffsim_kinetics.png" />
                                                                 <br>
                                                                 <span style="position:relative; top:-12px"> Kinetics </span>
                                                         </div>
-                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:310px; right:320px; text-align:center; font-size:18px">
+                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:350px; right:320px; text-align:center; font-size:18px">
                                                                 <img class="plain   "  style=" width: 350px;" data-src="assets/diffsim_md.jpeg" />
                                                                 <br>
                                                                 <span style="position:relative; top:-12px"> Molecular dynamics </span>
                                                         </div>
-                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:240px; right:20px; text-align:center; font-size:18px">
+                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:300px; right:20px; text-align:center; font-size:18px">
                                                                 <img class="plain  "  style="width:280px;" data-src="assets/diffsim_hep.jpg" />
                                                                 <br>
                                                                 <span style="position:relative; top:-12px"> High energy theory &<br>particle physics  </span>
                                                         </div>
-                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:440px; right:120px ; text-align:center; font-size:18px">
+                                                        <div class="plain  fragment " data-fragment-index="7" style="position:absolute; top:500px; right:200px ; text-align:center; font-size:18px">
                                                                 <img class="plain  "  style="width:400px;" data-src="assets/diffsim_hep_github.png" />
                                                                 <br>
-                                                                <span style="position:relative; top:-13px"> Community tool building  </span>
+                                                                 <span style="position:relative; top:-13px"> Community tool building  </span>
                                                         </div>
 
 						        <div class="plain fragment " data-fragment-index="7" style="position:absolute; top:590px; right:20px; font-size: 16px; text-align:right">
@@ -1158,133 +1124,260 @@
                                         
 
                                         <div style="font-size:40px">
-                                                Explicit inference:<br>
-                                                Hamiltonian Monte Carlo (HMC)
+                                                Reconstructing the Universe with Bayesian inference
                                         </div>
                                         
                                 </section>
 
                                 
 				<!-------------------------------------------------------------------------------->
+                              
+				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
 
 					<section>
-						<h3 class='slide-title'> Markov Chain Monte Carlo (MCMC) </h3>
-						
-						<br>
-						<div style="position:absolute; top:30px; right:20px; width:600px; text-align:right; font-size:20px">
-                                                        Goal: Generate samples from the posterior <span style="font-size:20px" > $p(\theta|x)$. </span> <br>
-                                                        <!-- to approximate expectations  <span style="font-size:20px" > $\int f(\theta) p(\theta | x) \mathrm{d}\theta$ -->
-							</span>
-                                                </div>
-						<br>
+						<h3 class='slide-title'> High dimensional Bayesian inference </h3>
+
 						<div class="container" style="font-size:20px">
 
-							<div class="col" style="flex:0 0 38em;"> 
-								<div class="plain " >
-                                                                        <u><b>Metropolis Hastings:</b></u>
-                                                                        <br>
-                                                                        <br>
-                                                                        <div style="text-align:left; margin-left:20px" >
-                                                                                Construct a Markov chain with probabilistic transition kernel <span style="font-size:18px" >  $\, k(\theta \rightarrow \theta')$</span>.
+							<div class="col" style="flex:0 0 32em; margin-left:20px ">
+                                                                
+                                                                <div class="plain" style="position: absolute; top:100px; text-align:left;">
+                                                                        <div style="text-align:center; font-size:20px">
+                                                                                
+                                                                                <u><b style="font-size:24px">Hamiltonian Monte Carlo</b></u>
                                                                                 <br>
-                                                                                Accept the proposed point with probability
-                                                                                <span style="font-size:18px" >
-                                                                                        $\alpha = \mathrm{min}\Big(1, \frac{p(\theta'|x)\, k(\theta' \rightarrow \theta)}{p(\theta|x)\, k(\theta \rightarrow \theta')}\Big)$
+                                                                                <br>
+                                                                                <span class="fragment" data-fragment-index="1">
+                                                                                        Goal: Generate samples from the posterior <span style="font-size:20px" > $p(\theta|x)$. </span>
                                                                                 </span>
-                                                                        </div>
-                                                                </div>
-                                                                
-                                                                <br>
-                                                                <br>
-                                                                
-								<div class="plain fragment" data-fragment-index="1">
-                                                                        
-                                                                        <u><b>Hamiltonian Monte Carlo:</b></u>
-                                                                        <br>
-                                                                        <br>
-                                                                        <div style="text-align:left; margin-left:20px" >
-										
-                                                                                Follow gradients to construct a better transition kernel.
-										<br>
-										<br>
-								                <span class="fragment" data fragment-index="2"> Generate proposals by simulating Hamiltonian dynamics with an auxiliary momentum ($u$).
-											<br>
-											$(\theta, u)\rightarrow(\theta', u')$
-											<br>
-
-                                                                                        <div style="font-size:20px; margin-left:20px; text-align:center" >
-                                                                                                $\dot{\theta} \propto u$
-												<br>
-												$ \dot{u} \propto -\nabla_{\theta}\log p(x, \theta)$
-                                                                                        </div>
-											<br>
-                                                                                        Numerically evolved using leapfrog integrator with <u>step-size</u> $\epsilon$, for $L$ steps: $k= \mathcal{T}(\epsilon, L)$.
-
-										</span>
-                                                                                <!-- Construct an Hamiltonian system:  <span style="font-size:18px" >  $H(\theta, u) = U(\theta) + K(u)$ </span> -->
-                                                                                <!-- <br> -->
-                                                                                <!-- <br> -->
-									        <!-- $\rightarrow$ interpret parameters as positions with potential energy -->
-									        <!-- <span style="font-size:18px" > $U(\theta) = -\log p(\theta|x)$ </span>  -->
-                                                                                <!-- <br> -->
-									        <!-- $\rightarrow$ introduce auxillary momentum, $u$, with kinetic energy $K(u)= \frac{u^TM^{-1}u}{2}$ <br> -->
-								                <!-- <br> -->
-									        <!-- <\!-- <li class="fragment" data fragment-index="2">introduce an auxiliary momentum $(p)$ for each parameter & construct Hamiltonian -\-> -->
-									        <!--         <\!-- 	$$H(x) = H(q, p) = U(q) + \frac{1}{2}p^TMp$$ -\-> -->
-									        <!--         <\!-- </li> -\-> -->
-								                <!-- <span class="fragment" data fragment-index="2"> Generate proposals for the Markov chain by simulating Hamiltonian dynamics -->
-                                                                                <!--         <span style="font-size:20px" > -->
-                                                                                <!--                 $$ -->
-                                                                                <!--                 \dot{\theta} = M^{-1}u; \quad \dot{u} = -\frac{\partial U}{\partial \theta} -->
-                                                                                <!--                 $$ -->
-                                                                                <!--         </span> -->
-                                                                                <!--         Numerically evolved using leapfrog integrator with <u>step-size $\epsilon$, for $L$ steps</u>: $k= \mathcal{T}(\epsilon, L)$. -->
                                                                                         
-								                </span>
                                                                         </div>
-								        <br>
-                                                                </div>
-							</div>		
-														
-							<div class="col" >
-								<div style="position:relative; width:700px; height:500px; top:200px; left:50px;  margin:1 auto">
-									
-									<!-- <Img  style="position:absolute;top:-150px;left:0px;" data-src="assets/hmc_algo.png"/> -->
-									<img  class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:-150px; right:250px; height:300px;" data-src="assets/rwmh.gif"/>
-									<img  class="fragment fade-in" data-fragment-index="1" style="position:absolute; top:-150px; right:250px; height:300px;" data-src="assets/hmc.gif"/>
+                                                                        <br>
+ 									<span class="fragment" data-fragment-index="1">
+                                                                                
+                                                                                Construct a Markov chain by simulating Hamiltonian dynamics.
+										<br>
+										<br>
+								                $\theta$: positions; $\,$$u$: auxiliary momentum
+										<br>
+										$(\theta, u)\rightarrow(\theta', u')$
+										<br>
+                                                                                
+                                                                                <div style="font-size:19px; margin-left:20px; text-align:center" >
+                                                                                        $ \dot{\theta} \propto u$
+											<br>
+											$ \dot{u} \propto -\nabla_{\theta}\log p(x, \theta)$
+                                                                                </div>
+										<br>
+                                                                                ODEs evolved using symplectic integrators like leapfrog.
+                                                                                <br>
+                                                                                <span class="fragment" data-fragment-index="2">
+                                                                                        Accept the proposed point with probability
+                                                                                        <span style="font-size:18px" >
+                                                                                                $\alpha = \mathrm{min}\Big(1, \frac{p(\theta'|x)}{p(\theta|x)}\Big)$
+                                                                                        </span>
+                                                                                </span>
+                                                                                <br>
+                                                                                <div style="position:absolute; top:360px; left:100px; font-size: 16px; margin:0 auto">
+                                                                                        <img  class="fragment fade-in" data-fragment-index="1" style="height:200px; border:none" data-src="assets/hmc.gif"/>
+                                                                                        <br>
+                                                                                        <div style="position:relative; top:-12px; left:100px; ">
+                                                                                                https://github.com/chi-feng/mcmc-demo
+                                                                                        </div>
+                                                                                </div>			
+                                                                                
+                                                                                
+                                                                        </span>
+                                                                </div>		
+                                                                
+                                                        </div>
+                                                        
+                                                        <div class="col" style="flex:0 0 32em; "> 
+                                                                
+                                                                        
+                                                                <div class="plain" style="position: absolute; top:100px; text-align:left; ">
 
-								</div>
-								<div style="position:absolute; float:right; top:650px; right:00px; font-size: 20px; margin:0 auto">https://github.com/chi-feng/mcmc-demo</div>			
-								
-							</div>
+                                                                        <div style="text-align:center; font-size:20px">
+                                                                                <u><b style="font-size:24px">Variational inference</b></u>
+                                                                                
+                                                                                <br>
+                                                                                <br>
+                                                                                <span class="fragment" data-fragment-index="4">
+                                                                                        Goal: Approximate the posterior with a parametric distribution
+							                                <span style="font-size:19px" > $$ p(\theta | x) \approx q_{\phi} (\theta) $$ </span>
+                                                                                </span>
+						                        </div>
+                                                                        
+								        <span class="fragment" data-fragment-index="4">
+                                                                        
+								                E.g. $q_\phi = \mathcal{N}(\mu, \Sigma)$, then
+								                $\phi = (\mu, \Sigma)$
+								                <br>
+                                                                                <br>
+                                                                        </span>
+                                                                        <span class="fragment" data-fragment-index="5">
+        
+							                        Fit parameters $\phi$ to minimize a dissimilarity metric $d(q;p)$
+                                                                                <br>
+                                                                                <br>
+									        <u>Reverse Kullback-Leibler Divergence</u>
+                                                                                <span style="font-size:18px" >
+                                                                                        $$D_{\mathrm{KL}}(q||p) = \mathbb{E}_{q}(\log q(\theta) - \log p(\theta|x)) $$
+                                                                                </span>
+
+									        <!-- <div class="block-content" style="font-size:20px"> -->
+										<!--         \begin{align} -->
+										<!--         D_{\mathrm{KL}}(q||p) &= \mathbb{E}_{q}(\log q - \log p) \nonumber \\ -->
+										<!--         & \approx \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta | x) \bigr] \nonumber \\ -->
+										<!--         & \leq  \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta,  x) \bigr] -->
+										<!--         \end{align} -->
+										<!--         $$D_{\mathrm{KL}}(q||p) = \mathbb{E}_{q}(\log q(\theta) - \log p(\theta|x)) $$ -->
+									        <!-- </div> -->
+								        </span>
+								        
+								        <br>
+								        <br>
+                                                                        <div      class="fragment" data-fragment-index="5" style="position:absolute; top:360px; right:100px; font-size: 16px; margin:0 auto">
+                                                                                <img  class="fragment fade-in" data-fragment-index="1" style="height:200px; border:none;" data-src="assets/vi_cartoon.png"/>
+                                                                                <br>
+                                                                                <br>
+                                                                        </div>			
+                                                                        
+							        </div>
+                                                                <br>
+						        </div>
 							
-						</div>
-					</section>
+						        </div>
+						        
+				        </section>
+				        
+                                </section> 
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+				<section>
+
+					<!-- <section> -->
+					<!-- 	<h3 class='slide-title'> Markov Chain Monte Carlo (MCMC) </h3> -->
+						
+					<!-- 	<br> -->
+					<!-- 	<div style="position:absolute; top:30px; right:20px; width:600px; text-align:right; font-size:20px"> -->
+                                        <!--                 Goal: Generate samples from the posterior <span style="font-size:20px" > $p(\theta|x)$. </span> <br> -->
+                                        <!--                 <\!-- to approximate expectations  <span style="font-size:20px" > $\int f(\theta) p(\theta | x) \mathrm{d}\theta$ -\-> -->
+					<!-- 		</span> -->
+                                        <!--         </div> -->
+					<!-- 	<br> -->
+					<!-- 	<div class="container" style="font-size:20px"> -->
+
+					<!-- 		<div class="col" style="flex:0 0 38em;">  -->
+					<!-- 			<div class="plain " > -->
+                                        <!--                                 <u><b>Metropolis Hastings:</b></u> -->
+                                        <!--                                 <br> -->
+                                        <!--                                 <br> -->
+                                        <!--                                 <div style="text-align:left; margin-left:20px" > -->
+                                        <!--                                         Construct a Markov chain with probabilistic transition kernel <span style="font-size:18px" >  $\, k(\theta \rightarrow \theta')$</span>. -->
+                                        <!--                                         <br> -->
+                                        <!--                                         Accept the proposed point with probability -->
+                                        <!--                                         <span style="font-size:18px" > -->
+                                        <!--                                                 $\alpha = \mathrm{min}\Big(1, \frac{p(\theta'|x)\, k(\theta' \rightarrow \theta)}{p(\theta|x)\, k(\theta \rightarrow \theta')}\Big)$ -->
+                                        <!--                                         </span> -->
+                                        <!--                                 </div> -->
+                                        <!--                         </div> -->
+                                                                
+                                        <!--                         <br> -->
+                                        <!--                         <br> -->
+                                                                
+					<!-- 			<div class="plain fragment" data-fragment-index="1"> -->
+                                                                        
+                                        <!--                                 <u><b>Hamiltonian Monte Carlo:</b></u> -->
+                                        <!--                                 <br> -->
+                                        <!--                                 <br> -->
+                                        <!--                                 <div style="text-align:left; margin-left:20px" > -->
+										
+                                        <!--                                         Follow gradients to construct a better transition kernel. -->
+					<!-- 					<br> -->
+					<!-- 					<br> -->
+					<!-- 			                <span class="fragment" data fragment-index="2"> Generate proposals by simulating Hamiltonian dynamics with an auxiliary momentum ($u$). -->
+					<!-- 						<br> -->
+					<!-- 						$(\theta, u)\rightarrow(\theta', u')$ -->
+					<!-- 						<br> -->
+
+                                        <!--                                                 <div style="font-size:20px; margin-left:20px; text-align:center" > -->
+                                        <!--                                                         $\dot{\theta} \propto u$ -->
+					<!-- 							<br> -->
+					<!-- 							$ \dot{u} \propto -\nabla_{\theta}\log p(x, \theta)$ -->
+                                        <!--                                                 </div> -->
+					<!-- 						<br> -->
+                                        <!--                                                 Numerically evolved using leapfrog integrator with <u>step-size</u> $\epsilon$, for $L$ steps: $k= \mathcal{T}(\epsilon, L)$. -->
+
+					<!-- 					</span> -->
+                                        <!--                                         <\!-- Construct an Hamiltonian system:  <span style="font-size:18px" >  $H(\theta, u) = U(\theta) + K(u)$ </span> -\-> -->
+                                        <!--                                         <\!-- <br> -\-> -->
+                                        <!--                                         <\!-- <br> -\-> -->
+					<!-- 				        <\!-- $\rightarrow$ interpret parameters as positions with potential energy -\-> -->
+					<!-- 				        <\!-- <span style="font-size:18px" > $U(\theta) = -\log p(\theta|x)$ </span>  -\-> -->
+                                        <!--                                         <\!-- <br> -\-> -->
+					<!-- 				        <\!-- $\rightarrow$ introduce auxillary momentum, $u$, with kinetic energy $K(u)= \frac{u^TM^{-1}u}{2}$ <br> -\-> -->
+					<!-- 			                <\!-- <br> -\-> -->
+					<!-- 				        <\!-- <\\!-- <li class="fragment" data fragment-index="2">introduce an auxiliary momentum $(p)$ for each parameter & construct Hamiltonian -\\-> -\-> -->
+					<!-- 				        <\!--         <\\!-- 	$$H(x) = H(q, p) = U(q) + \frac{1}{2}p^TMp$$ -\\-> -\-> -->
+					<!-- 				        <\!--         <\\!-- </li> -\\-> -\-> -->
+					<!-- 			                <\!-- <span class="fragment" data fragment-index="2"> Generate proposals for the Markov chain by simulating Hamiltonian dynamics -\-> -->
+                                        <!--                                         <\!--         <span style="font-size:20px" > -\-> -->
+                                        <!--                                         <\!--                 $$ -\-> -->
+                                        <!--                                         <\!--                 \dot{\theta} = M^{-1}u; \quad \dot{u} = -\frac{\partial U}{\partial \theta} -\-> -->
+                                        <!--                                         <\!--                 $$ -\-> -->
+                                        <!--                                         <\!--         </span> -\-> -->
+                                        <!--                                         <\!--         Numerically evolved using leapfrog integrator with <u>step-size $\epsilon$, for $L$ steps</u>: $k= \mathcal{T}(\epsilon, L)$. -\-> -->
+                                                                                        
+					<!-- 			                </span> -->
+                                        <!--                                 </div> -->
+					<!-- 			        <br> -->
+                                        <!--                         </div> -->
+					<!-- 		</div>		 -->
+														
+					<!-- 		<div class="col" > -->
+					<!-- 			<div style="position:relative; width:700px; height:500px; top:200px; left:50px;  margin:1 auto"> -->
+									
+					<!-- 				<\!-- <Img  style="position:absolute;top:-150px;left:0px;" data-src="assets/hmc_algo.png"/> -\-> -->
+					<!-- 				<img  class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:-150px; right:250px; height:300px;" data-src="assets/rwmh.gif"/> -->
+					<!-- 				<img  class="fragment fade-in" data-fragment-index="1" style="position:absolute; top:-150px; right:250px; height:300px;" data-src="assets/hmc.gif"/> -->
+
+					<!-- 			</div> -->
+					<!-- 			<div style="position:absolute; float:right; top:650px; right:00px; font-size: 20px; margin:0 auto">https://github.com/chi-feng/mcmc-demo</div>			 -->
+								
+					<!-- 		</div> -->
+							
+					<!-- 	</div> -->
+					<!-- </section> -->
 				
 				
 					<!-------------------------------------------------------------------------------->
 					<!-------------------------------------------------------------------------------->
 					<section>
-						<h3 class='slide-title'> Inferring the initial conditions of the Universe with HMC</h3>
+						<h3 class='slide-title'> Inferring the initial conditions of the Universe #1: HMC</h3>
 
 						<br>
 						<div class="container"  style="font-size:20px; margin-left:20px">
 
 							<div class="col"  style="flex:0 0 28em;"> 
 									<div class="plain"  style="text-align:left">
-										Data ($x$): 3D dark matter density data
+										<u>Data</u><br>
+                                                                                $x:$ 3D dark matter density data
 										<br>
 										<br>
-										Parameters ($\theta$): $\,z$, initial conditions at $64^3$ resolution
+										<u>Parameters</u><br>
+                                                                                $\theta:$ <span class="fragment highlight-red" data-fragment-index="1">  $\Lambda,\,\phi$,</span> $\,z$ = initial conditions on a $64^3$ grid
+										<br >
+                                                                                $p(z) = \mathcal{N}\big(0, g(\Lambda))$
 										<br>
-										<div style="position:relative; left:140px; color:red" > $\Lambda,\,\phi$ </div>
+                                                                                <br>
+										<u>Likelihood</u><br>
+                                                                                $p(x|\theta): \mathcal{N}\big(\mu, \sigma=1.\big)$
 										<br>
-										<br>
-										Likelihood $p(x|\theta): \mathcal{N}\big(f(z), \sigma=1.\big)$
-										<br>
-										<div style="position:relative; left:151px; " >$f$ : $N$-body  simulation </div>
+										<div style="" >$\mu = f(z)$  $\rightarrow\,N$-body  simulation </div>
 
 										<br>
 									</div>
@@ -1293,27 +1386,18 @@
 									<br>
 									<div class="plain fragment" data-fragment-index="2" style="text-align:left" >
 										
-										Quantitative comparison
+										<u>Quantitative comparison</u>
 										<br>
-										<span style="font-size:18px" > Power spectrum: $P(k) \sim \delta_D(k - k') \langle \delta(k) \delta(k')\rangle $ </span>
-										<br>
-										$k = $ length scale.
-									<br>
-									<br>
-									<ul class="fragment" data-fragment-index="1"> $\rightarrow$ <u>Cross Correlation</u>: $r_c(k) = \frac{P_{ab}(k)}{\sqrt{P_a(k)P_b(k)}}$
-										<br>
-										<em> Expectation: 1 on large scales, 0 on small scales</em> 
-									</ul>
-									<br>
-									<br>
-									<ul class="fragment" data-fragment-index="1">$\rightarrow$ <u>Transfer Function</u>: $t_f (k) = \sqrt{\frac{P_a(k)}{P_b(k)}}$
-										<br>
+										<!-- <span style="font-size:18px" > Power spectrum: $P(k) \sim \delta_D(k - k') \langle \delta(k) \delta(k')\rangle $ </span> -->
+										<!-- <br> -->
+										<!-- $k = $ length scale. -->
+									        Transfer Function as function of length-scales ($k$):
+                                                                                <!-- $$t_f (k) = \frac{<P_a(k)}{P_b(k)}}$$ -->
+                                                                                $$t_{ab} (k) = \frac{\langle \delta_a(k)\delta^*_a(k) \rangle}{\langle \delta_b(k)\delta^*_b(k) \rangle} = \frac{\textrm{clustering in field }a}{{\textrm{clustering in field }b}}$$
 										<em> Expectation: 1 on all scales </em>
-									</ul>
-									<br>
-									<!-- <p class="fragment" data-fragment-index="2" > Iff both $t_f$ and $r_c$ are 1 on all scales, the fields are identical </p> -->
-
-									
+									        <br>
+									        
+									        
 									</div>							
 
 									<br>
@@ -1323,18 +1407,22 @@
 
 								<div>
 									<span style="position:relative; left:-100px; top:10px"> True $z$ </span>
-									<span  class="fragment" data-fragment-index="1" style="position:relative; left:0px; top:10px"> HMC samples of $z$ </span>
+									<span  class="fragment" data-fragment-index="2" style="position:relative; left:0px; top:10px"> HMC samples of $z$ </span>
 									<span style="position:relative; left:100px; top:10px"> Data $x$ </span>
 									<br>
 									<img class="plain" src="../assets/ic_gif.png"   width="200" />
 									&nbsp;
-									<img  class="fragment" data-fragment-index="1" style="border:none" src="../assets/ic.gif"   width="200" />
+									<img  class="fragment" data-fragment-index="2" style="border:none" src="../assets/ic.gif"   width="200" />
 									&nbsp;
 									<img  class="plain" src="../assets/dm_data.png"   width="200" />
 								</div>
-								<img  class="fragment plain" data-fragment-index="3" height="300px" width="700px" data-src="assets/hmc_posterior.png" />
+								<img  class="fragment plain" data-fragment-index="3" height="300px" width="350px" data-src="assets/hmc_posterior_tf.png" />
 																
 							</div>
+							
+							<span  class="plain fragment" data-fragment-index="2" style="position:absolute; top:640px; right:10px; font-size:18px; text-align:right">
+								<b><u>Modi</u></b>, Li, Blei (2022) <br>
+							</span>
 						
 						</div>
 						<br><br>
@@ -1344,12 +1432,12 @@
 					<!-------------------------------------------------------------------------------->
 					<!-------------------------------------------------------------------------------->
 					<section>
-						<h3 class='slide-title'> Cost of the algorithm </h3>
+						<h3 class='slide-title'> Cost of HMC </h3>
 
 						<br>
 						<br>
 						<div  style="font-size:20px">
-							Auto-correlation length of samples in the MCMC chain (for every mode i.e. $k$-bin)
+							Auto-correlation length of samples in the MCMC chain (for different $k$-bins i.e. length-scales)
 							<!-- $$ -->
 							<!-- \rho_j(t)  = \frac{1}{n} \sum_{i=t+1}^n \big(P_i(k_j) - \bar{P}(k_j)\big) \big(P_{i-t}(k_j) - \bar{P}(k_j)\big); \quad a_c :=  \rho_j(a_c) \leq 0.1 -->
 							<!-- $$ -->
@@ -1361,13 +1449,17 @@
 						<ul class="fragment" data-fragment-index="2" style="font-size:20px; text-align:center">
 
 							Auto-correlation lengths can be 1000 samples long,
-							<br>
 							<b class="alert">~10,000 simulations </b> for a single independent sample!!
 						</ul>
 						<br>
-						<ul class="fragment" data-fragment-index="3" style="font-size:20px; text-align:center">
+						<ul class="fragment alert" data-fragment-index="3" style="font-size:20px; text-align:center">
 							
-							Computationally prohibitive in realistic settings. 
+							<strong>Computationally prohibitive in realistic settings. </strong>
+                                                </ul>
+                                                <span  class="plain "  style="position:absolute; top:640px; right:10px; font-size:18px; text-align:right">
+							<b><u>Modi</u></b>, Li, Blei (2022) <br>
+						</span>
+
 					</section>
 
 				</section>
@@ -1375,94 +1467,83 @@
 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-				<section data-background-color="black">
-                                        
-
-                                        <div style="font-size:40px">
-                                                Explicit inference: variational inference
-                                        </div>
-                                        
-                                </section>
-
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
                                 
                                 <section>
-                                        <section data-background-color="black">
+                                        <!-- <section data-background-color="black"> -->
                                                 
-                                                <h3 class='slide-title' style="position:absolute;top:0;"> Variational Inference </h3>
+                                        <!--         <h3 class='slide-title' style="position:absolute;top:0;"> Variational Inference </h3> -->
 
-						<!-- <div style="position:absolute; top:20px; right:20px; width:600px; text-align:right; font-size:20px"> -->
-                                                <!--         Goal: Generate samples from the posterior <span style="font-size:20px" > $p(\theta|x)$ </span> <br> -->
-                                                <!--         to approximate expectations  <span style="font-size:20px" > $\int f(\theta) p(\theta | x) \mathrm{d}\theta$</span>. -->
-                                                <!-- </div> -->
+					<!-- 	<\!-- <div style="position:absolute; top:20px; right:20px; width:600px; text-align:right; font-size:20px"> -\-> -->
+                                        <!--         <\!--         Goal: Generate samples from the posterior <span style="font-size:20px" > $p(\theta|x)$ </span> <br> -\-> -->
+                                        <!--         <\!--         to approximate expectations  <span style="font-size:20px" > $\int f(\theta) p(\theta | x) \mathrm{d}\theta$</span>. -\-> -->
+                                        <!--         <\!-- </div> -\-> -->
 						
-                                                <br> 
-                                                <br>
-						<div style="text-align:center; font-size:21px"> Approximate the posterior with a simpler parametric distribution
-							<br>
-							<span style="font-size:20px" > $$ p(\theta | x) \approx q_{\phi} (\theta) $$ </span>
-							Fit parameters $\phi$ to minimize a dissimilarity metric $d(q;p)$
-						</div>
+                                        <!--         <br>  -->
+                                        <!--         <br> -->
+					<!-- 	<div style="text-align:center; font-size:21px"> Approximate the posterior with a parametric distribution -->
+  					<!-- 		<br> -->
+					<!-- 		<span style="font-size:20px" > $$ p(\theta | x) \approx q_{\phi} (\theta) $$ </span> -->
+					<!-- 		Fit parameters $\phi$ to minimize a dissimilarity metric $d(q;p)$ -->
+					<!-- 	</div> -->
                                                 
-						<div class="container" style="font-size:20px">
-							<br>
-							<div class="col" style="text-align:left; margin-left:20px">
+					<!-- 	<div class="container" style="font-size:20px"> -->
+					<!-- 		<br> -->
+					<!-- 		<div class="col" style="text-align:left; margin-left:20px"> -->
 
-								E.g. $q_\phi = \mathcal{N}(\mu, \Sigma)$, then
-								$\phi = (\mu, \Sigma)$
-								<br>
-								<br>
-								<span class="fragment" data-fragment-index="2">
-									<u>Reverse Kullback-Leibler Divergence</u>
-									<div class="block-content" style="font-size:20px">
-										<!-- \begin{align} -->
-										<!-- D_{\mathrm{KL}}(q||p) &= \mathbb{E}_{q}(\log q - \log p) \nonumber \\ -->
-										<!-- & \approx \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta | x) \bigr] \nonumber \\ -->
-										<!-- & \leq  \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta,  x) \bigr]  -->
-										<!-- \end{align} -->
-										$$D_{\mathrm{KL}}(q||p) = \mathbb{E}_{q}(\log q(\theta) - \log p(\theta|x)) $$
-									</div>
-								</span>
+					<!-- 			E.g. $q_\phi = \mathcal{N}(\mu, \Sigma)$, then -->
+					<!-- 			$\phi = (\mu, \Sigma)$ -->
+					<!-- 			<br> -->
+					<!-- 			<br> -->
+					<!-- 			<span class="fragment" data-fragment-index="2"> -->
+					<!-- 				<u>Reverse Kullback-Leibler Divergence</u> -->
+					<!-- 				<div class="block-content" style="font-size:20px"> -->
+					<!-- 					<\!-- \begin{align} -\-> -->
+					<!-- 					<\!-- D_{\mathrm{KL}}(q||p) &= \mathbb{E}_{q}(\log q - \log p) \nonumber \\ -\-> -->
+					<!-- 					<\!-- & \approx \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta | x) \bigr] \nonumber \\ -\-> -->
+					<!-- 					<\!-- & \leq  \sum_{\theta_i \sim q} \bigl[ \log q_{\phi}(\theta) - \log p(\theta,  x) \bigr]  -\-> -->
+					<!-- 					<\!-- \end{align} -\-> -->
+					<!-- 					$$D_{\mathrm{KL}}(q||p) = \mathbb{E}_{q}(\log q(\theta) - \log p(\theta|x)) $$ -->
+					<!-- 				</div> -->
+					<!-- 			</span> -->
 								
-								<br>
-								<br>
+					<!-- 			<br> -->
+					<!-- 			<br> -->
 
-							</div>
-							<div class="col" >
-								<img class="fragment plain" data-fragment-index="2"  style="position:relative; top:20px" data-src="assets/vi_cartoon.png" width="500"/>
+					<!-- 		</div> -->
+					<!-- 		<div class="col" > -->
+					<!-- 			<img class="fragment plain" data-fragment-index="2"  style="position:relative; top:20px" data-src="assets/vi_cartoon.png" width="500"/> -->
 								
 								
-							</div>
+					<!-- 		</div> -->
 							
-						</div>
+					<!-- 	</div> -->
 						
-					</section>
+					<!-- </section> -->
 					
  					<!-------------------------------------------------------------------------------->
                                         
 					<section data-background-color="black">
 						
-                                                <h3 class='slide-title' style="position:absolute;top:0;"> Inferring initial conditions of the Universe with VI </h3>
+                                                <h3 class='slide-title' style="position:absolute;top:0;"> Inferring the initial conditions of the Universe #2: VI </h3>
 						
                                                 <br>
                                                 <br>
                                                 <div class="slide-text" style="text-align:left; margin-left:20px; font-size:20px">
-							Choose a variational distribution $q_\phi$:
+                                                        Approximate the posterior  <span style="font-size:18px" > $ p(\theta | x) \approx q_{\phi} (\theta) $ </span> using optimization. 
                                                         <br>
-							<br>
 							<ul>
-								<li class="fragment strike" data-fragment-index="1"> Gaussian with diagonal covariance (mean-field) </li>
+								<li class="fragment strike" data-fragment-index="1"> $ q_{\phi}:$ Gaussian with diagonal covariance (mean-field) </li>
 								<br>
-								<li class="fragment" data-fragment-index="2"> Normalizing flows <br>
-									$\rightarrow$ free-form distributions parameterized with neural networks
+								<li class="fragment" data-fragment-index="1"> $ q_{\phi}:$ Normalizing flows <br>
+									$\rightarrow$ parameterized with neural networks<br>
+                                                                        $\rightarrow$ transform Gaussians into complex distributions
 									<br>
-									<span class="fragment" data-fragment-index="3">
+									<span class="fragment" data-fragment-index="2">
 										$\rightarrow$ symmetry-based flows using Fourier space convolutions
                                                                                 <br>
-                                                                                <span class="fragment highlight-green" data-fragment-index="5">
-											(capable of learning the distribution of samples from HMC)
-										</span>
+                                                                                <!-- <span class="fragment highlight-green" data-fragment-index="5"> -->
+										<!-- 	(capable of learning the distribution of samples from HMC) -->
+										<!-- </span> -->
 									</span>
 								</li>
                                                         </ul>
@@ -1472,12 +1553,12 @@
 							
                                                 </div>
 								
-						<img class="plain fragment" data-fragment-index="2" style="position:absolute; top:100px; right:75px; width:450px"
+						<img class="plain fragment" data-fragment-index="1" style="position:absolute; top:100px; right:75px; width:450px"
 						     data-src="assets/nf_cartoon.png" />
-						<img class="fragment plain" data-fragment-index="4"  style="position:absolute; top:300px; right:20px; width:600px; height:250px"
-						     data-src="assets/vi_posterior.png"/>
 						<img  class="fragment  plain" data-fragment-index="4"
-						      style="position:absolute; left:20px; top:300px" height="250px" width="600px" data-src="assets/hmc_posterior.png" />
+						      style="position:absolute; left:220px; top:300px" height="250px" width="300px" data-src="assets/hmc_posterior_tf.png" />
+						<img class="fragment plain" data-fragment-index="4"  style="position:absolute; top:300px; right:220px; width:300px; height:250px"
+						     data-src="assets/vi_posterior_tf.png"/>
 						<!-- <img class="fragment plain" data-fragment-index="5"  style="position:absolute; top:420px; left:100px; width:400px" -->
 						<!--      data-src="assets/mfvb.png"/> -->
 						<div class="fragment" data-fragment-index="5" style="position:absolute; top:600px; left:30px; font-size:20px; text-align:left">
@@ -1556,6 +1637,7 @@
 							<span  class="plain fragment" data-fragment-index="3" style="position:absolute; top:640px; right:20px; font-size:16px; text-align:right">
 								<b><u>Modi</u></b>, Li, Blei (2022) <br>
 								Dai and Seljak (2022)
+								<span class="plain fragment" data-fragment-index="4" style="position:relative;  font-size:16px"> Gabrie et al. (2022)
 								
 							</span>
 							
@@ -1569,52 +1651,120 @@
 				
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
+
 				
+                                
+                                <section data-background-color="black">
+                                        
+                                        <h3 class='slide-title' style=""> Hierarchical models </h3>
+                                        
+                                        <div class="slide-text">
+                                                <div style="text-align:center">
+                                                        <!-- $$\mu, \sigma \sim p(\mu, \sigma)$$ -->
+                                                        <!-- $$\mu_i, \sigma_i \sim p(\mu_i, \sigma_i | \mu, \sigma)$$ -->
+                                                        $$\sigma \sim \mathcal{N}(0, 3)$$
+                                                        $$\mu \sim \mathcal{N}(0, \exp(\sigma/2))$$
+							$$x \sim p(\mu)$$
+                                                </div>
+                                                <br>
+                                                <div class="plain fragment" data-fragment-index="1" >
+                                                        Parameters at different levels are strongly coupled.
+                                                        <br>
+                                                        <u> Multiscale distribution</u>: condition number varies over the domain. 
+                                                        
+                                                </div>
+                                                <br>
+                                                <div class="plain fragment" data-fragment-index="2" >
+							HMC & NUTS <b class="alert"> do not </b> robustly sample these distributions.
+							<br>
+							<span class="fragment" data-fragment-index="3" > $\rightarrow$ Need very different step-sizes for leapfrog integration in HMC. </span>
+                                                </div>
+						<div class="plain " style="position:absolute; top:100px; right:200px; " >
+							<img style="border:none; height:250px; ", data-src="assets/hierarchical_model1.png" />
+                                                </div>
+						<div class="plain fragment" data-fragment-index="1"  style="position:absolute; top:400px; right:100px; ">
+                                                        <img style="height:250px; width:300px; border:none; ", data-src="assets/funnel2.png" />
+                                                </div>
+						<div class="plain fragment" data-fragment-index="2"  style="position:absolute; top:370px; left:250px; ">
+                                                        <img style="height:300px; width:450px; border:none; ", data-src="assets/funnel_nuts.png" />
+                                                </div>
+                                        </div>
+                                        <br>
+                                        <br>
+                                </section>
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+                                        
 
                                 <section>
 					<h3 class="slide-title">Summary so far</h3>
 					
+					<br>
                                         <div class="slide-text" >
 						<ul>
-							<li> Automatic differentiation for using gradient based inference algorithms.
+							<li> Automatic differentiation: physical models for using gradient based inference algorithms.
 							</li>
+							<br>
 							<li> Hamiltonian Monte Carlo: accurate but expensive.
 							</li>
+							<br>
 							<li> Variational inference: fast, but can be inaccurate.
 							</li>
+							<br>
 							<li> Combinations of HMC and VI can be fast and accurate.
 							</li>
+							<br>
 						</ul>
 						
 						<br>
 						<br>
 						<br>
-						Focused on inferring initial conditions, not the cosmology parameters. Why?
-						<br>
-						Hierarchical distribution!
 					</div>
+					<span class="plain fragment" data-fragment-index="1" style=" font-size:20px; text-align:center">
+						So what about inferring cosmology parameters?
+						<br>
+						<span class="plain fragment" data-fragment-index="2" style="position:relative;  font-size:20px">
+								Hierarchical model! $\longrightarrow$ HMC is not robust.
+						</span>
+					</span>
                                 </section>
 
                                 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
-
                                 <section> 
 
-                                        <div style="font-size:40px">
-                                                Advances in HMC and VI 
+                                        <div style="font-size:24px">
+                                                Overcoming limitations of the current Bayesian inference algorithms. 
                                         </div>
 					<br>
-					<div class="container fragment"  data-fragment-index="2" style="margin:auto; width:600px; font-size:26px">
-						<div class="col">
-							<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:200px">
-								<br>1.<br>Delayed rejection <br> HMC <br>  </div></div>
-						<!-- <div class="col"> -->
-							<!-- 	<div class="boxonly alert" style="border-radius: 100px; width:160px">  <br>2.<br>Joint<br>analysis<br><br> </div> </div> -->
-						<div class="col">
-							<div class="boxonly alert" style="border-radius: 100px; width:200px; ">  <br>2.<br> Score matching VI<br><br> </div>
-						</div>
-					</div>
+					<br>
+					<ol  class="fragment" data-fragment-index="1" style="font-size:24px">
+						<li> HMC is not robust for hierarchical models. 
+							<br>
+							<span  >
+								<b class="alert" > Delayed rejection HMC </b>
+							</span>
+						</li>
+						<br>
+						<li class="fragment" data-fragment-index="2" > VI presents a hard optimization problem.   
+							<br>
+							<span  >
+								<b class="alert" > Score based variational inference </b>
+							</span>
+						</li>
+					</ol>
+					<!-- <div class="container fragment"  data-fragment-index="2" style="margin:auto; width:600px; font-size:26px"> -->
+					<!-- 	<div class="col"> -->
+					<!-- 		<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:200px"> -->
+					<!-- 			<br>1.<br>Delayed rejection <br> HMC <br>  </div></div> -->
+					<!-- 	<\!-- <div class="col"> -\-> -->
+					<!-- 		<\!-- 	<div class="boxonly alert" style="border-radius: 100px; width:160px">  <br>2.<br>Joint<br>analysis<br><br> </div> </div> -\-> -->
+					<!-- 	<div class="col"> -->
+					<!-- 		<div class="boxonly alert" style="border-radius: 100px; width:200px; ">  <br>2.<br> Score matching VI<br><br> </div> -->
+					<!-- 	</div> -->
+					<!-- </div> -->
 
                                 </section>
 
@@ -1689,10 +1839,6 @@
 									<b>Funnel</b>: make a second proposal with reduced step-size.
 									<br>
 								</span>
-								
-								<!-- Remark: Although kth-order DRHMC has a cost per proposal that grows exponen- -->
-								<!-- tially in k, the cost is only a constant factor more expensive than classical HMC proposals -->
-								<!-- made with the “correct” (largest stable) step size. -->
 
                                                         </div>
                                                         
@@ -1718,7 +1864,9 @@
                                                 </div>
                                                 <br>
                                                 <br>
-                                                <br>
+						<div class="plain  " data-fragment-index="4"  style="position:absolute; top:670px; right:20px; font-size:20px" >
+							<b><u>Modi</b></u>, Barnett, and Carpenter (2022)
+						</div>
                                         </section>
                                 
 				        <!-------------------------------------------------------------------------------->
@@ -1774,7 +1922,9 @@
 						
                                                 <br>
                                                 <br>
-                                                <br>
+						<div class="plain  " data-fragment-index="4"  style="position:absolute; top:670px; right:20px; font-size:20px" >
+							<b><u>Modi</b></u>, Barnett, and Carpenter (2022)
+						</div>
 					</section>
 					
 					<!-------------------------------------------------------------------------------->
@@ -1822,6 +1972,33 @@
 
                                  </section>
 
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
+
+                                <section> 
+
+                                        <div style="font-size:24px">
+                                                Overcoming limitations of the current Bayesian inference algorithms. 
+                                        </div>
+					<br>
+					<br>
+					<ol  class="fagment" data-fragment-index="1" style="font-size:24px">
+						<li> HMC is not robust for hierarchical models. 
+							<br>
+							<span  >
+								<b class="alert" > Delayed rejection HMC </b>
+							</span>
+						</li>
+						<br>
+						<li class="fagment" data-fragment-index="2" > VI presents a hard optimization problem.   
+							<br>
+							<span  >
+								<b class="alert" > Score based variational inference </b>
+							</span>
+						</li>
+					</ol>
+                                </section>
+				
                                 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
@@ -1911,7 +2088,13 @@
 									<br>
 									<li> <u>Non-local updates</u>: no Taylor approximation around a point. </li>
 									<br>
-									<li> Package implementation </li>
+									<li class="plain fragment" data-fragment-index="3"> Package:<br>
+										<code data-trim data-noescape style="">
+												pip install gsmvi
+										</code>
+										<br>
+									        <a href="https://github.com/modichirag/GSM-VI">https://github.com/modichirag/GSM-VI</a> <br>
+									</li>
 								</ul>
                                                         </div>
 
@@ -1924,7 +2107,9 @@
 							</div>
 						</div>
 						
-                                                <br>
+						<div class="plain  " data-fragment-index="4"  style="position:absolute; top:680px; right:20px; font-size:20px" >
+							<b><u>Modi</b></u>, Margossian et al. (2023)
+						</div>
                                         </section>
 					<!-------------------------------------------------------------------------------->
 					<section data-background-color="black">
@@ -1934,17 +2119,19 @@
 						<br>
                                                 <div class="slide-text" style="font-size:20px">
 							Closed form updates match score only at one point<br>
-							$\rightarrow$ not many gains from using large batch size, e.g. on GPUs
+							$\rightarrow$ not many gains from using large batch size, e.g., with parallization on GPUs
 
+                                                        <div class="plain fragment" data-fragment-index="1" >
 							$$ \mathcal{L(q)}: \frac{1}{B}\sum_i ||\nabla_\theta \log q_\phi(\theta_t) - \nabla_\theta \log p(\theta_t, x) ||^2_{\textrm{Cov}(q)} + \frac{2}{\lambda_t}\textrm{KL}(q_{\phi_t} || q_{\phi_{t+1}})
 							$$
+							</div>
 							<br>
                                                         <div class="plain fragment" data-fragment-index="2" >
 								For Gaussian $q=\mathcal{N}(\mu, \Sigma)$,<br>
-								global minimum to update $\mu, \Sigma$ can be evaluated in closed form.
+								closed form updates for $\mu, \Sigma$ to achieve global minimum.
 								<br>
 								<br>
-								No Taylor approximation. 
+								No Taylor approximation with gradient descent methods. 
                                                         </div>
 							<br>
 							
@@ -1968,582 +2155,606 @@
 							</div>
 						</div>
 						
+						<div class="plain  " data-fragment-index="4"  style="position:absolute; top:670px; right:20px; font-size:20px" >
+							Cai, <b><u>Modi</b></u> et al. (2023)
+						</div>
                                                 <br>
                                         </section>
 										
-
                                 </section>
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 
 
-                                <section data-background-color="black">
-                                        
-                                        <h3 class='slide-title' style="position:absolute;top:0;"> Summary of Explicit methods </h3>
-                                        
-                                        <br>
-                                        <br>
-                                        <div class="slide-text">
-                                                <ul>
-                                                </ul>
-                                        </div>
-                                        
+
+                                <section>
+					<h3 class="slide-title">Summary of explicit inference</h3>
+					
+					<br>
+                                        <div class="slide-text" >
+						<ul>
+							<li> Automatic differentiation: physical models for using gradient based inference algorithms.
+							</li>
+							<br>
+							<li> Performance of existing inference algorithms for field-level inference in cosmology.
+								<ul>
+									<li> Hamiltonian Monte Carlo: accurate but expensive.
+									</li>
+									<li> Variational inference: fast, but can be inaccurate.
+									</li>
+									<li> Combinations of HMC and VI can be fast and accurate.
+									</li>
+								</ul>
+							</li>
+							<br>
+							<li> Overcoming shortcomings with new algorithms.
+								<ul>
+									<li> Delayed rejection HMC for robust inference with hierarchical models. 
+									</li>
+									<li> Score based techniques for robust, efficient variational inference.
+									</li>
+								</ul>
+							</li>
+ 						</ul>
+						
+						<br>
+					</div>
                                 </section>
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 
-                                <section data-background-color="black">
+                                <!-- <section data-background-color="black"> -->
                                         
-                                        <h3 class='slide-title' style="position:absolute;top:0;"> Simulation based inference </h3>
+                                <!--         <h3 class='slide-title' style="position:absolute;top:0;"> Simulation based inference </h3> -->
                                         
-                                        <br>
-                                        <br>
-                                        <div class="slide-text">
-                                                <ul>
-                                                </ul>
-                                        </div>
+                                <!--         <br> -->
+                                <!--         <br> -->
+                                <!--         <div class="slide-text"> -->
+                                <!--                 <ul> -->
+                                <!--                 </ul> -->
+                                <!--         </div> -->
                                         
-                                </section>
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
+                                <!-- </section> -->
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
 
 				
 
-				<section >
-                                        <section> 
-                                                <h3 class='slide-title'>Intractable likelihood distribution</h3>
+				<!-- <section > -->
+                                <!--         <section>  -->
+                                <!--                 <h3 class='slide-title'>Intractable likelihood distribution</h3> -->
 
-                                                <br>
+                                <!--                 <br> -->
 
-						$$ x \sim p(x | z, \Lambda, \phi)$$
-                                                <div class="slide-text" style="font-size:20px">
-							$x$ : Observed galaxy distribution, or its compressed summary statistic <br>
-							$\quad \rightarrow$ e.g., 2-point function, 3-point function, scattering coefficients, neural summaries etc. <br>
-							<span class="fragment highlight-red" data-fragment-index="1" > $z$ : Gaussian initial density field
-								<span class="fragment fade-in" data-fragment-index="1"> $\rightarrow$ <em> Latent parameters </em> </span>
-							</span>
-							<br>
-							$\Lambda$ : Cosmology parameters <br>
-							$\phi$ : Galaxy modeling parameters
-							<br>
-							<br>
-							<span class="plain fragment fade-in" data-fragment-index="2">
-								To avoid inferring latent parameters $z$, we need the likelihood with respect to $\tilde\theta= (\Lambda, \phi)$:
-								<br>
-								<br>
-								<!-- <span class="fragment fade-out" data-fragment-index="3" style="position:absolute; left:500px"> -->
-								<!-- 	$ x \sim p (x | \tilde\theta) =  \int  p (x | z, \tilde\theta) p (z) \, \textrm{d}z   $ -->
-								<!-- </span> -->
-								<!-- <span class="fragment fade-in" data-fragment-index="3" style="position:absolute; left:500px"> -->
-								<!-- 	$ x \sim p (x | \tilde\theta) = $ -->
-								<!-- 	<span style="color:red" > $\int  p (x | z, \tilde\theta) p (z) \, \textrm{d}z  $ -->
-								<!-- 	</span> -->
-								<!-- </span> -->
-								<span  style="position:absolute; left:600px">
-									$ x \sim p (x | \tilde\theta) $
-									<span class="fragment fade-in" data-fragment-index="3" style="color:red" >
-										$= \int  p (x | z, \tilde\theta) p (z) \, \textrm{d}z  $
-									</span>
-								</span>
-								<br>
-								$$ p (\tilde\theta | x) \propto p (x | \tilde\theta) p (\tilde\theta) $$
-							</span>
-						</div> 
-						<br>
-						<span class="fragment" data-fragment-index="4" style="font-size:20px" >
-							<b class="alert"> Simulation-based inference</b> enables doing inference when we do not have a tractable likelihood distribution,<br>
-							but have access to the underlying simulator. 
-						</span>
+				<!-- 		$$ x \sim p(x | z, \Lambda, \phi)$$ -->
+                                <!--                 <div class="slide-text" style="font-size:20px"> -->
+				<!-- 			$x$ : Observed galaxy distribution, or its compressed summary statistic <br> -->
+				<!-- 			$\quad \rightarrow$ e.g., 2-point function, 3-point function, scattering coefficients, neural summaries etc. <br> -->
+				<!-- 			<span class="fragment highlight-red" data-fragment-index="1" > $z$ : Gaussian initial density field -->
+				<!-- 				<span class="fragment fade-in" data-fragment-index="1"> $\rightarrow$ <em> Latent parameters </em> </span> -->
+				<!-- 			</span> -->
+				<!-- 			<br> -->
+				<!-- 			$\Lambda$ : Cosmology parameters <br> -->
+				<!-- 			$\phi$ : Galaxy modeling parameters -->
+				<!-- 			<br> -->
+				<!-- 			<br> -->
+				<!-- 			<span class="plain fragment fade-in" data-fragment-index="2"> -->
+				<!-- 				To avoid inferring latent parameters $z$, we need the likelihood with respect to $\tilde\theta= (\Lambda, \phi)$: -->
+				<!-- 				<br> -->
+				<!-- 				<br> -->
+				<!-- 				<\!-- <span class="fragment fade-out" data-fragment-index="3" style="position:absolute; left:500px"> -\-> -->
+				<!-- 				<\!-- 	$ x \sim p (x | \tilde\theta) =  \int  p (x | z, \tilde\theta) p (z) \, \textrm{d}z   $ -\-> -->
+				<!-- 				<\!-- </span> -\-> -->
+				<!-- 				<\!-- <span class="fragment fade-in" data-fragment-index="3" style="position:absolute; left:500px"> -\-> -->
+				<!-- 				<\!-- 	$ x \sim p (x | \tilde\theta) = $ -\-> -->
+				<!-- 				<\!-- 	<span style="color:red" > $\int  p (x | z, \tilde\theta) p (z) \, \textrm{d}z  $ -\-> -->
+				<!-- 				<\!-- 	</span> -\-> -->
+				<!-- 				<\!-- </span> -\-> -->
+				<!-- 				<span  style="position:absolute; left:600px"> -->
+				<!-- 					$ x \sim p (x | \tilde\theta) $ -->
+				<!-- 					<span class="fragment fade-in" data-fragment-index="3" style="color:red" > -->
+				<!-- 						$= \int  p (x | z, \tilde\theta) p (z) \, \textrm{d}z  $ -->
+				<!-- 					</span> -->
+				<!-- 				</span> -->
+				<!-- 				<br> -->
+				<!-- 				$$ p (\tilde\theta | x) \propto p (x | \tilde\theta) p (\tilde\theta) $$ -->
+				<!-- 			</span> -->
+				<!-- 		</div>  -->
+				<!-- 		<br> -->
+				<!-- 		<span class="fragment" data-fragment-index="4" style="font-size:20px" > -->
+				<!-- 			<b class="alert"> Simulation-based inference</b> enables doing inference when we do not have a tractable likelihood distribution,<br> -->
+				<!-- 			but have access to the underlying simulator.  -->
+				<!-- 		</span> -->
                                    
-                                        </section>
+                                <!--         </section> -->
 
 
-				        <!-------------------------------------------------------------------------------->
-				        <!-------------------------------------------------------------------------------->
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
 					
-                                        <section >
-                                                <h3 class='slide-title'>Simulation-based inference: theory</h3>
+                                <!--         <section > -->
+                                <!--                 <h3 class='slide-title'>Simulation-based inference: theory</h3> -->
 
-                                                <br>
-                                                <br>
-						<div class="boxonly " data-fragment-index="1" style="width:1100px; padding:8px; font-size:20px;" >
-							A simulator defines the likelihood $p(x|\theta)$ as an <b class="alert"> implicit distribution </b> i.e we can sample from it but cannot evaluate it.
-						</div>
+                                <!--                 <br> -->
+                                <!--                 <br> -->
+				<!-- 		<div class="boxonly " data-fragment-index="1" style="width:1100px; padding:8px; font-size:20px;" > -->
+				<!-- 			A simulator defines the likelihood $p(x|\theta)$ as an <b class="alert"> implicit distribution </b> i.e we can sample from it but cannot evaluate it. -->
+				<!-- 		</div> -->
 
-                                                <br>
-                                                <br>
-                                                        <img class="plain fragment" data-fragment-index="3" style=""
-                                                             data-src="assets/lfi_sim.png" width="700" />
-                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:325px; left:310px; font-size:14px"> Model  </div> 
-                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:395px; left:300px; font-size:14px"> $\theta \sim p(\theta)$ </div> 
-                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:395px; left:570px; font-size:14px; color:black"> $z \sim p(z)$ </div> 
-                                                        <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:395px; left:910px; font-size:14px"> $x \sim p(x|\theta)$ </div> 
+                                <!--                 <br> -->
+                                <!--                 <br> -->
+                                <!--                         <img class="plain fragment" data-fragment-index="3" style="" -->
+                                <!--                              data-src="assets/lfi_sim.png" width="700" /> -->
+                                <!--                         <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:325px; left:310px; font-size:14px"> Model  </div>  -->
+                                <!--                         <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:395px; left:300px; font-size:14px"> $\theta \sim p(\theta)$ </div>  -->
+                                <!--                         <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:395px; left:570px; font-size:14px; color:black"> $z \sim p(z)$ </div>  -->
+                                <!--                         <div class="plain fragment" data-fragment-index="3" style="position:absolute; top:395px; left:910px; font-size:14px"> $x \sim p(x|\theta)$ </div>  -->
 							
-                                                <div class="slide-text fragment " data-fragment-index="3" style="font-size:20px">
-                                                        <center> Generating simulations is sampling from the joint distribution, i.e., ${D} = \{x_i, \theta_i\} \sim p(x, \theta)$ </center>
-                                                        <br>
+                                <!--                 <div class="slide-text fragment " data-fragment-index="3" style="font-size:20px"> -->
+                                <!--                         <center> Generating simulations is sampling from the joint distribution, i.e., ${D} = \{x_i, \theta_i\} \sim p(x, \theta)$ </center> -->
+                                <!--                         <br> -->
 							
-						<div class="plain"  style="position:absolute; top:680px; right:0px; width:300px; font-size:16px; text-align:right"> Cranmer et al. (2020) </div>
-						<div class="plain"  style="position:absolute; top:700px; right:0px; width:300px; font-size:16px; text-align:right"> Papamakarios et al. (2017)
-						</div>
-                                        </section>
+				<!-- 		<div class="plain"  style="position:absolute; top:680px; right:0px; width:300px; font-size:16px; text-align:right"> Cranmer et al. (2020) </div> -->
+				<!-- 		<div class="plain"  style="position:absolute; top:700px; right:0px; width:300px; font-size:16px; text-align:right"> Papamakarios et al. (2017) -->
+				<!-- 		</div> -->
+                                <!--         </section> -->
 
 
-				        <!-------------------------------------------------------------------------------->
-				        <!-------------------------------------------------------------------------------->
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
 
 					
-                                        <section >
-                                                <h3 class='slide-title'>Simulation-based inference: theory</h3>
+                                <!--         <section > -->
+                                <!--                 <h3 class='slide-title'>Simulation-based inference: theory</h3> -->
 
 						
-                                                <br>
-                                                <div class="slide-text " data-fragment-index="3" style="font-size:20px">
-                                                        <center> Generating simulations is sampling from the joint distribution, i.e., ${D} = \{x_i, \theta_i\} \sim p(x, \theta)$ </center>
-                                                        <br>
+                                <!--                 <br> -->
+                                <!--                 <div class="slide-text " data-fragment-index="3" style="font-size:20px"> -->
+                                <!--                         <center> Generating simulations is sampling from the joint distribution, i.e., ${D} = \{x_i, \theta_i\} \sim p(x, \theta)$ </center> -->
+                                <!--                         <br> -->
 
-                                                </div>
-						<div class="container" style="position:absolute">
-							<div class="col"  style="flex: 0 0 35em">
-								<div class="block   " data-fragment-index="5" style=" " >
-									<div class="block-title" style="font-size:22px" >
-										Q. How to use this for inference?
-										<!-- <span class="plain fragment" data-fragment-index="6"> $\,$A. Density estimation problem!</span> -->
-									</div>
-									<div class="block-content" style="font-size:20px; ">
-										<span class="plain fragment" data-fragment-index="6"> Density estimation problem!
+                                <!--                 </div> -->
+				<!-- 		<div class="container" style="position:absolute"> -->
+				<!-- 			<div class="col"  style="flex: 0 0 35em"> -->
+				<!-- 				<div class="block   " data-fragment-index="5" style=" " > -->
+				<!-- 					<div class="block-title" style="font-size:22px" > -->
+				<!-- 						Q. How to use this for inference? -->
+				<!-- 						<\!-- <span class="plain fragment" data-fragment-index="6"> $\,$A. Density estimation problem!</span> -\-> -->
+				<!-- 					</div> -->
+				<!-- 					<div class="block-content" style="font-size:20px; "> -->
+				<!-- 						<span class="plain fragment" data-fragment-index="6"> Density estimation problem! -->
 
-											<br>
-											<br>
-											<span class="plain fragment" data-fragment-index="7" style="font-size:20px">
-												Learn the likelihood distribution.
-												<br>
-												Model the likelihood with a parametric distribution $q$<span style="color:red" >$_\phi$</span>,
-												e.g.,
-												normalizing flow
- 												<!-- </span> -->
-											</span>
-										</span>
-										<br>
-										<br>
+				<!-- 							<br> -->
+				<!-- 							<br> -->
+				<!-- 							<span class="plain fragment" data-fragment-index="7" style="font-size:20px"> -->
+				<!-- 								Learn the likelihood distribution. -->
+				<!-- 								<br> -->
+				<!-- 								Model the likelihood with a parametric distribution $q$<span style="color:red" >$_\phi$</span>, -->
+				<!-- 								e.g., -->
+				<!-- 								normalizing flow -->
+ 				<!-- 								<\!-- </span> -\-> -->
+				<!-- 							</span> -->
+				<!-- 						</span> -->
+				<!-- 						<br> -->
+				<!-- 						<br> -->
 										
-										<div class="plain fragment" data-fragment-index="8">
-											Fit $\phi$ to match the likelihood
-											<span style="font-size:17px">
-											$q_{\phi}\rightarrow p(x|\theta)$
-											$$ \phi^* = \max_{\phi} \sum_i \log q_{\phi}(x_i | \theta_i) \quad \quad \{x_i, \theta_i\} \sim p(x, \theta)$$
-											</span>
-										</div>
-										<div class="plain fragment" data-fragment-index="9">
-											Or
-											<br>
-											Learn the posterior
-											<span style="font-size:17px">
-											      $\,q_{\phi}\rightarrow p(\theta|x) :$
-											      $$ \phi^* =  \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i)  \quad \quad \{x_i, \theta_i\} \sim p(x, \theta)$$
-											</span>
-										</div>
+				<!-- 						<div class="plain fragment" data-fragment-index="8"> -->
+				<!-- 							Fit $\phi$ to match the likelihood -->
+				<!-- 							<span style="font-size:17px"> -->
+				<!-- 							$q_{\phi}\rightarrow p(x|\theta)$ -->
+				<!-- 							$$ \phi^* = \max_{\phi} \sum_i \log q_{\phi}(x_i | \theta_i) \quad \quad \{x_i, \theta_i\} \sim p(x, \theta)$$ -->
+				<!-- 							</span> -->
+				<!-- 						</div> -->
+				<!-- 						<div class="plain fragment" data-fragment-index="9"> -->
+				<!-- 							Or -->
+				<!-- 							<br> -->
+				<!-- 							Learn the posterior -->
+				<!-- 							<span style="font-size:17px"> -->
+				<!-- 							      $\,q_{\phi}\rightarrow p(\theta|x) :$ -->
+				<!-- 							      $$ \phi^* =  \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i)  \quad \quad \{x_i, \theta_i\} \sim p(x, \theta)$$ -->
+				<!-- 							</span> -->
+				<!-- 						</div> -->
 
-									</div>
-								</div>
-							</div>
-							<div class="col "  data-fragment-index="5" style="flex: 0 0 20em; text-align:left; font-size:20px; " >
+				<!-- 					</div> -->
+				<!-- 				</div> -->
+				<!-- 			</div> -->
+				<!-- 			<div class="col "  data-fragment-index="5" style="flex: 0 0 20em; text-align:left; font-size:20px; " > -->
 								
-								<span class="plain " data-fragment-index="6">
-									<img class="plain fragment fade-out" data-fragment-index="7" style="position:absolute; top:15px; right:-400px; width:250px;"
-									     data-src="assets/sbi_joint_samples.png" />
-								</span>
+				<!-- 				<span class="plain " data-fragment-index="6"> -->
+				<!-- 					<img class="plain fragment fade-out" data-fragment-index="7" style="position:absolute; top:15px; right:-400px; width:250px;" -->
+				<!-- 					     data-src="assets/sbi_joint_samples.png" /> -->
+				<!-- 				</span> -->
 
-								<span class="plain fragment fade-in" data-fragment-index="7">
-									<img class="plain fragment fade-out" data-fragment-index="9" style="position:absolute; top:15px; right:-400px; width:250px;"
-									     data-src="assets/sbi_joint.png" />
-								</span>
+				<!-- 				<span class="plain fragment fade-in" data-fragment-index="7"> -->
+				<!-- 					<img class="plain fragment fade-out" data-fragment-index="9" style="position:absolute; top:15px; right:-400px; width:250px;" -->
+				<!-- 					     data-src="assets/sbi_joint.png" /> -->
+				<!-- 				</span> -->
 								
-								<img class="plain fragment" data-fragment-index="9" style="position:absolute; top:15px; right:-400px; width:250px"
-								     data-src="assets/sbi_joint_posterior.png" />
+				<!-- 				<img class="plain fragment" data-fragment-index="9" style="position:absolute; top:15px; right:-400px; width:250px" -->
+				<!-- 				     data-src="assets/sbi_joint_posterior.png" /> -->
 								
-								<img class="plain fragment" data-fragment-index="7" style="position:absolute; top:300px; right:-465px; width:390px"
-								     data-src="assets/nf_cartoon.png" />
+				<!-- 				<img class="plain fragment" data-fragment-index="7" style="position:absolute; top:300px; right:-465px; width:390px" -->
+				<!-- 				     data-src="assets/nf_cartoon.png" /> -->
 								
-							</div>
-						</div>
+				<!-- 			</div> -->
+				<!-- 		</div> -->
 							
-						<div class="plain"  style="position:absolute; top:620px; right:0px; width:300px; font-size:16px; text-align:right"> Cranmer et al. (2020) </div>
-						<div class="plain"  style="position:absolute; top:640px; right:0px; width:300px; font-size:16px; text-align:right"> Papamakarios et al. (2017)
-						</div>
-                                        </section>
+				<!-- 		<div class="plain"  style="position:absolute; top:620px; right:0px; width:300px; font-size:16px; text-align:right"> Cranmer et al. (2020) </div> -->
+				<!-- 		<div class="plain"  style="position:absolute; top:640px; right:0px; width:300px; font-size:16px; text-align:right"> Papamakarios et al. (2017) -->
+				<!-- 		</div> -->
+                                <!--         </section> -->
 
 
-				        <!-------------------------------------------------------------------------------->
-				        <!-------------------------------------------------------------------------------->
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
+				<!--         <\!-------------------------------------------------------------------------------\-> -->
 
                                 
-                                        <section >
-                                                <h3 class='slide-title'>Simulation-based inference: in practice </h3>
+                                <!--         <section > -->
+                                <!--                 <h3 class='slide-title'>Simulation-based inference: in practice </h3> -->
 
-                                                <br>
+                                <!--                 <br> -->
 						
 
-						<div class="container">
-							<div class="col slide-text"  style="flex: 0 0 38em; font-size:20px">
-								<div class="" data-fragment-index="1">
- 									<br>
-									<u> 1. Training data </u>
-									<br>
-									Generate a dataset of simulations
-									$$ D = \{x_i, \theta_i\}_{i\in N} \sim p(x, \theta)$$
-								</div>
+				<!-- 		<div class="container"> -->
+				<!-- 			<div class="col slide-text"  style="flex: 0 0 38em; font-size:20px"> -->
+				<!-- 				<div class="" data-fragment-index="1"> -->
+ 				<!-- 					<br> -->
+				<!-- 					<u> 1. Training data </u> -->
+				<!-- 					<br> -->
+				<!-- 					Generate a dataset of simulations -->
+				<!-- 					$$ D = \{x_i, \theta_i\}_{i\in N} \sim p(x, \theta)$$ -->
+				<!-- 				</div> -->
 
-								<div class="fragment" data-fragment-index="2">
-									<br>
-									<u> 2. Learn the posterior </u>
-									<br>
-									Choose a parametric distribution $q_\phi(\theta | x)$
-                                                                        <br>
-									Optimize to fit $\phi$
-									$$\phi^* = \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$
-								</div>
+				<!-- 				<div class="fragment" data-fragment-index="2"> -->
+				<!-- 					<br> -->
+				<!-- 					<u> 2. Learn the posterior </u> -->
+				<!-- 					<br> -->
+				<!-- 					Choose a parametric distribution $q_\phi(\theta | x)$ -->
+                                <!--                                         <br> -->
+				<!-- 					Optimize to fit $\phi$ -->
+				<!-- 					$$\phi^* = \max_{\phi} \sum_i \log q_{\phi}(\theta_i | x_i) $$ -->
+				<!-- 				</div> -->
 								
-								<div class="fragment" data-fragment-index="3">
-									With large number of samples
-									$$ q_{\phi^*}(\theta | x) \approx  p(\theta | x) $$
-								</div>
+				<!-- 				<div class="fragment" data-fragment-index="3"> -->
+				<!-- 					With large number of samples -->
+				<!-- 					$$ q_{\phi^*}(\theta | x) \approx  p(\theta | x) $$ -->
+				<!-- 				</div> -->
 
 								
-								<div class="fragment" data-fragment-index="4">
-									<u> 3. Inference</u>
- 									<br>
-									Given observed data: $x_{\rm obs}$
-									$$\theta \sim q_{\phi^*}(\theta | x_{\rm obs})$$
-								<br>
-								</div>
-							</div>
+				<!-- 				<div class="fragment" data-fragment-index="4"> -->
+				<!-- 					<u> 3. Inference</u> -->
+ 				<!-- 					<br> -->
+				<!-- 					Given observed data: $x_{\rm obs}$ -->
+				<!-- 					$$\theta \sim q_{\phi^*}(\theta | x_{\rm obs})$$ -->
+				<!-- 				<br> -->
+				<!-- 				</div> -->
+				<!-- 			</div> -->
 							
-							<div class="col"  style="flex: 0 0 30em">
+				<!-- 			<div class="col"  style="flex: 0 0 30em"> -->
 
-								<img class="plain fragment fade-out"  data-fragment-index="2" style="position:absolute; top:100px; right:50px; width:500px "
-								     data-src="assets/sbi_pipeline0.png"  />
-								<img class="plain fragment current-visible"  data-fragment-index="2" style="position:absolute; top:100px; right:50px; width:500px "
-								     data-src="assets/sbi_pipeline2.png"  />
-								<img class="plain fragment current-visible"  data-fragment-index="3" style="position:absolute; top:100px; right:50px; width:500px "
-								     data-src="assets/sbi_pipeline_trained.png"  />
-								<div class="plain fragment current-visible"  data-fragment-index="4" style="position:absolute; top:250px; right:50px; width:500px; font-size:20px "
-								     data-src="assets/sbi_inference.png" >
-									<em> Inference with observed data </em>
-									<br>
-									<img class="plain  "  data-src="assets/sbi_inference2.png"/ >
-								</div>
-
-								
-								<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:20px; right:250px; font-size:18px ">
-									<img style="width:300px "  data-src="assets/sbi_neuroscience.webp"   />
-									<br>
-									<span style="position:relative; top:-13px"> Neuroscience </span>
-								</div>
-								<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:360px; right:350px; font-size:18px ">
-									<img style="width:320px "   data-src="assets/sbi_climate.png"  />
-									<br>
-									<span style="position:relative; top:-100px; right:-200px"> Climate<br>science </span>
-								</div>
-								<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:490px; right:350px; font-size:18px ">
-									<img style="width:320px "   data-src="assets/sbi_evolbio.png"     />
-									<br>
-									<span style="position:relative; top:-160px; right:-220px"> Evolutionary<br>biology </span>
-								</div>
-								<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:20px; right:20px; font-size:18px ">
-									<img style="width:200px; height:500px " data-src="assets/sbi_genomics.png"   />
-									<br>
-									<span style="position:relative; top:-13px"> Genomics </span>
-								</div>
-								
+				<!-- 				<img class="plain fragment fade-out"  data-fragment-index="2" style="position:absolute; top:100px; right:50px; width:500px " -->
+				<!-- 				     data-src="assets/sbi_pipeline0.png"  /> -->
+				<!-- 				<img class="plain fragment current-visible"  data-fragment-index="2" style="position:absolute; top:100px; right:50px; width:500px " -->
+				<!-- 				     data-src="assets/sbi_pipeline2.png"  /> -->
+				<!-- 				<img class="plain fragment current-visible"  data-fragment-index="3" style="position:absolute; top:100px; right:50px; width:500px " -->
+				<!-- 				     data-src="assets/sbi_pipeline_trained.png"  /> -->
+				<!-- 				<div class="plain fragment current-visible"  data-fragment-index="4" style="position:absolute; top:250px; right:50px; width:500px; font-size:20px " -->
+				<!-- 				     data-src="assets/sbi_inference.png" > -->
+				<!-- 					<em> Inference with observed data </em> -->
+				<!-- 					<br> -->
+				<!-- 					<img class="plain  "  data-src="assets/sbi_inference2.png"/ > -->
+				<!-- 				</div> -->
 
 								
-							</div>
-						</div>
+				<!-- 				<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:20px; right:250px; font-size:18px "> -->
+				<!-- 					<img style="width:300px "  data-src="assets/sbi_neuroscience.webp"   /> -->
+				<!-- 					<br> -->
+				<!-- 					<span style="position:relative; top:-13px"> Neuroscience </span> -->
+				<!-- 				</div> -->
+				<!-- 				<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:360px; right:350px; font-size:18px "> -->
+				<!-- 					<img style="width:320px "   data-src="assets/sbi_climate.png"  /> -->
+				<!-- 					<br> -->
+				<!-- 					<span style="position:relative; top:-100px; right:-200px"> Climate<br>science </span> -->
+				<!-- 				</div> -->
+				<!-- 				<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:490px; right:350px; font-size:18px "> -->
+				<!-- 					<img style="width:320px "   data-src="assets/sbi_evolbio.png"     /> -->
+				<!-- 					<br> -->
+				<!-- 					<span style="position:relative; top:-160px; right:-220px"> Evolutionary<br>biology </span> -->
+				<!-- 				</div> -->
+				<!-- 				<div class="plain fragment "  data-fragment-index="5" style="position:absolute; top:20px; right:20px; font-size:18px "> -->
+				<!-- 					<img style="width:200px; height:500px " data-src="assets/sbi_genomics.png"   /> -->
+				<!-- 					<br> -->
+				<!-- 					<span style="position:relative; top:-13px"> Genomics </span> -->
+				<!-- 				</div> -->
+								
+
+								
+				<!-- 			</div> -->
+				<!-- 		</div> -->
 						
-						<br>
-						<div class="fragment fade-out" data-fragment-index="5"  style="position:absolute; top:650px; right:10px; width:300px; font-size:16px; text-align:right">
-							Cranmer et al. (2020)
-							<br>
-							Papamakarios et al. (2017)
-						</div>
-						<div  class="fragment fade-in" data-fragment-index="5" style="position:absolute; top:630px; right:10px; width:300px; font-size:15px; text-align:right">
-							Avecilla, Chuong et al. (2021)
-							<br>
-							Bernstein, Sulheim et al. (2021)
-							<br>
-							Watson-Parris, Williams et al. (2021)
-							<br>
-							Goncalves, Lueckmann et al. (2020)
-						</div>
+				<!-- 		<br> -->
+				<!-- 		<div class="fragment fade-out" data-fragment-index="5"  style="position:absolute; top:650px; right:10px; width:300px; font-size:16px; text-align:right"> -->
+				<!-- 			Cranmer et al. (2020) -->
+				<!-- 			<br> -->
+				<!-- 			Papamakarios et al. (2017) -->
+				<!-- 		</div> -->
+				<!-- 		<div  class="fragment fade-in" data-fragment-index="5" style="position:absolute; top:630px; right:10px; width:300px; font-size:15px; text-align:right"> -->
+				<!-- 			Avecilla, Chuong et al. (2021) -->
+				<!-- 			<br> -->
+				<!-- 			Bernstein, Sulheim et al. (2021) -->
+				<!-- 			<br> -->
+				<!-- 			Watson-Parris, Williams et al. (2021) -->
+				<!-- 			<br> -->
+				<!-- 			Goncalves, Lueckmann et al. (2020) -->
+				<!-- 		</div> -->
 						
-                                        </section>
+                                <!--         </section> -->
                                 
  
 
-                                </section>
-				<!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
+                                <!-- </section> -->
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
 
-				<section >
-					<h3 class='slide-title'>Galaxy clustering</h3>
+				<!-- <section > -->
+				<!-- 	<h3 class='slide-title'>Galaxy clustering</h3> -->
 					
-                                        <br>
-                                        <font style="font-variant:small-caps"> SimBIG</font> collaboration: First galaxy clustering analysis with SBI on survey data.
-                                        <br>
-                                        <br>
+                                <!--         <br> -->
+                                <!--         <font style="font-variant:small-caps"> SimBIG</font> collaboration: First galaxy clustering analysis with SBI on survey data. -->
+                                <!--         <br> -->
+                                <!--         <br> -->
 
-                                        <div class="container">
-						<div class="col"  style="flex: 0 0 30em">
-                                                        <div class="slide-text">
-								<ul>
-									<li class="plain " data-fragment-index="1"> Data
-										<ul  style="font-size:20px">
+                                <!--         <div class="container"> -->
+				<!-- 		<div class="col"  style="flex: 0 0 30em"> -->
+                                <!--                         <div class="slide-text"> -->
+				<!-- 				<ul> -->
+				<!-- 					<li class="plain " data-fragment-index="1"> Data -->
+				<!-- 						<ul  style="font-size:20px"> -->
 											
-											<!-- <li> BOSS: SDSS III survey, spectra of $\sim$1.4 million galaxies from 2008-2014 </li>  -->
-											<li> ~100,000 galaxies mapped by BOSS from 2008-2014 (total ~1.4 million). </li>
-										</ul>
-									</li>
-									<br>
-									<li class="plain fragment " data-fragment-index="2" > Simulations
-										<ul style="font-size:20px">
-											<li> 2000 N-Body simulations of Quijote suite</li>
-											<li> Populate galaxies and impose survey realism- geometry, mask</li>
-										</ul>
-									</li>
-									<br>
-									<li class="plain fragment " data-fragment-index="3" > Statistics
-										<ul style="font-size:20px">
-											<li> <u>Baseline:</u> Power spectrum (2-point function)
-											</li>
-											<li> <u>Higher order:</u> Bispectrum (3-point), Wavelets, CNN-based statistics
-											</li>
-										</ul>
-									</li>
-									<br>
-									<li class="plain fragment " data-fragment-index="4" > Results 
-										<ul style="font-size:20px">
+				<!-- 							<\!-- <li> BOSS: SDSS III survey, spectra of $\sim$1.4 million galaxies from 2008-2014 </li>  -\-> -->
+				<!-- 							<li> ~100,000 galaxies mapped by BOSS from 2008-2014 (total ~1.4 million). </li> -->
+				<!-- 						</ul> -->
+				<!-- 					</li> -->
+				<!-- 					<br> -->
+				<!-- 					<li class="plain fragment " data-fragment-index="2" > Simulations -->
+				<!-- 						<ul style="font-size:20px"> -->
+				<!-- 							<li> 2000 N-Body simulations of Quijote suite</li> -->
+				<!-- 							<li> Populate galaxies and impose survey realism- geometry, mask</li> -->
+				<!-- 						</ul> -->
+				<!-- 					</li> -->
+				<!-- 					<br> -->
+				<!-- 					<li class="plain fragment " data-fragment-index="3" > Statistics -->
+				<!-- 						<ul style="font-size:20px"> -->
+				<!-- 							<li> <u>Baseline:</u> Power spectrum (2-point function) -->
+				<!-- 							</li> -->
+				<!-- 							<li> <u>Higher order:</u> Bispectrum (3-point), Wavelets, CNN-based statistics -->
+				<!-- 							</li> -->
+				<!-- 						</ul> -->
+				<!-- 					</li> -->
+				<!-- 					<br> -->
+				<!-- 					<li class="plain fragment " data-fragment-index="4" > Results  -->
+				<!-- 						<ul style="font-size:20px"> -->
 											
 								
-											<li  >  1.9x and 1.5x tighter constraints on $S_8$ and $H_0$</b>
-											</li>
+				<!-- 							<li  >  1.9x and 1.5x tighter constraints on $S_8$ and $H_0$</b> -->
+				<!-- 							</li> -->
 								
 								
-												<!-- $\rightarrow$  $\approx$  gain from analyzing 60% larger galaxy sample </li> -->
-											<!-- <li  > Going beyond perturbative analyses ($k_{\mathrm max} =0.25$ h/Mpc) </li> -->
-										</ul>
-									</li>
-								</ul>
-								<br>
-								<br>
-								<!-- <div class="plain fragment " data-fragment-index="6" style="font-size:20px" > Ongoing work with other statistics, e.g. wavelets, marked power spectrum </div> -->
+				<!-- 								<\!-- $\rightarrow$  $\approx$  gain from analyzing 60% larger galaxy sample </li> -\-> -->
+				<!-- 							<\!-- <li  > Going beyond perturbative analyses ($k_{\mathrm max} =0.25$ h/Mpc) </li> -\-> -->
+				<!-- 						</ul> -->
+				<!-- 					</li> -->
+				<!-- 				</ul> -->
+				<!-- 				<br> -->
+				<!-- 				<br> -->
+				<!-- 				<\!-- <div class="plain fragment " data-fragment-index="6" style="font-size:20px" > Ongoing work with other statistics, e.g. wavelets, marked power spectrum </div> -\-> -->
 									
 
-                                                        </div>
-						</div>
+                                <!--                         </div> -->
+				<!-- 		</div> -->
 						
-						<div class="col" style="flex: 0 0 25em">
-							<img class="plain fragment fade-out" data-fragment-index="2" style="position:absolute; top:180px; right:30px"
-                                                             data-src="assets/boss_telescope.jpg" width="360" />
-							<img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:180px; right:30px"
-                                                             data-src="assets/simbig_fwmodel.png" width="490" />
-							<img class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; top:180px; right:30px"
-                                                             data-src="assets/simbig_pell2.png" width="520" />
-							<img class="plain fragment" data-fragment-index="4" style="position:absolute; top:180px; right:70px"
-                                                             data-src="assets/simbig_constraint3.png" width="380" />
-						</div>
-						<div class="plain " data-fragment-index="1" style="position:absolute; bottom:-120px; right:20px; font-size: 16px; text-align:right">
-							Hahn et al. (including <b><u> Modi</b></u>) (2022a, 2022b, 2023) <br>
-							Régaldo-Saint Blancard et al. (including <b><u> Modi</b></u>) (2023) <br>
-							Lemos et al. (including <b><u> Modi</b></u>) (2023) <br>
-							<span class="fragment" data-fragment-index="2" > Villaescusa-Navarro et al. (2019) </span>
-						</div>
+				<!-- 		<div class="col" style="flex: 0 0 25em"> -->
+				<!-- 			<img class="plain fragment fade-out" data-fragment-index="2" style="position:absolute; top:180px; right:30px" -->
+                                <!--                              data-src="assets/boss_telescope.jpg" width="360" /> -->
+				<!-- 			<img class="plain fragment current-visible" data-fragment-index="2" style="position:absolute; top:180px; right:30px" -->
+                                <!--                              data-src="assets/simbig_fwmodel.png" width="490" /> -->
+				<!-- 			<img class="plain fragment current-visible" data-fragment-index="3" style="position:absolute; top:180px; right:30px" -->
+                                <!--                              data-src="assets/simbig_pell2.png" width="520" /> -->
+				<!-- 			<img class="plain fragment" data-fragment-index="4" style="position:absolute; top:180px; right:70px" -->
+                                <!--                              data-src="assets/simbig_constraint3.png" width="380" /> -->
+				<!-- 		</div> -->
+				<!-- 		<div class="plain " data-fragment-index="1" style="position:absolute; bottom:-120px; right:20px; font-size: 16px; text-align:right"> -->
+				<!-- 			Hahn et al. (including <b><u> Modi</b></u>) (2022a, 2022b, 2023) <br> -->
+				<!-- 			Régaldo-Saint Blancard et al. (including <b><u> Modi</b></u>) (2023) <br> -->
+				<!-- 			Lemos et al. (including <b><u> Modi</b></u>) (2023) <br> -->
+				<!-- 			<span class="fragment" data-fragment-index="2" > Villaescusa-Navarro et al. (2019) </span> -->
+				<!-- 		</div> -->
 
-						<br>
+				<!-- 		<br> -->
 						
-					</div>
+				<!-- 	</div> -->
                                         
         				
-				</section>
+				<!-- </section> -->
 
-                                <!-------------------------------------------------------------------------------->
-				<!-------------------------------------------------------------------------------->
+                                <!-- <\!-------------------------------------------------------------------------------\-> -->
+				<!-- <\!-------------------------------------------------------------------------------\-> -->
 
-				<section >
+				<!-- <section > -->
 
-					<section>
-					<h3 class='slide-title'>Challenges to SBI #1</h3>
-						<br>
-						<div class="boxonly" style="width:1000px; padding:8px; font-size:22px">  SBI training converges in the limit of a large number of samples. </div>
-						<br>
-						<div class="slide-text" style="font-size:22px">
-							<ul>
-								<li  class="plain" data-fragment-index="1" style="font-size:20px"> Current simulation suites are smaller than the BOSS survey (2008-2014).
-								</li>
-								<li  class="plain fragment" data-fragment-index="1" style="font-size:20px">
-									Upcoming surveys like DESI require larger volume, and higher resolution.
-								</li>
-							</ul>
+				<!-- 	<section> -->
+				<!-- 	<h3 class='slide-title'>Challenges to SBI #1</h3> -->
+				<!-- 		<br> -->
+				<!-- 		<div class="boxonly" style="width:1000px; padding:8px; font-size:22px">  SBI training converges in the limit of a large number of samples. </div> -->
+				<!-- 		<br> -->
+				<!-- 		<div class="slide-text" style="font-size:22px"> -->
+				<!-- 			<ul> -->
+				<!-- 				<li  class="plain" data-fragment-index="1" style="font-size:20px"> Current simulation suites are smaller than the BOSS survey (2008-2014). -->
+				<!-- 				</li> -->
+				<!-- 				<li  class="plain fragment" data-fragment-index="1" style="font-size:20px"> -->
+				<!-- 					Upcoming surveys like DESI require larger volume, and higher resolution. -->
+				<!-- 				</li> -->
+				<!-- 			</ul> -->
 							
-							<br>
-							<br>
-							<div class='fragment' data-fragment-index="2" style="position:absolute; left:20px; width:750px; text-align:center; font-size:20px">
+				<!-- 			<br> -->
+				<!-- 			<br> -->
+				<!-- 			<div class='fragment' data-fragment-index="2" style="position:absolute; left:20px; width:750px; text-align:center; font-size:20px"> -->
 								
-								<b class="alert"> We do not have the computational resources </b><br>
-								to generate training simulations
-								for the upcoming cosmological surveys.
-							</div>
+				<!-- 				<b class="alert"> We do not have the computational resources </b><br> -->
+				<!-- 				to generate training simulations -->
+				<!-- 				for the upcoming cosmological surveys. -->
+				<!-- 			</div> -->
 
-							<div class="box fragment" data-fragment-index="3" style="position:relative; top:80px; text-align:left; margin-left:0px; width:750px ">
-								<div class="box-title" style="padding:8px">
-									Road ahead
-								</div>
-								<div class="box-content" style="font-size:20px">
-									<ul style="margin-left:30px">
-										<li > Use pre-trained large networks to extract representations more efficiently.</li>
-										<li class=" fragment" data-fragment-index="4"> <u>Hybrid SBI</u>: combine theory analysis on large scales with SBI in small scales
-											<span style="font-size:19px" >
-												$$ p(x | \theta) = p_{\textrm{theory}}(x_L | \theta) \times  p_{\textrm{SBI}}(x_S |x_L,  \theta) $$
-											</span>
-											$\rightarrow$ develop multi-scale cosmological simulations. 
-										</li>
-									</ul>
-								</div>
-							</div>
+				<!-- 			<div class="box fragment" data-fragment-index="3" style="position:relative; top:80px; text-align:left; margin-left:0px; width:750px "> -->
+				<!-- 				<div class="box-title" style="padding:8px"> -->
+				<!-- 					Road ahead -->
+				<!-- 				</div> -->
+				<!-- 				<div class="box-content" style="font-size:20px"> -->
+				<!-- 					<ul style="margin-left:30px"> -->
+				<!-- 						<li > Use pre-trained large networks to extract representations more efficiently.</li> -->
+				<!-- 						<li class=" fragment" data-fragment-index="4"> <u>Hybrid SBI</u>: combine theory analysis on large scales with SBI in small scales -->
+				<!-- 							<span style="font-size:19px" > -->
+				<!-- 								$$ p(x | \theta) = p_{\textrm{theory}}(x_L | \theta) \times  p_{\textrm{SBI}}(x_S |x_L,  \theta) $$ -->
+				<!-- 							</span> -->
+				<!-- 							$\rightarrow$ develop multi-scale cosmological simulations.  -->
+				<!-- 						</li> -->
+				<!-- 					</ul> -->
+				<!-- 				</div> -->
+				<!-- 			</div> -->
 
-							<div  class='fragment current-visible' data-fragment-index="2">
-								<img style="position:absolute; top:200px; right:20px; width:450px"
-								     data-src="assets/cartoon_resources.jpeg"  />
-							</div>
-							<div  class='fragment current-visible' data-fragment-index="3">
-								<img style="position:absolute; top:200px; right:20px; width:450px"
-								     data-src="assets/cartoon_resources.jpeg"  />
-							</div>
+				<!-- 			<div  class='fragment current-visible' data-fragment-index="2"> -->
+				<!-- 				<img style="position:absolute; top:200px; right:20px; width:450px" -->
+				<!-- 				     data-src="assets/cartoon_resources.jpeg"  /> -->
+				<!-- 			</div> -->
+				<!-- 			<div  class='fragment current-visible' data-fragment-index="3"> -->
+				<!-- 				<img style="position:absolute; top:200px; right:20px; width:450px" -->
+				<!-- 				     data-src="assets/cartoon_resources.jpeg"  /> -->
+				<!-- 			</div> -->
 
-							<span  class="plain fragment fade-in" data-fragment-index="4" style="position:absolute; top:200px; right:20px; width:450px" >
-								<img data-src="assets/hysbi_corner_eighth.png"  />
-								<div style='position:relative; top:-20px; font-size:18px; text-align:center'>
-									Hybrid-SBI trained on 1/8$^{th}$ the simulation volume outperforms standard analyses </div>
-							</span>
-							<span  class="plain  fragment " data-fragment-index="4" style="position:absolute; top:500px; left:500px; width:200px" >
-								<img  style="border:none"  data-src="assets/zoom_in.png"  />
-							</span>
-							<span  class="plain fragment " data-fragment-index="4" style="position:absolute; top:570px; left:700px; width:120px; font-size:14px" >
-								<img style="border:none" data-src="assets/gemma.jpg"  />
-								<br>
-								<div style="position:relative; top:-55px; left:100px" > Gemma<br>Zhang </div>
-							</span>
-							<div class="plain fragment " data-fragment-index="4"  style="position:absolute; top:670px; right:20px; font-size:20px" >
-								<b><u>Modi</b></u> and Philcox 2023
-							</div>
+				<!-- 			<span  class="plain fragment fade-in" data-fragment-index="4" style="position:absolute; top:200px; right:20px; width:450px" > -->
+				<!-- 				<img data-src="assets/hysbi_corner_eighth.png"  /> -->
+				<!-- 				<div style='position:relative; top:-20px; font-size:18px; text-align:center'> -->
+				<!-- 					Hybrid-SBI trained on 1/8$^{th}$ the simulation volume outperforms standard analyses </div> -->
+				<!-- 			</span> -->
+				<!-- 			<span  class="plain  fragment " data-fragment-index="4" style="position:absolute; top:500px; left:500px; width:200px" > -->
+				<!-- 				<img  style="border:none"  data-src="assets/zoom_in.png"  /> -->
+				<!-- 			</span> -->
+				<!-- 			<span  class="plain fragment " data-fragment-index="4" style="position:absolute; top:570px; left:700px; width:120px; font-size:14px" > -->
+				<!-- 				<img style="border:none" data-src="assets/gemma.jpg"  /> -->
+				<!-- 				<br> -->
+				<!-- 				<div style="position:relative; top:-55px; left:100px" > Gemma<br>Zhang </div> -->
+				<!-- 			</span> -->
+				<!-- 			<div class="plain fragment " data-fragment-index="4"  style="position:absolute; top:670px; right:20px; font-size:20px" > -->
+				<!-- 				<b><u>Modi</b></u> and Philcox 2023 -->
+				<!-- 			</div> -->
 							
 
-						</div>
-						<br>
+				<!-- 		</div> -->
+				<!-- 		<br> -->
 						
-					</section>
+				<!-- 	</section> -->
        					
 				
-					<!-------------------------------------------------------------------------------->
+				<!-- 	<\!-------------------------------------------------------------------------------\-> -->
 
-					<section >
-						<h3 class='slide-title'>Challenges to SBI #2</h3>
-						<br>
-						<div class="boxonly" style="width:1200px; padding:8px; font-size:22px">
-							<b class="alert"> Model misspecification:</b> SBI assumes that the observed data is generated from the same model (simulation).
-						</div>
-						<br>
+				<!-- 	<section > -->
+				<!-- 		<h3 class='slide-title'>Challenges to SBI #2</h3> -->
+				<!-- 		<br> -->
+				<!-- 		<div class="boxonly" style="width:1200px; padding:8px; font-size:22px"> -->
+				<!-- 			<b class="alert"> Model misspecification:</b> SBI assumes that the observed data is generated from the same model (simulation). -->
+				<!-- 		</div> -->
+				<!-- 		<br> -->
 						
-						<div class="plain fragment" data-fragment-index="1" style="font-size:22px" > Inference is unreliable if the simulation & data-model are different. </div>
+				<!-- 		<div class="plain fragment" data-fragment-index="1" style="font-size:22px" > Inference is unreliable if the simulation & data-model are different. </div> -->
 						
-						<br>
-						<div class="container">
-							<div class="col"  style="flex: 0 0 34em">
-								<div class="slide-text" style="font-size:22px">
-									<br>
-									<div class="block fragment" data-fragment-index="2" style="position:relative; top:-20px" >
-										<div class="block-title" >
-											Road ahead
-										</div>
-										<div class="block-content" style="font-size:20px">
-											Q. How do we use SBI when we do not have the exact model?
-											<br>
-											<br>
-											A. We have multiple models for the same data.
-											<br>
-											$\rightarrow$ E.g., empirical and physical models for populating galaxies.
-											<br>
-											<br>
-											<ul class="fragment " data-fragment-index="3" style="font-size:20px">
-												<li> <u>Data-cuts</u>: confident in regimes where these agree.</li>
-												<br>
-												<li> <u>Robust algorithms</u>:  construct invariant statistics using self-supervised learning. </li>	<br>
-												<li> <u>Diagnostics</u>: detect model-misspecification using Bayesian evidence. </li>
+				<!-- 		<br> -->
+				<!-- 		<div class="container"> -->
+				<!-- 			<div class="col"  style="flex: 0 0 34em"> -->
+				<!-- 				<div class="slide-text" style="font-size:22px"> -->
+				<!-- 					<br> -->
+				<!-- 					<div class="block fragment" data-fragment-index="2" style="position:relative; top:-20px" > -->
+				<!-- 						<div class="block-title" > -->
+				<!-- 							Road ahead -->
+				<!-- 						</div> -->
+				<!-- 						<div class="block-content" style="font-size:20px"> -->
+				<!-- 							Q. How do we use SBI when we do not have the exact model? -->
+				<!-- 							<br> -->
+				<!-- 							<br> -->
+				<!-- 							A. We have multiple models for the same data. -->
+				<!-- 							<br> -->
+				<!-- 							$\rightarrow$ E.g., empirical and physical models for populating galaxies. -->
+				<!-- 							<br> -->
+				<!-- 							<br> -->
+				<!-- 							<ul class="fragment " data-fragment-index="3" style="font-size:20px"> -->
+				<!-- 								<li> <u>Data-cuts</u>: confident in regimes where these agree.</li> -->
+				<!-- 								<br> -->
+				<!-- 								<li> <u>Robust algorithms</u>:  construct invariant statistics using self-supervised learning. </li>	<br> -->
+				<!-- 								<li> <u>Diagnostics</u>: detect model-misspecification using Bayesian evidence. </li> -->
 												
-											</span>
+				<!-- 							</span> -->
 											
-											<br>
-											<!-- <br> -->
+				<!-- 							<br> -->
+				<!-- 							<\!-- <br> -\-> -->
 											
-											<!-- <span class="plain fragment" data-fragment-index="4" > -->
-											<!-- 	<\!-- Better galaxy models! -\-> -->
-											<!-- 	<\!-- <br> -\-> -->
-											<!-- 	<span style="font-size:20px"> -->
-											<!-- 		<span class="fragment highlight-green " data-fragment-index="7"> -->
-											<!-- 			Physically motivated</span> semi-analytic models for cosmology. </span> -->
+				<!-- 							<\!-- <span class="plain fragment" data-fragment-index="4" > -\-> -->
+				<!-- 							<\!-- 	<\\!-- Better galaxy models! -\\-> -\-> -->
+				<!-- 							<\!-- 	<\\!-- <br> -\\-> -\-> -->
+				<!-- 							<\!-- 	<span style="font-size:20px"> -\-> -->
+				<!-- 							<\!-- 		<span class="fragment highlight-green " data-fragment-index="7"> -\-> -->
+				<!-- 							<\!-- 			Physically motivated</span> semi-analytic models for cosmology. </span> -\-> -->
 												
-											<!-- 	<br> -->
-											<!-- 	<span class="plain fragment" data-fragment-index="6" style="font-size:20px"> -->
-											<!-- 		$\quad \rightarrow$ Learn generative models for halo-merger trees. -->
-											<!-- 	</span> -->
-											<!-- 	<br> -->
-											<!-- 	<br> -->
-											<!-- 	<span class="plain fragment" data-fragment-index="7" style="font-size:20px"> -->
-											<!-- 		Constrain <u>galaxy formation</u> with  cosmology -->
-											<!-- 	</span> -->
-											<!-- </span> -->
+				<!-- 							<\!-- 	<br> -\-> -->
+				<!-- 							<\!-- 	<span class="plain fragment" data-fragment-index="6" style="font-size:20px"> -\-> -->
+				<!-- 							<\!-- 		$\quad \rightarrow$ Learn generative models for halo-merger trees. -\-> -->
+				<!-- 							<\!-- 	</span> -\-> -->
+				<!-- 							<\!-- 	<br> -\-> -->
+				<!-- 							<\!-- 	<br> -\-> -->
+				<!-- 							<\!-- 	<span class="plain fragment" data-fragment-index="7" style="font-size:20px"> -\-> -->
+				<!-- 							<\!-- 		Constrain <u>galaxy formation</u> with  cosmology -\-> -->
+				<!-- 							<\!-- 	</span> -\-> -->
+				<!-- 							<\!-- </span> -\-> -->
 											
-										</div>
-									</div>
-									<br>
-								</div>
-							</div>
+				<!-- 						</div> -->
+				<!-- 					</div> -->
+				<!-- 					<br> -->
+				<!-- 				</div> -->
+				<!-- 			</div> -->
 							
-							<div class="col" style="flex: 0 0 25em">
-								<span  class="plain fragment" data-fragment-index="1" style="position:absolute; top:220px; right:50px; width:360px">
-									<span class="plain fragmentt" data-fragment-index="2" >
-										<img data-src="assets/sbi_diffhod.png"  />
-										<br>
-										<em style="font-size:20px; position:relative; top:-16px"> SBI predictions for 2 different datasets.
-											<br>
-											Train: 5 parameter galaxy model.</em>
-									</span>
-								</span>
+				<!-- 			<div class="col" style="flex: 0 0 25em"> -->
+				<!-- 				<span  class="plain fragment" data-fragment-index="1" style="position:absolute; top:220px; right:50px; width:360px"> -->
+				<!-- 					<span class="plain fragmentt" data-fragment-index="2" > -->
+				<!-- 						<img data-src="assets/sbi_diffhod.png"  /> -->
+				<!-- 						<br> -->
+				<!-- 						<em style="font-size:20px; position:relative; top:-16px"> SBI predictions for 2 different datasets. -->
+				<!-- 							<br> -->
+				<!-- 							Train: 5 parameter galaxy model.</em> -->
+				<!-- 					</span> -->
+				<!-- 				</span> -->
 								
 								
 								
-								<div  class="plain fragment " data-fragment-index="1" style="position:absolute; top:620px; right:20px; font-size:16px; text-align:right; ">
-									<b><u>Modi</b></u> et al. (2023)<br>
-									<span  class="plain fragment " data-fragment-index="3">
-										Arjovsky, Bottou et al. (2019) <br>
-									</span>
-									<span  class="plain fragment " data-fragment-index="3">
-										Nguyen, <b><u>Modi</b></u>, Li, Somerville (2023)<br>
-										<img  style="position:relative; top:-110px; left:-280px; width:100px; border:none"
-										     data-src="assets/tringyun.jpg"  /><br>
-									</span>
+				<!-- 				<div  class="plain fragment " data-fragment-index="1" style="position:absolute; top:620px; right:20px; font-size:16px; text-align:right; "> -->
+				<!-- 					<b><u>Modi</b></u> et al. (2023)<br> -->
+				<!-- 					<span  class="plain fragment " data-fragment-index="3"> -->
+				<!-- 						Arjovsky, Bottou et al. (2019) <br> -->
+				<!-- 					</span> -->
+				<!-- 					<span  class="plain fragment " data-fragment-index="3"> -->
+				<!-- 						Nguyen, <b><u>Modi</b></u>, Li, Somerville (2023)<br> -->
+				<!-- 						<img  style="position:relative; top:-110px; left:-280px; width:100px; border:none" -->
+				<!-- 						     data-src="assets/tringyun.jpg"  /><br> -->
+				<!-- 					</span> -->
 									
-								</div>
+				<!-- 				</div> -->
 								
-							</div>
-						<br>
+				<!-- 			</div> -->
+				<!-- 		<br> -->
 						
-						</div>
-						<br>
+				<!-- 		</div> -->
+				<!-- 		<br> -->
         					
-					</section>
+				<!-- 	</section> -->
 					
-				</section>
+				<!-- </section> -->
 
                                 <!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
