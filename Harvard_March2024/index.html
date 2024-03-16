@@ -497,7 +497,11 @@
                                                         <span class="fragment " data-fragment-index="2"> No information is lost by data compression.
                                                         </span>
                                                         <br>
-                                                         <img class="fragment plain"   data-fragment-index="2" width="350px" height="300px" style="position:relative;top:50px;left:250px" data-src="assets/field_level_prelim.png" />
+							<div  class="fragment plain"   data-fragment-index="2" style="position:absolute;top:120px;left:200px"> 
+								<img style="border:none; width:380px"  data-src="assets/field_level_prelim.png" />
+								<br>
+								<div class="caption"> Equivalent to probing 20x larger volume </div>
+							</div>
                                                         <br>
 
                                                         
@@ -1409,7 +1413,7 @@
 						
 						<ul class="fragment" data-fragment-index="2" style="font-size:20px; text-align:center">
 
-							Auto-correlation lengths can be 1000 samples long,
+							Auto-correlation lengths can be 1000 samples long.<br>
 							<b class="alert">~10,000 simulations </b> for a single independent sample!!
 						</ul>
 						<br>
@@ -1417,7 +1421,12 @@
 							
 							<strong>Computationally prohibitive in realistic settings. </strong>
                                                 </ul>
-                                                <span  class="plain "  style="position:absolute; top:640px; right:10px; font-size:18px; text-align:right">
+												
+						<img   class="fragment " data-fragment-index="3" style="position:absolute; top:480px; right:10px; border:none"
+						       data-src="assets/costly.png" height="200px"/>
+						
+
+                                                <span  class="plain "  style="position:absolute; top:120px; right:10px; font-size:18px; text-align:right">
 							<b><u>Modi</u></b>, Li, Blei (2022) <br>
 						</span>
 
@@ -1500,7 +1509,7 @@
                                                                         $\rightarrow$ model complex distributions with  neural networks
 									<br>
 									<span class="fragment" data-fragment-index="2">
-										$\rightarrow$ <u>symmetry-based flows</u>, do convolutions in Fourier space ($\mathcal{F}$) <br>
+										$\rightarrow$ <u>symmetry-based flows</u>: convolutions in Fourier space ($\mathcal{F}$) <br>
 										$$ \quad i^{\textrm{th}}\,\textrm{layer}:\quad  z_{i+1} = \mathcal{F_{3D}^{-1}}(t_{\phi,1D} \times \mathcal{F_{3D}}(z_i))$$
                                                                                 <br>
 										
