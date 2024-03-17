@@ -60,4 +60,4 @@
 	url = https://github.com/modichirag/reveal.js
 [submodule "Harvard2_March2024/reveal.js"]
 	path = Harvard2_March2024/reveal.js
-	url = git@github.com:modichirag/reveal.js.git
+	url = https://github.com/modichirag/reveal.js

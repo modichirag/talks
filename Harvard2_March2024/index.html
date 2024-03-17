@@ -293,11 +293,11 @@
 									<ul style="">
 										<li> 35 million galaxies & quasars over 5 years</li>
                                                                                 <br>
-										<li> Previous largest survey: $\sim$1.2 million galaxies </li>
-										<br>
-										<li class="fragment" data-fragment-index="0"> In first 6 months, mapped out <b><u> more galaxies than all of the
-													previous 3D surveys combined</u></b>. </li>
-											<!-- $\,\rightarrow$ same as the last big survey in 5 years -->
+										<li class="fragment" data-fragment-index="0"> Has mapped out <b><u> more galaxies than all of the previous 3D surveys combined.</u></b>
+											<br>
+                                                                                        <br>
+                                                                                        $\,\rightarrow$ 1.2 million galaxies in the first 6 months<br>
+                                                                                        <!-- $\,\rightarrow$ same as the last big survey in 5 years -->
 									</ul>
 								</div>
 								<br>
@@ -487,43 +487,35 @@
                                                 Model the galaxy field: full three-dimensional distribution of galaxies.
                                                 <!-- field-level data without any compression and use it for inference. -->
 
-                                                <div class="slide-text", style="position:relative; width:700px">
+                                                <div class="slide-text", style="position:relative;">
                                                         <br>
                                                         <br>
 
-                                                        <span class="fragment " data-fragment-index="1"> <u>Field level inference</u>: 
-								<span style="position:absolute; width:400px"> $\,$model positions of individual galaxies,
-									<br>not low-dimensional summary statistics.
-								</span>
+                                                        <span class="fragment " data-fragment-index="1"> Model positions of individual galaxies, not low-dimensional summary statistics.
                                                         </span>
-                                                        <br>
                                                         <br>
                                                         <span class="fragment " data-fragment-index="2"> No information is lost by data compression.
                                                         </span>
                                                         <br>
-							<div  class="fragment plain"   data-fragment-index="2" style="position:absolute;top:130px;left:180px"> 
-								<img style="border:none; width:360px"  data-src="assets/field_level_prelim.png" />
-								<br>
-								<div class="caption"> Equivalent to probing <b class="alert"> 20x</b> larger volume. </div>
-							</div>
+                                                         <img class="fragment plain"   data-fragment-index="2" width="350px" height="300px" style="position:relative;top:50px;left:250px" data-src="assets/field_level_prelim.png" />
                                                         <br>
-							
-                                                </div>
-						
-						<div class="plain" style="position:absolute; top:145px; right:165px; ">
-                                                        <img style="height:225px; border:none"
-                                                             data-src="assets/sdss_pie2.jpg" />
-                                                </div>
-                                                <div class="plain fragment fade-in" data-fragment-index="1" style="position:absolute; top:380px; right:130px; font-size:20px">
-                                                        <img  style="height:200px; border:none"  data-src="assets/boss_dr12_fit_corr.png" />
-                                                        <br>
-                                                        <div class="caption">Spatial clustering statistics$\,\,$</div>
-                                                </div>
-                                                
-                                                <div class="fragment  " data-fragment-index="2" style="font-size: 18px; position:absolute; top:660px; right:20px; text-align:right;">
-                                                        <b><u>Modi</u></b> et al. (in preparation);
-                                                        <b><u>Modi</u></b>, Feng, Seljak (2017);
-                                                        Leclercq and Heavens (2021)
+
+                                                        
+                                                        <div class="plain" style="position:absolute; top:20px; right:165px; ">
+                                                                <img style="height:225px; border:none"
+                                                                     data-src="assets/sdss_pie2.jpg" />
+                                                        </div>
+                                                        <div class="plain fragment fade-in" data-fragment-index="1" style="position:absolute; top:260px; right:130px; font-size:20px">
+                                                                <img  style="height:200px; border:none"  data-src="assets/boss_dr12_fit_corr.png" />
+                                                                <br>
+                                                                <div class="caption">Spatial clustering statistics$\,\,$</div>
+                                                        </div>
+                                                        
+                                                        <div class="fragment  " data-fragment-index="2" style="font-size: 18px; position:absolute; top:520px; right:20px; text-align:right;">
+                                                                <b><u>Modi</u></b> et al. (in preparation);
+                                                                <b><u>Modi</u></b>, Feng, Seljak (2017);
+                                                                Leclercq and Heavens (2021)
+                                                        </div>
                                                 </div>
                                                 
                                         </section>
@@ -571,7 +563,7 @@
                                                 <br>
 						$x \sim  p(x|\theta)$
                                                 <br>
-						<div style="font-size:20px" style="position:relative; top:20px" > 3-D galaxy field $\sim$ probabilistic forward model (parameters) </div>
+						<div style="font-size:20px" style="position:relative; top:20px" > data $\sim$ probabilistic forward model (parameters) </div>
                                                 <div class="fragment" data-fragment-index='6' style="position:relative; top:-10px">
                                                         $$\theta = (\Lambda, z, \phi)$$
                                                 </div>
@@ -639,14 +631,15 @@
 							<div class='col fragment' data-fragment-index='2'>  Boltzmann <br> equations </div>
 							<div class='col fragment' data-fragment-index='3'>  Gravity evolution <br> (N-Body simulations) <br> ($\mathbf{\Lambda}$) </div>
 							<!-- <div class='col fragment' data-fragment-index='4'>  Group Finding <br> algorithms <br>  ($\mathbf{\theta}$) </div> -->
- 							<div class='col fragment' data-fragment-index='4'>  Galaxy models  <br> $\phi\sim p(\phi)$  </div>
+ 							<div class='col fragment' data-fragment-index='4'>  Galaxy models & <br>survey systematics <br> ($\phi\sim p(\phi)$)  </div>
 							<!-- <div class='col fragment' data-fragment-index='6'>  Survey systematics <br> & summarize<br> ($\mathbf{\theta}$)  </div> -->
 						</div>
                                                 <img class="plain  fragment fade-out" data-fragment-index="3" style="position:absolute; top:10px; right:20px; height:250px;" data-src="assets/WMAP_timeline.jpg" />
                                                 <span class="fragment" data-fragment-index="3">
                                                         <img class="plain  fragment fade-in" data-fragment-index="3" style="position:absolute; top:10px; right:20px;;" data-src="assets/nbodysim.gif" />
                                                 </span>
-                                                <span class="fragment " data-fragment-index="7" style="font-size:20px"> Use $z$ to  develop completely novel cosmological probes (<b><u>Modi</b></u>, White et al. (2019a,b; 2021)).
+                                                <br>
+                                                <span class="fragment " data-fragment-index="7" style="font-size:20px"> Use $z$ to reconstruct unobserved fields and develop new cosmological probes (<b><u>Modi</b></u>, White et al. (2019a,b; 2021)).
                                                 </span>
                                                 
                                                 <!-- <img class="plain  fragment fade-in" data-fragment-index="4" style="position:absolute; top:50px; right:20px; height:150px;" data-src="assets/galaxypeaks.jpg" /> -->
@@ -679,7 +672,7 @@
                                                                 </li>
                                                                 <br>
                                                                 <li class="fragment highlight-green" data-fragment-index="3"> Hierarchical model <br>
-                                                                        $\rightarrow$ Multiscale posterior geometry
+                                                                        $\rightarrow$ Difficult posterior geometry
                                                                 </li>
                                                                         
 						        </ol>
@@ -735,11 +728,10 @@
                                                         <li> High dimensional inference in cosmology with field-level inference.  </li>
                                                         <ul>
                                                                 <li> Tools  </li>
-                                                                <li> Algorithms:
+                                                                <li> Algorithms for high-dimensional inference
                                                                         <ul>
-                                                                                $\rightarrow$ Hamiltonian Monte-Carlo (HMC)<br>
-										$\rightarrow$ Variational Inference (VI) 
-
+                                                                                $\rightarrow$ Variational Inference (VI) <br>
+                                                                                $\rightarrow$ Hamiltonian Monte-Carlo (HMC)
                                                                         </ul>
                                                                 </li> 
                                                         </ul>
@@ -790,7 +782,7 @@
 											
   										</li>
 										<br>
-										<li class="plain"> Gradient based inference algorithms <br>
+										<li class="fragment" data-fragment-index="1"> Gradient based inference algorithms <br>
 											<div style="font-size:20px">
 												E.g. gradient descent, Hamiltonian Monte Carlo (HMC) <br>
 											</div>
@@ -800,7 +792,7 @@
                                                                                 <br>
 										<div class="fragment " data-fragment-index="1" style="position:relative; left:100px ">
 											<!-- $g = \frac{\partial\, p(x| \theta)}{\partial\, \theta}$ -->
-											$g = \frac{\partial\, \log p(\theta | x)}{\partial\, \theta} = $ <span style="color:orange">$\frac{\partial\, \log p(x| \theta)}{\partial\, \theta}$</span> $+ \frac{\partial\, \log p(\theta)}{\partial\, \theta}$
+											$g = \frac{\partial\, p(\theta | x)}{\partial\, \theta} = $ <span style="color:orange">$\frac{\partial\, p(x| \theta)}{\partial\, \theta}$</span> $+ \frac{\partial\, p(\theta)}{\partial\, \theta}$
 											<br> 
 										</div>
                                                                                 <br>
@@ -1022,12 +1014,12 @@
 									                Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
 										        <a href="https://github.com/DifferentiableUniverseInitiative/flowpm">https://github.com/DifferentiableUniverseInitiative/flowpm</a> <br>
 									        </span>
-									        <!-- <div  class="plain fragment" data-fragment-index="2" style="position:absolute; top:-10px; left:00px"> -->
-									        <!--         <img style="border:none; width:120px; height:100px;   " -->
-									        <!--              data-src="../assets/epod.jpg" /> -->
-                                                                                <!--         <br> -->
-                                                                                <!--         <span style="position:relative; top:-80px; right:-40px " > Epod<br>Kwan </span> -->
-                                                                                <!-- </div> -->
+									        <div  class="plain fragment" data-fragment-index="2" style="position:absolute; top:-10px; left:00px">
+									                <img style="border:none; width:120px; height:100px;   "
+									                     data-src="../assets/epod.jpg" />
+                                                                                        <br>
+                                                                                        <span style="position:relative; top:-80px; right:-40px " > Epod<br>Kwan </span>
+                                                                                </div>
 									        
 									        <span  class="plain fragment" data-fragment-index="2" style="position:relative; top:-70px; font-size:16px">
 										        <b> <u>Modi</u></b>, Lanusse, Seljak (2020) <br>
@@ -1140,7 +1132,7 @@
                                                                                 ODEs evolved using symplectic integrators like leapfrog.
                                                                                 <br>
                                                                                 <span class="fragment" data-fragment-index="2">
-                                                                                        <u>Detailed balance</u> criterion for accepting proposals
+                                                                                        Metropolis-Hastings criterion for accepting proposals
                                                                                         <span style="font-size:20px" >
                                                                                                 $\alpha = 1 \land \frac{p(\theta'|x)}{p(\theta|x)}$
                                                                                         </span>
@@ -1334,18 +1326,21 @@
 										<u>Data</u><br>
                                                                                 $x:$ 3D dark matter density data
 										<br>
-										$x = f(z) + \epsilon$<br>
-										$f(z):$ $N$-body  simulation; $\quad  \epsilon\sim\mathcal{N}(0,1)$
-										<br>
-										<br>
-										<u>Likelihood</u><br>
-                                                                                $p(x|\theta): \mathcal{N}\big(f(z), 1.\big)$
-										<br>
 										<br>
 										<u>Parameters</u><br>
-                                                                                $\theta:$ <span style="color:orange">  $\Lambda,\,\phi$,</span> $\,z$ = initial conditions on a $64^3$ grid
+                                                                                $\theta:$ <span class="fragment highlight-red" data-fragment-index="1">  $\Lambda,\,\phi$,</span> $\,z$ = initial conditions on a $64^3$ grid
 										<br >
                                                                                 $p(z) = \mathcal{N}\big(0, g(\Lambda))$
+										<br>
+										Fixed cosmology
+										<br>
+                                                                                <br>
+										<u>Likelihood</u><br>
+										$x = f(z) + \epsilon, \quad  \epsilon\sim\mathcal{N}(0,1)$<br>
+										$f(z):$ $N$-body  simulation
+										<br>
+                                                                                $p(x|\theta): \mathcal{N}\big(f(z), 1.\big)$
+										<br>
 									</div>
 
 									<br>
@@ -1414,7 +1409,7 @@
 						
 						<ul class="fragment" data-fragment-index="2" style="font-size:20px; text-align:center">
 
-							Auto-correlation lengths can be 1000 samples long.<br>
+							Auto-correlation lengths can be 1000 samples long,
 							<b class="alert">~10,000 simulations </b> for a single independent sample!!
 						</ul>
 						<br>
@@ -1422,12 +1417,7 @@
 							
 							<strong>Computationally prohibitive in realistic settings. </strong>
                                                 </ul>
-												
-						<img   class="fragment " data-fragment-index="3" style="position:absolute; top:480px; right:10px; border:none"
-						       data-src="assets/costly.png" height="200px"/>
-						
-
-                                                <span  class="plain "  style="position:absolute; top:120px; right:10px; font-size:18px; text-align:right">
+                                                <span  class="plain "  style="position:absolute; top:640px; right:10px; font-size:18px; text-align:right">
 							<b><u>Modi</u></b>, Li, Blei (2022) <br>
 						</span>
 
@@ -1510,8 +1500,8 @@
                                                                         $\rightarrow$ model complex distributions with  neural networks
 									<br>
 									<span class="fragment" data-fragment-index="2">
-										$\rightarrow$ <u>symmetry-based flows</u>: convolutions in Fourier space ($\mathcal{F}$) <br>
-										<!-- $$ \quad i^{\textrm{th}}\,\textrm{layer}:\quad  z_{i+1} = \mathcal{F_{3D}^{-1}}(t_{\phi,1D} \times \mathcal{F_{3D}}(z_i))$$ -->
+										$\rightarrow$ <u>symmetry-based flows</u>, do convolutions in Fourier space ($\mathcal{F}$) <br>
+										$$ \quad i^{\textrm{th}}\,\textrm{layer}:\quad  z_{i+1} = \mathcal{F_{3D}^{-1}}(t_{\phi,1D} \times \mathcal{F_{3D}}(z_i))$$
                                                                                 <br>
 										
 									</span>
@@ -1559,25 +1549,29 @@
 						<h3 class="slide-title">So how do we do this high-dimensional inference?</h3>
 						
 						<br>
-						<div class="slide-text" style="width:600px">
+						<div class="slide-text" style="width:550px">
 							
+							<span class="fragment highlight-green" data-fragment-index="3"> HMC generates samples from the target</span>, but is expensive.
 							<br>
-							Variational inference with reverse KL divergence is not robust.
+							$\rightarrow$ samples are correlated.
+							<br>
+							<br>
+							Variational inference with reverse KL is not robust.
 							<br>
 							<br>
 							<span class="fragment " data-fragment-index="1">
 								Can we use other divergences, e.g., forward KL divergence?
-								$$D_{\mathrm{KL}}(p||q) = \mathbb{E}_{ p}( \log p(\theta|x) - \log q(\theta)) $$
-								<span class="fragment" data-fragment-index="2"> Requires samples from $p(\theta|x)$.
-								</span>
-								
+								$$D_{\mathrm{KL}}(p||q) = \mathbb{E}_{ p}(\log q(\theta) - \log p(\theta|x)) $$
 							</span>
 							
-							<br>
-
 						</div>
 					
-						<div class="plain" style="position:absolute; top:100px; right:180px; font-size:20px;">
+						<div style="position:absolute; top:100px; right:50px; ">
+							<img  class="plain" style="width:600px; height:180px" data-src="assets/hmc_ac.png"/>
+							<br>
+							<span class="caption"> 10,000 simulations for one independent sample. </span>
+						</div>
+						<div class="plain" style="position:absolute; top:350px; right:160px; font-size:20px;">
 							<img style=" width:300px; height:250px; border:none"
 							     data-src="assets/vi_posterior_tf.png"/>
 							<br>
@@ -1586,18 +1580,6 @@
 						<div class="fragment" data-fragment-index="2"  style="position:absolute; top:350px; left:140px; font-size:20px;">
 							<img style=" width:300px; height:250px; border:none"   data-src="assets/chicken-egg.jpg"/>
 						</div>
-						<div class="fragment" data-fragment-index="3" style="position:absolute; top:400px; left:600px">
-							<span style="position:relative; left:-100px; top:10px"> True $z$ </span>
-							<span   style="position:relative; left:0px; top:10px"> HMC samples of $z$ </span>
-							<span style="position:relative; left:100px; top:10px"> Data $x$ </span>
-							<br>
-							<img class="plain" src="../assets/ic_gif.png"   width="200" />
-							&nbsp;
-							<img  class="fragment" data-fragment-index="2" style="border:none" src="../assets/ic.gif"   width="200" />
-							&nbsp;
-							<img  class="plain" src="../assets/dm_data.png"   width="200" />
-						</div>
-	
 					</section>
 
 					<!-------------------------------------------------------------------------------->
@@ -1623,7 +1605,7 @@
 										<ul>
 											<li class=" plain "> HMC: ensures samples are from the target.
 											</li>
-											<li class="plain " > VI: samples generated from variational distribution are independent.
+											<li class="plain " > VI: samples generated are independent.
 											</li>
 										</ul>
 										
@@ -1648,7 +1630,7 @@
 												$\rightarrow$ Explore the posterior faster.
 											</li>
 											<br>
-											<li class=" fragment " data-fragment-index="3">Detailed balance criterion for accepting NF proposals.
+											<li class=" fragment " data-fragment-index="3">Metropolis-Hastings criterion for accepting NF proposals.
 												<span style="position:relative; font-size:17px; top:-10px">
 													$$\alpha(\theta_1\rightarrow \theta_2) = \textrm{min}\Big(1, \frac{p(\theta_2|x)\, q_\phi(\theta_1)}{p(\theta_1|x)\, q_\phi(\theta_2)}\Big)$$
 												</span>
@@ -1937,10 +1919,10 @@
                                                         When faced with a rejection, make another proposal with a <u>different transition kernel</u>.
                                                 </div>
 						<br>
-                                                <div class="slide-text" style="font-size:20px">
+                                                <div class="slide-text">
                                                         <div class="plain fragment " data-fragment-index="1"  >
 								<u>Hamiltonian-Monte Carlo</u>: <br>
-								Transition kernel $F_1:$ Leapfrog integration step-size $\epsilon$ for $L$ steps
+								$F_1:$ Hamiltonian dynamics by leapfrog integration with step-size $\epsilon$ for $L$ steps
 								<br>
 								Accepts proposals with probability:
 								$ \alpha_1(x\rightarrow y) = \textrm{min}\Big(1, \frac{p(y)}{p(x)}\Big)$
@@ -1949,10 +1931,8 @@
 								<br>
 								<span class="plain fragment" data-fragment-index="3" style="position:relative; top:15px">
 									Acceptance probability of DRHMC proposals:
-									<span style="font-size:21px">
 									$ \alpha_2(x\rightarrow y) = \textrm{min}\Big(1, \frac{p(y)}{p(x)}$<span style="color:orange">
-											$\frac{1 - \alpha_1(y)}{1 - \alpha_1(x)}$</span>$\Big)$
-									</span>
+										$\frac{1 - \alpha_1(y)}{1 - \alpha_1(x)}$</span>$\Big)$
 									<br>
 								</span>
 								<br>
@@ -2310,13 +2290,14 @@
                                                         <br>
 							<br>
 							<br>
-                                                        <div class="plain fragment" data-fragment-index="2" style="width:660px">
+                                                        <div class="plain fragment" data-fragment-index="2" style="width:600px">
 								<u>Gaussian variational family</u> $\, q=\mathcal{N}(\mu, \Sigma)$:
                                                                 <br>
 								<br>
 								<ul>
+                                                                        <li>No Taylor approximation. </li>
                                                                         <li>closed form updates for $\mu, \Sigma$ to achieve global minimum. </li>
-                                                                        <li> Provable exponential convergence for Gaussian target as  $B\rightarrow \infty$ </li>
+                                                                        <li> Provable exponential convergence for Gaussian target as $\textrm{limit}\, B\rightarrow \infty$ </li>
                                                                 </ul>
                                                                 <br>
                                                                 <br>
@@ -2326,7 +2307,7 @@
 							
 						</div>
 						
-						<div class="plain fragment" data-fragment-index="1" style="position:absolute; top:100px; right:10px; font-size:20px; width:720px; text-align:center">
+						<div class="plain fragment" data-fragment-index="1" style="position:absolute; top:100px; right:20px; font-size:20px; width:720px; text-align:center">
                                                         <u><b>BaM objective</b></u>:
 							<br>
 							<br>
@@ -2334,22 +2315,21 @@
 							$$ \mathcal{L(q)}: \frac{1}{B}\sum_i ||\nabla_\theta \log q_\phi(\theta_i) - \nabla_\theta \log p(\theta_i, x) ||^2_{\textrm{Cov}(q)} + \frac{2}{\lambda_t}\textrm{KL}(q_{\phi_t} || q_{\phi})$$
 						</div>
 
-						<div class="plain fragment" data-fragment-index="2" style="position:absolute; top:300px; right:170px; font-size:20px">
-							<img style="width:350px; height:220px;  border:none; ", data-src="assets/bam_pdb2.png" /><br>
-							<div class="caption"> Comparing algorithms for<br>B=2 (dashed) and B=32 (solids)
-							</div>
+						<div class="plain fragment" data-fragment-index="2" style="position:absolute; top:300px; right:50px; font-size:20px">
+							<img style="width:600px; height:190px;  border:none; ", data-src="assets/bam_pdb.png" /><br>
+							<span style="position:relative; top:-10px; left:20px" style="font-size:20px"> Comparing algorithms for B=2 (dashed) and B=32 (solids) </span>
 						</div>
 
-						<div class="box fragment" data-fragment-index="3" style="position:absolute; top:500px; left:20px; text-align:left; margin-left:0px; width:700px ">
+						<div class="box fragment" data-fragment-index="3" style="position:absolute; top:500px; left:20px; text-align:left; margin-left:0px; width:600px ">
 							<div class="box-title" style="padding:8px">
 								Road ahead
 							</div>
 							<div class="box-content" style="font-size:20px">
 								<ul style="margin-left:30px">
-									<li> Scaling with dimensions: Gaussian with diagonal+low-rank covariance.</li>
-									<li> Beyond Gaussian distributions: score matching VI for normalizing flow.</li>
+									<li> Scaling with dimensions:<br>$\rightarrow$ Gaussian with diagonal+low-rank covariance.</li>
+									<li> Beyond Gaussian distributions:<br>$\rightarrow$ score matching VI for normalizing flow.</li>
+									<li> Applications in natural sciences.</li>
 								</ul>
-								<br>
 							</div>
 						</div>
 						
