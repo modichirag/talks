@@ -1553,14 +1553,14 @@
 										<li>Exponential families</li>
 										<li>score matching VI for normalizing flow<br>
 											$\rightarrow$ model-based optimization e.g. momo <br>
-											$\rightarrow$ informed base distributions, e.g., solution of GSM/BaM
 										</li>
 									</ul>
 								</li>
 								<br>
-								<li class="plain fragment" data-fragment-index="3" > Synergies with MCMC
+								<li class="plain fragment" data-fragment-index="3" > Synergies with MCMC and NF
 									<ul>
-										<li>Mass matrix adaptation for HMC.</li>
+										<li> informed base distributions for NF, e.g., solution of GSM/BaM
+	                                                                        <li>Mass matrix adaptation for HMC.</li>
                                                                                 <br>
                                                                                 
                                                                                 <div class="plain fragment " data-fragment-index="3" style="font-size:19px; text-align:center" >
@@ -1602,20 +1602,20 @@
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
 				<section>
-					<div style="font-size:28px">Tools for scientific modeling
+					<div style="font-size:34px">Tools for scientific modeling
 						<br> 
 						<br>
 						<br>
-						<div class="container fragment " data-fragment-index="1" style="width:800px; font-size:24px; margin:auto">
-							<div class="col">
-								<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:250px"> <br>1. MCMC <br>methods<br><br> </div>
-							</div>
-							<div class="col">
-								<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:250px"> <br>2. Variational<br>inference<br> <br></div>
-							</div>
-						</div>
-						<br>
-						<br>
+						<!-- <div class="container fragment " data-fragment-index="1" style="width:800px; font-size:24px; margin:auto"> -->
+						<!-- 	<div class="col"> -->
+						<!-- 		<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:250px"> <br>1. MCMC <br>methods<br><br> </div> -->
+						<!-- 	</div> -->
+						<!-- 	<div class="col"> -->
+						<!-- 		<div class="boxonly alert" style="background-color:#44444;  border-radius: 100px; width:250px"> <br>2. Variational<br>inference<br> <br></div> -->
+						<!-- 	</div> -->
+						<!-- </div> -->
+						<!-- <br> -->
+						<!-- <br> -->
 					</div>
 				</section >
                                 
@@ -1627,14 +1627,80 @@
 
                                         <section data-background-color="black">
 					        <h3 class='slide-title' style="position:absolute;top:0;"> Differentiable simulations </h3>
-					        <div class="container">
-					        </div>
-                                                        
+
+                                                <br>
+                                                <br>
+					        <div class="slide-text">
+							<b class="alert "> FlowPM</b>: the first particle-mesh simulations in TensorFlow <br>
+                                                        <b class="alert" style="font-size:22px"> $pmwd$</b><font color="white">: particle mesh with derivatives </font>
+                                                        <br>
+                                                        <br>
+                                                        Dual purpose: Field-level inference vs fast-simulators. 
+
+                                                </div>
+                                                <br>
+                                                <div class="box fragment" data-fragment-index="1"  style=" text-align:left; margin-left:10px; width:600px">
+							<div class="box-title" style="padding:8px">
+								Road ahead
+                                                	</div>
+							<div class="box-content" style="font-size:20px; margin-left:10px">
+                                                                <br>
+								<ol>
+                                                                        <li class="fragment" data-fragment-index="1"> High performance computing<br>
+                                                                                <ul><li>parallelizing simulations over hundreds of GPUs </li></ul>
+                                                                        </li>
+                                                                        <br>
+                                                                        <li class="fragment" data-fragment-index="2"> Differentiable components<br>
+                                                                                <ul>
+                                                                                        <li> Finding dark matter halos (cluster-finding) </li>
+                                                                                        <li> Sampling variable number of components. 
+                                                                                </ul>
+                                                                        </li>
+                                                                        <br>
+                                                                        <li class="fragment" data-fragment-index="3"> Enhancements with ML components: subgrid physics<br>
+                                                                                <ul>
+                                                                                        <li> Fourier space vs configuration space corrections </li>
+                                                                                        <li> Adaptive-mesh refinement </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <br>
+                                                                        <li class="fragment" data-fragment-index="4"> Non $\Lambda$-CDM components<br>
+                                                                                <ul>
+                                                                                        <li> massive neutrinos, models of dark matter, dark energy </li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <br>
+                                                                        
+								</ol>
+							</div>
+						</div>
+						
                                                 
+
+                                                        
+                                                        
+
+                                                <img class="fragment fade-out" data-fragment-index="1" style="position:absolute; top:380px; left:100px; width:300px; border:none" data-src="assets/pmwd_logo.svg" />
+
+                                                
+                                                <img class="ragment plain" data-fragment-index="1" style="position:absolute; top:100px; right:300px; width:300px;"
+						     data-src="assets/perlmutter.jpg" />
+                                                
+                                                <img class="ragment" data-fragment-index="2" style="position:absolute; top:220px; right:120px; width:350px; border:none" data-src="assets/fof.png" />
+                                                
+                                                <!-- <div class="plain fragment fade-out" data-fragment-index="1" style="position:absolute; top:70px; right:100px" > -->
+                                                <!--         <div  style="position:relative; float:right; top:20px;  font-size: 15px; ">Credits : Francois Lanusse</div> -->
+                                                <!--         <br> -->
+                                                <!--         <img  style=" border:none" data-src="assets/flowpm.gif" /> -->
+                                                <!-- </div> -->
+                                                
+                                                <div class="plain  " data-fragment-index="4"  style="position:absolute; top:620px; right:19px; font-size:20px; text-align:right" >
+							<b><u>Modi</b></u>, Lanusse, and Seljak (2020) <br>
+							Li, <b><u>Modi</b></u> et al. (2022)<br>
+							Cuesta-Lazaro and <b><u>Modi</b></u> (2022)
+						</div>
+
                                         </section>
-                                        
-				        <!-------------------------------------------------------------------------------->
-                                        
                                         
                                 </section>
 
