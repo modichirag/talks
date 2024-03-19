@@ -41,7 +41,7 @@
 
 						<div class="container">
 							<div class="title" style="margin:auto; text-align:center; border-radius: 20px; background-color:rgba(0, 0, 0, 0.4);">
-								<h2> Reconstructing the Universe,<br> and algorithms for high dimensional Bayesian inference</h2>
+								<h2> High dimensional Bayesian Inference,<br> and how to reconstruct the Universe</h2>
 								<h4> SEAS, Harvard University<br>March 21st, 2024</h4>
 							</div>
 						</div>
@@ -300,14 +300,14 @@
 											<!-- $\,\rightarrow$ same as the last big survey in 5 years -->
 									</ul>
 								</div>
-								<br>
 								<img class="plain fragment fade-in"  data-fragment-index="0" data-src="assets/sdss_vs_desi.jpg" style="position:absolute; right:20px; width:450px; height:210px" />
+				 				<div class="fragment"  data-fragment-index="0" style="position:absolute; font-size: 16px; top: 600px; right:10px">
+									Credits: DESI Collaboration
+								</div>
 								<br>
- 								<div class="fragment"  data-fragment-index="1" style="">
+ 								<div class="fragment"  data-fragment-index="1"  style="position:absolute; font-size: 21px; top: 650px; right:40px">
 									LSST will collect data on 10 billion objects
                                                                 </div>
- 								<div class="fragment"  data-fragment-index="0" style="position:absolute; font-size: 16px; top: 650px; right:20px">
-									DESI Collaboration: 1611.00036</div>
 							</div>
 							                         
                                                 </div>
@@ -664,7 +664,7 @@
                                         <section data-background-color="black">
 
 
-                                                <h3 class='slide-title' style=""> Challenges for inference </h3>
+                                                <h3 class='slide-title' style=""> Challenges for field-level inference </h3>
 
 
 						$x \sim  p(x | \Lambda, z, \phi)$
@@ -677,12 +677,12 @@
                                                                         $\rightarrow$ $N$-body simulation under gravity
                                                                 </li>
                                                                 <br>
-                                                                <li class="" data-fragment-index="2"> High-dimensional inference <br>
+                                                                <li class="fragment highlight-green" data-fragment-index="2"> High-dimensional inference <br>
                                                                         $\rightarrow$ $z$ can be millions of unknown parameters
                                                                 </li>
                                                                 <br>
-                                                                <li class="" data-fragment-index="3"> Hierarchical model <br>
-                                                                        $\rightarrow$ Multiscale posterior geometry
+                                                                <li class="fragment highlight-green" data-fragment-index="2"> Hierarchical model <br>
+                                                                        $\rightarrow$ Multiscale posteriors (stiff systems)
                                                                 </li>
                                                                         
 						        </ol>
@@ -726,6 +726,66 @@
                                 </section> 
 				<!-------------------------------------------------------------------------------->
 				<!-------------------------------------------------------------------------------->
+				<!-- <section data-background-color="black"> -->
+
+				<!-- 	<h3 class='slide-title' style="position:absolute;top:0;"> Outline of the talk </h3> -->
+
+                                <!--         <br> -->
+                                <!--         <br> -->
+                                <!--         <br> -->
+				<!-- 	<div class="slide-text" style="position:absolute; top:100px; width:700px; font-size:22px"> -->
+                                                
+                                <!--                 <ol> -->
+                                <!--                         <li class="fragment " data-fragment-index="1"> High dimensional inference in cosmology with field-level inference.   -->
+                                <!--                                 <ul> -->
+                                <!--                                         <li> Tools  </li> -->
+                                <!--                                         <li> Algorithms -->
+                                <!--                                                 <ul> -->
+                                <!--                                                         $\rightarrow$ Hamiltonian Monte-Carlo (HMC)<br> -->
+				<!-- 						        $\rightarrow$ Variational Inference (VI)  -->
+                                                                                        
+                                <!--                                                 </ul> -->
+                                <!--                                         </li>  -->
+                                <!--                                 </ul> -->
+                                <!--                         </li> -->
+                                <!--                         <br> -->
+                                <!--                         <li class="fragment " data-fragment-index="2"> New, robust algorithms for Bayesian inference -->
+				<!-- 				<ul> -->
+				<!-- 					<li> MCMC algorithms for multiscale distributions  </li> -->
+				<!-- 					<li> Variational inference with score matching -->
+				<!-- 					</li>  -->
+				<!-- 				</ul> -->
+				<!-- 			</li> -->
+                                <!--                         <br> -->
+                                <!--                         <br>  -->
+                                <!--                         <\!-- <li> Putting it all together </li> -\-> -->
+                                <!--                 </ol> -->
+                                                
+                                <!--         </div> -->
+                                <!--         <div class="boxonly" style="position:absolute; top:100px; right:100px; padding-left:10px; text-align:center; font-size:22px; width:flex; "> -->
+                                <!--                 <u>Challenges to Bayesian inference</u> -->
+                                <!--                 <br> -->
+                                <!--                 <br> -->
+                                <!--                 <ol> -->
+                                <!--                         <li> Computationally expensive models <br> -->
+                                <!--                                 <\!-- $\rightarrow$ $N$-body simulation under gravity -\-> -->
+                                <!--                         </li> -->
+                                <!--                         <br> -->
+                                <!--                         <li class="fragment highlight-green" data-fragment-index="1"> High-dimensional inference <br> -->
+                                <!--                                 <\!-- $\rightarrow$ $z$ can be millions of unknown parameters -\-> -->
+                                <!--                         </li> -->
+                                <!--                         <br> -->
+                                <!--                         <li class="fragment highlight-green" data-fragment-index="2"> Complex posterior geometry <br> -->
+                                <!--                                 <\!-- $\rightarrow$ Complex posterior geometry -\-> -->
+                                <!--                         </li> -->
+                                                        
+				<!-- 		</ol> -->
+                                <!--         </div> -->
+                                        
+                                <!-- </section> -->
+
+				<!-------------------------------------------------------------------------------->
+				<!-------------------------------------------------------------------------------->
 				<section data-background-color="black">
 
 					<h3 class='slide-title' style="position:absolute;top:0;"> Outline of the talk </h3>
@@ -733,25 +793,20 @@
                                         <br>
                                         <br>
                                         <br>
-					<div class="slide-text" style="position:absolute; top:100px; width:700px; font-size:22px">
+					<div class="slide-text" style="position:absolute; top:100px; width:800px; font-size:22px">
                                                 
                                                 <ol>
-                                                        <li class="fragment " data-fragment-index="1"> High dimensional inference in cosmology with field-level inference.  
+                                                        <li class="fragment " data-fragment-index="1"> Field level inference in cosmology:<br>
+								combining existing tools & algorithms for high-dimensional inference
                                                                 <ul>
-                                                                        <li> Tools  </li>
-                                                                        <li> Algorithms
-                                                                                <ul>
-                                                                                        $\rightarrow$ Hamiltonian Monte-Carlo (HMC)<br>
-										        $\rightarrow$ Variational Inference (VI) 
-                                                                                        
-                                                                                </ul>
-                                                                        </li> 
+                                                                        <li> Hamiltonian Monte-Carlo
+									<li> Variational Inference 
                                                                 </ul>
                                                         </li>
                                                         <br>
-                                                        <li class="fragment " data-fragment-index="2"> New, robust algorithms for Bayesian inference
+                                                        <li class="fragment " data-fragment-index="2"> New algorithms for robust Bayesian inference
 								<ul>
-									<li> MCMC algorithms for multi-scale distributions  </li>
+									<li> MCMC algorithms for multiscale distributions  </li>
 									<li> Variational inference with score matching
 									</li> 
 								</ul>
@@ -762,25 +817,25 @@
                                                 </ol>
                                                 
                                         </div>
-                                        <div style="position:absolute; top:100px; right:100px; text-align:center; font-size:22px">
-                                                <u>Challenges to Bayesian inference</u>
-                                                <br>
-                                                <br>
-                                                <ol>
-                                                        <li> Computationally expensive models <br>
-                                                                <!-- $\rightarrow$ $N$-body simulation under gravity -->
-                                                        </li>
-                                                        <br>
-                                                        <li class="fragment highlight-green" data-fragment-index="1"> High-dimensional inference <br>
-                                                                <!-- $\rightarrow$ $z$ can be millions of unknown parameters -->
-                                                        </li>
-                                                        <br>
-                                                        <li class="fragment highlight-green" data-fragment-index="2"> Complex posterior geometry <br>
-                                                                <!-- $\rightarrow$ Complex posterior geometry -->
-                                                        </li>
+                                        <!-- <div class="boxonly" style="position:absolute; top:100px; right:100px; padding-left:10px; text-align:center; font-size:22px; width:flex; "> -->
+                                        <!--         <u>Challenges to Bayesian inference</u> -->
+                                        <!--         <br> -->
+                                        <!--         <br> -->
+                                        <!--         <ol> -->
+                                        <!--                 <li> Computationally expensive models <br> -->
+                                        <!--                         <\!-- $\rightarrow$ $N$-body simulation under gravity -\-> -->
+                                        <!--                 </li> -->
+                                        <!--                 <br> -->
+                                        <!--                 <li class="fragment highlight-green" data-fragment-index="1"> High-dimensional inference <br> -->
+                                        <!--                         <\!-- $\rightarrow$ $z$ can be millions of unknown parameters -\-> -->
+                                        <!--                 </li> -->
+                                        <!--                 <br> -->
+                                        <!--                 <li class="fragment highlight-green" data-fragment-index="2"> Complex posterior geometry <br> -->
+                                        <!--                         <\!-- $\rightarrow$ Complex posterior geometry -\-> -->
+                                        <!--                 </li> -->
                                                         
-						</ol>
-                                        </div>
+					<!-- 	</ol> -->
+                                        <!-- </div> -->
                                         
                                 </section>
 
@@ -809,14 +864,14 @@
 							<div class="container">
                                                         	<div class="col" style="flex: 0 0 30em;" >
 									<br>
-									<ul>
+									<ul style="font-size:21px">
 										<li class=" plain " > High-dimensional inference<br>
-											<div style="font-size:20px">  Initial conditions $z:$ millions of unknown parameters </div>
+											<div style="font-size:21px">  Initial conditions $z:$ millions of unknown parameters </div>
 											
   										</li>
 										<br>
 										<li class="plain"> Gradient based inference algorithms <br>
-											<div style="font-size:20px">
+											<div style="font-size:21px">
 												E.g. gradient descent, Hamiltonian Monte Carlo (HMC) <br>
 											</div>
 										</li>
@@ -829,7 +884,7 @@
 											<br> 
 										</div>
                                                                                 <br>
-										<li class="fragment " data-fragment-index="3"> Differentiable $N$-body simulations
+										<li class="fragment " data-fragment-index="3"> Differentiable evolution of particles under gravity
 										</li>
                                                                                 <!-- <li class="fragment " data-fragment-index="3"> 	Hammer behind the machine learning revolution. </li> -->
                                                                                 <br>
@@ -859,21 +914,17 @@
 
 								</div>
 								<br>
-                                                                <div class="fragment " data-fragment-index="5" style="position:absolute; top:450px; width:600px; font-size:20px">
-									<b class="alert"> Automatic differentiation</b>
-									<br>
-									<ul>
-										<li> the hammer behind deep learning </li>
-										<li> TensorFlow, JAX, Pytorch, Stan and more </li>
-									</ul>
-									<br>
+                                                                <div class="fragment " data-fragment-index="5" style="position:absolute; top:480px; left:30px; width:700px; font-size:21px;text-align:center">
+									<div class="alert"  style="font-size:22px; "> <u>Automatic differentiation</u></div>
+									The hammer behind deep learning, 
+									e.g., TensorFlow, JAX, Pytorch 
  								</div>
                                                                 
-								<div  class="fragment"  data-fragment-index="3" style="position:absolute; top:550px; right:20px; font-size:16px; text-align:right">
-									Jasche & Lavaux (2018) <br>
+								<div  class="fragment"  data-fragment-index="3" style="position:absolute; top:550px; right:20px; font-size:20px; text-align:right">
 									Wang, Mo, Yang, Bosch (2014) <br>
                                                                         <b><u>Modi</u></b>, Feng and Seljak (2017) <br>
                                                                         Seljak, Aslanyan, Feng, <b> <u>Modi</u></b> (2017) <br>
+									Jasche & Lavaux (2018)
 								</div>
 							</div>
 							
@@ -1427,7 +1478,7 @@
 
 						<br>
 						<br>
-						<div  style="font-size:20px">
+						<div  style="font-size:22px">
 							Auto-correlation length of samples in the MCMC chain (for different $k$-bins i.e. length-scales)
 							<!-- $$ -->
 							<!-- \rho_j(t)  = \frac{1}{n} \sum_{i=t+1}^n \big(P_i(k_j) - \bar{P}(k_j)\big) \big(P_{i-t}(k_j) - \bar{P}(k_j)\big); \quad a_c :=  \rho_j(a_c) \leq 0.1 -->
@@ -1435,20 +1486,20 @@
 
 						</div>
 						
-						<img  class="plain" data-src="assets/hmc_ac.png" height="300"/>
+						<img  class="plain" data-src="assets/hmc_ac.png" height="280"/>
 						
-						<ul class="fragment" data-fragment-index="2" style="font-size:20px; text-align:center">
+						<ul class="fragment" data-fragment-index="2" style="font-size:22px; text-align:center">
 
 							Auto-correlation lengths can be 1000 samples long.<br>
 							<b class="alert">~10,000 simulations </b> for a single independent sample!!
 						</ul>
 						<br>
-						<ul class="fragment alert" data-fragment-index="3" style="font-size:20px; text-align:center">
+						<ul class="fragment alert" data-fragment-index="3" style="font-size:22px; text-align:center">
 							
 							<strong>Computationally prohibitive in realistic settings. </strong>
                                                 </ul>
 												
-						<img   class="fragment " data-fragment-index="3" style="position:absolute; top:480px; right:10px; border:none"
+						<img   class="fragment " data-fragment-index="3" style="position:absolute; top:460px; right:0px; border:none"
 						       data-src="assets/costly.png" height="200px"/>
 						
 
@@ -1524,7 +1575,7 @@
 						
                                                 <br>
                                                 <br>
-                                                <div class="slide-text" style="text-align:left; margin-left:20px; font-size:20px; width:600px">
+                                                <div class="slide-text" style="text-align:left; margin-left:20px; font-size:22px; width:650px">
                                                         Approximate the posterior  <span style="font-size:18px" > $ p(\theta | x) \approx q_{\phi} (\theta) $ </span> using optimization. 
                                                         <br>
 							<br>
@@ -1547,7 +1598,7 @@
 							
                                                 </div>
 						
-						<img class="plain fragment" data-fragment-index="1" style="position:absolute; top:100px; right:75px; width:450px"
+						<img class="plain fragment" data-fragment-index="1" style="position:absolute; top:100px; right:50px; width:530px"
 						     data-src="assets/nf_cartoon.png" />
 						
 						<div class="fragment  plain" data-fragment-index="3" style="position:absolute; top:320px; left:60px; font-size:20px" > 
@@ -1562,7 +1613,7 @@
 							<span class="caption" > Posterior inferred by VI with reverse KL </span>
 						</div>
 						<div  class="plain fragment" data-fragment-index="4"
-						      style="position:absolute; top:400px; right:100px; width:400px; font-size:20px; text-align:center">
+						      style="position:absolute; top:400px; right:100px; width:400px; font-size:22px; text-align:center">
 							<b class='alert'> Variational inference with reverse KL is extremely  challenging optimization! </b>
 							$$D_{\mathrm{KL}}(q||p) = \mathbb{E}_{q}(\log q(\theta) - \log p(\theta|x)) $$
 						</div>
@@ -1584,7 +1635,7 @@
 						<h3 class="slide-title">Can we use other divergences?</h3>
 						
 						<br>
-						<div class="slide-text" style="width:600px">
+						<div class="slide-text" style="width:700px; font-size:22px">
 							
 							<br>
 							Variational inference with reverse KL divergence is not robust.
@@ -1611,7 +1662,7 @@
 
 						</div>
 					
-						<div class="plain" style="position:absolute; top:100px; right:180px; font-size:20px;">
+						<div class="plain" style="position:absolute; top:80px; right:180px; font-size:20px;">
 							<img style=" width:300px; height:250px; border:none"
 							     data-src="assets/vi_posterior_tf.png"/>
 							<br>
@@ -1647,7 +1698,7 @@
 						<br>
 						<div class="container">
 							<br>
-							<div class="col"  style="flex: 0 0 31em">
+							<div class="col"  style="flex: 0 0 31em; ">
 								
 								<div class="block  ">
 									<div class="block-title">
@@ -1969,26 +2020,25 @@
                                                 <h3 class='slide-title' style=""> Delayed rejection Hamiltonian Monte Carlo (DRHMC) </h3>
 
                                                 <br>
-                                                <div  class="plain fragment" data-fragment-index="2" style="font-size:20px">
+                                                <div  class="plain fragment" data-fragment-index="2" style="font-size:22px">
                                                         When faced with a rejection, make another proposal with a <u>different transition kernel</u>.
                                                 </div>
 						<br>
-                                                <div class="slide-text" style="font-size:20px">
+                                                <div class="slide-text" style="font-size:21px">
                                                         <div class="plain fragment " data-fragment-index="1"  >
 								<u>Hamiltonian-Monte Carlo</u>: <br>
-								Transition kernel $F_1:$ Leapfrog integration step-size $\epsilon$ for $L$ steps
+								Transition kernel $F_1:$ Leapfrog integration step-size $\epsilon$
 								<br>
-								Accepts proposals with probability:
-								$ \alpha_1(x\rightarrow y) = \textrm{min}\Big(1, \frac{p(y)}{p(x)}\Big)$
+								Detailed balance: accept proposals with probability
+								$ \alpha_{1(x\rightarrow y)} = \textrm{min}\Big(1, \frac{p(y)}{p(x)}\Big)$
 								<br>
 								If reject, fall back to $x$
 								<br>
 								<span class="plain fragment" data-fragment-index="3" style="position:relative; top:15px">
-									Acceptance probability of DRHMC proposals:
-									<span style="font-size:21px">
-									$ \alpha_2(x\rightarrow y) = \textrm{min}\Big(1, \frac{p(y)}{p(x)}$<span style="color:orange">
-											$\frac{1 - \alpha_1(y)}{1 - \alpha_1(x)}$</span>$\Big)$
-									</span>
+									Detailed balance for DRHMC proposals:
+									$ \alpha_{2(x\rightarrow y)} = \textrm{min}\Big(1,$
+									<span style=" font-size:22px">$\frac{p(y)}{p(x)}$<span style="color:orange;  font-size:22px">
+											$\frac{1 - \alpha_1(y)}{1 - \alpha_1(x)}$</span></span>$\Big)$
 									<br>
 								</span>
 								<br>
@@ -2035,7 +2085,7 @@
                                                 </div>
                                                 <br>
                                                 <br>
-						<div class="plain  " data-fragment-index="4"  style="position:absolute; top:670px; right:20px; font-size:20px" >
+						<div class="plain  " data-fragment-index="4"  style="position:absolute; top:670px; right:20px; font-size:20px; text-align:right" >
 							<b><u>Modi</b></u>, Barnett, and Carpenter (2022) <br>
                                                         Green and Mira (2001)
 						</div>
@@ -2050,7 +2100,7 @@
                                                 <br>
                                                 <div class="slide-text">
 							
-                                                        <div class="plain " >
+                                                        <div class="plain " style=" font-size:22px" >
 								<ul>
 									<li> Can make a third, fourth,..., proposal. <br>
 										<!-- <span class="plain  fragment" data-fragment-index="1"> Computational cost of $k^{th}$ proposal: -->
@@ -2088,7 +2138,7 @@
 							     style="position:relative;right:10px; width:350px; border:none; ", data-src="assets/drhmc_prop3.png" />
 						</div>
 
-						<div class="plain fragment" data-fragment-index="2"  style="position:absolute; top:350px; left:250px; ">
+						<div class="plain fragment" data-fragment-index="2"  style="position:absolute; top:365px; left:250px; ">
                                                         <img style="width:400px; border:none; ", data-src="assets/prob_drhmc3.png" />
 							<br>
 							<span class="caption" > Cost for stochastic volatility model </span>
@@ -2114,7 +2164,7 @@
                                                 <br>
                                                 <div class="slide-text">
 							
-                                                        <div class="plain " >
+                                                        <div class="plain " style=" font-size:22px">
 								<ul>
 									<li> Beyond hierarchical models<br>
 										$\rightarrow$ Heavy/light tailed distribution, additive and multiplicative degeneracies...
@@ -2124,7 +2174,7 @@
 										$\rightarrow$ different kinetic energies, mass-matrix, integrators...
 									</li>
 									<br>
-									<li > Software: tuning algorithm parameters during warm-up. 
+									<li > Locally adaptive algorithms
 									</li>
 									<!-- <li > Continuous adaptation of parameters -->
 									<!-- </li> -->
@@ -2190,7 +2240,7 @@
                                                 <h3 class='slide-title' style="">Score matching for Variational Inference</h3>
 
 						<br>
-                                                <div class="slide-text" style="font-size:20px">
+                                                <div class="slide-text" style="font-size:21px">
 							<div style="text-align:center; font-size:21px"> Approximate the posterior $ p(\theta | x) \approx q_{\phi} (\theta) $ by minimizing a dissimilarity metric $d(q;p)$.
 							</div>
                                                         <br>
@@ -2209,7 +2259,7 @@
 								<span class="plain fragment" data-fragment-index="2"> $\rightarrow$ requires samples from the distribution. </span>
                                                         </div>
 
-                                                        <div class="plain fragment" data-fragment-index="1" style="position:absolute; top:200px; left:500px; font-size:100px; height:100px; color:lightgray">
+                                                        <div class="plain fragment" data-fragment-index="1" style="position:absolute; top:210px; left:500px; font-size:100px; height:100px; color:lightgray">
                                                                 <!-- $\Biggl{\}}$ -->
                                                                 <!-- &#10101; -->
                                                                 <!-- &#125; -->
@@ -2227,13 +2277,13 @@
 								<div class="box-title" style="padding:8px; font-size:22px ">
 									A different approach: score matching
 								</div>
-								<div class="box-content" style="font-size:20px; text-align:left; padding:8px;">
+								<div class="box-content" style="font-size:21px; text-align:left; padding:8px;">
 									$$\nabla_{\theta} \log q_{\phi^*}(\theta) = \nabla_{\theta} \log p(\theta,  x) \quad \forall \theta \in \Theta$$
 									if and only if, 
 									$\, q_{\phi^*}(\theta) =  p(\theta | x) $
 									<br>
                                                                         <br>  
-									<ul class=" fragment" data-fragment-index="4">
+									<ul class=" fragment" data-fragment-index="4" style="font-size:21px;">
 										<li> No constraint on samples being drawn from $p$ or $q$. </li>
 										<li> Matching vectors instead of scalars <br>
                                                                                         $\rightarrow$ size of vectors $\propto$ dimensionality.
@@ -2260,13 +2310,13 @@
                                                 <h3 class='slide-title' style="">Gaussian Score matching for Variational Inference (GSM)</h3>
 						
 						<br>
-                                                <div class="slide-text" style="font-size:20px; width:700px">
+                                                <div class="slide-text" style="font-size:21px; width:700px">
 							
 							<div class="box"  style=" text-align:left; margin-left:0px; ">
 								<div class="box-title" style="padding:8px">
 									Algorithm
 								</div>
-								<div class="box-content" style="font-size:20px; margin-left:10px">
+								<div class="box-content" style="font-size:21px; margin-left:10px">
 									At iteration $t$,
 									<br>
 									<ol style="margin-left:50px">
@@ -2279,10 +2329,9 @@
 								</div>
 							</div>
 							
-                                                        <br>
 							<br>
                                                         <div class="plain fragment" data-fragment-index="3" >
-                                                                For Gaussian distribution $q_\phi = \mathcal{N}(\mu, \Sigma)$, closed form updates 
+                                                                For Gaussian distribution <span style="font-size:20px" > $q_\phi = \mathcal{N}(\mu, \Sigma)$</span>, closed form updates 
 								<br>
                                                                 <span style="font-size:18px" >
 								        $$\mu_{t+1} = \mu_t + A_t\big(\nabla_\theta \log p(\theta_t, x) - \nabla_\theta \log q_\phi(\theta_t)\big) $$
@@ -2338,14 +2387,13 @@
 						
 						<br>
 						<br>
-                                                <div class="slide-text" style="font-size:20px">
+                                                <div class="slide-text" style="font-size:21px">
 							Match score only at one point<br>
 							$\rightarrow$ marginal gains from large batch size<br>
                                                         <!-- $\rightarrow$ parallelization on GPUs -->
                                                         
                                                         <br>
                                                         <br>
-							<br>
 							<br>
                                                         <div class="plain fragment" data-fragment-index="2" style="width:660px">
 								<u>Gaussian variational family</u> $\, q=\mathcal{N}(\mu, \Sigma)$:
@@ -2354,7 +2402,7 @@
 								<ul>
                                                                         <li>closed form updates for $\mu, \Sigma$ to achieve global minimum. </li>
 									<br>
-                                                                        <li> Provable exponential convergence for Gaussian target as  $B\rightarrow \infty$ </li>
+                                                                        <li> Exponential convergence for Gaussian target as  $B\rightarrow \infty$ </li>
                                                                 </ul>
                                                                 <br>
                                                                 <br>
@@ -2364,7 +2412,7 @@
 							
 						</div>
 						
-						<div class="plain fragment" data-fragment-index="1" style="position:absolute; top:100px; right:10px; font-size:20px; width:720px; text-align:center">
+						<div class="plain fragment" data-fragment-index="1" style="position:absolute; top:100px; right:10px; font-size:21px; width:720px; text-align:center">
                                                         <u><b>BaM objective</b></u>:
 							<br>
 							<br>
@@ -2372,18 +2420,18 @@
 							$$ \mathcal{L(q)}: \frac{1}{B}\sum_i ||\nabla_\theta \log q_\phi(\theta_i) - \nabla_\theta \log p(\theta_i, x) ||^2_{\textrm{Cov}(q)} + \frac{2}{\lambda_t}\textrm{KL}(q_{\phi_t} || q_{\phi})$$
 						</div>
 
-						<div class="plain fragment" data-fragment-index="2" style="position:absolute; top:300px; right:170px; font-size:20px">
+						<div class="plain fragment" data-fragment-index="2" style="position:absolute; top:300px; right:150px; font-size:21px">
 							<img style="width:350px; height:220px;  border:none; ", data-src="assets/bam_pdb2.png" /><br>
 							<div class="caption"> Comparing algorithms for<br>B=2 (dashed) and B=32 (solids)
 							</div>
 						</div>
 
-						<div class="box fragment" data-fragment-index="3" style="position:absolute; top:500px; left:20px; text-align:left; margin-left:0px; width:700px ">
+						<div class="box fragment" data-fragment-index="3" style="position:absolute; top:500px; left:20px; text-align:left; margin-left:0px; width:flex ">
 							<div class="box-title" style="padding:8px">
 								Road ahead
 							</div>
-							<div class="box-content" style="font-size:20px">
-								<ul style="margin-left:30px">
+							<div class="box-content" style="font-size:21px; padding:8px">
+								<ul style="margin-left:20px">
 									<li> Scaling with dimensions: Gaussian with diagonal+low-rank covariance.</li>
 									<li> Beyond Gaussian distributions: score matching VI for normalizing flow.</li>
 								</ul>
