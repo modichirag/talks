@@ -61,3 +61,6 @@
 [submodule "Harvard2_March2024/reveal.js"]
 	path = Harvard2_March2024/reveal.js
 	url = https://github.com/modichirag/reveal.js
+[submodule "Voleon_Oct25/reveal.js"]
+	path = Voleon_Oct25/reveal.js
+	url = https://github.com/modichirag/reveal.js
